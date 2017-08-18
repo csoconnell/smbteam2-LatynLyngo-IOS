@@ -7,14 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A45CC4EB5A8FE86DC3D508F /* Pods_LatinLingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2BFC039BB902ED3B4586D /* Pods_LatinLingo.framework */; };
+		58021ED91E2792B600C38624 /* ConstantsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED11E2792B600C38624 /* ConstantsHelper.swift */; };
+		58021EDB1E2792B600C38624 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED31E2792B600C38624 /* Double+Conversions.swift */; };
+		58021EDD1E2792B600C38624 /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED51E2792B600C38624 /* HelperClass.swift */; };
+		58021EDE1E2792B600C38624 /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED61E2792B600C38624 /* UIColor+CustomColor.swift */; };
+		58021EDF1E2792B600C38624 /* SharedInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED71E2792B600C38624 /* SharedInstance.swift */; };
+		58021EE01E2792B600C38624 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021ED81E2792B600C38624 /* UIViewHelper.swift */; };
+		58021EE31E2794F700C38624 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58021EE21E2794F700C38624 /* UIKit.framework */; };
+		5802B59F1E4B26B300FE9D84 /* GetRequestByToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802B59E1E4B26B300FE9D84 /* GetRequestByToken.swift */; };
+		5802B5A11E4B2D1C00FE9D84 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802B5A01E4B2D1C00FE9D84 /* ForgetPasswordVC.swift */; };
+		5802B5A31E4B3BB600FE9D84 /* AboutVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802B5A21E4B3BB600FE9D84 /* AboutVc.swift */; };
+		5802B5A71E4B533900FE9D84 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5802B5A61E4B533900FE9D84 /* ChangePasswordVC.swift */; };
+		5802B5A91E4B74C400FE9D84 /* HARNGTON.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5802B5A81E4B6E7C00FE9D84 /* HARNGTON.TTF */; };
+		58067B581E4A1969005CC1E6 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58067B571E4A1969005CC1E6 /* loginModel.swift */; };
+		58067B5A1E4A28E5005CC1E6 /* RegstrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58067B591E4A28E5005CC1E6 /* RegstrationModel.swift */; };
 		581B51F71E2670170005D53A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B51F61E2670170005D53A /* AppDelegate.swift */; };
-		581B51F91E2670170005D53A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B51F81E2670170005D53A /* ViewController.swift */; };
+		581B51F91E2670170005D53A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B51F81E2670170005D53A /* HomeVC.swift */; };
 		581B51FC1E2670170005D53A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581B51FA1E2670170005D53A /* Main.storyboard */; };
 		581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 581B51FD1E2670170005D53A /* LatinLingo.xcdatamodeld */; };
-		581B52011E2670170005D53A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581B52001E2670170005D53A /* Assets.xcassets */; };
-		581B52041E2670170005D53A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581B52021E2670170005D53A /* LaunchScreen.storyboard */; };
 		581B520F1E2670170005D53A /* LatinLingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B520E1E2670170005D53A /* LatinLingoTests.swift */; };
 		581B521A1E2670170005D53A /* LatinLingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B52191E2670170005D53A /* LatinLingoUITests.swift */; };
+		582561F51E31BF1800526558 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582561F41E31BF1800526558 /* AudioToolbox.framework */; };
+		582561FB1E31C59000526558 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F71E31C59000526558 /* corbel.ttf */; };
+		582561FC1E31C59000526558 /* corbelb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F81E31C59000526558 /* corbelb.ttf */; };
+		582561FD1E31C59000526558 /* corbeli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F91E31C59000526558 /* corbeli.ttf */; };
+		582561FE1E31C59000526558 /* corbelz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561FA1E31C59000526558 /* corbelz.ttf */; };
+		582562021E31E02900526558 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582562011E31E02900526558 /* AVFoundation.framework */; };
+		58362A601E95347C0069C913 /* Papyrus-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328211E952DF80002DC0A /* Papyrus-Condensed.ttf */; };
+		58362A611E9534800069C913 /* ArialRounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328141E95249D0002DC0A /* ArialRounded-Bold.ttf */; };
+		58362A621E9534830069C913 /* GillSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328191E9524B40002DC0A /* GillSans-Bold.ttf */; };
+		58362A631E9534860069C913 /* GillSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328221E952E220002DC0A /* GillSans.ttf */; };
+		58362A641E9534890069C913 /* ChalkboardSE-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */; };
+		58362A651E95348B0069C913 /* ChalkboardSE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */; };
+		58362A671E9538060069C913 /* BanglaSangamMN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58362A661E9538060069C913 /* BanglaSangamMN.ttf */; };
+		58424DA61E448C1900F067BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58424DA51E448C1900F067BC /* LoginViewController.swift */; };
+		58424DA81E448C5A00F067BC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58424DA71E448C5A00F067BC /* RegistrationViewController.swift */; };
+		584592D21E5C6B4B00F39623 /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D11E5C6B4B00F39623 /* LoaderHelper.swift */; };
+		584592D71E5C9C7C00F39623 /* InstuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D61E5C9C7C00F39623 /* InstuctionVC.swift */; };
+		584592D81E5CA1A000F39623 /* HarringtonBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584592D51E5C9BD600F39623 /* HarringtonBold.ttf */; };
+		5849CECF1E2894FF00859AE2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC51E2894FF00859AE2 /* FMDatabase.m */; };
+		5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC71E2894FF00859AE2 /* FMDatabaseAdditions.m */; };
+		5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC91E2894FF00859AE2 /* FMDatabasePool.m */; };
+		5849CED21E2894FF00859AE2 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CECB1E2894FF00859AE2 /* FMDatabaseQueue.m */; };
+		5849CED31E2894FF00859AE2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CECE1E2894FF00859AE2 /* FMResultSet.m */; };
+		5849CED51E28954E00859AE2 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849CED41E28954E00859AE2 /* DBManager.swift */; };
+		5849CED91E2895E600859AE2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5849CED81E2895E600859AE2 /* libsqlite3.tbd */; };
+		584D83CB1E56DA0600550DFD /* SplitedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D83CA1E56DA0600550DFD /* SplitedPicker.swift */; };
+		584F4FB01E48A9E30098BADA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */; };
+		584F4FB41E48C2A20098BADA /* SidemenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F4FB31E48C2A20098BADA /* SidemenuCell.swift */; };
+		585356DC1E7FB6F900EA4980 /* passDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DB1E7FB6F900EA4980 /* passDataVC.swift */; };
+		585356DE1E7FB7FF00EA4980 /* splitedPickerAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */; };
+		585356E01E7FBB4C00EA4980 /* NavigationPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */; };
+		5859DA031E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859DA021E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift */; };
+		585BBEC81E83F4AB000734A3 /* calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC21E83F4AB000734A3 /* calibri.ttf */; };
+		585BBEC91E83F4AB000734A3 /* calibrib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC31E83F4AB000734A3 /* calibrib.ttf */; };
+		585BBECA1E83F4AB000734A3 /* Helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC41E83F4AB000734A3 /* Helvetica.ttf */; };
+		585BBECB1E83F4AB000734A3 /* HelveticaBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC51E83F4AB000734A3 /* HelveticaBd.ttf */; };
+		585BBECD1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBECC1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf */; };
+		585BBECF1E83F6ED000734A3 /* AmericanTypewriterCondensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBECE1E83F6ED000734A3 /* AmericanTypewriterCondensed.ttf */; };
+		585BBED41E83FA81000734A3 /* trebuc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBED21E83FA81000734A3 /* trebuc.ttf */; };
+		585BBED51E83FA81000734A3 /* trebucbd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBED31E83FA81000734A3 /* trebucbd.ttf */; };
+		585BBED81E83FA9F000734A3 /* verdana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBED61E83FA9F000734A3 /* verdana.ttf */; };
+		585BBED91E83FA9F000734A3 /* verdanab.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBED71E83FA9F000734A3 /* verdanab.ttf */; };
+		585CB2EA1E64314D00915467 /* FontSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CB2E91E64314D00915467 /* FontSettingVC.swift */; };
+		585CB2EC1E64482300915467 /* GalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CB2EB1E64482300915467 /* GalleryCollectionCell.swift */; };
+		585CB2EE1E6448B900915467 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CB2ED1E6448B900915467 /* SideMenuVC.swift */; };
+		585CB2F11E6448CD00915467 /* Clapp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 585CB2EF1E6448CD00915467 /* Clapp.mp3 */; };
+		585CB2F21E6448CD00915467 /* Tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 585CB2F01E6448CD00915467 /* Tick.mp3 */; };
+		586686EF1E685E8400581550 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586686EE1E685E8400581550 /* NavigationController.swift */; };
+		586686F11E686BD300581550 /* passVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586686F01E686BD300581550 /* passVc.swift */; };
+		5883CF1B1E600C1E00D74A37 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF181E600C1E00D74A37 /* GetRequest.swift */; };
+		5883CF1C1E600C1E00D74A37 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF191E600C1E00D74A37 /* PostRequest.swift */; };
+		5883CF1D1E600C1E00D74A37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF1A1E600C1E00D74A37 /* Reachability.swift */; };
+		588736CE1E82862100DF8DC8 /* passDataSolveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */; };
+		588736D01E8288C700DF8DC8 /* splitedPickerWithReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */; };
+		588736D21E828B1F00DF8DC8 /* NavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */; };
+		589EF0611E4C5E950024CA08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581B52001E2670170005D53A /* Assets.xcassets */; };
+		589EF0631E4C5FBB0024CA08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589EF0621E4C5FBB0024CA08 /* Images.xcassets */; };
+		589EF0661E4C60230024CA08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */; };
+		58A01B441E49C20800A5C485 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A01B431E49C20800A5C485 /* SettingsVC.swift */; };
+		58A01B461E49C3E700A5C485 /* PackegesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A01B451E49C3E700A5C485 /* PackegesVC.swift */; };
+		58AF55751E2F4A0D00AB4E14 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF55741E2F4A0D00AB4E14 /* LoginService.swift */; };
+		58FCC6FE1E4C967E00C852AE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCC6FD1E4C967E00C852AE /* ProfileVC.swift */; };
+		58FCC7001E4CB02A00C852AE /* MTPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCC6FF1E4CB02A00C852AE /* MTPopUp.swift */; };
+		8FB34DFD8F60121B49615659 /* Pods_LatinLingoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E61C34CB83FF8A4CE1A5349 /* Pods_LatinLingoUITests.framework */; };
+		A54FC730D0B2AC7C132D8F2F /* Pods_LatinLingoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8AD5152F937E843043F451 /* Pods_LatinLingoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +113,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E61C34CB83FF8A4CE1A5349 /* Pods_LatinLingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatinLingoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8B0473D672D987DF834C4C /* Pods-LatinLingoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		58021ED11E2792B600C38624 /* ConstantsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsHelper.swift; sourceTree = "<group>"; };
+		58021ED31E2792B600C38624 /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
+		58021ED51E2792B600C38624 /* HelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
+		58021ED61E2792B600C38624 /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
+		58021ED71E2792B600C38624 /* SharedInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedInstance.swift; sourceTree = "<group>"; };
+		58021ED81E2792B600C38624 /* UIViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
+		58021EE21E2794F700C38624 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5802B59B1E4B12BB00FE9D84 /* LatinLingo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LatinLingo.entitlements; sourceTree = "<group>"; };
+		5802B59E1E4B26B300FE9D84 /* GetRequestByToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetRequestByToken.swift; path = LatinLingo/GetRequestByToken.swift; sourceTree = SOURCE_ROOT; };
+		5802B5A01E4B2D1C00FE9D84 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgetPasswordVC.swift; path = LatinLingo/ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		5802B5A21E4B3BB600FE9D84 /* AboutVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutVc.swift; path = LatinLingo/AboutVc.swift; sourceTree = "<group>"; };
+		5802B5A61E4B533900FE9D84 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordVC.swift; path = LatinLingo/ChangePasswordVC.swift; sourceTree = "<group>"; };
+		5802B5A81E4B6E7C00FE9D84 /* HARNGTON.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HARNGTON.TTF; sourceTree = "<group>"; };
+		58067B571E4A1969005CC1E6 /* loginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
+		58067B591E4A28E5005CC1E6 /* RegstrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegstrationModel.swift; sourceTree = "<group>"; };
 		581B51F31E2670170005D53A /* LatinLingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LatinLingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581B51F61E2670170005D53A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		581B51F81E2670170005D53A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		581B51F81E2670170005D53A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = LatinLingo/HomeVC.swift; sourceTree = "<group>"; };
 		581B51FB1E2670170005D53A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		581B51FE1E2670170005D53A /* LatinLingo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LatinLingo.xcdatamodel; sourceTree = "<group>"; };
 		581B52001E2670170005D53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		581B52031E2670170005D53A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581B52051E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581B520A1E2670170005D53A /* LatinLingoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LatinLingoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		581B520E1E2670170005D53A /* LatinLingoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinLingoTests.swift; sourceTree = "<group>"; };
@@ -49,6 +143,83 @@
 		581B52151E2670170005D53A /* LatinLingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LatinLingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		581B52191E2670170005D53A /* LatinLingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinLingoUITests.swift; sourceTree = "<group>"; };
 		581B521B1E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		582561F41E31BF1800526558 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		582561F71E31C59000526558 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbel.ttf; path = fonts/corbel.ttf; sourceTree = "<group>"; };
+		582561F81E31C59000526558 /* corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelb.ttf; path = fonts/corbelb.ttf; sourceTree = "<group>"; };
+		582561F91E31C59000526558 /* corbeli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbeli.ttf; path = fonts/corbeli.ttf; sourceTree = "<group>"; };
+		582561FA1E31C59000526558 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelz.ttf; path = fonts/corbelz.ttf; sourceTree = "<group>"; };
+		582562011E31E02900526558 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		58362A661E9538060069C913 /* BanglaSangamMN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BanglaSangamMN.ttf; sourceTree = "<group>"; };
+		58424DA51E448C1900F067BC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = LatinLingo/LoginViewController.swift; sourceTree = "<group>"; };
+		58424DA71E448C5A00F067BC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = LatinLingo/RegistrationViewController.swift; sourceTree = "<group>"; };
+		584592D11E5C6B4B00F39623 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
+		584592D51E5C9BD600F39623 /* HarringtonBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarringtonBold.ttf; sourceTree = "<group>"; };
+		584592D61E5C9C7C00F39623 /* InstuctionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstuctionVC.swift; path = LatinLingo/InstuctionVC.swift; sourceTree = "<group>"; };
+		5849CEC31E2894FF00859AE2 /* LatinLingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LatinLingo-Bridging-Header.h"; sourceTree = "<group>"; };
+		5849CEC41E2894FF00859AE2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = FMDB/FMDatabase.h; sourceTree = "<group>"; };
+		5849CEC51E2894FF00859AE2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = FMDB/FMDatabase.m; sourceTree = "<group>"; };
+		5849CEC61E2894FF00859AE2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = FMDB/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		5849CEC71E2894FF00859AE2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = FMDB/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		5849CEC81E2894FF00859AE2 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = FMDB/FMDatabasePool.h; sourceTree = "<group>"; };
+		5849CEC91E2894FF00859AE2 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = FMDB/FMDatabasePool.m; sourceTree = "<group>"; };
+		5849CECA1E2894FF00859AE2 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = FMDB/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		5849CECB1E2894FF00859AE2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = FMDB/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		5849CECC1E2894FF00859AE2 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = FMDB/FMDB.h; sourceTree = "<group>"; };
+		5849CECD1E2894FF00859AE2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = FMDB/FMResultSet.h; sourceTree = "<group>"; };
+		5849CECE1E2894FF00859AE2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = FMDB/FMResultSet.m; sourceTree = "<group>"; };
+		5849CED41E28954E00859AE2 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		5849CED81E2895E600859AE2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		584D83CA1E56DA0600550DFD /* SplitedPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitedPicker.swift; path = LatinLingo/SplitedPicker.swift; sourceTree = "<group>"; };
+		584F4FAE1E48A9E30098BADA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		584F4FB31E48C2A20098BADA /* SidemenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidemenuCell.swift; path = LatinLingo/SidemenuCell.swift; sourceTree = "<group>"; };
+		585356DB1E7FB6F900EA4980 /* passDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passDataVC.swift; sourceTree = "<group>"; };
+		585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splitedPickerAny.swift; sourceTree = "<group>"; };
+		585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPassController.swift; sourceTree = "<group>"; };
+		5859DA021E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
+		585BBEC21E83F4AB000734A3 /* calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibri.ttf; sourceTree = "<group>"; };
+		585BBEC31E83F4AB000734A3 /* calibrib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibrib.ttf; sourceTree = "<group>"; };
+		585BBEC41E83F4AB000734A3 /* Helvetica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica.ttf; sourceTree = "<group>"; };
+		585BBEC51E83F4AB000734A3 /* HelveticaBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaBd.ttf; sourceTree = "<group>"; };
+		585BBECC1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmericanTypewriterCondensedBold.ttf; sourceTree = "<group>"; };
+		585BBECE1E83F6ED000734A3 /* AmericanTypewriterCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmericanTypewriterCondensed.ttf; sourceTree = "<group>"; };
+		585BBED21E83FA81000734A3 /* trebuc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebuc.ttf; sourceTree = "<group>"; };
+		585BBED31E83FA81000734A3 /* trebucbd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebucbd.ttf; sourceTree = "<group>"; };
+		585BBED61E83FA9F000734A3 /* verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = verdana.ttf; sourceTree = "<group>"; };
+		585BBED71E83FA9F000734A3 /* verdanab.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = verdanab.ttf; sourceTree = "<group>"; };
+		585CB2E91E64314D00915467 /* FontSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontSettingVC.swift; path = LatinLingo/FontSettingVC.swift; sourceTree = "<group>"; };
+		585CB2EB1E64482300915467 /* GalleryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCollectionCell.swift; path = LatinLingo/GalleryCollectionCell.swift; sourceTree = "<group>"; };
+		585CB2ED1E6448B900915467 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuVC.swift; path = LatinLingo/SideMenuVC.swift; sourceTree = "<group>"; };
+		585CB2EF1E6448CD00915467 /* Clapp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clapp.mp3; sourceTree = "<group>"; };
+		585CB2F01E6448CD00915467 /* Tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tick.mp3; sourceTree = "<group>"; };
+		586686EE1E685E8400581550 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		586686F01E686BD300581550 /* passVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passVc.swift; sourceTree = "<group>"; };
+		5883CF181E600C1E00D74A37 /* GetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetRequest.swift; path = LatinLingo/GetRequest.swift; sourceTree = SOURCE_ROOT; };
+		5883CF191E600C1E00D74A37 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostRequest.swift; path = LatinLingo/PostRequest.swift; sourceTree = SOURCE_ROOT; };
+		5883CF1A1E600C1E00D74A37 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = LatinLingo/Reachability.swift; sourceTree = SOURCE_ROOT; };
+		588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passDataSolveVC.swift; sourceTree = "<group>"; };
+		588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splitedPickerWithReset.swift; sourceTree = "<group>"; };
+		588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerViewController.swift; sourceTree = "<group>"; };
+		589328141E95249D0002DC0A /* ArialRounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArialRounded-Bold.ttf"; sourceTree = "<group>"; };
+		589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChalkboardSE-Bold.ttf"; sourceTree = "<group>"; };
+		589328191E9524B40002DC0A /* GillSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GillSans-Bold.ttf"; sourceTree = "<group>"; };
+		5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChalkboardSE-Regular.ttf"; sourceTree = "<group>"; };
+		589328211E952DF80002DC0A /* Papyrus-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Papyrus-Condensed.ttf"; sourceTree = "<group>"; };
+		589328221E952E220002DC0A /* GillSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttf; sourceTree = "<group>"; };
+		589EF0621E4C5FBB0024CA08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		589EF0651E4C60230024CA08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58A01B431E49C20800A5C485 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = LatinLingo/SettingsVC.swift; sourceTree = "<group>"; };
+		58A01B451E49C3E700A5C485 /* PackegesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackegesVC.swift; path = LatinLingo/PackegesVC.swift; sourceTree = "<group>"; };
+		58AF55741E2F4A0D00AB4E14 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		58FCC6FD1E4C967E00C852AE /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = LatinLingo/ProfileVC.swift; sourceTree = "<group>"; };
+		58FCC6FF1E4CB02A00C852AE /* MTPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTPopUp.swift; path = LatinLingo/MTPopUp.swift; sourceTree = "<group>"; };
+		64AF38E3F17C85EB1DC79C1A /* Pods-LatinLingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo.debug.xcconfig"; sourceTree = "<group>"; };
+		9EF2BFC039BB902ED3B4586D /* Pods_LatinLingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatinLingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB71397D459E39C177EFEC68 /* Pods-LatinLingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo.release.xcconfig"; sourceTree = "<group>"; };
+		CF8AD5152F937E843043F451 /* Pods_LatinLingoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatinLingoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2A9085B81C5326D26625176 /* Pods-LatinLingoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8DD4B93EA0E151D8E228D22 /* Pods-LatinLingoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA3FDE7CB13A8510B61B898F /* Pods-LatinLingoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatinLingoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +227,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582562021E31E02900526558 /* AVFoundation.framework in Frameworks */,
+				582561F51E31BF1800526558 /* AudioToolbox.framework in Frameworks */,
+				5849CED91E2895E600859AE2 /* libsqlite3.tbd in Frameworks */,
+				58021EE31E2794F700C38624 /* UIKit.framework in Frameworks */,
+				3A45CC4EB5A8FE86DC3D508F /* Pods_LatinLingo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54FC730D0B2AC7C132D8F2F /* Pods_LatinLingoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +247,125 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB34DFD8F60121B49615659 /* Pods_LatinLingoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B8C379B6E0D402BCB25E3E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				582562011E31E02900526558 /* AVFoundation.framework */,
+				582561F41E31BF1800526558 /* AudioToolbox.framework */,
+				5849CED81E2895E600859AE2 /* libsqlite3.tbd */,
+				58021EE21E2794F700C38624 /* UIKit.framework */,
+				9EF2BFC039BB902ED3B4586D /* Pods_LatinLingo.framework */,
+				CF8AD5152F937E843043F451 /* Pods_LatinLingoTests.framework */,
+				2E61C34CB83FF8A4CE1A5349 /* Pods_LatinLingoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D40AA75A2CC5C60BD821CE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64AF38E3F17C85EB1DC79C1A /* Pods-LatinLingo.debug.xcconfig */,
+				CB71397D459E39C177EFEC68 /* Pods-LatinLingo.release.xcconfig */,
+				4A8B0473D672D987DF834C4C /* Pods-LatinLingoTests.debug.xcconfig */,
+				FA3FDE7CB13A8510B61B898F /* Pods-LatinLingoTests.release.xcconfig */,
+				F2A9085B81C5326D26625176 /* Pods-LatinLingoUITests.debug.xcconfig */,
+				F8DD4B93EA0E151D8E228D22 /* Pods-LatinLingoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		58021ECF1E2789E800C38624 /* LLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				58FCC6FF1E4CB02A00C852AE /* MTPopUp.swift */,
+			);
+			name = LLAlertView;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		58021ED01E278A1400C38624 /* LLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				581B51F81E2670170005D53A /* HomeVC.swift */,
+				584D83CA1E56DA0600550DFD /* SplitedPicker.swift */,
+				588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */,
+				585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */,
+				585CB2ED1E6448B900915467 /* SideMenuVC.swift */,
+				58424DA71E448C5A00F067BC /* RegistrationViewController.swift */,
+				58424DA51E448C1900F067BC /* LoginViewController.swift */,
+				586686F01E686BD300581550 /* passVc.swift */,
+				585356DB1E7FB6F900EA4980 /* passDataVC.swift */,
+				588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */,
+				584592D61E5C9C7C00F39623 /* InstuctionVC.swift */,
+				5802B5A01E4B2D1C00FE9D84 /* ForgetPasswordVC.swift */,
+				58A01B431E49C20800A5C485 /* SettingsVC.swift */,
+				58A01B451E49C3E700A5C485 /* PackegesVC.swift */,
+				5802B5A61E4B533900FE9D84 /* ChangePasswordVC.swift */,
+				58FCC6FD1E4C967E00C852AE /* ProfileVC.swift */,
+				5802B5A21E4B3BB600FE9D84 /* AboutVc.swift */,
+				585CB2E91E64314D00915467 /* FontSettingVC.swift */,
+				586686EE1E685E8400581550 /* NavigationController.swift */,
+				585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */,
+				588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */,
+			);
+			name = LLViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		58021EE11E27943300C38624 /* LLExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				58021ED31E2792B600C38624 /* Double+Conversions.swift */,
+				584F4FAE1E48A9E30098BADA /* SWRevealViewController.h */,
+				584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */,
+				58021ED61E2792B600C38624 /* UIColor+CustomColor.swift */,
+			);
+			name = LLExtensions;
+			sourceTree = "<group>";
+		};
+		58021EE41E27A08600C38624 /* LLHelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				58021ED11E2792B600C38624 /* ConstantsHelper.swift */,
+				58021ED71E2792B600C38624 /* SharedInstance.swift */,
+				58AF55741E2F4A0D00AB4E14 /* LoginService.swift */,
+				58021ED51E2792B600C38624 /* HelperClass.swift */,
+				584592D11E5C6B4B00F39623 /* LoaderHelper.swift */,
+				5859DA021E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift */,
+				58021ED81E2792B600C38624 /* UIViewHelper.swift */,
+				5849CED41E28954E00859AE2 /* DBManager.swift */,
+			);
+			name = LLHelperClasses;
+			sourceTree = "<group>";
+		};
+		5802B5A51E4B50E400FE9D84 /* LLModel Class */ = {
+			isa = PBXGroup;
+			children = (
+				58067B571E4A1969005CC1E6 /* loginModel.swift */,
+				58067B591E4A28E5005CC1E6 /* RegstrationModel.swift */,
+			);
+			name = "LLModel Class";
+			sourceTree = "<group>";
+		};
+		58067B521E4A07FD005CC1E6 /* LLServerConnection */ = {
+			isa = PBXGroup;
+			children = (
+				5883CF181E600C1E00D74A37 /* GetRequest.swift */,
+				5883CF191E600C1E00D74A37 /* PostRequest.swift */,
+				5883CF1A1E600C1E00D74A37 /* Reachability.swift */,
+				5802B59E1E4B26B300FE9D84 /* GetRequestByToken.swift */,
+			);
+			name = LLServerConnection;
+			path = ../../Ananthu/LookOutForYou/LookOutForYou;
+			sourceTree = "<group>";
+		};
 		581B51EA1E2670170005D53A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +373,8 @@
 				581B520D1E2670170005D53A /* LatinLingoTests */,
 				581B52181E2670170005D53A /* LatinLingoUITests */,
 				581B51F41E2670170005D53A /* Products */,
+				4D40AA75A2CC5C60BD821CE2 /* Pods */,
+				1B8C379B6E0D402BCB25E3E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +391,23 @@
 		581B51F51E2670170005D53A /* LatinLingo */ = {
 			isa = PBXGroup;
 			children = (
+				582561F61E31C57400526558 /* LLFonts */,
+				5849CEC21E2894E900859AE2 /* LLFMDB */,
+				5883CF1E1E600CEF00D74A37 /* LLDataBase */,
+				58021ECF1E2789E800C38624 /* LLAlertView */,
+				58021EE11E27943300C38624 /* LLExtensions */,
+				58021EE41E27A08600C38624 /* LLHelperClasses */,
+				58067B521E4A07FD005CC1E6 /* LLServerConnection */,
+				5883CEF61E6007F000D74A37 /* LLMP3Files */,
+				5883CEF71E60081900D74A37 /* LLCell */,
+				5802B5A51E4B50E400FE9D84 /* LLModel Class */,
+				5883CEF81E6008D500D74A37 /* LLBridgeHeader */,
+				58021ED01E278A1400C38624 /* LLViewController */,
 				581B51F61E2670170005D53A /* AppDelegate.swift */,
-				581B51F81E2670170005D53A /* ViewController.swift */,
 				581B51FA1E2670170005D53A /* Main.storyboard */,
+				589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */,
 				581B52001E2670170005D53A /* Assets.xcassets */,
-				581B52021E2670170005D53A /* LaunchScreen.storyboard */,
-				581B52051E2670170005D53A /* Info.plist */,
-				581B51FD1E2670170005D53A /* LatinLingo.xcdatamodeld */,
+				589EF0621E4C5FBB0024CA08 /* Images.xcassets */,
 			);
 			path = LatinLingo;
 			sourceTree = "<group>";
@@ -128,6 +430,91 @@
 			path = LatinLingoUITests;
 			sourceTree = "<group>";
 		};
+		582561F61E31C57400526558 /* LLFonts */ = {
+			isa = PBXGroup;
+			children = (
+				582561F71E31C59000526558 /* corbel.ttf */,
+				585BBEC21E83F4AB000734A3 /* calibri.ttf */,
+				585BBEC31E83F4AB000734A3 /* calibrib.ttf */,
+				585BBEC41E83F4AB000734A3 /* Helvetica.ttf */,
+				585BBECC1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf */,
+				585BBED21E83FA81000734A3 /* trebuc.ttf */,
+				585BBED31E83FA81000734A3 /* trebucbd.ttf */,
+				585BBEC51E83F4AB000734A3 /* HelveticaBd.ttf */,
+				585BBECE1E83F6ED000734A3 /* AmericanTypewriterCondensed.ttf */,
+				585BBED61E83FA9F000734A3 /* verdana.ttf */,
+				58362A661E9538060069C913 /* BanglaSangamMN.ttf */,
+				585BBED71E83FA9F000734A3 /* verdanab.ttf */,
+				582561F81E31C59000526558 /* corbelb.ttf */,
+				582561F91E31C59000526558 /* corbeli.ttf */,
+				582561FA1E31C59000526558 /* corbelz.ttf */,
+				584592D51E5C9BD600F39623 /* HarringtonBold.ttf */,
+				5802B5A81E4B6E7C00FE9D84 /* HARNGTON.TTF */,
+				589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */,
+				5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */,
+				589328221E952E220002DC0A /* GillSans.ttf */,
+				589328191E9524B40002DC0A /* GillSans-Bold.ttf */,
+				589328141E95249D0002DC0A /* ArialRounded-Bold.ttf */,
+				589328211E952DF80002DC0A /* Papyrus-Condensed.ttf */,
+			);
+			name = LLFonts;
+			sourceTree = "<group>";
+		};
+		5849CEC21E2894E900859AE2 /* LLFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				5849CEC41E2894FF00859AE2 /* FMDatabase.h */,
+				5849CEC51E2894FF00859AE2 /* FMDatabase.m */,
+				5849CEC61E2894FF00859AE2 /* FMDatabaseAdditions.h */,
+				5849CEC71E2894FF00859AE2 /* FMDatabaseAdditions.m */,
+				5849CEC81E2894FF00859AE2 /* FMDatabasePool.h */,
+				5849CEC91E2894FF00859AE2 /* FMDatabasePool.m */,
+				5849CECA1E2894FF00859AE2 /* FMDatabaseQueue.h */,
+				5849CECB1E2894FF00859AE2 /* FMDatabaseQueue.m */,
+				5849CECC1E2894FF00859AE2 /* FMDB.h */,
+				5849CECD1E2894FF00859AE2 /* FMResultSet.h */,
+				5849CECE1E2894FF00859AE2 /* FMResultSet.m */,
+			);
+			name = LLFMDB;
+			sourceTree = "<group>";
+		};
+		5883CEF61E6007F000D74A37 /* LLMP3Files */ = {
+			isa = PBXGroup;
+			children = (
+				585CB2EF1E6448CD00915467 /* Clapp.mp3 */,
+				585CB2F01E6448CD00915467 /* Tick.mp3 */,
+			);
+			name = LLMP3Files;
+			sourceTree = "<group>";
+		};
+		5883CEF71E60081900D74A37 /* LLCell */ = {
+			isa = PBXGroup;
+			children = (
+				584F4FB31E48C2A20098BADA /* SidemenuCell.swift */,
+				585CB2EB1E64482300915467 /* GalleryCollectionCell.swift */,
+			);
+			name = LLCell;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		5883CEF81E6008D500D74A37 /* LLBridgeHeader */ = {
+			isa = PBXGroup;
+			children = (
+				5849CEC31E2894FF00859AE2 /* LatinLingo-Bridging-Header.h */,
+			);
+			name = LLBridgeHeader;
+			sourceTree = "<group>";
+		};
+		5883CF1E1E600CEF00D74A37 /* LLDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				581B52051E2670170005D53A /* Info.plist */,
+				581B51FD1E2670170005D53A /* LatinLingo.xcdatamodeld */,
+				5802B59B1E4B12BB00FE9D84 /* LatinLingo.entitlements */,
+			);
+			name = LLDataBase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +522,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581B521E1E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingo" */;
 			buildPhases = (
+				5D4F1E2AE681A8884244D0EF /* [CP] Check Pods Manifest.lock */,
 				581B51EF1E2670170005D53A /* Sources */,
 				581B51F01E2670170005D53A /* Frameworks */,
 				581B51F11E2670170005D53A /* Resources */,
+				84D703F936531477D0416DE8 /* [CP] Embed Pods Frameworks */,
+				1A7A7968196D85FA9C844FC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +542,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581B52211E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoTests" */;
 			buildPhases = (
+				0D17F829D616B34C0F7BF3E7 /* [CP] Check Pods Manifest.lock */,
 				581B52061E2670170005D53A /* Sources */,
 				581B52071E2670170005D53A /* Frameworks */,
 				581B52081E2670170005D53A /* Resources */,
+				BA7505922CAF094FBA94C366 /* [CP] Embed Pods Frameworks */,
+				E7AC424AACDA387C1127ACC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +563,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581B52241E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoUITests" */;
 			buildPhases = (
+				EC4A12BDE854CBBF9515F276 /* [CP] Check Pods Manifest.lock */,
 				581B52111E2670170005D53A /* Sources */,
 				581B52121E2670170005D53A /* Frameworks */,
 				581B52131E2670170005D53A /* Resources */,
+				232624BF58A332B437B765D0 /* [CP] Embed Pods Frameworks */,
+				BD9FCB61DF98CA7025047379 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,18 +592,26 @@
 				TargetAttributes = {
 					581B51F21E2670170005D53A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AWTTDM87PD;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3HPCT47XEZ;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					581B52091E2670170005D53A = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AWTTDM87PD;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 581B51F21E2670170005D53A;
 					};
 					581B52141E2670170005D53A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AWTTDM87PD;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 581B51F21E2670170005D53A;
 					};
@@ -238,9 +642,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581B52041E2670170005D53A /* LaunchScreen.storyboard in Resources */,
-				581B52011E2670170005D53A /* Assets.xcassets in Resources */,
+				585BBEC91E83F4AB000734A3 /* calibrib.ttf in Resources */,
+				589EF0631E4C5FBB0024CA08 /* Images.xcassets in Resources */,
+				585BBED41E83FA81000734A3 /* trebuc.ttf in Resources */,
+				585BBED91E83FA9F000734A3 /* verdanab.ttf in Resources */,
+				585BBECA1E83F4AB000734A3 /* Helvetica.ttf in Resources */,
+				582561FE1E31C59000526558 /* corbelz.ttf in Resources */,
+				585BBED81E83FA9F000734A3 /* verdana.ttf in Resources */,
+				582561FC1E31C59000526558 /* corbelb.ttf in Resources */,
+				585CB2F11E6448CD00915467 /* Clapp.mp3 in Resources */,
+				589EF0611E4C5E950024CA08 /* Assets.xcassets in Resources */,
+				582561FD1E31C59000526558 /* corbeli.ttf in Resources */,
+				58362A621E9534830069C913 /* GillSans-Bold.ttf in Resources */,
+				582561FB1E31C59000526558 /* corbel.ttf in Resources */,
+				584592D81E5CA1A000F39623 /* HarringtonBold.ttf in Resources */,
+				58362A601E95347C0069C913 /* Papyrus-Condensed.ttf in Resources */,
+				585BBECD1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf in Resources */,
+				5802B5A91E4B74C400FE9D84 /* HARNGTON.TTF in Resources */,
+				585BBED51E83FA81000734A3 /* trebucbd.ttf in Resources */,
+				58362A611E9534800069C913 /* ArialRounded-Bold.ttf in Resources */,
+				585CB2F21E6448CD00915467 /* Tick.mp3 in Resources */,
+				585BBECB1E83F4AB000734A3 /* HelveticaBd.ttf in Resources */,
+				58362A631E9534860069C913 /* GillSans.ttf in Resources */,
 				581B51FC1E2670170005D53A /* Main.storyboard in Resources */,
+				585BBECF1E83F6ED000734A3 /* AmericanTypewriterCondensed.ttf in Resources */,
+				585BBEC81E83F4AB000734A3 /* calibri.ttf in Resources */,
+				58362A641E9534890069C913 /* ChalkboardSE-Bold.ttf in Resources */,
+				58362A651E95348B0069C913 /* ChalkboardSE-Regular.ttf in Resources */,
+				589EF0661E4C60230024CA08 /* LaunchScreen.storyboard in Resources */,
+				58362A671E9538060069C913 /* BanglaSangamMN.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +690,197 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D17F829D616B34C0F7BF3E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A7A7968196D85FA9C844FC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		232624BF58A332B437B765D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D4F1E2AE681A8884244D0EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84D703F936531477D0416DE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7505922CAF094FBA94C366 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD9FCB61DF98CA7025047379 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AC424AACDA387C1127ACC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC4A12BDE854CBBF9515F276 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		581B51EF1E2670170005D53A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581B51F91E2670170005D53A /* ViewController.swift in Sources */,
+				584592D71E5C9C7C00F39623 /* InstuctionVC.swift in Sources */,
+				581B51F91E2670170005D53A /* HomeVC.swift in Sources */,
+				586686EF1E685E8400581550 /* NavigationController.swift in Sources */,
+				58021EDB1E2792B600C38624 /* Double+Conversions.swift in Sources */,
+				5849CECF1E2894FF00859AE2 /* FMDatabase.m in Sources */,
+				5802B5A11E4B2D1C00FE9D84 /* ForgetPasswordVC.swift in Sources */,
+				58A01B461E49C3E700A5C485 /* PackegesVC.swift in Sources */,
+				58424DA61E448C1900F067BC /* LoginViewController.swift in Sources */,
+				58A01B441E49C20800A5C485 /* SettingsVC.swift in Sources */,
+				5883CF1C1E600C1E00D74A37 /* PostRequest.swift in Sources */,
+				58021EDF1E2792B600C38624 /* SharedInstance.swift in Sources */,
+				5849CED21E2894FF00859AE2 /* FMDatabaseQueue.m in Sources */,
+				58AF55751E2F4A0D00AB4E14 /* LoginService.swift in Sources */,
+				5849CED31E2894FF00859AE2 /* FMResultSet.m in Sources */,
+				5883CF1D1E600C1E00D74A37 /* Reachability.swift in Sources */,
+				585CB2EE1E6448B900915467 /* SideMenuVC.swift in Sources */,
+				585356DC1E7FB6F900EA4980 /* passDataVC.swift in Sources */,
 				581B51F71E2670170005D53A /* AppDelegate.swift in Sources */,
+				58021EDD1E2792B600C38624 /* HelperClass.swift in Sources */,
+				5859DA031E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
+				58FCC7001E4CB02A00C852AE /* MTPopUp.swift in Sources */,
+				5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */,
+				588736D21E828B1F00DF8DC8 /* NavigationControllerViewController.swift in Sources */,
+				5849CED51E28954E00859AE2 /* DBManager.swift in Sources */,
+				5802B5A71E4B533900FE9D84 /* ChangePasswordVC.swift in Sources */,
+				586686F11E686BD300581550 /* passVc.swift in Sources */,
+				584F4FB41E48C2A20098BADA /* SidemenuCell.swift in Sources */,
+				584F4FB01E48A9E30098BADA /* SWRevealViewController.m in Sources */,
+				585356E01E7FBB4C00EA4980 /* NavigationPassController.swift in Sources */,
+				58067B5A1E4A28E5005CC1E6 /* RegstrationModel.swift in Sources */,
+				58424DA81E448C5A00F067BC /* RegistrationViewController.swift in Sources */,
+				585CB2EC1E64482300915467 /* GalleryCollectionCell.swift in Sources */,
+				5802B59F1E4B26B300FE9D84 /* GetRequestByToken.swift in Sources */,
+				58067B581E4A1969005CC1E6 /* loginModel.swift in Sources */,
+				58021EDE1E2792B600C38624 /* UIColor+CustomColor.swift in Sources */,
+				584592D21E5C6B4B00F39623 /* LoaderHelper.swift in Sources */,
+				58021EE01E2792B600C38624 /* UIViewHelper.swift in Sources */,
+				588736D01E8288C700DF8DC8 /* splitedPickerWithReset.swift in Sources */,
+				58FCC6FE1E4C967E00C852AE /* ProfileVC.swift in Sources */,
+				5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */,
 				581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */,
+				585356DE1E7FB7FF00EA4980 /* splitedPickerAny.swift in Sources */,
+				584D83CB1E56DA0600550DFD /* SplitedPicker.swift in Sources */,
+				585CB2EA1E64314D00915467 /* FontSettingVC.swift in Sources */,
+				5883CF1B1E600C1E00D74A37 /* GetRequest.swift in Sources */,
+				58021ED91E2792B600C38624 /* ConstantsHelper.swift in Sources */,
+				5802B5A31E4B3BB600FE9D84 /* AboutVc.swift in Sources */,
+				588736CE1E82862100DF8DC8 /* passDataSolveVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +924,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		581B52021E2670170005D53A /* LaunchScreen.storyboard */ = {
+		589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				581B52031E2670170005D53A /* Base */,
+				589EF0651E4C60230024CA08 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -343,9 +956,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph John (Y53P3R24YG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph John (AWTTDM87PD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -362,9 +977,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PROVISIONING_PROFILE = "089ad140-a3eb-4e47-b2b7-c780944b1a98";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -392,9 +1009,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph John (Y53P3R24YG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joseph John (AWTTDM87PD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -405,8 +1024,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PROVISIONING_PROFILE = "089ad140-a3eb-4e47-b2b7-c780944b1a98";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -415,35 +1036,56 @@
 		};
 		581B521F1E2670170005D53A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64AF38E3F17C85EB1DC79C1A /* Pods-LatinLingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWTTDM87PD;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3HPCT47XEZ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2d734d2b-f759-418e-9585-872b15dc5e96";
+				PROVISIONING_PROFILE_SPECIFIER = latiLingo_dev_july11;
+				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		581B52201E2670170005D53A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB71397D459E39C177EFEC68 /* Pods-LatinLingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWTTDM87PD;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 3HPCT47XEZ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdec5dfa-c870-411d-a73d-c5b0c5e83c4b";
+				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_prod_july11;
+				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		581B52221E2670170005D53A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A8B0473D672D987DF834C4C /* Pods-LatinLingoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AWTTDM87PD;
 				INFOPLIST_FILE = LatinLingoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -456,9 +1098,11 @@
 		};
 		581B52231E2670170005D53A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA3FDE7CB13A8510B61B898F /* Pods-LatinLingoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = AWTTDM87PD;
 				INFOPLIST_FILE = LatinLingoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -471,13 +1115,17 @@
 		};
 		581B52251E2670170005D53A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2A9085B81C5326D26625176 /* Pods-LatinLingoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AWTTDM87PD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LatinLingoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LatinLingo;
 			};
@@ -485,13 +1133,17 @@
 		};
 		581B52261E2670170005D53A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8DD4B93EA0E151D8E228D22 /* Pods-LatinLingoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AWTTDM87PD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LatinLingoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LatinLingo;
 			};
@@ -516,6 +1168,7 @@
 				581B52201E2670170005D53A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		581B52211E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +1177,7 @@
 				581B52231E2670170005D53A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		581B52241E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +1186,7 @@
 				581B52261E2670170005D53A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

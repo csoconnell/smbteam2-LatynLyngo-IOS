@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Canvas (0.1.2)
+  - IQKeyboardManagerSwift (4.0.7)
+  - NVActivityIndicatorView (3.2)
+  - ReachabilitySwift (3)
+  - RJImageLoader (0.3.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SkyFloatingLabelTextField (2.0.1)
+  - SwiftKeychainWrapper (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3)
+  - Canvas (~> 0.1.2)
+  - IQKeyboardManagerSwift
+  - NVActivityIndicatorView
+  - ReachabilitySwift (~> 3)
+  - RJImageLoader
+  - SDWebImage (~> 3.8)
+  - SkyFloatingLabelTextField (~> 2.0.0)
+  - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  RJImageLoader: f0d9edebeb7837feb0ce51759826900645770db7
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+
+PODFILE CHECKSUM: 38e3a285a4eca19ef6b480ab0711159644b14f45
+
+COCOAPODS: 1.1.1
