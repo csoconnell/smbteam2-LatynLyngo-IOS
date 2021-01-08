@@ -100,29 +100,29 @@ class DBManager: NSObject {
             for case let movie as NSDictionary in passDict {
                 var query = ""
                 print(movie)
-                let List_word_id = movie.object(forKey: "word_id") as! NSString
-                let List_word = movie.object(forKey: "word") as! NSString
-                let List_meaning = movie.object(forKey: "meaning") as! NSString
-                let List_prefex_1 = movie.object(forKey: "prefex_1") as! NSString
-                let List_prefex_2 = movie.object(forKey: "prefex_2") as! NSString
-                let List_root = movie.object(forKey: "root") as! NSString
-                let List_suffix_1 = movie.object(forKey: "suffix_1") as! NSString
-                let List_suffix_2 = movie.object(forKey: "suffix_2") as! NSString
-                let List_suffix_3 = movie.object(forKey: "suffix_3") as! NSString
-                let List_synonym = movie.object(forKey: "synonym") as! NSString
-                let List_part_of_speech = movie.object(forKey: "part_of_speech") as! NSString
+                let List_word_id = movie.object(forKey: "word_id") as? String ?? ""
+                let List_word = movie.object(forKey: "word") as? String ?? ""
+                let List_meaning = movie.object(forKey: "meaning") as? String ?? ""
+                let List_prefex_1 = movie.object(forKey: "prefex_1") as? String ?? ""
+                let List_prefex_2 = movie.object(forKey: "prefex_2") as? String ?? ""
+                let List_root = movie.object(forKey: "root") as? String ?? ""
+                let List_suffix_1 = movie.object(forKey: "suffix_1") as? String ?? ""
+                let List_suffix_2 = movie.object(forKey: "suffix_2") as? String ?? ""
+                let List_suffix_3 = movie.object(forKey: "suffix_3") as? String ?? ""
+                let List_synonym = movie.object(forKey: "synonym") as? String ?? ""
+                let List_part_of_speech = movie.object(forKey: "part_of_speech") as? String ?? ""
                 
                 var arr :[NSString] = []
                 arr.removeAll()
                 arr.append(List_word_id as NSString)
-                arr.append(List_word.uppercased as NSString)
+                arr.append(List_word.uppercased() as NSString)
                 arr.append(List_meaning as NSString)
-                arr.append(List_prefex_1.uppercased  as NSString)
-                arr.append(List_prefex_2.uppercased as NSString)
-                arr.append(List_root.uppercased  as NSString)
-                arr.append(List_suffix_1.uppercased as NSString )
-                arr.append(List_suffix_2.uppercased  as NSString)
-                arr.append(List_suffix_3.uppercased  as NSString)
+                arr.append(List_prefex_1.uppercased()  as NSString)
+                arr.append(List_prefex_2.uppercased() as NSString)
+                arr.append(List_root.uppercased()  as NSString)
+                arr.append(List_suffix_1.uppercased() as NSString )
+                arr.append(List_suffix_2.uppercased()  as NSString)
+                arr.append(List_suffix_3.uppercased()  as NSString)
                 arr.append(List_synonym as NSString )
                 arr.append(List_part_of_speech  as NSString)
                 
@@ -145,19 +145,19 @@ class DBManager: NSObject {
             for case let movie as NSDictionary in passDict {
                 print(movie)
                 var query = ""
-                let List_word_id = movie.object(forKey: "w_id") as! NSString
-                let List_word = movie.object(forKey: "word" )as! NSString
+                let List_word_id = movie.object(forKey: "w_id") as? String ?? ""
+                let List_word = movie.object(forKey: "word" )as? String ?? ""
                 var List_meaning = ""
                 if let meaning = movie.object(forKey: "meaning") as? String{
                     List_meaning = meaning as String
                 }
-                let List_type = movie.object(forKey: "type") as! NSString
-                let List_m_id = movie.object(forKey: "m_cat_id") as! NSString
-                let List_speech = movie.object(forKey: "part_of_speech") as! NSString
+                let List_type = movie.object(forKey: "type") as? String ?? ""
+                let List_m_id = movie.object(forKey: "m_cat_id") as? String ?? ""
+                let List_speech = movie.object(forKey: "part_of_speech") as? String ?? ""
                 var arr :[NSString] = []
                 arr.removeAll()
                 arr.append(List_word_id as NSString)
-                arr.append(List_word.uppercased as NSString)
+                arr.append(List_word.uppercased() as NSString)
                 arr.append(List_meaning as NSString)
                 arr.append(List_type  as NSString)
                 arr.append(List_m_id as NSString )

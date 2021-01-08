@@ -14,7 +14,7 @@ import NVActivityIndicatorView
 protocol listRefresh {
     func loadData()
 }
-class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate,NVActivityIndicatorViewable,UICollectionViewDataSource,UICollectionViewDelegate {
+class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
     var items: [DictionaryInfo]!
     let reuseIdentifier = "Cell"
     @IBOutlet var templateList: UICollectionView!
@@ -215,7 +215,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         super.viewDidLoad()
         let frame = CGRect(x: self.view.center.x-20, y: self.view.center.y-20, width: 40, height: 40)
         activityIndicatorView = NVActivityIndicatorView(frame: frame,
-                                                        type: NVActivityIndicatorType(rawValue: 23)!)
+                                                        type: .ballSpinFadeLoader)
         templateList.isHidden = false
         templateList.allowsSelection = true
         
@@ -375,9 +375,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
-                       options: [UIViewAnimationOptions.curveLinear,
-                                 UIViewAnimationOptions.repeat,
-                                 UIViewAnimationOptions.autoreverse],
+                       options: [UIView.AnimationOptions.curveLinear,
+                                 UIView.AnimationOptions.repeat,
+                                 UIView.AnimationOptions.autoreverse],
                        animations: { self.rootBtn.alpha = 1.0
                         self.suffixbtn.alpha = 1.0
                         self.prefixBtn.alpha = 1.0
@@ -486,9 +486,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
-                       options: [UIViewAnimationOptions.curveLinear,
-                                 UIViewAnimationOptions.repeat,
-                                 UIViewAnimationOptions.autoreverse],
+                       options: [UIView.AnimationOptions.curveLinear,
+                                 UIView.AnimationOptions.repeat,
+                                 UIView.AnimationOptions.autoreverse],
                        animations: { self.rootBtn.alpha = 1.0 },
                        completion: nil)
         self.view.layoutIfNeeded()
@@ -637,7 +637,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
     }
     
-    func randomSelection(){
+    @objc func randomSelection(){
         if !(self.activityIndicatorView?.isDescendant(of: self.view))! {
             self.view.addSubview(activityIndicatorView!)
             
@@ -812,7 +812,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     //MARK: PopUpView Ations
     @IBAction func meanigpopupACtion(_ sender: UIButton) {
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
             self.meaningPopupView.alpha = 0
             
         }, completion: nil)
@@ -820,7 +820,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     @IBAction func showMeaningPopupView(_ sender: UIButton) {
         meaningPopupView.alpha = 0
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             self.meaningPopupView.isHidden = false
             self.meaningPopupView.alpha = 1
             
@@ -865,7 +865,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         suffix1Img.layer.removeAllAnimations()
         suffix2Img.layer.removeAllAnimations()
         suffix3Img.layer.removeAllAnimations()
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             
             if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                 
@@ -920,7 +920,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         closeBtn.setImage(UIImage(named:"close"), for: .normal)
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
             
             self.popupviewBottom.constant = -667+(UIScreen.main.bounds.height)
             self.view.layoutIfNeeded()
@@ -952,7 +952,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             let stringVar : NSString = str as NSString
             let newString  = stringVar.replacingOccurrences(of: "<br />", with: "", options: .literal, range: NSRange(location: 0, length: stringVar.length))
-            let myAttribute = [ NSFontAttributeName: UIFont(name: "Corbel", size: 24.0)!, NSForegroundColorAttributeName: UIColor.white]
+            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Corbel", size: 24.0)!, NSAttributedString.Key.foregroundColor: UIColor.white]
             let myAttrString = NSAttributedString(string: newString, attributes: myAttribute)
             
             self.MeaningTextView.attributedText = myAttrString
@@ -1030,9 +1030,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
     }
     func attributedText(str : NSString)->NSAttributedString{
-        var attributedString = NSMutableAttributedString(string: str as String, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15.0)])
-        let boldFontAttribute = [NSFontAttributeName: UIFont(name: "corbel", size: CGFloat(17.0))]
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: str.length))
+        var attributedString = NSMutableAttributedString(string: str as String, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+        let boldFontAttribute = [NSAttributedString.Key.font: UIFont(name: "corbel", size: CGFloat(17.0))]
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: str.length))
         attributedString.addAttributes(boldFontAttribute, range: str.range(of: ":"))
         return attributedString
     }
@@ -1119,7 +1119,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBAction func menuBtnClicked(_ sender: UIButton) {
         if menubtnClicked{
             self.menubtnClicked = false
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 
                 self.grammerTop.constant = -28
                 self.instructionTop.constant = -28
@@ -1135,7 +1135,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             self.menubtnClicked = true
             self.menuBtnView.isHidden = false
             
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 
                 self.grammerTop.constant = 0
                 self.instructionTop.constant = 7
@@ -1153,7 +1153,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     //MARK: UITapgesture Actions
-    func tapprefix1PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapprefix1PickerButton(_ sender: UITapGestureRecognizer) {
         
         
         if prefix1Value != ""{
@@ -1177,7 +1177,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
     }
-    func tapPrefix2PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapPrefix2PickerButton(_ sender: UITapGestureRecognizer) {
         if prefix2Value != ""{
             
             let id = prefix2Value
@@ -1198,7 +1198,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
     }
-    func tapRootPickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapRootPickerButton(_ sender: UITapGestureRecognizer) {
         if rootValue != ""{
             let id = rootValue
             
@@ -1219,7 +1219,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
     }
-    func tapSuffix1PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix1PickerButton(_ sender: UITapGestureRecognizer) {
         
         
         if suffix1Value != ""{
@@ -1243,7 +1243,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
     }
-    func tapSuffix2PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix2PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix2Value != ""{
             let id = suffix2Value
             
@@ -1265,7 +1265,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
     }
-    func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix3Value != ""{
 //            var myStringArr = suffix3Value.components(separatedBy: " ")
 //            let id = myStringArr[0]
@@ -1288,7 +1288,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
     }
     
-    func showMeaningGestureTapped(_ sender: UITapGestureRecognizer){
+    @objc func showMeaningGestureTapped(_ sender: UITapGestureRecognizer){
         self.wordformBtn.isHidden = true
         
         DBManager.shared.loadwordFromDB(withWord: selectedWordArr[0], prefix2: selectedWordArr[1], root: selectedWordArr[2], suffix1: selectedWordArr[3], suffix2: selectedWordArr[4], suffix3: selectedWordArr[5], completionHandler: { (movie) in
@@ -1313,7 +1313,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         
                         if self.popupviewBottom.constant   ==  -541 {
                             
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
                                 
                                 if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                                     
@@ -1332,7 +1332,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             
                             
                         }else{
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
                                 
                                 self.popupviewBottom.constant =  -541
                                 self.view.layoutIfNeeded()
@@ -1482,7 +1482,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     if pickerView == selectPiceker {
                         pickerLabel.alpha = 0
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1527,7 +1527,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1562,7 +1562,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.font = UIFont(name: fontstyleBold as String, size: shared.FontSizePicker-5)
                         pickerLabel.textAlignment = NSTextAlignment.center
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1594,7 +1594,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textColor = UIColor.black
                         pickerLabel.font = UIFont(name: fontstyleBold as String, size: shared.FontSizePicker-5)
                         pickerLabel.textAlignment = NSTextAlignment.center
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1634,7 +1634,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1671,7 +1671,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1711,7 +1711,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     if pickerView == selectPiceker {
                         pickerLabel.alpha = 0
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1759,7 +1759,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1802,7 +1802,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.font = UIFont(name: fontstyleBold as String, size: shared.FontSizePicker-5)
                         pickerLabel.textAlignment = NSTextAlignment.center
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1845,7 +1845,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1892,7 +1892,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -1934,7 +1934,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerLabel.textAlignment = NSTextAlignment.center
                         pickerLabel.textColor = UIColor.black
                         
-                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                             
                             pickerLabel.alpha = 0.5
                             self.view.layoutIfNeeded()
@@ -2164,9 +2164,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         suffixbtn.alpha = 0.0
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
-                       options: [UIViewAnimationOptions.curveLinear,
-                                 UIViewAnimationOptions.repeat,
-                                 UIViewAnimationOptions.autoreverse],
+                       options: [UIView.AnimationOptions.curveLinear,
+                                 UIView.AnimationOptions.repeat,
+                                 UIView.AnimationOptions.autoreverse],
                        animations: {
                         self.prefixBtn.alpha = 1.0
                         self.suffixbtn.alpha = 1.0

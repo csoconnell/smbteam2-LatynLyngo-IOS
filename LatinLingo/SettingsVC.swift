@@ -45,7 +45,7 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     // MARK: UITYableView Delegates
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.settingsTbl.dequeueReusableCell(withIdentifier: "SidemenuCell") as! SidemenuCell!
+        let cell = self.settingsTbl.dequeueReusableCell(withIdentifier: "SidemenuCell") as! SidemenuCell?
         cell?.titleLbl.text = self.settigsItems[indexPath.row]
         cell?.titleLbl.textAlignment = NSTextAlignment.left
         cell?.titleImg.image = self.settigsImages[indexPath.row]

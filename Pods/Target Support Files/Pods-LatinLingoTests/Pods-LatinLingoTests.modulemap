@@ -1,6 +1,0 @@
-framework module Pods_LatinLingoTests {
-  umbrella header "Pods-LatinLingoTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

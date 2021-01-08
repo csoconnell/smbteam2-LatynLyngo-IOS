@@ -10,20 +10,9 @@ target 'LatinLingo' do
   pod 'NVActivityIndicatorView'
   pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire', '~> 4.3'
-  
   pod "RJImageLoader"  
   pod 'SwiftKeychainWrapper'
   pod 'SkyFloatingLabelTextField', '~> 2.0.0'
 # Pods for LatinLingo
-
-  target 'LatinLingoTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'LatinLingoUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

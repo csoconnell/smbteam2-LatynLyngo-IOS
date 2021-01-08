@@ -8,6 +8,13 @@
 
 import UIKit
 import SwiftKeychainWrapper
+
+/*
+ 2021 updates
+ WelcomeVC insted of LoginViewController
+ Login,sighnup,passwords removed
+ */
+
 class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate,GetRequestResult {
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var loginviewBottom: NSLayoutConstraint!
@@ -37,10 +44,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 
             }
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    func rotated(){
+    @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             if loaderStart{
                 stopLoader()
@@ -56,7 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0.5, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.logoCenter.constant = -100
             self.loginviewBottom.constant = 0
             self.view.layoutIfNeeded()
@@ -67,14 +74,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     @IBAction func LoginClicked(sender: AnyObject) {
         self.usernameField.resignFirstResponder()
         self.passwordField.resignFirstResponder()
-        if  usernameField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || usernameField.text?.characters.count == 0
+        if  usernameField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || usernameField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Name field is empty")
         }
-        else if passwordField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || passwordField.text?.characters.count == 0
+        else if passwordField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || passwordField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Password field is empty")
-        }else if (passwordField.text!.characters.count) < 5
+        }else if (passwordField.text!.count) < 5
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Password is too short")
         }
@@ -97,7 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     
     //MARK: TapGesture
-    func hideViews(_ tapgesture: UITapGestureRecognizer){
+    @objc func hideViews(_ tapgesture: UITapGestureRecognizer){
         self.view.endEditing(true)
     }
     

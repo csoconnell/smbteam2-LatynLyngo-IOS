@@ -26,14 +26,14 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         userName.text = self.shared.userFullName as String
         userEmail.text = self.shared.userEmail as String
         userImg.layer.masksToBounds = true
-        userImg.contentMode = UIViewContentMode.scaleAspectFill
+        userImg.contentMode = UIView.ContentMode.scaleAspectFill
         userImg.clipsToBounds = true
         userImg.sd_setImage(with: URL(string: self.shared.userProfilepic as String), placeholderImage: #imageLiteral(resourceName: "no_img"))
         imagePicker.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    func rotated(){
+    @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             if loaderStart{
                 stopLoader()
@@ -76,17 +76,18 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
     }
     // MARK: - UIImagePickerControllerDelegate Methods
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            userImg.contentMode = .scaleAspectFit
-            userImg.image = pickedImage
-        }
-        dismiss(animated: true, completion: nil)
-    }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            userImg.contentMode = .scaleAspectFit
+//            userImg.image = pickedImage
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             userImg.image = image
             dismiss(animated: true, completion: nil)
             self.uploadedImage.delegate = self
@@ -95,7 +96,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             self.uploadedImage.upDateprofile(imageData: userImg.image!)
         }
     }
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

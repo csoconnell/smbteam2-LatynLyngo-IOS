@@ -26,8 +26,6 @@
 		581B51F91E2670170005D53A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B51F81E2670170005D53A /* HomeVC.swift */; };
 		581B51FC1E2670170005D53A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581B51FA1E2670170005D53A /* Main.storyboard */; };
 		581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 581B51FD1E2670170005D53A /* LatinLingo.xcdatamodeld */; };
-		581B520F1E2670170005D53A /* LatinLingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B520E1E2670170005D53A /* LatinLingoTests.swift */; };
-		581B521A1E2670170005D53A /* LatinLingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B52191E2670170005D53A /* LatinLingoUITests.swift */; };
 		582561F51E31BF1800526558 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582561F41E31BF1800526558 /* AudioToolbox.framework */; };
 		582561FB1E31C59000526558 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F71E31C59000526558 /* corbel.ttf */; };
 		582561FC1E31C59000526558 /* corbelb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F81E31C59000526558 /* corbelb.ttf */; };
@@ -46,6 +44,7 @@
 		584592D21E5C6B4B00F39623 /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D11E5C6B4B00F39623 /* LoaderHelper.swift */; };
 		584592D71E5C9C7C00F39623 /* InstuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D61E5C9C7C00F39623 /* InstuctionVC.swift */; };
 		584592D81E5CA1A000F39623 /* HarringtonBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584592D51E5C9BD600F39623 /* HarringtonBold.ttf */; };
+		5845AC0825A4A1820083EE8D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845AC0725A4A1820083EE8D /* WelcomeVC.swift */; };
 		5849CECF1E2894FF00859AE2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC51E2894FF00859AE2 /* FMDatabase.m */; };
 		5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC71E2894FF00859AE2 /* FMDatabaseAdditions.m */; };
 		5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC91E2894FF00859AE2 /* FMDatabasePool.m */; };
@@ -91,26 +90,7 @@
 		58AF55751E2F4A0D00AB4E14 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF55741E2F4A0D00AB4E14 /* LoginService.swift */; };
 		58FCC6FE1E4C967E00C852AE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCC6FD1E4C967E00C852AE /* ProfileVC.swift */; };
 		58FCC7001E4CB02A00C852AE /* MTPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCC6FF1E4CB02A00C852AE /* MTPopUp.swift */; };
-		8FB34DFD8F60121B49615659 /* Pods_LatinLingoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E61C34CB83FF8A4CE1A5349 /* Pods_LatinLingoUITests.framework */; };
-		A54FC730D0B2AC7C132D8F2F /* Pods_LatinLingoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8AD5152F937E843043F451 /* Pods_LatinLingoTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		581B520B1E2670170005D53A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 581B51EB1E2670170005D53A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 581B51F21E2670170005D53A;
-			remoteInfo = LatinLingo;
-		};
-		581B52161E2670170005D53A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 581B51EB1E2670170005D53A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 581B51F21E2670170005D53A;
-			remoteInfo = LatinLingo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2E61C34CB83FF8A4CE1A5349 /* Pods_LatinLingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatinLingoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,12 +117,6 @@
 		581B51FE1E2670170005D53A /* LatinLingo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LatinLingo.xcdatamodel; sourceTree = "<group>"; };
 		581B52001E2670170005D53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581B52051E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		581B520A1E2670170005D53A /* LatinLingoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LatinLingoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		581B520E1E2670170005D53A /* LatinLingoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinLingoTests.swift; sourceTree = "<group>"; };
-		581B52101E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		581B52151E2670170005D53A /* LatinLingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LatinLingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		581B52191E2670170005D53A /* LatinLingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinLingoUITests.swift; sourceTree = "<group>"; };
-		581B521B1E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		582561F41E31BF1800526558 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		582561F71E31C59000526558 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbel.ttf; path = fonts/corbel.ttf; sourceTree = "<group>"; };
 		582561F81E31C59000526558 /* corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelb.ttf; path = fonts/corbelb.ttf; sourceTree = "<group>"; };
@@ -155,6 +129,7 @@
 		584592D11E5C6B4B00F39623 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
 		584592D51E5C9BD600F39623 /* HarringtonBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarringtonBold.ttf; sourceTree = "<group>"; };
 		584592D61E5C9C7C00F39623 /* InstuctionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstuctionVC.swift; path = LatinLingo/InstuctionVC.swift; sourceTree = "<group>"; };
+		5845AC0725A4A1820083EE8D /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		5849CEC31E2894FF00859AE2 /* LatinLingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LatinLingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		5849CEC41E2894FF00859AE2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = FMDB/FMDatabase.h; sourceTree = "<group>"; };
 		5849CEC51E2894FF00859AE2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = FMDB/FMDatabase.m; sourceTree = "<group>"; };
@@ -169,6 +144,10 @@
 		5849CECE1E2894FF00859AE2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = FMDB/FMResultSet.m; sourceTree = "<group>"; };
 		5849CED41E28954E00859AE2 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		5849CED81E2895E600859AE2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		584ADCE725A6D59700BC6FC7 /* SourceSansPro-BlackIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackIt.otf"; sourceTree = "<group>"; };
+		584ADCE825A6D59800BC6FC7 /* SourceSansPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldIt.otf"; sourceTree = "<group>"; };
+		584ADCE925A6D59900BC6FC7 /* SourceSansPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.otf"; sourceTree = "<group>"; };
+		584ADCEB25A6D59B00BC6FC7 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
 		584D83CA1E56DA0600550DFD /* SplitedPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitedPicker.swift; path = LatinLingo/SplitedPicker.swift; sourceTree = "<group>"; };
 		584F4FAE1E48A9E30098BADA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -235,22 +214,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		581B52071E2670170005D53A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A54FC730D0B2AC7C132D8F2F /* Pods_LatinLingoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		581B52121E2670170005D53A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FB34DFD8F60121B49615659 /* Pods_LatinLingoUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -293,13 +256,14 @@
 		58021ED01E278A1400C38624 /* LLViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5845AC0725A4A1820083EE8D /* WelcomeVC.swift */,
+				58424DA51E448C1900F067BC /* LoginViewController.swift */,
 				581B51F81E2670170005D53A /* HomeVC.swift */,
 				584D83CA1E56DA0600550DFD /* SplitedPicker.swift */,
 				588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */,
 				585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */,
 				585CB2ED1E6448B900915467 /* SideMenuVC.swift */,
 				58424DA71E448C5A00F067BC /* RegistrationViewController.swift */,
-				58424DA51E448C1900F067BC /* LoginViewController.swift */,
 				586686F01E686BD300581550 /* passVc.swift */,
 				585356DB1E7FB6F900EA4980 /* passDataVC.swift */,
 				588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */,
@@ -370,8 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				581B51F51E2670170005D53A /* LatinLingo */,
-				581B520D1E2670170005D53A /* LatinLingoTests */,
-				581B52181E2670170005D53A /* LatinLingoUITests */,
 				581B51F41E2670170005D53A /* Products */,
 				4D40AA75A2CC5C60BD821CE2 /* Pods */,
 				1B8C379B6E0D402BCB25E3E3 /* Frameworks */,
@@ -382,8 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				581B51F31E2670170005D53A /* LatinLingo.app */,
-				581B520A1E2670170005D53A /* LatinLingoTests.xctest */,
-				581B52151E2670170005D53A /* LatinLingoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,24 +372,6 @@
 			path = LatinLingo;
 			sourceTree = "<group>";
 		};
-		581B520D1E2670170005D53A /* LatinLingoTests */ = {
-			isa = PBXGroup;
-			children = (
-				581B520E1E2670170005D53A /* LatinLingoTests.swift */,
-				581B52101E2670170005D53A /* Info.plist */,
-			);
-			path = LatinLingoTests;
-			sourceTree = "<group>";
-		};
-		581B52181E2670170005D53A /* LatinLingoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				581B52191E2670170005D53A /* LatinLingoUITests.swift */,
-				581B521B1E2670170005D53A /* Info.plist */,
-			);
-			path = LatinLingoUITests;
-			sourceTree = "<group>";
-		};
 		582561F61E31C57400526558 /* LLFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +379,10 @@
 				585BBEC21E83F4AB000734A3 /* calibri.ttf */,
 				585BBEC31E83F4AB000734A3 /* calibrib.ttf */,
 				585BBEC41E83F4AB000734A3 /* Helvetica.ttf */,
+				584ADCE925A6D59900BC6FC7 /* SourceSansPro-Black.otf */,
+				584ADCE725A6D59700BC6FC7 /* SourceSansPro-BlackIt.otf */,
+				584ADCE825A6D59800BC6FC7 /* SourceSansPro-BoldIt.otf */,
+				584ADCEB25A6D59B00BC6FC7 /* SourceSansPro-Regular.otf */,
 				585BBECC1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf */,
 				585BBED21E83FA81000734A3 /* trebuc.ttf */,
 				585BBED31E83FA81000734A3 /* trebucbd.ttf */,
@@ -527,7 +473,6 @@
 				581B51F01E2670170005D53A /* Frameworks */,
 				581B51F11E2670170005D53A /* Resources */,
 				84D703F936531477D0416DE8 /* [CP] Embed Pods Frameworks */,
-				1A7A7968196D85FA9C844FC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,48 +482,6 @@
 			productName = LatinLingo;
 			productReference = 581B51F31E2670170005D53A /* LatinLingo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		581B52091E2670170005D53A /* LatinLingoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 581B52211E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoTests" */;
-			buildPhases = (
-				0D17F829D616B34C0F7BF3E7 /* [CP] Check Pods Manifest.lock */,
-				581B52061E2670170005D53A /* Sources */,
-				581B52071E2670170005D53A /* Frameworks */,
-				581B52081E2670170005D53A /* Resources */,
-				BA7505922CAF094FBA94C366 /* [CP] Embed Pods Frameworks */,
-				E7AC424AACDA387C1127ACC4 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				581B520C1E2670170005D53A /* PBXTargetDependency */,
-			);
-			name = LatinLingoTests;
-			productName = LatinLingoTests;
-			productReference = 581B520A1E2670170005D53A /* LatinLingoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		581B52141E2670170005D53A /* LatinLingoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 581B52241E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoUITests" */;
-			buildPhases = (
-				EC4A12BDE854CBBF9515F276 /* [CP] Check Pods Manifest.lock */,
-				581B52111E2670170005D53A /* Sources */,
-				581B52121E2670170005D53A /* Frameworks */,
-				581B52131E2670170005D53A /* Resources */,
-				232624BF58A332B437B765D0 /* [CP] Embed Pods Frameworks */,
-				BD9FCB61DF98CA7025047379 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				581B52171E2670170005D53A /* PBXTargetDependency */,
-			);
-			name = LatinLingoUITests;
-			productName = LatinLingoUITests;
-			productReference = 581B52151E2670170005D53A /* LatinLingoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -604,17 +507,6 @@
 							};
 						};
 					};
-					581B52091E2670170005D53A = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AWTTDM87PD;
-						ProvisioningStyle = Manual;
-						TestTargetID = 581B51F21E2670170005D53A;
-					};
-					581B52141E2670170005D53A = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 581B51F21E2670170005D53A;
-					};
 				};
 			};
 			buildConfigurationList = 581B51EE1E2670170005D53A /* Build configuration list for PBXProject "LatinLingo" */;
@@ -622,6 +514,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -631,8 +524,6 @@
 			projectRoot = "";
 			targets = (
 				581B51F21E2670170005D53A /* LatinLingo */,
-				581B52091E2670170005D53A /* LatinLingoTests */,
-				581B52141E2670170005D53A /* LatinLingoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -674,81 +565,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		581B52081E2670170005D53A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		581B52131E2670170005D53A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D17F829D616B34C0F7BF3E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1A7A7968196D85FA9C844FC5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		232624BF58A332B437B765D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5D4F1E2AE681A8884244D0EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LatinLingo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84D703F936531477D0416DE8 /* [CP] Embed Pods Frameworks */ = {
@@ -757,73 +592,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/RJImageLoader/RJImageLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RJImageLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA7505922CAF094FBA94C366 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD9FCB61DF98CA7025047379 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoUITests/Pods-LatinLingoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7AC424AACDA387C1127ACC4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LatinLingoTests/Pods-LatinLingoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC4A12BDE854CBBF9515F276 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatinLingo/Pods-LatinLingo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -873,6 +667,7 @@
 				588736D01E8288C700DF8DC8 /* splitedPickerWithReset.swift in Sources */,
 				58FCC6FE1E4C967E00C852AE /* ProfileVC.swift in Sources */,
 				5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */,
+				5845AC0825A4A1820083EE8D /* WelcomeVC.swift in Sources */,
 				581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */,
 				585356DE1E7FB7FF00EA4980 /* splitedPickerAny.swift in Sources */,
 				584D83CB1E56DA0600550DFD /* SplitedPicker.swift in Sources */,
@@ -884,36 +679,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		581B52061E2670170005D53A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				581B520F1E2670170005D53A /* LatinLingoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		581B52111E2670170005D53A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				581B521A1E2670170005D53A /* LatinLingoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		581B520C1E2670170005D53A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 581B51F21E2670170005D53A /* LatinLingo */;
-			targetProxy = 581B520B1E2670170005D53A /* PBXContainerItemProxy */;
-		};
-		581B52171E2670170005D53A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 581B51F21E2670170005D53A /* LatinLingo */;
-			targetProxy = 581B52161E2670170005D53A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		581B51FA1E2670170005D53A /* Main.storyboard */ = {
@@ -977,7 +743,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -985,6 +751,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1024,12 +791,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PROVISIONING_PROFILE = "089ad140-a3eb-4e47-b2b7-c780944b1a98";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1041,19 +809,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2d734d2b-f759-418e-9585-872b15dc5e96";
-				PROVISIONING_PROFILE_SPECIFIER = latiLingo_dev_july11;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1064,88 +836,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fdec5dfa-c870-411d-a73d-c5b0c5e83c4b";
-				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_prod_july11;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_adhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		581B52221E2670170005D53A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A8B0473D672D987DF834C4C /* Pods-LatinLingoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AWTTDM87PD;
-				INFOPLIST_FILE = LatinLingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LatinLingo.app/LatinLingo";
-			};
-			name = Debug;
-		};
-		581B52231E2670170005D53A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA3FDE7CB13A8510B61B898F /* Pods-LatinLingoTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = AWTTDM87PD;
-				INFOPLIST_FILE = LatinLingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LatinLingo.app/LatinLingo";
-			};
-			name = Release;
-		};
-		581B52251E2670170005D53A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2A9085B81C5326D26625176 /* Pods-LatinLingoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LatinLingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = LatinLingo;
-			};
-			name = Debug;
-		};
-		581B52261E2670170005D53A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8DD4B93EA0E151D8E228D22 /* Pods-LatinLingoUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LatinLingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = LatinLingo;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1166,24 +872,6 @@
 			buildConfigurations = (
 				581B521F1E2670170005D53A /* Debug */,
 				581B52201E2670170005D53A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		581B52211E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				581B52221E2670170005D53A /* Debug */,
-				581B52231E2670170005D53A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		581B52241E2670170005D53A /* Build configuration list for PBXNativeTarget "LatinLingoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				581B52251E2670170005D53A /* Debug */,
-				581B52261E2670170005D53A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

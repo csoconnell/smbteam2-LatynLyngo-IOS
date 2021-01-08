@@ -29,7 +29,7 @@ class InstructionVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         var url = NSURL (string: "")
-        if pushFrom == "instVC" || pushFrom == "grammerVC"{
+        if pushFrom == "instVC" || pushFrom == "grammerVC" {
             backBtn.isHidden = false
             menuButton.isHidden = true
             if pushFrom == "instVC"{
@@ -44,15 +44,21 @@ class InstructionVC: UIViewController, UIScrollViewDelegate {
         else{
             url = NSURL (string: kBaseURLCommon + "instruction")
             instnLbl.text = "Instructions For Use"
-            backBtn.isHidden = true
-            menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
+            if pushFrom == "WelcomeVC" {
+                backBtn.isHidden = false
+                menuButton.isHidden = true
+            } else {
+                backBtn.isHidden = true
+                menuButton.isHidden = false
+                menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
+            }
         }
         let requestObj = URLRequest(url: url! as URL)
         webview.loadRequest(requestObj)
         scrollView.delegate = self
         scrollView.minimumZoomScale = 0.8
         scrollView.maximumZoomScale = 6.0
-        NotificationCenter.default.addObserver(self, selector: #selector(self.ViewLoads), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.ViewLoads), name: UIDevice.orientationDidChangeNotification, object: nil)
         UITableView.appearance().separatorColor = UIColor.clear
     }
     
@@ -60,7 +66,7 @@ class InstructionVC: UIViewController, UIScrollViewDelegate {
         self.ViewLoads()
     }
     
-    func ViewLoads(){
+    @objc func ViewLoads(){
         textView1Height.constant = self.widthForView(text: self.textView1.text, txtView: textView1)
         textView2Height.constant = self.widthForView(text: self.textView2.text, txtView: textView2)
         textView3Height.constant = self.widthForView(text: self.textView3.text, txtView: textView3)

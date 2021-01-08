@@ -27,7 +27,7 @@ class PostRequest: NSObject
         
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            let inspireImageData = UIImageJPEGRepresentation(imageData, 0.7)
+            let inspireImageData = imageData.jpegData(compressionQuality: 0.7)
             multipartFormData.append(inspireImageData!, withName: "image", fileName: "pic.jpg", mimeType: "image/png")
             for (key, value) in parameters {
                 multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue)!), withName: key)

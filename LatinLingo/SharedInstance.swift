@@ -32,7 +32,7 @@ class SharedInstance: NSObject
     var ModeValue: Int! = 0
     var numberOfEmergencyContants: Int! = 0
     var FontSizePicker : CGFloat! = 35
-    var fontStylePicker : NSString = "corbel"
+    var fontStylePicker : NSString! = "corbel"
     var dataload : NSString = ""
     var dataloadPass : NSString = ""
     var reloadedData : Bool  = false
@@ -42,7 +42,7 @@ class SharedInstance: NSObject
     func userAuthTokenFun(passString: String)
     {
         userAuthToken = ""
-        userAuthToken = passString as NSString!
+        userAuthToken = passString as NSString?
         
     }
     

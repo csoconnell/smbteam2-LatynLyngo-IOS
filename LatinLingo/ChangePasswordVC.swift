@@ -17,10 +17,10 @@ class ChangePasswordVC: UIViewController, GetRequestByTokenResult {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    func rotated(){
+    @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             if loaderStart{
                 stopLoader()
@@ -40,7 +40,7 @@ class ChangePasswordVC: UIViewController, GetRequestByTokenResult {
         self.newPasswrdField.resignFirstResponder()
         self.oldPasswrdField.resignFirstResponder()
         let retrievedStringPassword: String? = KeychainWrapper.standard.string(forKey: "password")
-        if  oldPasswrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || oldPasswrdField.text?.characters.count == 0
+        if  oldPasswrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || oldPasswrdField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Current password field is empty")
         }
@@ -49,11 +49,11 @@ class ChangePasswordVC: UIViewController, GetRequestByTokenResult {
             self.newPasswrdField.text = ""
             self.showAlertView(withTitle: "Alert", withMessage: "Incorrect Current Password")
         }
-        else  if  newPasswrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || newPasswrdField.text?.characters.count == 0
+        else  if  newPasswrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || newPasswrdField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "New password field is empty")
         }
-        else if (newPasswrdField.text!.characters.count) < 5
+        else if (newPasswrdField.text!.count) < 5
         {
             self.showAlertView(withTitle: "Alert", withMessage: "New password is too short")
         }

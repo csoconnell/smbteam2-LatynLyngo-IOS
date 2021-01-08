@@ -30,18 +30,18 @@ class RegistrationViewController: UIViewController , UIGestureRecognizerDelegate
         self.tapgesture = UITapGestureRecognizer(target: self, action: #selector(self.hideViews(_:)))
         self.view.addGestureRecognizer(tapgesture)
         tapgesture.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.logoCenter.constant = -120
             self.registrViewBottom.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
-    func rotated(){
+    @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             if loaderStart{
                 stopLoader()
@@ -66,11 +66,11 @@ class RegistrationViewController: UIViewController , UIGestureRecognizerDelegate
         self.passwrdField.resignFirstResponder()
         self.conformPswrdField.resignFirstResponder()
         self.emailField.resignFirstResponder()
-        if nameField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || nameField.text?.characters.count == 0
+        if nameField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || nameField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Name field is empty")
         }
-        else if  emailField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || emailField.text?.characters.count == 0
+        else if  emailField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || emailField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Email field is empty")
         }
@@ -79,16 +79,16 @@ class RegistrationViewController: UIViewController , UIGestureRecognizerDelegate
             self.showAlertView(withTitle: "Alert", withMessage: "Email is not valid")
         }
         else if passwrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" ||
-            passwrdField.text?.characters.count == 0
+            passwrdField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Password field is empty")
         }
-        else if (passwrdField.text!.characters.count) < 5
+        else if (passwrdField.text!.count) < 5
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Password is too short")
         }
         else if conformPswrdField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" ||
-            conformPswrdField.text?.characters.count == 0
+            conformPswrdField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Confirm password field is empty")
         }
@@ -135,7 +135,7 @@ class RegistrationViewController: UIViewController , UIGestureRecognizerDelegate
     }
     
     //MARK: TapGesture
-    func hideViews(_ tapgesture: UITapGestureRecognizer){
+    @objc func hideViews(_ tapgesture: UITapGestureRecognizer){
         self.view.endEditing(true)
     }
     

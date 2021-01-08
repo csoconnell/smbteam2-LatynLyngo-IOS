@@ -53,22 +53,22 @@ class MTPopUp: UIView
         
         //Gesture Down
         gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDown))
-        gestureDown.direction = UISwipeGestureRecognizerDirection.down
+        gestureDown.direction = UISwipeGestureRecognizer.Direction.down
         self.addGestureRecognizer(gestureDown)
         
         //Gesture Left
         gestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDown))
-        gestureLeft.direction = UISwipeGestureRecognizerDirection.left
+        gestureLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.addGestureRecognizer(gestureLeft)
         
         //Gesture Up
         gestureUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDown))
-        gestureUp.direction = UISwipeGestureRecognizerDirection.up
+        gestureUp.direction = UISwipeGestureRecognizer.Direction.up
         self.addGestureRecognizer(gestureUp)
         
         //Gesture Right
         gestureRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDown))
-        gestureRight.direction = UISwipeGestureRecognizerDirection.right
+        gestureRight.direction = UISwipeGestureRecognizer.Direction.right
         self.addGestureRecognizer(gestureRight)
         
         //Transperant
@@ -161,7 +161,7 @@ class MTPopUp: UIView
             btnOk = UIButton(frame: rectNew)
             btnOk.backgroundColor = UIColor.clear
             //  btnOk.titleLabel?.textColor = UIColor.red
-            btnOk.setTitleColor(UIColor(red: 77.0/255.0, green: 38.0/255.0, blue: 14.0/255.0, alpha: 1), for: UIControlState())
+            btnOk.setTitleColor(UIColor(red: 77.0/255.0, green: 38.0/255.0, blue: 14.0/255.0, alpha: 1), for: UIControl.State())
             btnOk.layer.borderWidth = 0
             btnOk.layer.borderColor = UIColor.black.cgColor
             btnOk.layer.cornerRadius = 0
@@ -169,8 +169,8 @@ class MTPopUp: UIView
             btnOk.titleLabel?.numberOfLines = 0
             btnOk.titleLabel?.textAlignment = .center
             btnOk.addTarget(self, action: #selector(tappedOnOk), for: .touchUpInside)
-            btnOk.setTitle(strBtnTitle as? String, for: UIControlState())
-            btnOk.setBackgroundImage(#imageLiteral(resourceName: "alertBtn-BG"), for: UIControlState())
+            btnOk.setTitle(strBtnTitle as? String, for: UIControl.State())
+            btnOk.setBackgroundImage(#imageLiteral(resourceName: "alertBtn-BG"), for: UIControl.State())
             btnOk.tag = counter
             viewFooterPopup.addSubview(btnOk)
             
@@ -197,7 +197,19 @@ class MTPopUp: UIView
         
         let popUpHeight:CGFloat = (lblMessage.frame.origin.y + lblMessage.frame.size.height + viewFooterPopup.frame.height + 5)
         
-        viewPopUp.frame = CGRect(x: viewPopUp.frame.origin.x ,y: popUpHeight < screenHeight ? (((self.screenHeight/2) - ((lblMessage.frame.origin.y + lblMessage.frame.size.height + viewFooterPopup.frame.size.height) / 2)) - 20) : 10 , width: viewPopUp.frame.size.width , height: popUpHeight)
+        let y: CGFloat
+        if popUpHeight < screenHeight {
+            let yStep1 = (lblMessage.frame.origin.y + lblMessage.frame.size.height + viewFooterPopup.frame.size.height) / 2
+            let yStep2 = (self.screenHeight/2) - yStep1
+            y = yStep2 - 20
+        } else {
+            y = 10
+        }
+        
+        viewPopUp.frame = CGRect(x: (viewPopUp.frame.origin.x),
+                                 y: y,
+                                 width: viewPopUp.frame.size.width ,
+                                 height: popUpHeight)
         
         viewFooterPopup.frame = CGRect(x: viewFooterPopup.frame.origin.x ,y: viewPopUp.frame.height - viewFooterPopup.frame.size.height , width: viewFooterPopup.frame.size.width , height: viewFooterPopup.frame.size.height)
         
@@ -471,26 +483,26 @@ class MTPopUp: UIView
         }
     }
     //MARK: - Tapped On Button
-    func tappedOnOk(sender: UIButton)
+    @objc func tappedOnOk(sender: UIButton)
     {
         self.hide(2, index: sender.tag)
     }
     //MARK: - Gesture Swipe
-    func swipeToDown(_ gesture: UIGestureRecognizer)
+    @objc func swipeToDown(_ gesture: UIGestureRecognizer)
     {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer
         {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 self.hide(4, index: 0)
                 break
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 self.hide(3, index: 0)
                 break
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
                 self.hide(2, index: 0)
                 break
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
                 self.hide(1, index: 0)
                 break
             default:

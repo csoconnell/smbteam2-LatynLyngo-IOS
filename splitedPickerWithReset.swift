@@ -14,7 +14,7 @@ import NVActivityIndicatorView
 protocol listRefreshData {
     func loadDataFunction()
 }
-class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate,NVActivityIndicatorViewable,UICollectionViewDataSource,UICollectionViewDelegate  {
+class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate  {
     var items: [DictionaryInfo]!
     
     
@@ -225,7 +225,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         let frame = CGRect(x: self.view.center.x-20, y: self.view.center.y-20, width: 40, height: 40)
         activityIndicatorView = NVActivityIndicatorView(frame: frame,
-                                                        type: NVActivityIndicatorType(rawValue: 23)!)
+                                                        type: .ballSpinFadeLoader)
         templateList.isHidden = false
         templateList.allowsSelection = true
         templateList.delegate = self
@@ -389,9 +389,9 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         rootBtn.alpha = 0.0
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
-                       options: [UIViewAnimationOptions.curveLinear,
-                                 UIViewAnimationOptions.repeat,
-                                 UIViewAnimationOptions.autoreverse],
+                       options: [UIView.AnimationOptions.curveLinear,
+                                 UIView.AnimationOptions.repeat,
+                                 UIView.AnimationOptions.autoreverse],
                        animations: { self.rootBtn.alpha = 1.0 },
                        completion: nil)
         self.view.layoutIfNeeded()
@@ -399,13 +399,13 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
     
     //MARK: PopUpView Ations
     @IBAction func meanigpopupACtion(_ sender: UIButton) {
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
             self.meaningPopupView.alpha = 0
         }, completion: nil)
     }
     @IBAction func showMeaningPopupView(_ sender: UIButton) {
         meaningPopupView.alpha = 0
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             self.meaningPopupView.isHidden = false
             self.meaningPopupView.alpha = 1
             
@@ -449,7 +449,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         suffix1Img.layer.removeAllAnimations()
         suffix2Img.layer.removeAllAnimations()
         suffix3Img.layer.removeAllAnimations()
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                 self.popupviewBottom.constant =  -541
                 self.view.layoutIfNeeded()
@@ -493,7 +493,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             synonymsButton.setTitleColor(UIColor.white, for: .normal)
         }
         closeBtn.setImage(UIImage(named:"close"), for: .normal)
-        UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
             self.popupviewBottom.constant = -667+(UIScreen.main.bounds.height)
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -544,9 +544,9 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     func attributedText(str : NSString)->NSAttributedString{
-        var attributedString = NSMutableAttributedString(string: str as String, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15.0)])
-        let boldFontAttribute = [NSFontAttributeName: UIFont(name: "corbel", size: CGFloat(17.0))]
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: str.length))
+        var attributedString = NSMutableAttributedString(string: str as String, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+        let boldFontAttribute = [NSAttributedString.Key.font: UIFont(name: "corbel", size: CGFloat(17.0))]
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: str.length))
         attributedString.addAttributes(boldFontAttribute, range: str.range(of: ":"))
         
         return attributedString
@@ -613,7 +613,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func menuBtnClicked(_ sender: UIButton) {
         if menubtnClicked{
             self.menubtnClicked = false
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.grammerTop.constant = -28
                 self.instructionTop.constant = -28
                 
@@ -627,7 +627,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         else{
             self.menubtnClicked = true
             self.menuBtnView.isHidden = false
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.grammerTop.constant = 0
                 self.instructionTop.constant = 7
                 self.view.layoutIfNeeded()
@@ -641,7 +641,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     //MARK: UITapgesture Actions
-    func tapprefix1PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapprefix1PickerButton(_ sender: UITapGestureRecognizer) {
         if prefix1Value != ""{
             let id = prefix1Value
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
@@ -658,7 +658,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             })
         }
     }
-    func tapPrefix2PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapPrefix2PickerButton(_ sender: UITapGestureRecognizer) {
         if prefix2Value != ""{
             let id = prefix2Value
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
@@ -675,7 +675,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             })
         }
     }
-    func tapRootPickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapRootPickerButton(_ sender: UITapGestureRecognizer) {
         if rootValue != ""{
             let id = rootValue
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
@@ -693,7 +693,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             
         }
     }
-    func tapSuffix1PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix1PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix1Value != ""{
             let id = suffix1Value
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
@@ -711,7 +711,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             })
         }
     }
-    func tapSuffix2PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix2PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix2Value != ""{
             let id = suffix2Value
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
@@ -728,7 +728,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
             })
         }
     }
-    func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
+    @objc func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix3Value != ""{
 //            var myStringArr = suffix3Value.components(separatedBy: " ")
 //            let id = myStringArr[0]
@@ -748,7 +748,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    func showMeaningGestureTapped(_ sender: UITapGestureRecognizer){
+    @objc func showMeaningGestureTapped(_ sender: UITapGestureRecognizer){
         self.wordFormLbl.text = ""
         DBManager.shared.loadwordFromDB(withWord: selectedWordArr[0], prefix2: selectedWordArr[1], root: selectedWordArr[2], suffix1: selectedWordArr[3], suffix2: selectedWordArr[4], suffix3: selectedWordArr[5], completionHandler: { (movie) in
             DispatchQueue.main.async {
@@ -766,7 +766,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
                         self.synonymsButton.isSelected = false
                         self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
                         if self.popupviewBottom.constant   ==  -541 {
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromTop, animations: {
+                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
                                 if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                                     self.popupviewBottom.constant =  -541
                                     self.view.layoutIfNeeded()
@@ -777,7 +777,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
                                 }
                             }, completion: nil)
                         }else{
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
                                 self.popupviewBottom.constant =  -541
                                 self.view.layoutIfNeeded()
                             }, completion: nil)
@@ -868,7 +868,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
                 pickerLabel.textColor = UIColor.black
                 if pickerView == selectPiceker {
                     pickerLabel.alpha = 0
-                    UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                    UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                         pickerLabel.alpha = 0.5
                         self.view.layoutIfNeeded()
                     }, completion: { finish in

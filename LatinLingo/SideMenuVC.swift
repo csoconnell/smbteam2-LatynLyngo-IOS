@@ -30,11 +30,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: UITableviewDelegates
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SidemenuCell") as! SidemenuCell!
-        cell?.titleLbl.text = self.sideMenuItems[indexPath.row]
-        cell?.titleLbl.textAlignment = NSTextAlignment.right
-        cell?.titleImg.image = self.settigsImages[indexPath.row]
-        return cell!
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SidemenuCell") as! SidemenuCell
+        cell.titleLbl.text = self.sideMenuItems[indexPath.row]
+        cell.titleLbl.textAlignment = NSTextAlignment.right
+        cell.titleImg.image = self.settigsImages[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -52,7 +52,7 @@ class FontSettingVC: UIViewController, UIGestureRecognizerDelegate, UIPickerView
         self.fontPicker.isHidden = false
         self.fontPicker.reloadComponent(0)
         self.fontPicker.selectRow(intvalSize, inComponent: 0, animated: true)
-        UIView.animate(withDuration: 1, delay: 0.2, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0.2, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.ViewBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
             
@@ -75,7 +75,7 @@ class FontSettingVC: UIViewController, UIGestureRecognizerDelegate, UIPickerView
         self.stylePicker.reloadComponent(0)
         self.stylePicker.selectRow(intvalStyle, inComponent: 0, animated: true)
         
-        UIView.animate(withDuration: 1, delay: 0.2, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0.2, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.ViewBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
             
@@ -83,7 +83,7 @@ class FontSettingVC: UIViewController, UIGestureRecognizerDelegate, UIPickerView
     }
     
     @IBAction func closeBtnClicked(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0.2, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.ViewBottomConstraint.constant = -400
             self.view.layoutIfNeeded()
             
@@ -97,8 +97,8 @@ class FontSettingVC: UIViewController, UIGestureRecognizerDelegate, UIPickerView
         _ = navigationController?.popViewController(animated: true)
     }
     //MARK: TapGesture
-    func hideViews(_ tapgesture: UITapGestureRecognizer){
-        UIView.animate(withDuration: 0.5, delay: 0.2, options: UIViewAnimationOptions.curveEaseOut, animations: {
+    @objc func hideViews(_ tapgesture: UITapGestureRecognizer){
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.ViewBottomConstraint.constant = -400
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -139,7 +139,7 @@ class FontSettingVC: UIViewController, UIGestureRecognizerDelegate, UIPickerView
         else{
             let fontCustom = UIFont(name: fontStyleArr[row], size: SharedInstance.sharedInstance.FontSizePicker)
             demoLbl.font = fontCustom
-            SharedInstance.sharedInstance.fontStylePicker = fontStyleArr[row] as NSString!
+            SharedInstance.sharedInstance.fontStylePicker = fontStyleArr[row] as NSString
             
         }
         

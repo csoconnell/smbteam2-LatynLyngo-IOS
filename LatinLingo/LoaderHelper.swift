@@ -20,7 +20,7 @@ var blurEffectView : UIVisualEffectView = UIVisualEffectView()
 
 
 func startLoader (view: UIView, loadtext: String) {
-    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
     blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = view.bounds
     blurEffectView.alpha = 0.5
@@ -29,7 +29,7 @@ func startLoader (view: UIView, loadtext: String) {
         overLay.frame = CGRect(x:0,y:0,width:screen_size.height,height:screen_size.width)
         let frame = CGRect(x: view.center.x-20, y: view.center.y-20, width: 40, height: 40)
         nvactivityIndicator = NVActivityIndicatorView(frame: frame,
-                                                      type: NVActivityIndicatorType(rawValue: 23)!)
+                                                      type: .ballSpinFadeLoader)
         
     }
     else{
@@ -51,8 +51,8 @@ func startLoader (view: UIView, loadtext: String) {
     
     let animation: CATransition = CATransition()
     animation.duration = 3.0
-    animation.type = kCATransitionFade
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.type = CATransitionType.fade
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     label.layer.add(animation, forKey: "changeTextTransition")
     label.text = loadtext
     

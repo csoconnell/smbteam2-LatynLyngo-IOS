@@ -15,9 +15,9 @@ class ForgetPasswordVC: UIViewController,GetRequestResult {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
-    func rotated(){
+    @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             if loaderStart{
                 stopLoader()
@@ -35,7 +35,7 @@ class ForgetPasswordVC: UIViewController,GetRequestResult {
     // MARK: ChangePassword Button Action
     @IBAction func changePasswordClicked(_ sender: UIButton) {
         self.emailField.resignFirstResponder()
-        if  emailField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || emailField.text?.characters.count == 0
+        if  emailField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" || emailField.text?.count == 0
         {
             self.showAlertView(withTitle: "Alert", withMessage: "Email field is empty")
         }
