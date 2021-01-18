@@ -39,12 +39,23 @@
 		58362A641E9534890069C913 /* ChalkboardSE-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */; };
 		58362A651E95348B0069C913 /* ChalkboardSE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */; };
 		58362A671E9538060069C913 /* BanglaSangamMN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58362A661E9538060069C913 /* BanglaSangamMN.ttf */; };
+		583D333E25AEFB3800E545EE /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D333D25AEFB3800E545EE /* SplashVC.swift */; };
+		583D755B25AC0F430097CE1D /* passDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755025AC0F410097CE1D /* passDataVC.swift */; };
+		583D755C25AC0F430097CE1D /* splitedPickerWithReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */; };
+		583D755D25AC0F430097CE1D /* SelectAnyModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */; };
+		583D755E25AC0F430097CE1D /* NavigationPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755325AC0F420097CE1D /* NavigationPassController.swift */; };
+		583D755F25AC0F430097CE1D /* passVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755425AC0F420097CE1D /* passVc.swift */; };
+		583D756025AC0F430097CE1D /* passDataSolveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755525AC0F420097CE1D /* passDataSolveVC.swift */; };
+		583D756125AC0F430097CE1D /* splitedPickerAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755625AC0F420097CE1D /* splitedPickerAny.swift */; };
+		583D756225AC0F430097CE1D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755725AC0F420097CE1D /* WelcomeVC.swift */; };
+		583D756325AC0F430097CE1D /* NavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755825AC0F430097CE1D /* NavigationControllerViewController.swift */; };
+		583D756425AC0F430097CE1D /* FileSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755925AC0F430097CE1D /* FileSwift.swift */; };
+		583D756525AC0F430097CE1D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755A25AC0F430097CE1D /* NavigationController.swift */; };
 		58424DA61E448C1900F067BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58424DA51E448C1900F067BC /* LoginViewController.swift */; };
 		58424DA81E448C5A00F067BC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58424DA71E448C5A00F067BC /* RegistrationViewController.swift */; };
 		584592D21E5C6B4B00F39623 /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D11E5C6B4B00F39623 /* LoaderHelper.swift */; };
 		584592D71E5C9C7C00F39623 /* InstuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584592D61E5C9C7C00F39623 /* InstuctionVC.swift */; };
 		584592D81E5CA1A000F39623 /* HarringtonBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584592D51E5C9BD600F39623 /* HarringtonBold.ttf */; };
-		5845AC0825A4A1820083EE8D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845AC0725A4A1820083EE8D /* WelcomeVC.swift */; };
 		5849CECF1E2894FF00859AE2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC51E2894FF00859AE2 /* FMDatabase.m */; };
 		5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC71E2894FF00859AE2 /* FMDatabaseAdditions.m */; };
 		5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5849CEC91E2894FF00859AE2 /* FMDatabasePool.m */; };
@@ -55,9 +66,9 @@
 		584D83CB1E56DA0600550DFD /* SplitedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D83CA1E56DA0600550DFD /* SplitedPicker.swift */; };
 		584F4FB01E48A9E30098BADA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */; };
 		584F4FB41E48C2A20098BADA /* SidemenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F4FB31E48C2A20098BADA /* SidemenuCell.swift */; };
-		585356DC1E7FB6F900EA4980 /* passDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DB1E7FB6F900EA4980 /* passDataVC.swift */; };
-		585356DE1E7FB7FF00EA4980 /* splitedPickerAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */; };
-		585356E01E7FBB4C00EA4980 /* NavigationPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */; };
+		5856BD0025AF1C09000325B6 /* splashImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5856BCFD25AF1C06000325B6 /* splashImg.png */; };
+		5856BD0125AF1C09000325B6 /* splashImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5856BCFE25AF1C07000325B6 /* splashImg@2x.png */; };
+		5856BD0225AF1C09000325B6 /* splashImg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5856BCFF25AF1C08000325B6 /* splashImg@3x.png */; };
 		5859DA031E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859DA021E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift */; };
 		585BBEC81E83F4AB000734A3 /* calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC21E83F4AB000734A3 /* calibri.ttf */; };
 		585BBEC91E83F4AB000734A3 /* calibrib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 585BBEC31E83F4AB000734A3 /* calibrib.ttf */; };
@@ -74,14 +85,9 @@
 		585CB2EE1E6448B900915467 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CB2ED1E6448B900915467 /* SideMenuVC.swift */; };
 		585CB2F11E6448CD00915467 /* Clapp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 585CB2EF1E6448CD00915467 /* Clapp.mp3 */; };
 		585CB2F21E6448CD00915467 /* Tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 585CB2F01E6448CD00915467 /* Tick.mp3 */; };
-		586686EF1E685E8400581550 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586686EE1E685E8400581550 /* NavigationController.swift */; };
-		586686F11E686BD300581550 /* passVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586686F01E686BD300581550 /* passVc.swift */; };
 		5883CF1B1E600C1E00D74A37 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF181E600C1E00D74A37 /* GetRequest.swift */; };
 		5883CF1C1E600C1E00D74A37 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF191E600C1E00D74A37 /* PostRequest.swift */; };
 		5883CF1D1E600C1E00D74A37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5883CF1A1E600C1E00D74A37 /* Reachability.swift */; };
-		588736CE1E82862100DF8DC8 /* passDataSolveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */; };
-		588736D01E8288C700DF8DC8 /* splitedPickerWithReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */; };
-		588736D21E828B1F00DF8DC8 /* NavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */; };
 		589EF0611E4C5E950024CA08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581B52001E2670170005D53A /* Assets.xcassets */; };
 		589EF0631E4C5FBB0024CA08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589EF0621E4C5FBB0024CA08 /* Images.xcassets */; };
 		589EF0661E4C60230024CA08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */; };
@@ -124,12 +130,23 @@
 		582561FA1E31C59000526558 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelz.ttf; path = fonts/corbelz.ttf; sourceTree = "<group>"; };
 		582562011E31E02900526558 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		58362A661E9538060069C913 /* BanglaSangamMN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BanglaSangamMN.ttf; sourceTree = "<group>"; };
+		583D333D25AEFB3800E545EE /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		583D755025AC0F410097CE1D /* passDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = passDataVC.swift; path = LatinLingo/passDataVC.swift; sourceTree = "<group>"; };
+		583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = splitedPickerWithReset.swift; path = LatinLingo/splitedPickerWithReset.swift; sourceTree = "<group>"; };
+		583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectAnyModeVC.swift; path = LatinLingo/SelectAnyModeVC.swift; sourceTree = "<group>"; };
+		583D755325AC0F420097CE1D /* NavigationPassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationPassController.swift; path = LatinLingo/NavigationPassController.swift; sourceTree = "<group>"; };
+		583D755425AC0F420097CE1D /* passVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = passVc.swift; path = LatinLingo/passVc.swift; sourceTree = "<group>"; };
+		583D755525AC0F420097CE1D /* passDataSolveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = passDataSolveVC.swift; path = LatinLingo/passDataSolveVC.swift; sourceTree = "<group>"; };
+		583D755625AC0F420097CE1D /* splitedPickerAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = splitedPickerAny.swift; path = LatinLingo/splitedPickerAny.swift; sourceTree = "<group>"; };
+		583D755725AC0F420097CE1D /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeVC.swift; path = LatinLingo/WelcomeVC.swift; sourceTree = "<group>"; };
+		583D755825AC0F430097CE1D /* NavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationControllerViewController.swift; path = LatinLingo/NavigationControllerViewController.swift; sourceTree = "<group>"; };
+		583D755925AC0F430097CE1D /* FileSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileSwift.swift; path = LatinLingo/FileSwift.swift; sourceTree = "<group>"; };
+		583D755A25AC0F430097CE1D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = LatinLingo/NavigationController.swift; sourceTree = "<group>"; };
 		58424DA51E448C1900F067BC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = LatinLingo/LoginViewController.swift; sourceTree = "<group>"; };
 		58424DA71E448C5A00F067BC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = LatinLingo/RegistrationViewController.swift; sourceTree = "<group>"; };
 		584592D11E5C6B4B00F39623 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
 		584592D51E5C9BD600F39623 /* HarringtonBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarringtonBold.ttf; sourceTree = "<group>"; };
 		584592D61E5C9C7C00F39623 /* InstuctionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstuctionVC.swift; path = LatinLingo/InstuctionVC.swift; sourceTree = "<group>"; };
-		5845AC0725A4A1820083EE8D /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		5849CEC31E2894FF00859AE2 /* LatinLingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LatinLingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		5849CEC41E2894FF00859AE2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = FMDB/FMDatabase.h; sourceTree = "<group>"; };
 		5849CEC51E2894FF00859AE2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = FMDB/FMDatabase.m; sourceTree = "<group>"; };
@@ -152,9 +169,9 @@
 		584F4FAE1E48A9E30098BADA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		584F4FAF1E48A9E30098BADA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		584F4FB31E48C2A20098BADA /* SidemenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidemenuCell.swift; path = LatinLingo/SidemenuCell.swift; sourceTree = "<group>"; };
-		585356DB1E7FB6F900EA4980 /* passDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passDataVC.swift; sourceTree = "<group>"; };
-		585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splitedPickerAny.swift; sourceTree = "<group>"; };
-		585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPassController.swift; sourceTree = "<group>"; };
+		5856BCFD25AF1C06000325B6 /* splashImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashImg.png; sourceTree = "<group>"; };
+		5856BCFE25AF1C07000325B6 /* splashImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splashImg@2x.png"; sourceTree = "<group>"; };
+		5856BCFF25AF1C08000325B6 /* splashImg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splashImg@3x.png"; sourceTree = "<group>"; };
 		5859DA021E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
 		585BBEC21E83F4AB000734A3 /* calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibri.ttf; sourceTree = "<group>"; };
 		585BBEC31E83F4AB000734A3 /* calibrib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibrib.ttf; sourceTree = "<group>"; };
@@ -171,14 +188,9 @@
 		585CB2ED1E6448B900915467 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuVC.swift; path = LatinLingo/SideMenuVC.swift; sourceTree = "<group>"; };
 		585CB2EF1E6448CD00915467 /* Clapp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clapp.mp3; sourceTree = "<group>"; };
 		585CB2F01E6448CD00915467 /* Tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tick.mp3; sourceTree = "<group>"; };
-		586686EE1E685E8400581550 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		586686F01E686BD300581550 /* passVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passVc.swift; sourceTree = "<group>"; };
 		5883CF181E600C1E00D74A37 /* GetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetRequest.swift; path = LatinLingo/GetRequest.swift; sourceTree = SOURCE_ROOT; };
 		5883CF191E600C1E00D74A37 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostRequest.swift; path = LatinLingo/PostRequest.swift; sourceTree = SOURCE_ROOT; };
 		5883CF1A1E600C1E00D74A37 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = LatinLingo/Reachability.swift; sourceTree = SOURCE_ROOT; };
-		588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passDataSolveVC.swift; sourceTree = "<group>"; };
-		588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splitedPickerWithReset.swift; sourceTree = "<group>"; };
-		588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerViewController.swift; sourceTree = "<group>"; };
 		589328141E95249D0002DC0A /* ArialRounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArialRounded-Bold.ttf"; sourceTree = "<group>"; };
 		589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChalkboardSE-Bold.ttf"; sourceTree = "<group>"; };
 		589328191E9524B40002DC0A /* GillSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GillSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -256,17 +268,12 @@
 		58021ED01E278A1400C38624 /* LLViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5845AC0725A4A1820083EE8D /* WelcomeVC.swift */,
+				583D333D25AEFB3800E545EE /* SplashVC.swift */,
+				583D755725AC0F420097CE1D /* WelcomeVC.swift */,
 				58424DA51E448C1900F067BC /* LoginViewController.swift */,
 				581B51F81E2670170005D53A /* HomeVC.swift */,
-				584D83CA1E56DA0600550DFD /* SplitedPicker.swift */,
-				588736CF1E8288C700DF8DC8 /* splitedPickerWithReset.swift */,
-				585356DD1E7FB7FF00EA4980 /* splitedPickerAny.swift */,
 				585CB2ED1E6448B900915467 /* SideMenuVC.swift */,
 				58424DA71E448C5A00F067BC /* RegistrationViewController.swift */,
-				586686F01E686BD300581550 /* passVc.swift */,
-				585356DB1E7FB6F900EA4980 /* passDataVC.swift */,
-				588736CD1E82862100DF8DC8 /* passDataSolveVC.swift */,
 				584592D61E5C9C7C00F39623 /* InstuctionVC.swift */,
 				5802B5A01E4B2D1C00FE9D84 /* ForgetPasswordVC.swift */,
 				58A01B431E49C20800A5C485 /* SettingsVC.swift */,
@@ -275,9 +282,17 @@
 				58FCC6FD1E4C967E00C852AE /* ProfileVC.swift */,
 				5802B5A21E4B3BB600FE9D84 /* AboutVc.swift */,
 				585CB2E91E64314D00915467 /* FontSettingVC.swift */,
-				586686EE1E685E8400581550 /* NavigationController.swift */,
-				585356DF1E7FBB4C00EA4980 /* NavigationPassController.swift */,
-				588736D11E828B1F00DF8DC8 /* NavigationControllerViewController.swift */,
+				584D83CA1E56DA0600550DFD /* SplitedPicker.swift */,
+				583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */,
+				583D755625AC0F420097CE1D /* splitedPickerAny.swift */,
+				583D755925AC0F430097CE1D /* FileSwift.swift */,
+				583D755A25AC0F430097CE1D /* NavigationController.swift */,
+				583D755825AC0F430097CE1D /* NavigationControllerViewController.swift */,
+				583D755325AC0F420097CE1D /* NavigationPassController.swift */,
+				583D755525AC0F420097CE1D /* passDataSolveVC.swift */,
+				583D755025AC0F410097CE1D /* passDataVC.swift */,
+				583D755425AC0F420097CE1D /* passVc.swift */,
+				583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */,
 			);
 			name = LLViewController;
 			path = ..;
@@ -367,6 +382,9 @@
 				581B51FA1E2670170005D53A /* Main.storyboard */,
 				589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */,
 				581B52001E2670170005D53A /* Assets.xcassets */,
+				5856BCFD25AF1C06000325B6 /* splashImg.png */,
+				5856BCFE25AF1C07000325B6 /* splashImg@2x.png */,
+				5856BCFF25AF1C08000325B6 /* splashImg@3x.png */,
 				589EF0621E4C5FBB0024CA08 /* Images.xcassets */,
 			);
 			path = LatinLingo;
@@ -534,9 +552,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				585BBEC91E83F4AB000734A3 /* calibrib.ttf in Resources */,
+				5856BD0125AF1C09000325B6 /* splashImg@2x.png in Resources */,
 				589EF0631E4C5FBB0024CA08 /* Images.xcassets in Resources */,
 				585BBED41E83FA81000734A3 /* trebuc.ttf in Resources */,
 				585BBED91E83FA9F000734A3 /* verdanab.ttf in Resources */,
+				5856BD0025AF1C09000325B6 /* splashImg.png in Resources */,
 				585BBECA1E83F4AB000734A3 /* Helvetica.ttf in Resources */,
 				582561FE1E31C59000526558 /* corbelz.ttf in Resources */,
 				585BBED81E83FA9F000734A3 /* verdana.ttf in Resources */,
@@ -553,6 +573,7 @@
 				585BBED51E83FA81000734A3 /* trebucbd.ttf in Resources */,
 				58362A611E9534800069C913 /* ArialRounded-Bold.ttf in Resources */,
 				585CB2F21E6448CD00915467 /* Tick.mp3 in Resources */,
+				5856BD0225AF1C09000325B6 /* splashImg@3x.png in Resources */,
 				585BBECB1E83F4AB000734A3 /* HelveticaBd.ttf in Resources */,
 				58362A631E9534860069C913 /* GillSans.ttf in Resources */,
 				581B51FC1E2670170005D53A /* Main.storyboard in Resources */,
@@ -629,10 +650,10 @@
 			files = (
 				584592D71E5C9C7C00F39623 /* InstuctionVC.swift in Sources */,
 				581B51F91E2670170005D53A /* HomeVC.swift in Sources */,
-				586686EF1E685E8400581550 /* NavigationController.swift in Sources */,
 				58021EDB1E2792B600C38624 /* Double+Conversions.swift in Sources */,
 				5849CECF1E2894FF00859AE2 /* FMDatabase.m in Sources */,
 				5802B5A11E4B2D1C00FE9D84 /* ForgetPasswordVC.swift in Sources */,
+				583D755D25AC0F430097CE1D /* SelectAnyModeVC.swift in Sources */,
 				58A01B461E49C3E700A5C485 /* PackegesVC.swift in Sources */,
 				58424DA61E448C1900F067BC /* LoginViewController.swift in Sources */,
 				58A01B441E49C20800A5C485 /* SettingsVC.swift in Sources */,
@@ -643,39 +664,42 @@
 				5849CED31E2894FF00859AE2 /* FMResultSet.m in Sources */,
 				5883CF1D1E600C1E00D74A37 /* Reachability.swift in Sources */,
 				585CB2EE1E6448B900915467 /* SideMenuVC.swift in Sources */,
-				585356DC1E7FB6F900EA4980 /* passDataVC.swift in Sources */,
+				583D756425AC0F430097CE1D /* FileSwift.swift in Sources */,
 				581B51F71E2670170005D53A /* AppDelegate.swift in Sources */,
 				58021EDD1E2792B600C38624 /* HelperClass.swift in Sources */,
 				5859DA031E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
 				58FCC7001E4CB02A00C852AE /* MTPopUp.swift in Sources */,
+				583D333E25AEFB3800E545EE /* SplashVC.swift in Sources */,
 				5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */,
-				588736D21E828B1F00DF8DC8 /* NavigationControllerViewController.swift in Sources */,
+				583D756225AC0F430097CE1D /* WelcomeVC.swift in Sources */,
 				5849CED51E28954E00859AE2 /* DBManager.swift in Sources */,
 				5802B5A71E4B533900FE9D84 /* ChangePasswordVC.swift in Sources */,
-				586686F11E686BD300581550 /* passVc.swift in Sources */,
 				584F4FB41E48C2A20098BADA /* SidemenuCell.swift in Sources */,
 				584F4FB01E48A9E30098BADA /* SWRevealViewController.m in Sources */,
-				585356E01E7FBB4C00EA4980 /* NavigationPassController.swift in Sources */,
+				583D756025AC0F430097CE1D /* passDataSolveVC.swift in Sources */,
 				58067B5A1E4A28E5005CC1E6 /* RegstrationModel.swift in Sources */,
 				58424DA81E448C5A00F067BC /* RegistrationViewController.swift in Sources */,
 				585CB2EC1E64482300915467 /* GalleryCollectionCell.swift in Sources */,
 				5802B59F1E4B26B300FE9D84 /* GetRequestByToken.swift in Sources */,
+				583D756525AC0F430097CE1D /* NavigationController.swift in Sources */,
 				58067B581E4A1969005CC1E6 /* loginModel.swift in Sources */,
+				583D755F25AC0F430097CE1D /* passVc.swift in Sources */,
 				58021EDE1E2792B600C38624 /* UIColor+CustomColor.swift in Sources */,
+				583D755B25AC0F430097CE1D /* passDataVC.swift in Sources */,
 				584592D21E5C6B4B00F39623 /* LoaderHelper.swift in Sources */,
 				58021EE01E2792B600C38624 /* UIViewHelper.swift in Sources */,
-				588736D01E8288C700DF8DC8 /* splitedPickerWithReset.swift in Sources */,
+				583D756325AC0F430097CE1D /* NavigationControllerViewController.swift in Sources */,
 				58FCC6FE1E4C967E00C852AE /* ProfileVC.swift in Sources */,
 				5849CED11E2894FF00859AE2 /* FMDatabasePool.m in Sources */,
-				5845AC0825A4A1820083EE8D /* WelcomeVC.swift in Sources */,
 				581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */,
-				585356DE1E7FB7FF00EA4980 /* splitedPickerAny.swift in Sources */,
+				583D755E25AC0F430097CE1D /* NavigationPassController.swift in Sources */,
 				584D83CB1E56DA0600550DFD /* SplitedPicker.swift in Sources */,
 				585CB2EA1E64314D00915467 /* FontSettingVC.swift in Sources */,
 				5883CF1B1E600C1E00D74A37 /* GetRequest.swift in Sources */,
 				58021ED91E2792B600C38624 /* ConstantsHelper.swift in Sources */,
+				583D756125AC0F430097CE1D /* splitedPickerAny.swift in Sources */,
 				5802B5A31E4B3BB600FE9D84 /* AboutVc.swift in Sources */,
-				588736CE1E82862100DF8DC8 /* passDataSolveVC.swift in Sources */,
+				583D755C25AC0F430097CE1D /* splitedPickerWithReset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +842,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -845,7 +869,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

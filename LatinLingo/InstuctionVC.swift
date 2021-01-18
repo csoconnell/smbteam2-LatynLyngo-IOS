@@ -35,13 +35,11 @@ class InstructionVC: UIViewController, UIScrollViewDelegate {
             if pushFrom == "instVC"{
                 url = NSURL (string: kBaseURLCommon + "instruction")
                 instnLbl.text = "Instructions For Use"
-            }
-            else{
-                instnLbl.text = "Grammer For Use"
+            } else {
+                instnLbl.text = "Grammar For Use"
                 url = NSURL (string: kBaseURLCommon + "grammer")
             }
-        }
-        else{
+        } else {
             url = NSURL (string: kBaseURLCommon + "instruction")
             instnLbl.text = "Instructions For Use"
             if pushFrom == "WelcomeVC" {

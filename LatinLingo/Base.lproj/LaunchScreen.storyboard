@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eof-Bh-MQd">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="XQV-sc-36r">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="Eof-Bh-MQd" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="OMX-I2-alb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zl8-mP-1KH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tbn-c7-XmP">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <view key="view" contentMode="scaleToFill" id="cjj-u6-nlX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-72-Fxl">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwH-p4-Atw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4w-mG-FIX">
-                                <rect key="frame" x="204" y="161.5" width="260" height="52"/>
-                                <state key="normal" image="logo"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LH4-72-Fxl" secondAttribute="trailing" id="5lo-pn-Ypj"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="LH4-72-Fxl" secondAttribute="bottom" id="Fh3-Wo-EBo"/>
-                            <constraint firstItem="LH4-72-Fxl" firstAttribute="leading" secondItem="tbn-c7-XmP" secondAttribute="leading" id="Ivc-dV-QE8"/>
-                            <constraint firstItem="C4w-mG-FIX" firstAttribute="centerX" secondItem="LH4-72-Fxl" secondAttribute="centerX" id="geL-yx-J5y"/>
-                            <constraint firstItem="LH4-72-Fxl" firstAttribute="top" secondItem="tbn-c7-XmP" secondAttribute="top" id="nUE-lY-ZUn"/>
-                            <constraint firstItem="C4w-mG-FIX" firstAttribute="centerY" secondItem="LH4-72-Fxl" secondAttribute="centerY" id="woc-0R-NKM"/>
+                            <constraint firstAttribute="trailing" secondItem="dwH-p4-Atw" secondAttribute="trailing" id="4yj-u5-6iM"/>
+                            <constraint firstAttribute="bottom" secondItem="dwH-p4-Atw" secondAttribute="bottom" id="aIL-7n-N4Q"/>
+                            <constraint firstItem="dwH-p4-Atw" firstAttribute="leading" secondItem="cjj-u6-nlX" secondAttribute="leading" id="kaJ-nN-fl2"/>
+                            <constraint firstItem="dwH-p4-Atw" firstAttribute="top" secondItem="cjj-u6-nlX" secondAttribute="top" id="mnD-SZ-b1o"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h3C-HP-mpp"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUm-PP-yZE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="2828" y="-26.53673163418291"/>
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="260" height="52"/>
-        <image name="splash" width="571" height="321"/>
+        <image name="splashImg.png" width="375" height="812"/>
     </resources>
 </document>

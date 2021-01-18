@@ -67,7 +67,7 @@ class ChangePasswordVC: UIViewController, GetRequestByTokenResult {
                 "token":""
             ]
             newPasswordCall.delegate = self
-            newPasswordCall.tokenServiceCall(param: parameters as NSDictionary, header: SharedInstance.sharedInstance.userAuthToken as String)
+            newPasswordCall.tokenServiceCall(param: parameters as NSDictionary, header: SharedInstance.sharedInstance.userAuthToken as! String)
         }
     }
     

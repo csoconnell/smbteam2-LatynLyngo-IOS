@@ -30,8 +30,9 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        settigsItems = ["Profile", "Change Password", "Privacy", "Terms of use","Font Settings", "Logout"]
-        settigsImages = [#imageLiteral(resourceName: "icn1"), #imageLiteral(resourceName: "icn5"), #imageLiteral(resourceName: "icn2"), #imageLiteral(resourceName: "icn4"), #imageLiteral(resourceName: "dash2"), #imageLiteral(resourceName: "icn3")]
+        //settigsItems = ["Profile", "Change Password", "Privacy", "Terms of use","Font Settings", "Logout"]
+        settigsItems = ["Privacy", "Terms of use","Font Settings"]
+        settigsImages = [#imageLiteral(resourceName: "icn2"), #imageLiteral(resourceName: "icn4"), #imageLiteral(resourceName: "dash2")]
         menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
     }
     
@@ -53,23 +54,16 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if  indexPath.row == 0{
-            self.performSegue(withIdentifier: "ToProfile", sender: self)
-        }
-        else if  indexPath.row == 1{
-            self.performSegue(withIdentifier: "ToChangePassword", sender: self)
-        }
-        else if  indexPath.row == 2{
+        if indexPath.row == 0 {
             self.performSegue(withIdentifier: "loadDataPrivacy", sender: self)
-        }else if  indexPath.row == 3{
+        } else if  indexPath.row == 1 {
             self.performSegue(withIdentifier: "loadDataterms", sender: self)
-        }
-        else if  indexPath.row == 4{
+        } else {
             self.performSegue(withIdentifier: "ToFontSettings", sender: self)
         }
-        else {
-            self.showAlertViewBtn(withTitle: "Logout", withMessage: " Are you sure you want to Logout ?")
-        }
+        //self.performSegue(withIdentifier: "ToProfile", sender: self)
+        // self.performSegue(withIdentifier: "ToChangePassword", sender: self)
+        // self.showAlertViewBtn(withTitle: "Logout", withMessage: " Are you sure you want to Logout ?")
     }
     
     // MARK: navigation Function
@@ -122,14 +116,14 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func showAlertViewBtn(withTitle:String,withMessage:String){
         MTPopUp(frame: self.view.frame).show(complete: { (index) in
-            if index == 1{
+            if index == 1 {
                 let parameters:[String: Any] = [
                     "function": "logout",
                     "parameters": ["user_id":SharedInstance.sharedInstance.userId],
                     "token":""
                 ]
                 self.logoutCall.delegate = self
-                self.logoutCall.tokenServiceCall(param: parameters as NSDictionary, header: SharedInstance.sharedInstance.userAuthToken as String)
+                self.logoutCall.tokenServiceCall(param: parameters as NSDictionary, header: SharedInstance.sharedInstance.userAuthToken! as String)
             }
             
         },

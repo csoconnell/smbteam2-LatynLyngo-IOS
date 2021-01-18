@@ -15,13 +15,13 @@ class NavigationPassController: UINavigationController {
         
     }
     
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
-    
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+//    
+//    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+//        return .landscapeLeft
+//    }
+//    
     
 }

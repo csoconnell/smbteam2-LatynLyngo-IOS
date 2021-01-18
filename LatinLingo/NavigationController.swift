@@ -17,11 +17,10 @@ class NavigationController: UINavigationController {
         // Do any additional setup after loading the view.
     }
     
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
-    
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+//    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+//        return .landscapeLeft // code in next VC's viewWillAppear to work in iOS 13
+//    }
 }

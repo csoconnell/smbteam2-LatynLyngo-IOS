@@ -16,7 +16,7 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentLBL.text = " A Morpheme* based\n Slot~machine* style\n Vocabulary* learning game"
+        contentLBL.text = "A Morpheme* based\n Slot~machine* style\n Vocabulary* learning game"
         contentDetailLBL.text = "*morpheme--morph (G) (shape, form)+ -eme (unit, sound)\n\n *slot-machine--a random combination of symbols on a dial, certain combinations create a win\n\n *Vocabulary--vocare (L) to name, call +-ary (of or belonging to, pertaining to)"
 
     }

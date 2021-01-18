@@ -99,12 +99,13 @@ class DBManager: NSObject {
         if openDatabase() {
             for case let movie as NSDictionary in passDict {
                 var query = ""
+                print(".........insertWordTableData")
                 print(movie)
                 let List_word_id = movie.object(forKey: "word_id") as? String ?? ""
                 let List_word = movie.object(forKey: "word") as? String ?? ""
                 let List_meaning = movie.object(forKey: "meaning") as? String ?? ""
-                let List_prefex_1 = movie.object(forKey: "prefex_1") as? String ?? ""
-                let List_prefex_2 = movie.object(forKey: "prefex_2") as? String ?? ""
+                let List_prefex_1 = movie.object(forKey: "prefix_1") as? String ?? ""//movie.object(forKey: "prefex_1") as? String ?? ""
+                let List_prefex_2 = movie.object(forKey: "prefix_2") as? String ?? ""
                 let List_root = movie.object(forKey: "root") as? String ?? ""
                 let List_suffix_1 = movie.object(forKey: "suffix_1") as? String ?? ""
                 let List_suffix_2 = movie.object(forKey: "suffix_2") as? String ?? ""
@@ -143,6 +144,7 @@ class DBManager: NSObject {
     func insertMeaningTableData(passDict:NSArray) {
         if openDatabase() {
             for case let movie as NSDictionary in passDict {
+                print(".........insertMeaningTableData 145")
                 print(movie)
                 var query = ""
                 let List_word_id = movie.object(forKey: "w_id") as? String ?? ""
@@ -181,6 +183,7 @@ class DBManager: NSObject {
             let query = "select * from wordList"
             
             do {
+                print(".........loadMovies() 180")
                 print(database)
                 let results = try database.executeQuery(query, values: nil)
                 
@@ -577,7 +580,9 @@ class DBManager: NSObject {
     }
     func loadwordFromDB(withWord prefix1: String, prefix2 : String, root : String, suffix1:String, suffix2:String, suffix3:String, completionHandler: (_ movieInfo: DictionaryInfo?) -> Void)  {
         var movieInfo:DictionaryInfo!
+         print(".........loadwordFromDB 582")
         print(suffix1)
+        
         if openDatabase() {
             let query = "select * from wordList where \(field_root)=? AND \(field_prefex_1)=? AND \(field_prefex_2)=? AND \(field_suffix_3)=? AND \(field_suffix_2)=? AND \(field_suffix_1)=?"
             do{
@@ -589,8 +594,6 @@ class DBManager: NSObject {
                 else {
                     print(database.lastError())
                 }
-                
-                
             }
             catch {
                 print(error.localizedDescription)
@@ -608,6 +611,7 @@ class DBManager: NSObject {
             
             do {
                 let results = try database.executeQuery(query, values: [Word])
+                 print(".........loadWordmeaning 616")
                 print(Word)
                 
                 if results.next() {
@@ -615,6 +619,7 @@ class DBManager: NSObject {
                     
                 }
                 else {
+                    
                     print(database.lastError())
                 }
             }
@@ -752,6 +757,7 @@ class DBManager: NSObject {
     
     func loadMovie(withStartValue StartValue: NSString , StartValueData: NSString,SecondValue: NSString , SecondValueData: NSString,ThirdValue: NSString , ThirdValueData: NSString)  -> [DictionaryInfo]! {
         var movies: [DictionaryInfo]!
+        print(".........loadMovie 755")
         print(StartValueData,SecondValueData,ThirdValueData)
         if openDatabase() {
             
@@ -804,12 +810,14 @@ class DBManager: NSObject {
             
             database.close()
         }
+        print(".........loadMovie 755 last")
         print(movies)
         
         return movies
     }
     func loadMovie(withStartValue StartValue: NSString , StartValueData: NSString,SecondValue: NSString , SecondValueData: NSString,ThirdValue: NSString , ThirdValueData: NSString,ForthValue: NSString , ForthValueData: NSString)  -> [DictionaryInfo]! {
         var movies: [DictionaryInfo]!
+        print(".........loadMovie 815")
         print(StartValue,StartValueData,SecondValueData,ThirdValueData,ForthValueData)
         
         if openDatabase() {

@@ -39,6 +39,11 @@
     var meaningList: [WordMeaningInfo]!
     @IBOutlet weak var menuButton: UIButton!
     var shared = SharedInstance.sharedInstance
+    
+    @IBAction func backBTNTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func navigation(_ sender: UIButton) {
         if  sender.tag == 1 {
             startLoader(view: self.view, loadtext: "")

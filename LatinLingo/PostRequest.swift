@@ -23,7 +23,7 @@ class PostRequest: NSObject
     func upDateprofile(imageData:UIImage)
     {                let user_id = shared.userId
         var parameters = [String:AnyObject]()
-        parameters = ["user_id":user_id!]
+        parameters = ["user_id":user_id]
         
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in

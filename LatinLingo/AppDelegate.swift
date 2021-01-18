@@ -11,10 +11,14 @@ import CoreData
 import IQKeyboardManagerSwift
 
 var potrait = true
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var currentOrientation: UIInterfaceOrientationMask = .portrait
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+       RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))// for increase the delay of splash screen
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -24,11 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func rotated(){
         if UIDevice.current.orientation.isLandscape {
             potrait = false
-        }
-        else {
+        } else {
             potrait = true
         }
-        
+    }
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return currentOrientation
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
