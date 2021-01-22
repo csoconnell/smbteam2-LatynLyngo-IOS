@@ -223,10 +223,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         templateList.dataSource = self
         if UIScreen.main.bounds.width == 568 {
             listviewHeight.constant = 150
-        } else if UIScreen.main.bounds.width == 667 {
+        }else if UIScreen.main.bounds.width == 667 {
             listviewHeight.constant = 180
-        } else {
-             listviewHeight.constant = 220
+        }else{
+            
+            listviewHeight.constant = 220
         }
         
         rootBtn.titleLabel?.font = UIFont(name: shared.fontStylePicker as String, size: shared.FontSizePicker)
@@ -309,44 +310,49 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         suffixswipeupGesture.delegate = self
         suffixswipeupGesture.direction = .down
         self.suffixOverlayBtn.addGestureRecognizer(suffixswipeupGesture)
-//        if shared.ModeValue == 0 {
-//            loadIntialData()
-//        } else if shared.ModeValue == 1 {
-//            loadNonSenseData()
-//        } else {
-//            loadRandomData()
-//        }
-     }
-    //for landscape mode
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .landscapeRight
-        UIDevice.current.setValue( UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation()
-        if UIDevice.current.orientation.isLandscape {
-            deviceScreenWidth = UIScreen.main.bounds.height
-        } else {
-            deviceScreenWidth = UIScreen.main.bounds.width
-        }
-        if shared.ModeValue == 0 {
+        
+        deviceScreenWidth = UIScreen.main.bounds.width
+        if shared.ModeValue == 0{
             loadIntialData()
-        } else if shared.ModeValue == 1 {
+        }
+        else if shared.ModeValue == 1{
             loadNonSenseData()
-        } else {
+        }else{
             loadRandomData()
+            
         }
     }
+    override func viewWillLayoutSubviews() {
+          super.viewWillLayoutSubviews()
+          
+          blockWidthSettings()
+      }
+    func blockWidthSettings() {
+           //
+           //        if UIDevice.current.orientation.isLandscape {
+           //                   deviceScreenWidth = UIScreen.main.bounds.height
+           //               } else {
+           //                   deviceScreenWidth = UIScreen.main.bounds.width
+           //               }
+           deviceScreenWidth = UIScreen.main.bounds.width; print("......isLandscape_\(UIDevice.current.orientation.isLandscape)......height\(UIScreen.main.bounds.height).....width\(UIScreen.main.bounds.width)")
+           if shared.ModeValue == 0 {
+                    pickerviewWidth = 40
+                    picker1Width.constant = (deviceScreenWidth - 60)/3
+                    picker3Width.constant = (deviceScreenWidth - 60)/3
+                    picker6Width.constant = (deviceScreenWidth - 60)/3
+           } else if shared.ModeValue == 1 {
+                   pickerviewWidth = 40
+                   picker1Width.constant = (deviceScreenWidth - 60)/3
+                   picker3Width.constant = (deviceScreenWidth - 60)/3
+                   picker6Width.constant = (deviceScreenWidth - 60)/3
+           } else {
+               pickerviewWidth = 40
+               picker1Width.constant = (deviceScreenWidth - 60)/3
+               picker3Width.constant = (deviceScreenWidth - 60)/3
+               picker6Width.constant = (deviceScreenWidth - 60)/3
+           }
+       }
 
-    //in viewWillDisappear rotate to portrait can not fix the bug
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .portrait
-        UIDevice.current.setValue( UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation() //must call
-        super.dismiss(animated: true, completion: nil)
-    }
     //MARK: Mode Management Functions
     
     func loadNonSenseData() {
@@ -364,6 +370,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         print(meaningMovies)
         
         for item in meaningMovies {
+            
+            
             print(item)
                 if item.type == "1" {
                     nonsencePrefixArr.append(item.word)
@@ -375,6 +383,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 else if item.type == "6" {
                     nonsenceSuffixArr.append(item.word)
                 }
+                
+            
         }
         
         //deviceScreenWidth/3
@@ -385,6 +395,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         Prview2.isHidden = true
         Prview4.isHidden = true
         Prview5.isHidden = true
+        
         picker1Width.constant = (deviceScreenWidth - 60)/3
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
@@ -489,11 +500,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         pickerdataRoot = pickerdataRoot.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-//        if UIDevice.current.orientation.isLandscape {
-//            deviceScreenWidth = UIScreen.main.bounds.height
-//        } else {
-//            deviceScreenWidth = UIScreen.main.bounds.width
-//        }
         //deviceScreenWidth/3
         pickerviewWidth = 40
         picker1Leading.constant = 40
@@ -600,11 +606,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         pickerdataRoot = pickerdataRoot.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-//        if UIDevice.current.orientation.isLandscape {
-//            deviceScreenWidth = UIScreen.main.bounds.height
-//        } else {
-//            deviceScreenWidth = UIScreen.main.bounds.width
-//        }
         //deviceScreenWidth/3
         pickerviewWidth = 40
         picker1Leading.constant = 40
@@ -1158,7 +1159,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     self.menuBtnView.isHidden = true
                 }
             })
-        }else{
+        }
+        else{
             self.menubtnClicked = true
             self.menuBtnView.isHidden = false
             
@@ -1378,19 +1380,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     //MARK: WordCheckking Function
     func wordform() {
         self.wordformBtn.isHidden = true
-        print(".......wordform().........")
-        print(selectedWordArr)
         DBManager.shared.loadwordFromDB(withWord: selectedWordArr[0], prefix2: selectedWordArr[1], root: selectedWordArr[2], suffix1: selectedWordArr[3], suffix2: selectedWordArr[4], suffix3: selectedWordArr[5], completionHandler: { (movie) in
             DispatchQueue.main.async {
                 if movie != nil {
                     
                     self.resultWord = movie!.word
-                    print("........\(self.resultWord)..p1-\(movie!.prefex_1)..p2-\(movie!.prefex_2)..s1-\(movie!.suffix_1)..s2-\(movie!.suffix_2)..s3-\(movie!.suffix_3)")
                     
-                    
-                    /////////////
-                   
-                    ////////////////
                     if self.wordArrayDB.contains(self.resultWord){
                         
                         
@@ -2212,8 +2207,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     func pickerRootPrefixPrefix2Actiondone(withPrefix2 prefix2:NSString){
         self.picker2.reloadComponent(0)
-        print("......pickerRootPrefixPrefix2Actiondone.........")
-        print(selectedWordArr)
         if suffix3Value == "" {
             moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withPrefix2: prefix2 as NSString)
             selectedWordArr = [prefix1Value,prefix2 as String,rootValue,"","",""]
@@ -2302,8 +2295,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix1.removeAll()
         pickerdataSuffix2.removeAll()
         pickerdataSuffix3.removeAll()
-        print("......pickerRootPrefixActiondone.........")
-               print(selectedWordArr)
         moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as String as NSString, withPrefix: Prefix as NSString)
         selectedWordArr = [Prefix as String,"",rootValue,"","",""]
         for item in moviesPrefix1 {
@@ -2437,8 +2428,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         prefix2Value = ""
         pickerdataPrefix2.removeAll()
         self.picker1.reloadComponent(0)
-        print("......pickerRootPrefixSuffixActiondone.........")
-                      print(selectedWordArr)
         moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as String as NSString, withPrefix: Prefix as NSString, withSuffix: suffix3Value as NSString)
         selectedWordArr = [Prefix as String ,"",rootValue,"","",suffix3Value]
         for item in moviesPrefix1 {
@@ -2603,8 +2592,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         let   random1 :Int = Int(arc4random_uniform(10000))
         NumberPicker5 = -1
-        print("......pickerRootSuffixActiondone.........")
-        print(selectedWordArr)
+        
         selectedWordArr = ["","",rootValue,"","",suffix3Value]
         if pickerdataPrefix1.count > 0{
             self.picker1.reloadComponent(0)
@@ -2973,8 +2961,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         prefix2lblView.isHidden = true
         prefix1Value = ""
         prefix2Value = ""
-        print("......pickerRootSuffixSuffix2Suffix3Actiondone.........")
-        print(selectedWordArr)
         moviesSuffix3 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withSuffix1: suffix1Value as NSString, withSuffix2: suffix2Value as NSString, withSuffix3: suffix3Value as NSString)
         selectedWordArr = ["","",rootValue,suffix1Value,suffix2Value,suffix3Value]
         pickerdataPrefix2.removeAll()
@@ -3047,8 +3033,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         suffix1lblView.isHidden = true
         suffix1Value = ""
-        print("......pickerRootSuffixSuffix2prefixActiondone.........")
-               print(selectedWordArr)
         moviesSuffix3 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix3Value as NSString, withSuffix2: suffix2Value as NSString)
         selectedWordArr = [prefixdata as String,"",rootValue,"",suffix2Value,suffix3Value]
         
@@ -3194,8 +3178,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     func pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata prefixdata: NSString){
         prefix2lblView.isHidden = true
         prefix2Value = ""
-        print("......pickerRootSuffixSuffix2Suffix3prefixActiondone.........")
-        print(selectedWordArr)
         moviesSuffix3 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix1Value as NSString, withSuffix2: suffix2Value as NSString, withSuffix3: suffix3Value as NSString)
         selectedWordArr = [prefixdata as String,"",rootValue,suffix1Value,suffix2Value,suffix3Value]
         
@@ -3285,8 +3267,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         prefix2lblView.isHidden = true
         
         suffix1Value = ""
-        print("......pickerRootSuffixSuffix2PrefixActiondone.........")
-               print(selectedWordArr)
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix3Value as NSString, withSuffix2: Suffixdata as NSString)
         if prefix2Value != "" {
             selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
@@ -3436,8 +3416,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     func pickerRootSuffixSuffix2PrefixPrefix2Actiondone(withsuffixdata suffixdata : NSString){
         suffix1lblView.isHidden = true
         suffix1Value = ""
-        print("......pickerRootSuffixSuffix2PrefixPrefix2Actiondone.........")
-                  print(selectedWordArr)
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withPrefix2: prefix2Value as NSString, withSuffix2: suffix3Value as NSString, withSuffix3: suffixdata)
         selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
         

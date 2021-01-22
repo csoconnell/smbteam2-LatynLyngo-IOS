@@ -768,199 +768,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C14592C-4E60-4137-9C51-4A2C4657CAD2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            timestampString = "524051459.563887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1003"
-            endingLineNumber = "1003"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "534F0D37-782E-4B56-ABBA-FF9DEF1E2B76"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1060"
-            endingLineNumber = "1060"
-            landmarkName = "attributedText(str:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "40A7EDAE-2CD1-4689-B3C3-F6D8E9C3AD69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1089"
-            endingLineNumber = "1089"
-            landmarkName = "prefixbtnClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "164B886E-E58B-43E0-B00F-2B130D0DB491"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1192"
-            endingLineNumber = "1192"
-            landmarkName = "tapprefix1PickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "315AD5C2-B1E6-43EC-8920-421BC6834F5E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1052"
-            endingLineNumber = "1052"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2EA7897E-1655-4F27-8052-81A55AF7E618"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1099"
-            endingLineNumber = "1099"
-            landmarkName = "prefixbtnClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "752E1396-ACEA-49E9-AEEA-EF3FDF356DEE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1237"
-            endingLineNumber = "1237"
-            landmarkName = "tapRootPickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55D07B65-5598-4650-89BD-77FB562A922F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1259"
-            endingLineNumber = "1259"
-            landmarkName = "tapSuffix1PickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF7D44BC-FF8A-4418-973B-58E78C5DC178"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1214"
-            endingLineNumber = "1214"
-            landmarkName = "tapPrefix2PickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AD91F8CC-EE1D-40CC-98F5-34E5FE0A30D0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2288"
-            endingLineNumber = "2288"
-            landmarkName = "SplitedPicker"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E5A2BDF8-6EE9-4AA4-BEEF-D30549931306"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "868"
-            endingLineNumber = "868"
-            landmarkName = "showMeaningPopupView(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FCCC7920-FBFF-49BE-8DF5-4D2340B21743"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1242"
-            endingLineNumber = "1242"
-            landmarkName = "tapRootPickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E67FA54C-7255-438D-A42B-26B52A63BFA7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1032,8 +839,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "661"
-            endingLineNumber = "661"
+            startingLineNumber = "672"
+            endingLineNumber = "672"
             landmarkName = "tapPrefix2PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1048,8 +855,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "677"
-            endingLineNumber = "677"
+            startingLineNumber = "688"
+            endingLineNumber = "688"
             landmarkName = "tapRootPickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1064,8 +871,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "694"
-            endingLineNumber = "694"
+            startingLineNumber = "705"
+            endingLineNumber = "705"
             landmarkName = "tapSuffix1PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1128,48 +935,32 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "ShowDetailsOfWord(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2D572CE9-87B8-4E94-B1DA-5D0E9B62663D - a165e267f7d65467"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;LatinLingo.DictionaryInfo&gt;) -&gt; () in LatinLingo.splitedPickerAny.ShowDetailsOfWord(__C.UIButton) -&gt; ()"
-                  moduleName = "LatinLingo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatinLingo-IOS/LatinLingo/splitedPickerAny.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "522"
-                  endingLineNumber = "522"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "2D572CE9-87B8-4E94-B1DA-5D0E9B62663D - 523192be0e06ee1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.Optional&lt;LatinLingo.DictionaryInfo&gt;) -&gt; () in LatinLingo.splitedPickerAny.ShowDetailsOfWord(__C.UIButton) -&gt; ()"
-                  moduleName = "LatinLingo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatinLingo-IOS/LatinLingo/splitedPickerAny.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "523"
-                  endingLineNumber = "523"
-                  offsetFromSymbolStart = "164">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D8D882CD-F5B0-4769-9E54-24D55496CE4B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LatinLingo/splitedPickerAny.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
+            landmarkName = "ShowDetailsOfWord(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F65C695-34FC-4140-8A45-E21FA828BE06"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1185,22 +976,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F65C695-34FC-4140-8A45-E21FA828BE06"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "229BD0AC-E32D-43DC-AB4C-91EE88CD48D4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1208,8 +983,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "642"
-            endingLineNumber = "642"
+            startingLineNumber = "653"
+            endingLineNumber = "653"
             landmarkName = "tapprefix1PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1224,8 +999,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "637"
-            endingLineNumber = "637"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
             landmarkName = "tapprefix1PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1240,8 +1015,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "732"
-            endingLineNumber = "732"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
             landmarkName = "tapSuffix3PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1256,8 +1031,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1401"
-            endingLineNumber = "1401"
+            startingLineNumber = "1412"
+            endingLineNumber = "1412"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1272,8 +1047,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1500"
-            endingLineNumber = "1500"
+            startingLineNumber = "1511"
+            endingLineNumber = "1511"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1288,8 +1063,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1519"
-            endingLineNumber = "1519"
+            startingLineNumber = "1530"
+            endingLineNumber = "1530"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1304,8 +1079,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1538"
-            endingLineNumber = "1538"
+            startingLineNumber = "1549"
+            endingLineNumber = "1549"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1320,8 +1095,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1611"
-            endingLineNumber = "1611"
+            startingLineNumber = "1622"
+            endingLineNumber = "1622"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1336,8 +1111,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2200"
-            endingLineNumber = "2200"
+            startingLineNumber = "2211"
+            endingLineNumber = "2211"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1371,118 +1146,6 @@
             startingLineNumber = "543"
             endingLineNumber = "543"
             landmarkName = "loadMovie(withRoot:withPrefix:withPrefix2:withSuffix2:withSuffix3:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14F9F458-E618-4D6F-B4C1-C5D00388FEBB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1439"
-            endingLineNumber = "1439"
-            landmarkName = "pickerView(_:titleForRow:forComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E5E66992-054C-4AE2-A98B-D911641E4013"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1550"
-            endingLineNumber = "1550"
-            landmarkName = "pickerView(_:viewForRow:forComponent:reusing:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F185D934-510F-47C5-AD86-A8849A103706"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2035"
-            endingLineNumber = "2035"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DEF7BA44-29EA-4757-A95E-FB89ED7AFA42"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2059"
-            endingLineNumber = "2059"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "59E78BF5-735C-409E-A99D-7CCF4502F4F0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "632"
-            endingLineNumber = "632"
-            landmarkName = "loadRandomData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1332E72-2566-497B-B5A0-7852F92925B4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/SplitedPicker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1401"
-            endingLineNumber = "1401"
-            landmarkName = "wordform()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A7D442F-8E5E-40E1-9A54-5FED75C321C1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
-            landmarkName = "loadwordFromDB(withWord:prefix2:root:suffix1:suffix2:suffix3:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

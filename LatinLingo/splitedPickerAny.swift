@@ -263,27 +263,31 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         suffixswipeupGesture.delegate = self
         suffixswipeupGesture.direction = .down
         self.suffixOverlayBtn.addGestureRecognizer(suffixswipeupGesture)
-       // loadIntialData()
+        loadIntialData()
     }
     //for landscape mode
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .landscapeRight
-        UIDevice.current.setValue( UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation()
-        loadIntialData()
+        //        let appDel = UIApplication.shared.delegate as! AppDelegate
+        //        appDel.currentOrientation = .landscapeRight
+        //        UIDevice.current.setValue( UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        //        UIViewController.attemptRotationToDeviceOrientation()
+        
     }
-
+    
     //in viewWillDisappear rotate to portrait can not fix the bug
-
-
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        viewWidthSettings()
+    }
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .portrait
-        UIDevice.current.setValue( UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation() //must call
+        //        let appDel = UIApplication.shared.delegate as! AppDelegate
+        //        appDel.currentOrientation = .portrait
+        //        UIDevice.current.setValue( UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        //        UIViewController.attemptRotationToDeviceOrientation() //must call
         super.dismiss(animated: true, completion: nil)
     }
     
@@ -345,12 +349,7 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
                 wordArrayDB.append(item.word)
             }
         }
-       if UIDevice.current.orientation.isLandscape {
-            deviceScreenWidth = UIScreen.main.bounds.height
-        } else {
-            deviceScreenWidth = UIScreen.main.bounds.width
-        }
-        
+        deviceScreenWidth = UIScreen.main.bounds.width
         //deviceScreenWidth/3
         pickerviewWidth = 40
         picker1Leading.constant = 40
@@ -364,16 +363,27 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
         rootBtn.alpha = 0.0
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.0,
-                       options: [UIView.AnimationOptions.curveLinear,
-                                 UIView.AnimationOptions.repeat,
-                                 UIView.AnimationOptions.autoreverse],
-                       animations: { self.rootBtn.alpha = 1.0 },
-                       completion: nil)
+        self.rootBtn.alpha = 1.0
+//        UIView.animate(withDuration: 1.0,
+//                       delay: 0.0,
+//                       options: [UIView.AnimationOptions.curveLinear,
+//                                 UIView.AnimationOptions.repeat,
+//                                 UIView.AnimationOptions.autoreverse],
+//                       animations: { self.rootBtn.alpha = 1.0 },
+//                       completion: nil)
         self.view.layoutIfNeeded()
     }
-    
+    func viewWidthSettings() {
+        //        if UIDevice.current.orientation.isLandscape {
+        //                   deviceScreenWidth = UIScreen.main.bounds.height
+        //               } else {
+        //                   deviceScreenWidth = UIScreen.main.bounds.width
+        //               }
+        deviceScreenWidth = UIScreen.main.bounds.width
+        picker1Width.constant = (deviceScreenWidth - 60)/3
+        picker3Width.constant = (deviceScreenWidth - 60)/3
+        picker6Width.constant = (deviceScreenWidth - 60)/3
+    }
     //MARK: PopUpView Ations
     @IBAction func meanigpopupACtion(_ sender: UIButton) {
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
@@ -516,7 +526,7 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
             items = DBManager.shared.loadMovie(withRoot: rootValue as NSString)
             testArr.removeAllObjects()
             didselectStatus = false
-           
+            
             if let id = resultLbl.text {
                 DBManager.shared.loadMovie(withWordSynonym: id, completionHandler: { (movie) in
                     DispatchQueue.main.async {
@@ -524,35 +534,35 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
                             if movie?.synonym != "" {
                                 self.nosynonymLbl.isHidden = true
                                 self.templateList.isHidden = false
-                            self.MeaningTextView.text = movie?.synonym
-                            for var i in (0..<self.items.count) {
-                                if self.items[i].synonym != ""{
-                                if self.testArr.count < 4 {
-                                if self.items[i].synonym != movie?.synonym{
-                                    self.testArr.add(self.items[i].synonym)
-                                } else if self.items[self.items.count-1].synonym != movie?.synonym{
-                                    self.testArr.add(self.items[self.items.count-1].synonym)
-                                    
-                                    }
+                                self.MeaningTextView.text = movie?.synonym
+                                for var i in (0..<self.items.count) {
+                                    if self.items[i].synonym != ""{
+                                        if self.testArr.count < 4 {
+                                            if self.items[i].synonym != movie?.synonym{
+                                                self.testArr.add(self.items[i].synonym)
+                                            } else if self.items[self.items.count-1].synonym != movie?.synonym{
+                                                self.testArr.add(self.items[self.items.count-1].synonym)
+                                                
+                                            }
+                                        }
                                     }
                                 }
+                                // self.testArr.add((movie?.synonym)! as String)
+                                if self.testArr.contains((movie?.synonym)! as String){
+                                }
+                                else{
+                                    let   random1 :Int = Int(arc4random_uniform(4))
+                                    self.testArr.removeObject(at: random1)
+                                    self.testArr.insert((movie?.synonym)! as String, at: random1)
+                                }
+                                self.templateList.reloadData()
                             }
-                           // self.testArr.add((movie?.synonym)! as String)
-                            if self.testArr.contains((movie?.synonym)! as String){
-                            }
-                            else{
-                                let   random1 :Int = Int(arc4random_uniform(4))
-                                self.testArr.removeObject(at: random1)
-                                self.testArr.insert((movie?.synonym)! as String, at: random1)
-                            }
-                            self.templateList.reloadData()
-                        }
                             else{
                                 self.nosynonymLbl.isHidden = false
                                 self.templateList.isHidden = true
                             }
-                        
-                     }
+                            
+                        }
                     }
                 })
             }
@@ -715,10 +725,10 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     @objc func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix3Value != ""{
-//            var myStringArr = suffix3Value.components(separatedBy: " ")
-//            let id = myStringArr[0]
+            //            var myStringArr = suffix3Value.components(separatedBy: " ")
+            //            let id = myStringArr[0]
             let id = suffix3Value
-
+            
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
                 DispatchQueue.main.async {
                     if movie != nil {

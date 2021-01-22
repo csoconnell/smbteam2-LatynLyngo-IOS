@@ -25,14 +25,13 @@ func startLoader (view: UIView, loadtext: String) {
     blurEffectView.frame = view.bounds
     blurEffectView.alpha = 0.5
     view.addSubview(blurEffectView)
-    if potrait == false{
+    if UIDevice.current.orientation.isLandscape {
         overLay.frame = CGRect(x:0,y:0,width:screen_size.height,height:screen_size.width)
         let frame = CGRect(x: view.center.x-20, y: view.center.y-20, width: 40, height: 40)
         nvactivityIndicator = NVActivityIndicatorView(frame: frame,
                                                       type: .ballSpinFadeLoader)
         
-    }
-    else{
+    } else {
         overLay.frame = CGRect(x:0,y:0,width:screen_size.width,height:screen_size.height)
         nvactivityIndicator = NVActivityIndicatorView(frame:CGRect(x: view.center.x-20, y: view.center.y-20,width:activityViewSize,height:activityViewSize), type: .ballSpinFadeLoader)
         

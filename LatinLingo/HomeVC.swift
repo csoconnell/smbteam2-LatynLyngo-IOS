@@ -71,7 +71,6 @@
             shared.meaningList = meaningList
         }
         self.present(messageVC, animated: false, completion: nil)
-        
     }
     
     @IBAction func navigationAction(_ sender: UIButton) {
@@ -84,7 +83,6 @@
         shared.ModeValue = 3
         let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationPassController") as! NavigationPassController
         self.present(messageVC, animated: false, completion: nil)
-        
     }
     
     // MARK: View lifecycle
@@ -98,7 +96,7 @@
             Alamofire.request( "\(kBaseURLClient)get_word_list").response {
                 response in
                 do {
-                    print(response.data!)
+                    print("\(kBaseURLClient)get_word_list")
                     let responseObject = try JSONSerialization.jsonObject(with: response.data!, options: []) as! [String:AnyObject]
                     let param =
                         responseObject as NSDictionary

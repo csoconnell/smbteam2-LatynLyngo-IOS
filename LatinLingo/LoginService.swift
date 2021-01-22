@@ -22,11 +22,7 @@ class LoginService: NSObject {
     
     func LoginServiceCall(serverUrl:NSString)
     {
-        
-        
-        
-        
-        Alamofire.request("http://10.10.10.254/latin_lingo/api/client/get_word_list").response {
+         Alamofire.request("http://10.10.10.254/latin_lingo/api/client/get_word_list").response {
             response in
             do {
                 let responseObject = try JSONSerialization.jsonObject(with: response.data!, options: []) as! [String:AnyObject]

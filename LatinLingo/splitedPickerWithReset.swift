@@ -317,22 +317,22 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
     }
     //for landscape mode
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .landscapeRight
-        UIDevice.current.setValue( UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation()
-    }
-
-    //in viewWillDisappear rotate to portrait can not fix the bug
-
-
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+////        let appDel = UIApplication.shared.delegate as! AppDelegate
+////        appDel.currentOrientation = .landscapeRight
+////        UIDevice.current.setValue( UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+////        UIViewController.attemptRotationToDeviceOrientation()
+//    }
+//
+//    //in viewWillDisappear rotate to portrait can not fix the bug
+//
+//
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.currentOrientation = .portrait
-        UIDevice.current.setValue( UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation() //must call
+//        let appDel = UIApplication.shared.delegate as! AppDelegate
+//        appDel.currentOrientation = .portrait
+//        UIDevice.current.setValue( UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+//        UIViewController.attemptRotationToDeviceOrientation() //must call
         super.dismiss(animated: true, completion: nil)
     }
     @IBAction func resetbtnClicked(_ sender: UIButton) {
@@ -411,13 +411,7 @@ class splitedPickerWithReset: UIViewController, UIPickerViewDataSource, UIPicker
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
         rootBtn.alpha = 0.0
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.0,
-                       options: [UIView.AnimationOptions.curveLinear,
-                                 UIView.AnimationOptions.repeat,
-                                 UIView.AnimationOptions.autoreverse],
-                       animations: { self.rootBtn.alpha = 1.0 },
-                       completion: nil)
+        
         self.view.layoutIfNeeded()
     }
     

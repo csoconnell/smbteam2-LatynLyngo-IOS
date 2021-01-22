@@ -39,7 +39,6 @@
 		58362A641E9534890069C913 /* ChalkboardSE-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */; };
 		58362A651E95348B0069C913 /* ChalkboardSE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */; };
 		58362A671E9538060069C913 /* BanglaSangamMN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58362A661E9538060069C913 /* BanglaSangamMN.ttf */; };
-		583D333E25AEFB3800E545EE /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D333D25AEFB3800E545EE /* SplashVC.swift */; };
 		583D755B25AC0F430097CE1D /* passDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755025AC0F410097CE1D /* passDataVC.swift */; };
 		583D755C25AC0F430097CE1D /* splitedPickerWithReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */; };
 		583D755D25AC0F430097CE1D /* SelectAnyModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */; };
@@ -130,7 +129,6 @@
 		582561FA1E31C59000526558 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelz.ttf; path = fonts/corbelz.ttf; sourceTree = "<group>"; };
 		582562011E31E02900526558 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		58362A661E9538060069C913 /* BanglaSangamMN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BanglaSangamMN.ttf; sourceTree = "<group>"; };
-		583D333D25AEFB3800E545EE /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		583D755025AC0F410097CE1D /* passDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = passDataVC.swift; path = LatinLingo/passDataVC.swift; sourceTree = "<group>"; };
 		583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = splitedPickerWithReset.swift; path = LatinLingo/splitedPickerWithReset.swift; sourceTree = "<group>"; };
 		583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectAnyModeVC.swift; path = LatinLingo/SelectAnyModeVC.swift; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 		58021ED01E278A1400C38624 /* LLViewController */ = {
 			isa = PBXGroup;
 			children = (
-				583D333D25AEFB3800E545EE /* SplashVC.swift */,
 				583D755725AC0F420097CE1D /* WelcomeVC.swift */,
 				58424DA51E448C1900F067BC /* LoginViewController.swift */,
 				581B51F81E2670170005D53A /* HomeVC.swift */,
@@ -669,7 +666,6 @@
 				58021EDD1E2792B600C38624 /* HelperClass.swift in Sources */,
 				5859DA031E4D973C0008E1A1 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
 				58FCC7001E4CB02A00C852AE /* MTPopUp.swift in Sources */,
-				583D333E25AEFB3800E545EE /* SplashVC.swift in Sources */,
 				5849CED01E2894FF00859AE2 /* FMDatabaseAdditions.m in Sources */,
 				583D756225AC0F430097CE1D /* WelcomeVC.swift in Sources */,
 				5849CED51E28954E00859AE2 /* DBManager.swift in Sources */,
@@ -842,7 +838,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -869,7 +865,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
