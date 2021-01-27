@@ -21,9 +21,9 @@ class passVc: UIViewController,listRefresh {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if SharedInstance.sharedInstance.ModeValue == 2 {
+     //   if SharedInstance.sharedInstance.ModeValue == 2 {
             let view : SplitedPicker = segue.destination as! SplitedPicker
             view.delegate=self
-        }
+      //  }
     }
 }

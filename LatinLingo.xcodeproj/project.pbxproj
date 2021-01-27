@@ -115,7 +115,7 @@
 		5802B5A81E4B6E7C00FE9D84 /* HARNGTON.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HARNGTON.TTF; sourceTree = "<group>"; };
 		58067B571E4A1969005CC1E6 /* loginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
 		58067B591E4A28E5005CC1E6 /* RegstrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegstrationModel.swift; sourceTree = "<group>"; };
-		581B51F31E2670170005D53A /* LatinLingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LatinLingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		581B51F31E2670170005D53A /* Latyn Lyngo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latyn Lyngo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		581B51F61E2670170005D53A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		581B51F81E2670170005D53A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = LatinLingo/HomeVC.swift; sourceTree = "<group>"; };
 		581B51FB1E2670170005D53A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 		581B51F41E2670170005D53A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				581B51F31E2670170005D53A /* LatinLingo.app */,
+				581B51F31E2670170005D53A /* Latyn Lyngo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 				58021EE11E27943300C38624 /* LLExtensions */,
 				58021EE41E27A08600C38624 /* LLHelperClasses */,
 				58067B521E4A07FD005CC1E6 /* LLServerConnection */,
-				5883CEF61E6007F000D74A37 /* LLMP3Files */,
+				5883CEF61E6007F000D74A37 /* LLMP3FilesAndImages */,
 				5883CEF71E60081900D74A37 /* LLCell */,
 				5802B5A51E4B50E400FE9D84 /* LLModel Class */,
 				5883CEF81E6008D500D74A37 /* LLBridgeHeader */,
@@ -379,9 +379,6 @@
 				581B51FA1E2670170005D53A /* Main.storyboard */,
 				589EF0641E4C60230024CA08 /* LaunchScreen.storyboard */,
 				581B52001E2670170005D53A /* Assets.xcassets */,
-				5856BCFD25AF1C06000325B6 /* splashImg.png */,
-				5856BCFE25AF1C07000325B6 /* splashImg@2x.png */,
-				5856BCFF25AF1C08000325B6 /* splashImg@3x.png */,
 				589EF0621E4C5FBB0024CA08 /* Images.xcassets */,
 			);
 			path = LatinLingo;
@@ -439,13 +436,16 @@
 			name = LLFMDB;
 			sourceTree = "<group>";
 		};
-		5883CEF61E6007F000D74A37 /* LLMP3Files */ = {
+		5883CEF61E6007F000D74A37 /* LLMP3FilesAndImages */ = {
 			isa = PBXGroup;
 			children = (
+				5856BCFD25AF1C06000325B6 /* splashImg.png */,
+				5856BCFE25AF1C07000325B6 /* splashImg@2x.png */,
+				5856BCFF25AF1C08000325B6 /* splashImg@3x.png */,
 				585CB2EF1E6448CD00915467 /* Clapp.mp3 */,
 				585CB2F01E6448CD00915467 /* Tick.mp3 */,
 			);
-			name = LLMP3Files;
+			name = LLMP3FilesAndImages;
 			sourceTree = "<group>";
 		};
 		5883CEF71E60081900D74A37 /* LLCell */ = {
@@ -495,7 +495,7 @@
 			);
 			name = LatinLingo;
 			productName = LatinLingo;
-			productReference = 581B51F31E2670170005D53A /* LatinLingo.app */;
+			productReference = 581B51F31E2670170005D53A /* Latyn Lyngo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -838,11 +838,11 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_dev;
+				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_Dev_25Jan2021;
 				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -865,11 +865,11 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_adhoc;
+				PROVISIONING_PROFILE_SPECIFIER = LatinLingo_appstore;
 				SWIFT_OBJC_BRIDGING_HEADER = "LatinLingo/LatinLingo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};

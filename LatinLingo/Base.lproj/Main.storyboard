@@ -30,7 +30,7 @@
         <!--Login View Controller-->
         <scene sceneID="8ce-Lj-13V">
             <objects>
-                <viewController id="k9l-7q-EcI" customClass="LoginViewController" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k9l-7q-EcI" customClass="LoginViewController" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mCT-3U-qfo"/>
                         <viewControllerLayoutGuide type="bottom" id="Xxe-NI-bsV"/>
@@ -163,7 +163,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxU-Eh-JxY">
-                                        <rect key="frame" x="157" y="156.5" width="61.5" height="24"/>
+                                        <rect key="frame" x="159" y="156.5" width="57" height="24"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="20"/>
                                         <color key="textColor" red="0.6588235294" green="0.4941176471" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -175,19 +175,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newuser" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-M1-cqV">
-                                        <rect key="frame" x="225.5" y="228.5" width="67.5" height="20"/>
+                                        <rect key="frame" x="232" y="228.5" width="64" height="20"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="17"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.87450980389999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4N-e4-dYW">
-                                        <rect key="frame" x="295" y="228" width="60" height="21"/>
+                                        <rect key="frame" x="298" y="228" width="57" height="21"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="18"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.87450980389999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaX-Iz-3p2">
-                                        <rect key="frame" x="225.5" y="223.5" width="129.5" height="30"/>
+                                        <rect key="frame" x="232" y="223.5" width="123" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rnw-6T-MtU"/>
                                         </constraints>
@@ -291,7 +291,7 @@
         <!--HomeVC-->
         <scene sceneID="Jxn-ox-Kmu">
             <objects>
-                <viewController id="63s-lQ-7Di" customClass="HomeVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="63s-lQ-7Di" customClass="HomeVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AvJ-ZL-5wY"/>
                         <viewControllerLayoutGuide type="bottom" id="hCd-gm-SsA"/>
@@ -440,7 +440,7 @@
                                 <state key="normal" image="dash_icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAH-PH-3q7">
-                                <rect key="frame" x="117" y="15" width="141.5" height="30"/>
+                                <rect key="frame" x="122" y="15" width="131.5" height="30"/>
                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -521,7 +521,7 @@
         <!--SettingsVC-->
         <scene sceneID="ASv-nH-xCZ">
             <objects>
-                <viewController id="gBg-Qr-dAX" customClass="SettingsVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gBg-Qr-dAX" customClass="SettingsVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ysj-Pp-eKc"/>
                         <viewControllerLayoutGuide type="bottom" id="I3D-sO-xhB"/>
@@ -542,7 +542,7 @@
                                 <state key="normal" image="dash_icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-6f-NBf">
-                                <rect key="frame" x="141.5" y="15" width="92" height="30"/>
+                                <rect key="frame" x="144" y="15" width="87.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rel-If-jEi"/>
                                 </constraints>
@@ -555,7 +555,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SidemenuCell" rowHeight="58" id="ajB-0G-jVv" customClass="SidemenuCell" customModule="LatinLingo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SidemenuCell" rowHeight="58" id="ajB-0G-jVv" customClass="SidemenuCell" customModule="Latyn_Lyngo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="303" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ajB-0G-jVv" id="PZ7-LC-vlX">
@@ -670,7 +670,7 @@
         <!--PackegesVC-->
         <scene sceneID="Vs4-o1-xqW">
             <objects>
-                <viewController id="dnw-OM-jAE" customClass="PackegesVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dnw-OM-jAE" customClass="PackegesVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tk0-00-5uT"/>
                         <viewControllerLayoutGuide type="bottom" id="zoY-GZ-YQL"/>
@@ -742,7 +742,7 @@
         <!--Pass DataVC-->
         <scene sceneID="l2L-AE-MSZ">
             <objects>
-                <viewController storyboardIdentifier="passDataVC" id="aug-o7-DLv" customClass="passDataVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="passDataVC" id="aug-o7-DLv" customClass="passDataVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5l8-Ny-IlO"/>
                         <viewControllerLayoutGuide type="bottom" id="caS-qS-IxX"/>
@@ -764,7 +764,7 @@
         <!--Pass Vc-->
         <scene sceneID="G2S-Sp-miV">
             <objects>
-                <viewController id="6u2-qX-fge" customClass="passVc" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6u2-qX-fge" customClass="passVc" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5w5-oB-z1l"/>
                         <viewControllerLayoutGuide type="bottom" id="8Bw-kD-a88"/>
@@ -786,7 +786,7 @@
         <!--Splited Picker-->
         <scene sceneID="EHK-rH-JHB">
             <objects>
-                <viewController storyboardIdentifier="SplitedPicker" id="gfO-uu-Buf" customClass="SplitedPicker" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplitedPicker" id="gfO-uu-Buf" customClass="SplitedPicker" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zg4-zl-E83"/>
                         <viewControllerLayoutGuide type="bottom" id="9Jj-8A-L1I"/>
@@ -1399,20 +1399,26 @@
                                     <constraint firstItem="9wP-f2-J5o" firstAttribute="leading" secondItem="ris-OT-JcN" secondAttribute="leading" id="yXS-zV-VFc"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14C-0R-ae4">
-                                <rect key="frame" x="96" y="3" width="183" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14C-0R-ae4">
+                                <rect key="frame" x="160" y="4" width="55" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="HFl-fc-Xgk"/>
-                                    <constraint firstAttribute="width" constant="183" id="ovZ-Rc-g1H"/>
+                                    <constraint firstAttribute="width" constant="55" id="ovZ-Rc-g1H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="25"/>
-                                <state key="normal" image="refresh">
+                                <state key="normal" image="alertBtn-BG">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="resetbtnClicked:" destination="gfO-uu-Buf" eventType="touchUpInside" id="i1x-BM-okS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Spin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG0-mg-uvg">
+                                <rect key="frame" x="172" y="20" width="30" height="11"/>
+                                <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="16"/>
+                                <color key="textColor" red="0.71092396970000005" green="0.54862380030000002" blue="0.467776835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-hV-nhE">
                                 <rect key="frame" x="0.0" y="0.0" width="64" height="55"/>
                                 <constraints>
@@ -1533,7 +1539,7 @@
                                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kSK-ZE-ntM" customClass="GalleryCollectionCell" customModule="LatinLingo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kSK-ZE-ntM" customClass="GalleryCollectionCell" customModule="Latyn_Lyngo" customModuleProvider="target">
                                                         <rect key="frame" x="27.5" y="0.0" width="200" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1724,7 +1730,7 @@
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="y4f-UV-vDN">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="EtH-fW-xiW"/>
                                                     <constraint firstAttribute="width" constant="107" id="WKv-rT-gTX"/>
@@ -1771,7 +1777,7 @@
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-Li-J7g">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="IUq-Lj-qOy"/>
                                                     <constraint firstAttribute="width" constant="107" id="b3p-Qw-6Im"/>
@@ -1848,9 +1854,11 @@
                             <constraint firstItem="rsJ-TE-nvv" firstAttribute="centerX" secondItem="Azj-R2-qUh" secondAttribute="centerX" id="Aeh-96-wsh"/>
                             <constraint firstAttribute="trailing" secondItem="Bzz-4x-WhR" secondAttribute="trailing" id="Bgy-BT-RVM"/>
                             <constraint firstItem="ris-OT-JcN" firstAttribute="leading" secondItem="LkT-Gj-VR7" secondAttribute="leading" id="Bi9-DF-uM5"/>
+                            <constraint firstItem="14C-0R-ae4" firstAttribute="centerY" secondItem="gQa-hV-nhE" secondAttribute="centerY" constant="-1" id="CS8-sz-8vB"/>
                             <constraint firstItem="Azj-R2-qUh" firstAttribute="centerY" secondItem="Jum-Ik-5OI" secondAttribute="centerY" id="CVb-ol-meJ"/>
                             <constraint firstItem="Jum-Ik-5OI" firstAttribute="height" secondItem="NBZ-Ff-Ygt" secondAttribute="height" id="Cah-0b-fVY"/>
                             <constraint firstItem="hlR-Hi-2sd" firstAttribute="leading" secondItem="NBZ-Ff-Ygt" secondAttribute="leading" id="ETY-oj-4YZ"/>
+                            <constraint firstItem="pG0-mg-uvg" firstAttribute="centerY" secondItem="14C-0R-ae4" secondAttribute="centerY" constant="-1" id="G8v-vv-vm6"/>
                             <constraint firstItem="Bzz-4x-WhR" firstAttribute="height" secondItem="Q55-XC-wEm" secondAttribute="height" multiplier="0.55" id="Haj-7y-Sk7"/>
                             <constraint firstItem="Azj-R2-qUh" firstAttribute="leading" secondItem="Jum-Ik-5OI" secondAttribute="trailing" id="I5W-hJ-AxT"/>
                             <constraint firstItem="BAj-Hv-Oe9" firstAttribute="trailing" secondItem="Jum-Ik-5OI" secondAttribute="trailing" id="J0L-EJ-Rcc"/>
@@ -1892,7 +1900,7 @@
                             <constraint firstItem="hlR-Hi-2sd" firstAttribute="trailing" secondItem="NBZ-Ff-Ygt" secondAttribute="trailing" id="jrq-NR-Mbi"/>
                             <constraint firstAttribute="trailing" secondItem="u6a-Ro-rmC" secondAttribute="trailing" id="kBY-fL-N7R"/>
                             <constraint firstItem="gWz-Lm-J7Q" firstAttribute="height" secondItem="NBZ-Ff-Ygt" secondAttribute="height" id="kGj-93-eNV"/>
-                            <constraint firstItem="14C-0R-ae4" firstAttribute="centerX" secondItem="PxA-pi-JF4" secondAttribute="centerX" id="ldj-Ix-0Tv"/>
+                            <constraint firstItem="14C-0R-ae4" firstAttribute="centerX" secondItem="Q55-XC-wEm" secondAttribute="centerX" id="ldj-Ix-0Tv"/>
                             <constraint firstItem="o36-Tu-4I7" firstAttribute="trailing" secondItem="gWz-Lm-J7Q" secondAttribute="trailing" id="mLo-0T-aME"/>
                             <constraint firstItem="o36-Tu-4I7" firstAttribute="centerX" secondItem="gWz-Lm-J7Q" secondAttribute="centerX" id="nZb-lj-jeG"/>
                             <constraint firstItem="XO9-NB-JG2" firstAttribute="leading" secondItem="Q55-XC-wEm" secondAttribute="leading" id="ndg-c9-J4T"/>
@@ -1903,6 +1911,7 @@
                             <constraint firstItem="ZbI-a8-ef5" firstAttribute="leading" secondItem="Q55-XC-wEm" secondAttribute="leading" id="ppT-4Z-QpK"/>
                             <constraint firstItem="u6a-Ro-rmC" firstAttribute="centerX" secondItem="Q55-XC-wEm" secondAttribute="centerX" id="qEk-uw-JrW"/>
                             <constraint firstAttribute="trailing" secondItem="dns-vG-L35" secondAttribute="trailing" id="qRM-F7-WMJ"/>
+                            <constraint firstItem="pG0-mg-uvg" firstAttribute="centerX" secondItem="14C-0R-ae4" secondAttribute="centerX" id="qh5-EA-tht"/>
                             <constraint firstItem="Jum-Ik-5OI" firstAttribute="leading" secondItem="NBZ-Ff-Ygt" secondAttribute="trailing" id="rfO-3T-sfm"/>
                             <constraint firstAttribute="trailing" secondItem="ZbI-a8-ef5" secondAttribute="trailing" id="s2c-f0-4to"/>
                             <constraint firstItem="ris-OT-JcN" firstAttribute="top" secondItem="LkT-Gj-VR7" secondAttribute="bottom" constant="-5" id="tL8-4O-wfW"/>
@@ -1911,7 +1920,6 @@
                             <constraint firstItem="By6-ky-6hO" firstAttribute="top" secondItem="AlW-KQ-s1A" secondAttribute="bottom" constant="5" id="voW-GW-Bi5"/>
                             <constraint firstItem="73w-1r-4Aq" firstAttribute="leading" secondItem="Jum-Ik-5OI" secondAttribute="trailing" id="vzc-UC-4na"/>
                             <constraint firstItem="Bzz-4x-WhR" firstAttribute="leading" secondItem="Q55-XC-wEm" secondAttribute="leading" id="xuR-8S-lBk"/>
-                            <constraint firstItem="14C-0R-ae4" firstAttribute="top" secondItem="zg4-zl-E83" secondAttribute="bottom" constant="3" id="y0a-A9-wq0"/>
                             <constraint firstItem="NBZ-Ff-Ygt" firstAttribute="leading" secondItem="Q55-XC-wEm" secondAttribute="leading" id="ydS-yZ-z5D"/>
                         </constraints>
                     </view>
@@ -2002,12 +2010,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGa-bU-TGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6991" y="-913"/>
+            <point key="canvasLocation" x="6989.6000000000004" y="-913.49325337331345"/>
         </scene>
         <!--About Vc-->
         <scene sceneID="HZx-TG-7yk">
             <objects>
-                <viewController storyboardIdentifier="AboutVc" id="sUz-L2-en9" customClass="AboutVc" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVc" id="sUz-L2-en9" customClass="AboutVc" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xo9-0X-sZb"/>
                         <viewControllerLayoutGuide type="bottom" id="Qej-4p-tT1"/>
@@ -2095,7 +2103,7 @@
         <!--Side MenuVC-->
         <scene sceneID="agZ-eH-bwd">
             <objects>
-                <viewController id="1ba-3X-fod" customClass="SideMenuVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1ba-3X-fod" customClass="SideMenuVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WmU-zX-DkC"/>
                         <viewControllerLayoutGuide type="bottom" id="coJ-6Z-5HC"/>
@@ -2119,7 +2127,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SidemenuCell" rowHeight="58" id="l3A-eE-IoR" customClass="SidemenuCell" customModule="LatinLingo" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SidemenuCell" rowHeight="58" id="l3A-eE-IoR" customClass="SidemenuCell" customModule="Latyn_Lyngo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="260" height="58"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3A-eE-IoR" id="xu7-x3-KQj">
@@ -2244,7 +2252,7 @@
         <!--Registration View Controller-->
         <scene sceneID="1if-Bx-VLG">
             <objects>
-                <viewController id="JKv-kQ-p4P" customClass="RegistrationViewController" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JKv-kQ-p4P" customClass="RegistrationViewController" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6fP-L3-sUb"/>
                         <viewControllerLayoutGuide type="bottom" id="Yms-fm-cwh"/>
@@ -2452,7 +2460,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGNUP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtJ-E9-Bm5">
-                                        <rect key="frame" x="146" y="285.5" width="83" height="26"/>
+                                        <rect key="frame" x="149" y="285.5" width="77.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="22"/>
                                         <color key="textColor" red="0.6588235294" green="0.4941176471" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2472,19 +2480,19 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxO-kU-hKf">
-                                                <rect key="frame" x="40" y="2" width="60.5" height="34"/>
+                                                <rect key="frame" x="40" y="2" width="58.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="19"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.87450980389999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5su-BS-ugB">
-                                                <rect key="frame" x="102.5" y="7.5" width="165.5" height="23"/>
+                                                <rect key="frame" x="100.5" y="7.5" width="162.5" height="23"/>
                                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="19"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.87450980389999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ1-ul-MYu">
-                                                <rect key="frame" x="40" y="2" width="228" height="34"/>
+                                                <rect key="frame" x="40" y="2" width="223" height="34"/>
                                                 <connections>
                                                     <segue destination="sUz-L2-en9" kind="show" identifier="termsNservice" id="Roo-GE-BAs"/>
                                                 </connections>
@@ -2583,7 +2591,7 @@
         <!--Forget PasswordVC-->
         <scene sceneID="U7g-Kl-9i6">
             <objects>
-                <viewController id="0MX-HF-aYL" customClass="ForgetPasswordVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0MX-HF-aYL" customClass="ForgetPasswordVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zMv-LF-XKp"/>
                         <viewControllerLayoutGuide type="bottom" id="Mit-oA-Dc9"/>
@@ -2656,7 +2664,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il8-tx-xnd">
-                                        <rect key="frame" x="87.5" y="80.5" width="200" height="24"/>
+                                        <rect key="frame" x="92" y="80.5" width="191" height="24"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="20"/>
                                         <color key="textColor" red="0.6588235294" green="0.4941176471" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2736,7 +2744,7 @@
         <!--Change PasswordVC-->
         <scene sceneID="tQf-xP-Grx">
             <objects>
-                <viewController id="mfe-kd-jrr" customClass="ChangePasswordVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mfe-kd-jrr" customClass="ChangePasswordVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n4V-EH-L8t"/>
                         <viewControllerLayoutGuide type="bottom" id="PMt-Ij-la4"/>
@@ -2896,7 +2904,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANGE PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6l-D5-aYN">
-                                        <rect key="frame" x="87" y="159.5" width="201.5" height="24"/>
+                                        <rect key="frame" x="89.5" y="159.5" width="196.5" height="24"/>
                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="20"/>
                                         <color key="textColor" red="0.6588235294" green="0.4941176471" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2969,7 +2977,7 @@
         <!--ProfileVC-->
         <scene sceneID="Zy2-1n-xNi">
             <objects>
-                <viewController id="Sfi-b3-gew" customClass="ProfileVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sfi-b3-gew" customClass="ProfileVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xro-rg-ice"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ou-ws-fOf"/>
@@ -3106,7 +3114,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-DL-G5W">
-                                <rect key="frame" x="152.5" y="25" width="70.5" height="30"/>
+                                <rect key="frame" x="150.5" y="25" width="74.5" height="30"/>
                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3142,7 +3150,7 @@
         <!--InstructionVC-->
         <scene sceneID="tKe-EO-K5c">
             <objects>
-                <viewController storyboardIdentifier="InstructionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gMM-Xw-x3b" customClass="InstructionVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstructionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gMM-Xw-x3b" customClass="InstructionVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ckd-Hx-ndo"/>
                         <viewControllerLayoutGuide type="bottom" id="8oA-4V-FSh"/>
@@ -3188,32 +3196,32 @@
                                                 <rect key="frame" x="5" y="10" width="312" height="198"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The game has three modes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-tb-e9O">
-                                                        <rect key="frame" x="2" y="8" width="287" height="27"/>
+                                                        <rect key="frame" x="2" y="8" width="270" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Study Random" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYf-gE-0ez">
-                                                        <rect key="frame" x="2" y="43" width="214.5" height="27"/>
+                                                        <rect key="frame" x="2" y="43" width="209" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington-Bold" family="Harrington Bold" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nonsense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTN-Me-8Ez">
-                                                        <rect key="frame" x="2" y="74" width="103.5" height="27"/>
+                                                        <rect key="frame" x="2" y="74" width="99" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington-Bold" family="Harrington Bold" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Study by Root" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-hd-0Fi">
-                                                        <rect key="frame" x="2" y="105" width="208" height="27"/>
+                                                        <rect key="frame" x="2" y="105" width="205" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington-Bold" family="Harrington Bold" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The method of play for each mode follows:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-8w-e7m">
-                                                        <rect key="frame" x="2" y="146" width="440" height="27"/>
+                                                        <rect key="frame" x="2" y="146" width="422" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nonsense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6Z-xq-iof">
-                                                        <rect key="frame" x="2" y="179" width="103.5" height="27"/>
+                                                        <rect key="frame" x="2" y="179" width="99" height="27"/>
                                                         <fontDescription key="fontDescription" name="Harrington-Bold" family="Harrington Bold" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3390,7 +3398,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Font SettingVC-->
         <scene sceneID="gBk-Jx-DWa">
             <objects>
-                <viewController id="QXA-9A-0L3" customClass="FontSettingVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QXA-9A-0L3" customClass="FontSettingVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xg7-mt-WUb"/>
                         <viewControllerLayoutGuide type="bottom" id="tc8-rd-TlB"/>
@@ -3420,7 +3428,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brick Font Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIC-7O-p0y">
-                                <rect key="frame" x="81" y="15" width="213.5" height="30"/>
+                                <rect key="frame" x="83" y="15" width="209" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Lf2-IL-3Sh"/>
                                 </constraints>
@@ -3563,7 +3571,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Navigation Controller-->
         <scene sceneID="WSt-63-G1f">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bnN-bO-r8H" customClass="NavigationController" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bnN-bO-r8H" customClass="NavigationController" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xl6-Qc-DGN">
                         <autoresizingMask key="autoresizingMask"/>
@@ -3580,7 +3588,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Navigation Pass Controller-->
         <scene sceneID="f1x-8F-uEb">
             <objects>
-                <navigationController storyboardIdentifier="NavigationPassController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dTz-J5-Pni" customClass="NavigationPassController" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationPassController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dTz-J5-Pni" customClass="NavigationPassController" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MIO-Ev-uFJ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -3597,7 +3605,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Splited Picker Any-->
         <scene sceneID="3eI-N0-bFn">
             <objects>
-                <viewController storyboardIdentifier="splitedPickerAny" id="kS2-qJ-nLi" customClass="splitedPickerAny" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splitedPickerAny" id="kS2-qJ-nLi" customClass="splitedPickerAny" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d4X-WU-ePg"/>
                         <viewControllerLayoutGuide type="bottom" id="TOh-3U-rH8"/>
@@ -4205,25 +4213,31 @@ Continue to study by choosing the root (same or different) with which you want t
                                     <constraint firstItem="d6p-L9-A8U" firstAttribute="leading" secondItem="rmg-qv-Uud" secondAttribute="leading" constant="10" id="zi0-ZX-Bko"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-p0-Y4m">
-                                <rect key="frame" x="96" y="3" width="183" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-p0-Y4m" userLabel="Restart Btn">
+                                <rect key="frame" x="160" y="9" width="55" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="CLh-M0-ahT"/>
-                                    <constraint firstAttribute="width" constant="183" id="ZkW-0i-t22"/>
+                                    <constraint firstAttribute="width" constant="55" id="ZkW-0i-t22"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="25"/>
-                                <state key="normal" image="refresh">
+                                <state key="normal" image="btnbg">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="resetbtnClicked:" destination="kS2-qJ-nLi" eventType="touchUpInside" id="Be1-6c-gmW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-xl-KAS">
+                                <rect key="frame" x="173" y="18.5" width="29.5" height="16"/>
+                                <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="16"/>
+                                <color key="textColor" red="0.71092396970000005" green="0.54862380030000002" blue="0.467776835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLF-tE-93P">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="55"/>
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="8P4-6t-BB9"/>
-                                    <constraint firstAttribute="width" constant="64" id="IS9-ix-YC1"/>
+                                    <constraint firstAttribute="width" constant="60" id="IS9-ix-YC1"/>
                                 </constraints>
                                 <state key="normal" image="back_icon">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -4339,7 +4353,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OQ0-IE-FSD" customClass="GalleryCollectionCell" customModule="LatinLingo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OQ0-IE-FSD" customClass="GalleryCollectionCell" customModule="Latyn_Lyngo" customModuleProvider="target">
                                                         <rect key="frame" x="27.5" y="0.0" width="200" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4530,7 +4544,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-kM-ml1">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="107" id="DPn-nN-Mn3"/>
                                                     <constraint firstAttribute="height" constant="28" id="rph-Z1-IAf"/>
@@ -4577,7 +4591,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-zs-aWi">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="3BY-KG-B9M"/>
                                                     <constraint firstAttribute="width" constant="107" id="BJk-gj-K5U"/>
@@ -4662,6 +4676,7 @@ Continue to study by choosing the root (same or different) with which you want t
                             <constraint firstItem="TOh-3U-rH8" firstAttribute="top" secondItem="ihW-PM-FTn" secondAttribute="bottom" id="FXF-ad-gUN"/>
                             <constraint firstItem="lJW-p0-Y4m" firstAttribute="centerX" secondItem="cQ1-md-pBy" secondAttribute="centerX" id="FYP-3o-USB"/>
                             <constraint firstItem="BKN-X6-ddD" firstAttribute="leading" secondItem="xkM-82-kpv" secondAttribute="leading" id="H8d-Ec-ihd"/>
+                            <constraint firstItem="n8A-xl-KAS" firstAttribute="centerY" secondItem="lJW-p0-Y4m" secondAttribute="centerY" id="Hs4-ax-XWs"/>
                             <constraint firstItem="dQ1-sv-WpD" firstAttribute="leading" secondItem="xkM-82-kpv" secondAttribute="leading" id="I4l-hH-ghi"/>
                             <constraint firstItem="Tt2-cu-mzc" firstAttribute="top" secondItem="1KM-8L-fOO" secondAttribute="bottom" constant="-5" id="IHY-o8-aab"/>
                             <constraint firstItem="trj-Yh-OnW" firstAttribute="centerY" secondItem="GkP-KE-U8E" secondAttribute="centerY" id="IqJ-sW-Nbt"/>
@@ -4671,7 +4686,6 @@ Continue to study by choosing the root (same or different) with which you want t
                             <constraint firstItem="YdM-G2-v6h" firstAttribute="top" secondItem="GkP-KE-U8E" secondAttribute="bottom" constant="-5" id="L73-VG-Q1S"/>
                             <constraint firstAttribute="trailing" secondItem="ihW-PM-FTn" secondAttribute="trailing" id="LHG-yh-XjP"/>
                             <constraint firstItem="1KM-8L-fOO" firstAttribute="height" secondItem="l3C-zG-HlU" secondAttribute="height" id="Ola-uW-CVI"/>
-                            <constraint firstItem="lJW-p0-Y4m" firstAttribute="top" secondItem="d4X-WU-ePg" secondAttribute="bottom" constant="3" id="Q31-dq-b4r"/>
                             <constraint firstItem="ukK-lc-jDW" firstAttribute="height" secondItem="1KM-8L-fOO" secondAttribute="height" id="Q4m-mu-ms2"/>
                             <constraint firstItem="p7Y-j2-fEP" firstAttribute="leading" secondItem="GkP-KE-U8E" secondAttribute="trailing" id="Rmi-pa-ndM"/>
                             <constraint firstItem="eRN-Mj-zr5" firstAttribute="height" secondItem="ukK-lc-jDW" secondAttribute="height" multiplier="0.75" id="RwC-iZ-xNz"/>
@@ -4700,6 +4714,7 @@ Continue to study by choosing the root (same or different) with which you want t
                             <constraint firstItem="ukK-lc-jDW" firstAttribute="centerY" secondItem="1KM-8L-fOO" secondAttribute="centerY" id="gmJ-fg-ytT"/>
                             <constraint firstItem="eRN-Mj-zr5" firstAttribute="leading" secondItem="ukK-lc-jDW" secondAttribute="leading" id="gx0-cg-QXd"/>
                             <constraint firstItem="rmg-qv-Uud" firstAttribute="leading" secondItem="HOs-HN-hF3" secondAttribute="leading" id="hTq-y9-KUg"/>
+                            <constraint firstItem="n8A-xl-KAS" firstAttribute="centerX" secondItem="lJW-p0-Y4m" secondAttribute="centerX" id="itR-GZ-KNO"/>
                             <constraint firstItem="Af0-ZA-CiX" firstAttribute="leading" secondItem="xkM-82-kpv" secondAttribute="leading" id="jX9-HJ-0A5"/>
                             <constraint firstItem="Tt2-cu-mzc" firstAttribute="centerX" secondItem="1KM-8L-fOO" secondAttribute="centerX" id="jpe-UE-YV7"/>
                             <constraint firstItem="2hW-df-XK3" firstAttribute="centerX" secondItem="trj-Yh-OnW" secondAttribute="centerX" id="kfE-Ke-FNf"/>
@@ -4718,6 +4733,7 @@ Continue to study by choosing the root (same or different) with which you want t
                             <constraint firstItem="dQ1-sv-WpD" firstAttribute="top" secondItem="l3C-zG-HlU" secondAttribute="bottom" id="uuh-zI-YHI"/>
                             <constraint firstItem="eRN-Mj-zr5" firstAttribute="trailing" secondItem="ukK-lc-jDW" secondAttribute="trailing" id="vU7-Pc-NQS"/>
                             <constraint firstItem="rmg-qv-Uud" firstAttribute="trailing" secondItem="HOs-HN-hF3" secondAttribute="trailing" id="w1r-aX-4VR"/>
+                            <constraint firstItem="lJW-p0-Y4m" firstAttribute="centerY" secondItem="gLF-tE-93P" secondAttribute="centerY" constant="-1" id="xXw-h2-ulg"/>
                             <constraint firstItem="YdM-G2-v6h" firstAttribute="trailing" secondItem="GkP-KE-U8E" secondAttribute="trailing" id="yD5-kD-9Kj"/>
                         </constraints>
                     </view>
@@ -4812,7 +4828,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Pass Data SolveVC-->
         <scene sceneID="ekH-sR-qFI">
             <objects>
-                <viewController storyboardIdentifier="passDataSolveVC" id="V1Q-12-BMJ" customClass="passDataSolveVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="passDataSolveVC" id="V1Q-12-BMJ" customClass="passDataSolveVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jFI-lh-v67"/>
                         <viewControllerLayoutGuide type="bottom" id="ujv-rn-LIk"/>
@@ -4834,7 +4850,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Splited Picker With Reset-->
         <scene sceneID="Si2-ka-uEX">
             <objects>
-                <viewController storyboardIdentifier="splitedPickerWithReset" id="9xY-qo-sBr" customClass="splitedPickerWithReset" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splitedPickerWithReset" id="9xY-qo-sBr" customClass="splitedPickerWithReset" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fsI-WM-ASq"/>
                         <viewControllerLayoutGuide type="bottom" id="eqX-I7-P66"/>
@@ -5587,7 +5603,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Ziu-68-hOn" customClass="GalleryCollectionCell" customModule="LatinLingo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Ziu-68-hOn" customClass="GalleryCollectionCell" customModule="Latyn_Lyngo" customModuleProvider="target">
                                                         <rect key="frame" x="17.5" y="0.0" width="300" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -5747,7 +5763,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="nS6-xn-cYH">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="8pB-Bu-hJ7"/>
                                                     <constraint firstAttribute="width" constant="107" id="fS6-UC-Ee1"/>
@@ -5793,7 +5809,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="8XG-lB-Rln">
-                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="9Zw-09-j62"/>
                                                     <constraint firstAttribute="width" constant="107" id="c9h-IO-7t9"/>
@@ -6019,7 +6035,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--Navigation Controller View Controller-->
         <scene sceneID="IFY-Bv-hfg">
             <objects>
-                <navigationController storyboardIdentifier="NavigationControllerViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3No-Ff-P0Q" customClass="NavigationControllerViewController" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationControllerViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3No-Ff-P0Q" customClass="NavigationControllerViewController" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oaH-HL-2jo">
                         <autoresizingMask key="autoresizingMask"/>
@@ -6036,7 +6052,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <!--WelcomeVC-->
         <scene sceneID="lYB-wf-ZBT">
             <objects>
-                <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fE9-OA-qhA" customClass="WelcomeVC" customModule="LatinLingo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fE9-OA-qhA" customClass="WelcomeVC" customModule="Latyn_Lyngo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OPL-7Z-lp7"/>
                         <viewControllerLayoutGuide type="bottom" id="v7u-cA-egf"/>
@@ -6155,6 +6171,7 @@ Continue to study by choosing the root (same or different) with which you want t
         </scene>
     </scenes>
     <resources>
+        <image name="alertBtn-BG" width="89" height="26"/>
         <image name="alertPopUp_bg" width="298.5" height="143.5"/>
         <image name="arrow" width="6.5" height="10.5"/>
         <image name="back_icon" width="35" height="26"/>
@@ -6191,7 +6208,6 @@ Continue to study by choosing the root (same or different) with which you want t
         <image name="pop_box" width="571" height="257.5"/>
         <image name="popup_bg" width="298.5" height="143.5"/>
         <image name="qm" width="16" height="16"/>
-        <image name="refresh" width="47" height="33.5"/>
         <image name="reg_bg" width="571.5" height="213.5"/>
         <image name="round_Image" width="130.5" height="130.5"/>
         <image name="sidebar_bg" width="210" height="321.5"/>
@@ -6200,7 +6216,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <image name="unchecked" width="20" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TBp-e5-JQ8"/>
+        <segue reference="IKG-Is-VnZ"/>
         <segue reference="vjb-3u-WaC"/>
         <segue reference="L2t-Yq-XMI"/>
         <segue reference="c6O-eO-VLL"/>

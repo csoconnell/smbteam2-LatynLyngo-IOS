@@ -400,20 +400,23 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
-        rootBtn.alpha = 0.0
-        prefixBtn.alpha = 0.0
-        suffixbtn.alpha = 0.0
-        
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.0,
-                       options: [UIView.AnimationOptions.curveLinear,
-                                 UIView.AnimationOptions.repeat,
-                                 UIView.AnimationOptions.autoreverse],
-                       animations: { self.rootBtn.alpha = 1.0
-                        self.suffixbtn.alpha = 1.0
-                        self.prefixBtn.alpha = 1.0
-        },
-                       completion: nil)
+//        rootBtn.alpha = 0.0
+//        prefixBtn.alpha = 0.0
+//        suffixbtn.alpha = 0.0
+        self.rootBtn.alpha = 1.0
+        self.suffixbtn.alpha = 1.0
+        self.prefixBtn.alpha = 1.0
+//        UIView.animate(withDuration: 1.0,
+//                       delay: 0.0,
+//                       options: [UIView.AnimationOptions.curveLinear,
+//                                 UIView.AnimationOptions.repeat,
+//                                 UIView.AnimationOptions.autoreverse],
+//                       animations: {
+//                        self.rootBtn.alpha = 1.0
+//                        self.suffixbtn.alpha = 1.0
+//                        self.prefixBtn.alpha = 1.0
+//        },
+//                       completion: nil)
         self.view.layoutIfNeeded()
     }
     func loadIntialData() {
@@ -512,20 +515,20 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
-        rootBtn.alpha = 0.0
-        
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.0,
-                       options: [UIView.AnimationOptions.curveLinear,
-                                 UIView.AnimationOptions.repeat,
-                                 UIView.AnimationOptions.autoreverse],
-                       animations: { self.rootBtn.alpha = 1.0 },
-                       completion: nil)
+        //rootBtn.alpha = 0.0
+        self.rootBtn.alpha = 1.0
+//        UIView.animate(withDuration: 1.0,
+//                       delay: 0.0,
+//                       options: [UIView.AnimationOptions.curveLinear,
+//                                 UIView.AnimationOptions.repeat,
+//                                 UIView.AnimationOptions.autoreverse],
+//                       animations: { self.rootBtn.alpha = 1.0 },
+//                       completion: nil)
         self.view.layoutIfNeeded()
     }
     
     func loadRandomData(){
-        restartBtn.isHidden = false
+        //restartBtn.isHidden = false
         picker1.alpha = 1.0
         picker2.alpha = 1.0
         picker4.alpha = 1.0
@@ -2189,21 +2192,24 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     //MARK:DATABase  BuildIn Functions
     func RootActionButtonAnimation(){
-        prefixBtn.alpha = 0.0
-        suffixbtn.alpha = 0.0
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.0,
-                       options: [UIView.AnimationOptions.curveLinear,
-                                 UIView.AnimationOptions.repeat,
-                                 UIView.AnimationOptions.autoreverse],
-                       animations: {
-                        self.prefixBtn.alpha = 1.0
-                        self.suffixbtn.alpha = 1.0
-                        
-                        
-        },
-                       completion: nil)
-        
+        self.prefixBtn.alpha = 1.0
+        self.suffixbtn.alpha = 1.0
+                               
+//        prefixBtn.alpha = 0.0
+//        suffixbtn.alpha = 0.0
+//        UIView.animate(withDuration: 1.0,
+//                       delay: 0.0,
+//                       options: [UIView.AnimationOptions.curveLinear,
+//                                 UIView.AnimationOptions.repeat,
+//                                 UIView.AnimationOptions.autoreverse],
+//                       animations: {
+//                        self.prefixBtn.alpha = 1.0
+//                        self.suffixbtn.alpha = 1.0
+//
+//
+//        },
+//                       completion: nil)
+//
     }
     func pickerRootPrefixPrefix2Actiondone(withPrefix2 prefix2:NSString){
         self.picker2.reloadComponent(0)

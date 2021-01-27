@@ -104,7 +104,7 @@
                     let dict = printDict.value(forKey: "word") as! NSArray
                     let dict1 = printDict.value(forKey: "meaning") as! NSArray
                     if DBManager.shared.createDatabase() {
-                        UserDefaults.standard.set(true, forKey: "insertDB")
+                        //UserDefaults.standard.set(true, forKey: "insertDB")
                         UserDefaults.standard.synchronize()
                         DBManager.shared.insertWordTableData(passDict: dict)
                         DBManager.shared.insertMeaningTableData(passDict: dict1)
