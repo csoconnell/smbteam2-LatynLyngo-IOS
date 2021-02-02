@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoz-30-eqE">
-                                <rect key="frame" x="-73" y="280.5" width="521" height="106"/>
+                                <rect key="frame" x="57.5" y="307" width="260.5" height="53"/>
                                 <state key="normal" image="logo"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPP-wd-ZVe">
@@ -1439,7 +1439,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-Um-KCa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                        <rect key="frame" x="8" y="30" width="359" height="63"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="63" id="KrT-7f-Etv"/>
@@ -1449,9 +1449,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbE-8Y-e9k">
-                                        <rect key="frame" x="329" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="319" y="10" width="46" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="AIi-4N-WRB"/>
+                                            <constraint firstAttribute="height" constant="50" id="AIi-4N-WRB"/>
                                             <constraint firstAttribute="width" constant="46" id="kAt-43-c8Q"/>
                                         </constraints>
                                         <state key="normal" image="bown">
@@ -1462,10 +1462,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-Ig-CPw">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="63"/>
+                                        <rect key="frame" x="8" y="91" width="359" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxV-mO-Up7">
-                                                <rect key="frame" x="18" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="22" y="14" width="93" height="35"/>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
                                                 <state key="normal" title="DEFINITION" backgroundImage="btn_normal"/>
                                                 <state key="selected" backgroundImage="btn_active"/>
@@ -1474,9 +1474,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-1b-ER8">
-                                                <rect key="frame" x="140" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="133" y="14" width="93" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="95" id="PaT-1B-uGU"/>
+                                                    <constraint firstAttribute="width" constant="93" id="PaT-1B-uGU"/>
                                                     <constraint firstAttribute="height" constant="35" id="rsR-ny-wPC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
@@ -1487,7 +1487,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OX-h7-6Yf">
-                                                <rect key="frame" x="262" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="244" y="14" width="93" height="35"/>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
                                                 <state key="normal" title="SYNONYM" backgroundImage="btn_normal"/>
                                                 <state key="selected" backgroundImage="btn_active"/>
@@ -1498,11 +1498,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="6OX-h7-6Yf" firstAttribute="leading" secondItem="Wf3-1b-ER8" secondAttribute="trailing" constant="27" id="KzG-jF-ruf"/>
+                                            <constraint firstItem="6OX-h7-6Yf" firstAttribute="leading" secondItem="Wf3-1b-ER8" secondAttribute="trailing" constant="18" id="KzG-jF-ruf"/>
                                             <constraint firstItem="XxV-mO-Up7" firstAttribute="height" secondItem="Wf3-1b-ER8" secondAttribute="height" id="L5O-u1-Ino"/>
                                             <constraint firstItem="6OX-h7-6Yf" firstAttribute="width" secondItem="Wf3-1b-ER8" secondAttribute="width" id="OEg-Ji-Nxp"/>
                                             <constraint firstItem="Wf3-1b-ER8" firstAttribute="centerY" secondItem="yxE-Ig-CPw" secondAttribute="centerY" id="YQ7-4R-far"/>
-                                            <constraint firstItem="Wf3-1b-ER8" firstAttribute="leading" secondItem="XxV-mO-Up7" secondAttribute="trailing" constant="27" id="arN-r5-ct9"/>
+                                            <constraint firstItem="Wf3-1b-ER8" firstAttribute="leading" secondItem="XxV-mO-Up7" secondAttribute="trailing" constant="18" id="arN-r5-ct9"/>
                                             <constraint firstItem="Wf3-1b-ER8" firstAttribute="centerX" secondItem="yxE-Ig-CPw" secondAttribute="centerX" id="fpn-75-FBr"/>
                                             <constraint firstItem="XxV-mO-Up7" firstAttribute="width" secondItem="Wf3-1b-ER8" secondAttribute="width" id="pYD-6K-J96"/>
                                             <constraint firstItem="6OX-h7-6Yf" firstAttribute="height" secondItem="Wf3-1b-ER8" secondAttribute="height" id="sAa-1A-q37"/>
@@ -1511,23 +1511,23 @@
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrV-mq-hBt">
-                                        <rect key="frame" x="23" y="154" width="329" height="120"/>
+                                        <rect key="frame" x="23" y="184" width="329" height="120"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfl-uD-HtB">
-                                        <rect key="frame" x="60" y="139" width="255" height="506"/>
+                                        <rect key="frame" x="60" y="169" width="255" height="476"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-Gz-hAE">
-                                                <rect key="frame" x="127.5" y="0.0" width="0.0" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-Gz-hAE">
+                                                <rect key="frame" x="-50" y="0.0" width="355" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-Zo-Bzi">
-                                                <rect key="frame" x="0.0" y="30" width="255" height="120"/>
+                                                <rect key="frame" x="0.0" y="15" width="255" height="120"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="UUw-Ej-zS0"/>
@@ -1602,7 +1602,7 @@
                                                 </connections>
                                             </collectionView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No synonym Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDH-HA-k8O">
-                                                <rect key="frame" x="53.5" y="80" width="148" height="20.5"/>
+                                                <rect key="frame" x="53.5" y="65" width="148" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1611,10 +1611,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="8Xm-Zo-Bzi" secondAttribute="trailing" id="4K5-y7-eXJ"/>
-                                            <constraint firstItem="8Xm-Zo-Bzi" firstAttribute="top" secondItem="Lfl-uD-HtB" secondAttribute="top" constant="30" id="BTV-C3-h27"/>
+                                            <constraint firstItem="8Xm-Zo-Bzi" firstAttribute="top" secondItem="k0w-Gz-hAE" secondAttribute="bottom" constant="15" id="BTV-C3-h27"/>
                                             <constraint firstItem="uDH-HA-k8O" firstAttribute="centerX" secondItem="8Xm-Zo-Bzi" secondAttribute="centerX" id="Nul-jC-CPi"/>
                                             <constraint firstItem="k0w-Gz-hAE" firstAttribute="top" secondItem="Lfl-uD-HtB" secondAttribute="top" id="cYL-uF-3KO"/>
-                                            <constraint firstItem="k0w-Gz-hAE" firstAttribute="centerX" secondItem="Lfl-uD-HtB" secondAttribute="centerX" id="eqw-YA-SHi"/>
                                             <constraint firstItem="uDH-HA-k8O" firstAttribute="centerY" secondItem="8Xm-Zo-Bzi" secondAttribute="centerY" id="pJu-tc-ell"/>
                                             <constraint firstItem="8Xm-Zo-Bzi" firstAttribute="leading" secondItem="Lfl-uD-HtB" secondAttribute="leading" id="xDC-ss-GhO"/>
                                         </constraints>
@@ -1622,19 +1621,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Wt1-Um-KCa" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" id="1OK-Q5-bQo"/>
+                                    <constraint firstItem="Wt1-Um-KCa" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" constant="8" id="1OK-Q5-bQo"/>
                                     <constraint firstItem="Lfl-uD-HtB" firstAttribute="top" secondItem="yxE-Ig-CPw" secondAttribute="bottom" constant="15" id="3eB-yc-Lee"/>
-                                    <constraint firstItem="Wt1-Um-KCa" firstAttribute="top" secondItem="u6a-Ro-rmC" secondAttribute="top" id="9LN-ZV-9eA"/>
+                                    <constraint firstAttribute="trailing" secondItem="k0w-Gz-hAE" secondAttribute="trailing" constant="10" id="4Gk-5S-Mcd"/>
+                                    <constraint firstItem="Wt1-Um-KCa" firstAttribute="top" secondItem="u6a-Ro-rmC" secondAttribute="top" constant="30" id="9LN-ZV-9eA"/>
                                     <constraint firstItem="Lfl-uD-HtB" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" constant="60" id="AMx-gD-zD0"/>
                                     <constraint firstAttribute="height" constant="667" id="EYC-2t-ccf"/>
                                     <constraint firstItem="LrV-mq-hBt" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" constant="23" id="ICQ-zO-3mb"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wt1-Um-KCa" secondAttribute="trailing" id="J7t-sx-jbM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wt1-Um-KCa" secondAttribute="trailing" constant="8" id="J7t-sx-jbM"/>
                                     <constraint firstAttribute="bottom" secondItem="Lfl-uD-HtB" secondAttribute="bottom" constant="22" id="M2J-1o-Klx"/>
                                     <constraint firstItem="yxE-Ig-CPw" firstAttribute="top" secondItem="Wt1-Um-KCa" secondAttribute="bottom" constant="-2" id="RSj-71-uSn"/>
                                     <constraint firstAttribute="bottom" secondItem="IiN-6L-oD5" secondAttribute="bottom" id="VfD-LY-t1f"/>
                                     <constraint firstItem="IiN-6L-oD5" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" id="W5e-oH-SKq"/>
                                     <constraint firstItem="yxE-Ig-CPw" firstAttribute="leading" secondItem="Wt1-Um-KCa" secondAttribute="leading" id="YkZ-Fl-5BS"/>
-                                    <constraint firstItem="bbE-8Y-e9k" firstAttribute="top" secondItem="u6a-Ro-rmC" secondAttribute="top" id="b7O-UD-0LZ"/>
+                                    <constraint firstItem="bbE-8Y-e9k" firstAttribute="top" secondItem="u6a-Ro-rmC" secondAttribute="top" constant="10" id="b7O-UD-0LZ"/>
+                                    <constraint firstItem="k0w-Gz-hAE" firstAttribute="leading" secondItem="u6a-Ro-rmC" secondAttribute="leading" constant="10" id="ba6-b9-dYC"/>
                                     <constraint firstAttribute="trailing" secondItem="LrV-mq-hBt" secondAttribute="trailing" constant="23" id="f3S-Ao-BcI"/>
                                     <constraint firstItem="IiN-6L-oD5" firstAttribute="top" secondItem="u6a-Ro-rmC" secondAttribute="top" id="j8Y-jD-NDb"/>
                                     <constraint firstAttribute="trailing" secondItem="Lfl-uD-HtB" secondAttribute="trailing" constant="60" id="m69-Bu-3Yg"/>
@@ -1642,7 +1643,7 @@
                                     <constraint firstItem="yxE-Ig-CPw" firstAttribute="height" secondItem="Wt1-Um-KCa" secondAttribute="height" id="pd0-Dl-xFh"/>
                                     <constraint firstAttribute="trailing" secondItem="IiN-6L-oD5" secondAttribute="trailing" id="phL-Mp-OdO"/>
                                     <constraint firstItem="LrV-mq-hBt" firstAttribute="top" secondItem="yxE-Ig-CPw" secondAttribute="bottom" constant="30" id="pmf-Tm-NU6"/>
-                                    <constraint firstAttribute="trailing" secondItem="bbE-8Y-e9k" secondAttribute="trailing" id="pyi-hE-PGG"/>
+                                    <constraint firstAttribute="trailing" secondItem="bbE-8Y-e9k" secondAttribute="trailing" constant="10" id="pyi-hE-PGG"/>
                                     <constraint firstItem="LrV-mq-hBt" firstAttribute="height" secondItem="8Xm-Zo-Bzi" secondAttribute="height" id="pzC-BU-gYb"/>
                                 </constraints>
                             </view>
@@ -1730,7 +1731,7 @@
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="y4f-UV-vDN">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="EtH-fW-xiW"/>
                                                     <constraint firstAttribute="width" constant="107" id="WKv-rT-gTX"/>
@@ -1777,7 +1778,7 @@
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-Li-J7g">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="IUq-Lj-qOy"/>
                                                     <constraint firstAttribute="width" constant="107" id="b3p-Qw-6Im"/>
@@ -2604,7 +2605,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRK-q0-nmN">
-                                <rect key="frame" x="-73" y="170.5" width="521" height="106"/>
+                                <rect key="frame" x="57.5" y="197" width="260.5" height="53"/>
                                 <state key="normal" image="logo"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-Uy-E9Z">
@@ -3163,7 +3164,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-p0-YGL">
-                                <rect key="frame" x="0.0" y="10" width="57" height="55"/>
+                                <rect key="frame" x="0.0" y="20" width="57" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Bcd-FK-uGW"/>
                                     <constraint firstAttribute="width" constant="57" id="lx9-sw-Yap"/>
@@ -3174,20 +3175,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions For Use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="DHc-64-sAI">
-                                <rect key="frame" x="66" y="24" width="243" height="30"/>
+                                <rect key="frame" x="66" y="30" width="243" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="LMk-ZZ-Pen"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Harrington" family="Harrington" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcQ-2t-Fqg">
-                                <rect key="frame" x="312" y="15" width="63" height="48"/>
+                                <rect key="frame" x="309" y="20" width="66" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="2aX-AJ-oZQ"/>
+                                    <constraint firstAttribute="height" constant="55" id="2aX-AJ-oZQ"/>
                                 </constraints>
                                 <state key="normal" image="dash_icon"/>
                             </button>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWF-c9-hHO">
-                                <rect key="frame" x="25" y="82.5" width="325" height="584.5"/>
+                                <rect key="frame" x="25" y="93.5" width="325" height="563.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uiM-Eb-E79">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="900"/>
@@ -3344,16 +3348,17 @@ Continue to study by choosing the root (same or different) with which you want t
                                 </connections>
                             </scrollView>
                             <webView opaque="NO" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bu7-j5-FG5">
-                                <rect key="frame" x="25" y="82.5" width="325" height="584.5"/>
+                                <rect key="frame" x="25" y="93.5" width="325" height="563.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bu7-j5-FG5" firstAttribute="bottom" secondItem="oWF-c9-hHO" secondAttribute="bottom" id="0IH-lX-avQ"/>
+                            <constraint firstItem="PF0-p0-YGL" firstAttribute="centerY" secondItem="bcQ-2t-Fqg" secondAttribute="centerY" id="0d7-So-t5X"/>
                             <constraint firstItem="ZHS-KD-BF8" firstAttribute="centerX" secondItem="DHc-64-sAI" secondAttribute="centerX" id="27X-LV-I8R"/>
                             <constraint firstAttribute="trailing" secondItem="ZHS-KD-BF8" secondAttribute="trailing" id="2DD-aL-vUC"/>
-                            <constraint firstItem="oWF-c9-hHO" firstAttribute="bottom" secondItem="8oA-4V-FSh" secondAttribute="top" id="4AE-PF-ajv"/>
+                            <constraint firstItem="oWF-c9-hHO" firstAttribute="bottom" secondItem="8oA-4V-FSh" secondAttribute="top" constant="-10" id="4AE-PF-ajv"/>
                             <constraint firstItem="DHc-64-sAI" firstAttribute="centerY" secondItem="bcQ-2t-Fqg" secondAttribute="centerY" id="4Db-bu-oLn"/>
                             <constraint firstItem="ZHS-KD-BF8" firstAttribute="top" secondItem="wI0-Gf-jTW" secondAttribute="top" id="4RB-sb-J0k"/>
                             <constraint firstItem="bu7-j5-FG5" firstAttribute="leading" secondItem="oWF-c9-hHO" secondAttribute="leading" id="84w-8c-WdP"/>
@@ -3361,16 +3366,14 @@ Continue to study by choosing the root (same or different) with which you want t
                             <constraint firstItem="PF0-p0-YGL" firstAttribute="leading" secondItem="wI0-Gf-jTW" secondAttribute="leading" id="EJ7-Mh-Nvg"/>
                             <constraint firstItem="bcQ-2t-Fqg" firstAttribute="trailing" secondItem="ZHS-KD-BF8" secondAttribute="trailing" id="IUG-1y-p98"/>
                             <constraint firstItem="DHc-64-sAI" firstAttribute="leading" secondItem="wI0-Gf-jTW" secondAttribute="leadingMargin" constant="50" id="LD1-Cr-7GM"/>
+                            <constraint firstItem="DHc-64-sAI" firstAttribute="top" secondItem="ZHS-KD-BF8" secondAttribute="top" constant="30" id="RC2-hZ-bMj"/>
                             <constraint firstItem="bu7-j5-FG5" firstAttribute="top" secondItem="oWF-c9-hHO" secondAttribute="top" id="RH2-P1-DBi"/>
                             <constraint firstItem="DHc-64-sAI" firstAttribute="centerX" secondItem="oWF-c9-hHO" secondAttribute="centerX" id="X52-1Z-gSF"/>
-                            <constraint firstItem="bcQ-2t-Fqg" firstAttribute="leading" secondItem="DHc-64-sAI" secondAttribute="trailing" constant="3" id="d9J-6m-dyd"/>
                             <constraint firstItem="ZHS-KD-BF8" firstAttribute="leading" secondItem="wI0-Gf-jTW" secondAttribute="leading" id="e8q-yL-omw"/>
-                            <constraint firstItem="ZHS-KD-BF8" firstAttribute="bottom" secondItem="oWF-c9-hHO" secondAttribute="bottom" id="lne-EA-xCq"/>
-                            <constraint firstItem="PF0-p0-YGL" firstAttribute="top" secondItem="wI0-Gf-jTW" secondAttribute="top" constant="10" id="mHC-MV-clF"/>
-                            <constraint firstItem="bcQ-2t-Fqg" firstAttribute="leading" secondItem="DHc-64-sAI" secondAttribute="trailing" constant="3" id="nST-NM-8f6"/>
+                            <constraint firstItem="bcQ-2t-Fqg" firstAttribute="leading" secondItem="DHc-64-sAI" secondAttribute="trailing" id="nST-NM-8f6"/>
                             <constraint firstItem="oWF-c9-hHO" firstAttribute="top" secondItem="DHc-64-sAI" secondAttribute="bottom" constant="28.5" id="og7-RD-bxd"/>
+                            <constraint firstAttribute="bottom" secondItem="ZHS-KD-BF8" secondAttribute="bottom" id="rND-zj-AOh"/>
                             <constraint firstItem="bu7-j5-FG5" firstAttribute="trailing" secondItem="oWF-c9-hHO" secondAttribute="trailing" id="xDV-YP-ciD"/>
-                            <constraint firstItem="ZHS-KD-BF8" firstAttribute="top" secondItem="bcQ-2t-Fqg" secondAttribute="top" constant="-15" id="yar-Hw-iTL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hUw-h3-PwF"/>
@@ -4253,7 +4256,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-ok-gfi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                        <rect key="frame" x="8" y="30" width="359" height="63"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="63" id="ysT-Q0-iQP"/>
@@ -4263,10 +4266,10 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-EN-Jpb">
-                                        <rect key="frame" x="329" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="319" y="10" width="46" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="edN-w3-Zoy"/>
-                                            <constraint firstAttribute="height" constant="30" id="iQS-Qy-UJk"/>
+                                            <constraint firstAttribute="height" constant="50" id="iQS-Qy-UJk"/>
                                         </constraints>
                                         <state key="normal" image="bown">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -4276,10 +4279,10 @@ Continue to study by choosing the root (same or different) with which you want t
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-jA-lIB">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="63"/>
+                                        <rect key="frame" x="8" y="91" width="359" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLJ-hv-Ln0">
-                                                <rect key="frame" x="18" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="22" y="14" width="93" height="35"/>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
                                                 <state key="normal" title="DEFINITION" backgroundImage="btn_normal"/>
                                                 <state key="selected" backgroundImage="btn_active"/>
@@ -4288,9 +4291,9 @@ Continue to study by choosing the root (same or different) with which you want t
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-UT-ts3">
-                                                <rect key="frame" x="140" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="133" y="14" width="93" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="95" id="C1S-s4-ylF"/>
+                                                    <constraint firstAttribute="width" constant="93" id="C1S-s4-ylF"/>
                                                     <constraint firstAttribute="height" constant="35" id="hM1-8F-ZxA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
@@ -4301,7 +4304,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOh-Jp-TVj">
-                                                <rect key="frame" x="262" y="14" width="95" height="35"/>
+                                                <rect key="frame" x="244" y="14" width="93" height="35"/>
                                                 <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="15"/>
                                                 <state key="normal" title="SYNONYM" backgroundImage="btn_normal"/>
                                                 <state key="selected" backgroundImage="btn_active"/>
@@ -4315,33 +4318,33 @@ Continue to study by choosing the root (same or different) with which you want t
                                             <constraint firstItem="tOh-Jp-TVj" firstAttribute="width" secondItem="0nT-UT-ts3" secondAttribute="width" id="ADb-zo-akO"/>
                                             <constraint firstItem="lLJ-hv-Ln0" firstAttribute="centerY" secondItem="0nT-UT-ts3" secondAttribute="centerY" id="DN1-w8-u23"/>
                                             <constraint firstItem="tOh-Jp-TVj" firstAttribute="centerY" secondItem="0nT-UT-ts3" secondAttribute="centerY" id="JE7-CS-1sa"/>
-                                            <constraint firstItem="tOh-Jp-TVj" firstAttribute="leading" secondItem="0nT-UT-ts3" secondAttribute="trailing" constant="27" id="KKa-vX-iOI"/>
+                                            <constraint firstItem="tOh-Jp-TVj" firstAttribute="leading" secondItem="0nT-UT-ts3" secondAttribute="trailing" constant="18" id="KKa-vX-iOI"/>
                                             <constraint firstItem="0nT-UT-ts3" firstAttribute="centerX" secondItem="Ohb-jA-lIB" secondAttribute="centerX" id="KZB-fP-POX"/>
                                             <constraint firstItem="lLJ-hv-Ln0" firstAttribute="height" secondItem="0nT-UT-ts3" secondAttribute="height" id="NUc-vf-YUL"/>
                                             <constraint firstItem="tOh-Jp-TVj" firstAttribute="height" secondItem="0nT-UT-ts3" secondAttribute="height" id="OqQ-il-nev"/>
-                                            <constraint firstItem="0nT-UT-ts3" firstAttribute="leading" secondItem="lLJ-hv-Ln0" secondAttribute="trailing" constant="27" id="RaR-rg-e2K"/>
+                                            <constraint firstItem="0nT-UT-ts3" firstAttribute="leading" secondItem="lLJ-hv-Ln0" secondAttribute="trailing" constant="18" id="RaR-rg-e2K"/>
                                             <constraint firstItem="lLJ-hv-Ln0" firstAttribute="width" secondItem="0nT-UT-ts3" secondAttribute="width" id="kfq-QT-y2M"/>
                                             <constraint firstItem="0nT-UT-ts3" firstAttribute="centerY" secondItem="Ohb-jA-lIB" secondAttribute="centerY" id="wOB-km-ESu"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-vA-Uok">
-                                        <rect key="frame" x="23" y="154" width="335" height="120"/>
+                                        <rect key="frame" x="23" y="184" width="335" height="120"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23H-dC-1Zq">
-                                        <rect key="frame" x="60" y="139" width="255" height="506"/>
+                                        <rect key="frame" x="60" y="169" width="255" height="476"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA1-sD-fBq">
-                                                <rect key="frame" x="127.5" y="0.0" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="-50" y="0.0" width="355" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-eT-qcs">
-                                                <rect key="frame" x="0.0" y="30" width="255" height="120"/>
+                                                <rect key="frame" x="0.0" y="15" width="255" height="120"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="GdC-bv-Uxb"/>
@@ -4416,7 +4419,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                                 </connections>
                                             </collectionView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No synonym Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPM-27-9bO">
-                                                <rect key="frame" x="53.5" y="80" width="148" height="20.5"/>
+                                                <rect key="frame" x="53.5" y="65" width="148" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4424,13 +4427,12 @@ Continue to study by choosing the root (same or different) with which you want t
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Rvo-eT-qcs" firstAttribute="top" secondItem="LA1-sD-fBq" secondAttribute="bottom" constant="15" id="3Cs-QL-zPk"/>
                                             <constraint firstItem="hPM-27-9bO" firstAttribute="centerX" secondItem="Rvo-eT-qcs" secondAttribute="centerX" id="CKq-eS-Qif"/>
                                             <constraint firstItem="Rvo-eT-qcs" firstAttribute="leading" secondItem="23H-dC-1Zq" secondAttribute="leading" id="Cz0-pH-ews"/>
                                             <constraint firstItem="LA1-sD-fBq" firstAttribute="top" secondItem="23H-dC-1Zq" secondAttribute="top" id="DUk-hW-p9H"/>
-                                            <constraint firstItem="Rvo-eT-qcs" firstAttribute="top" secondItem="23H-dC-1Zq" secondAttribute="top" constant="30" id="HVA-0W-1E9"/>
                                             <constraint firstAttribute="trailing" secondItem="Rvo-eT-qcs" secondAttribute="trailing" id="Ry2-7W-9yW"/>
                                             <constraint firstItem="hPM-27-9bO" firstAttribute="centerY" secondItem="Rvo-eT-qcs" secondAttribute="centerY" id="TbF-ut-kUu"/>
-                                            <constraint firstItem="LA1-sD-fBq" firstAttribute="centerX" secondItem="23H-dC-1Zq" secondAttribute="centerX" id="snW-hS-iTh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4439,22 +4441,24 @@ Continue to study by choosing the root (same or different) with which you want t
                                     <constraint firstAttribute="height" constant="667" id="1zn-HU-Ss3"/>
                                     <constraint firstItem="vcG-wD-nAZ" firstAttribute="top" secondItem="h3h-nz-BTg" secondAttribute="top" id="2JL-Zn-0NT"/>
                                     <constraint firstItem="vW7-vA-Uok" firstAttribute="height" secondItem="Rvo-eT-qcs" secondAttribute="height" id="7lg-MR-FDd"/>
-                                    <constraint firstAttribute="trailing" secondItem="dgY-EN-Jpb" secondAttribute="trailing" id="8us-eR-b9n"/>
+                                    <constraint firstAttribute="trailing" secondItem="LA1-sD-fBq" secondAttribute="trailing" constant="10" id="8P2-FN-Zeg"/>
+                                    <constraint firstAttribute="trailing" secondItem="dgY-EN-Jpb" secondAttribute="trailing" constant="10" id="8us-eR-b9n"/>
                                     <constraint firstItem="Ohb-jA-lIB" firstAttribute="leading" secondItem="e0q-ok-gfi" secondAttribute="leading" id="AhL-Kp-ymh"/>
-                                    <constraint firstAttribute="trailing" secondItem="e0q-ok-gfi" secondAttribute="trailing" id="Aqk-Zp-50r"/>
+                                    <constraint firstAttribute="trailing" secondItem="e0q-ok-gfi" secondAttribute="trailing" constant="8" id="Aqk-Zp-50r"/>
                                     <constraint firstAttribute="trailing" secondItem="vW7-vA-Uok" secondAttribute="trailing" constant="17" id="BDw-P7-lnK"/>
                                     <constraint firstAttribute="bottom" secondItem="23H-dC-1Zq" secondAttribute="bottom" constant="22" id="GuQ-fv-EkC"/>
                                     <constraint firstItem="Ohb-jA-lIB" firstAttribute="trailing" secondItem="e0q-ok-gfi" secondAttribute="trailing" id="NKU-xf-MXa"/>
-                                    <constraint firstItem="e0q-ok-gfi" firstAttribute="top" secondItem="h3h-nz-BTg" secondAttribute="top" id="Njf-Mc-xcY"/>
+                                    <constraint firstItem="e0q-ok-gfi" firstAttribute="top" secondItem="h3h-nz-BTg" secondAttribute="top" constant="30" id="Njf-Mc-xcY"/>
                                     <constraint firstItem="vcG-wD-nAZ" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" id="PjW-to-pZ9"/>
                                     <constraint firstAttribute="trailing" secondItem="23H-dC-1Zq" secondAttribute="trailing" constant="60" id="Uu0-Jl-7f1"/>
                                     <constraint firstAttribute="trailing" secondItem="vcG-wD-nAZ" secondAttribute="trailing" id="WGe-uI-wqf"/>
+                                    <constraint firstItem="LA1-sD-fBq" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" constant="10" id="Ydt-C2-lph"/>
                                     <constraint firstItem="23H-dC-1Zq" firstAttribute="top" secondItem="Ohb-jA-lIB" secondAttribute="bottom" constant="15" id="Z6x-iS-pe7"/>
-                                    <constraint firstItem="dgY-EN-Jpb" firstAttribute="top" secondItem="h3h-nz-BTg" secondAttribute="top" id="c4V-2q-FsA"/>
+                                    <constraint firstItem="dgY-EN-Jpb" firstAttribute="top" secondItem="h3h-nz-BTg" secondAttribute="top" constant="10" id="c4V-2q-FsA"/>
                                     <constraint firstAttribute="bottom" secondItem="vcG-wD-nAZ" secondAttribute="bottom" id="lTl-Eb-jzK"/>
                                     <constraint firstItem="vW7-vA-Uok" firstAttribute="top" secondItem="Ohb-jA-lIB" secondAttribute="bottom" constant="30" id="prv-4s-Uv5"/>
                                     <constraint firstItem="23H-dC-1Zq" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" constant="60" id="tkR-gb-W7c"/>
-                                    <constraint firstItem="e0q-ok-gfi" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" id="u4T-Nf-zRh"/>
+                                    <constraint firstItem="e0q-ok-gfi" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" constant="8" id="u4T-Nf-zRh"/>
                                     <constraint firstItem="vW7-vA-Uok" firstAttribute="leading" secondItem="h3h-nz-BTg" secondAttribute="leading" constant="23" id="vWl-tH-eCG"/>
                                     <constraint firstItem="Ohb-jA-lIB" firstAttribute="top" secondItem="e0q-ok-gfi" secondAttribute="bottom" constant="-2" id="w8H-zD-fGr"/>
                                     <constraint firstItem="Ohb-jA-lIB" firstAttribute="height" secondItem="e0q-ok-gfi" secondAttribute="height" id="xGS-kT-gwg"/>
@@ -4544,7 +4548,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-kM-ml1">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="107" id="DPn-nN-Mn3"/>
                                                     <constraint firstAttribute="height" constant="28" id="rph-Z1-IAf"/>
@@ -4591,7 +4595,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-zs-aWi">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="3BY-KG-B9M"/>
                                                     <constraint firstAttribute="width" constant="107" id="BJk-gj-K5U"/>
@@ -5763,7 +5767,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="nS6-xn-cYH">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="8pB-Bu-hJ7"/>
                                                     <constraint firstAttribute="width" constant="107" id="fS6-UC-Ee1"/>
@@ -5809,7 +5813,7 @@ Continue to study by choosing the root (same or different) with which you want t
                                         <rect key="frame" x="0.0" y="-28" width="122" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_outer" translatesAutoresizingMaskIntoConstraints="NO" id="8XG-lB-Rln">
-                                                <rect key="frame" x="15" y="0.0" width="107" height="28"/>
+                                                <rect key="frame" x="15" y="0.0" width="107.00000000000003" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="9Zw-09-j62"/>
                                                     <constraint firstAttribute="width" constant="107" id="c9h-IO-7t9"/>
@@ -6216,7 +6220,7 @@ Continue to study by choosing the root (same or different) with which you want t
         <image name="unchecked" width="20" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IKG-Is-VnZ"/>
+        <segue reference="jGY-8b-RpZ"/>
         <segue reference="vjb-3u-WaC"/>
         <segue reference="L2t-Yq-XMI"/>
         <segue reference="c6O-eO-VLL"/>

@@ -50,20 +50,18 @@
             self.view.isUserInteractionEnabled = false
             meaningList = DBManager.shared.loadnonsenceData()
             shared.ModeValue = 1
-        }else if sender.tag == 2  {
+        } else if sender.tag == 2 {
             shared.ModeValue = 0
-        }
-        else{
+        } else {
             shared.ModeValue = 2
             
         }
         loadnavigation()
-        
     }
     func loadnavigation()  {
         let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
         
-        if shared.ModeValue == 1{
+        if shared.ModeValue == 1 {
             stopLoader()
             self.view.isUserInteractionEnabled = true
 

@@ -180,6 +180,11 @@ class DBManager: NSObject {
         var movies: [DictionaryInfo]!
         
         if openDatabase() {
+            if let rs = database.executeQuery("SELECT COUNT(*) as Count FROM wordList", withArgumentsIn: nil) {
+            while rs.next() {
+                print("Total Records:", rs.int(forColumn: "Count"))
+                }
+            }
             let query = "select * from wordList"
             
             do {

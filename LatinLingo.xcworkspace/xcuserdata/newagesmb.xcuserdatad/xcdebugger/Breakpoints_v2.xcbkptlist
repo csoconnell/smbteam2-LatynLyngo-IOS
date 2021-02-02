@@ -124,23 +124,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E808A220-46AE-43C5-B58E-7684AC19516B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6225D008-3CEE-4497-8B21-9808B119BBCD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -203,23 +186,6 @@
             startingLineNumber = "1696"
             endingLineNumber = "1696"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E0C4437D-E4EC-47C9-A30B-4D4124AE9640"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -302,57 +268,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2817"
             endingLineNumber = "2817">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DC6D0D1-F66D-4369-8210-E1012364DC46"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "10B05FCD-8717-44AB-BC54-07118F1187DC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B66172A-165B-41ED-9641-459F4FF4A544"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -768,70 +683,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E67FA54C-7255-438D-A42B-26B52A63BFA7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "632"
-            endingLineNumber = "632"
-            landmarkName = "loadWordmeaning(withWord:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A11C783C-42D9-4CFB-8E3B-8A859087FBA3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "646"
-            endingLineNumber = "646"
-            landmarkName = "loadMovie(withWordSynonym:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B7462939-C462-4E13-9B57-FA78891822A7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "643"
-            endingLineNumber = "643"
-            landmarkName = "loadMovie(withWordSynonym:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FCA6C7C5-628E-4AB3-8497-B7BE834A39EB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "567"
-            endingLineNumber = "567"
-            landmarkName = "loadMovie(withDataWord:prefix2:root:suffix1:suffix2:suffix3:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "84CB8CB0-1DA2-42C8-908A-6A9FB7A61439"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -839,8 +690,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
+            startingLineNumber = "699"
+            endingLineNumber = "699"
             landmarkName = "tapPrefix2PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -855,8 +706,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
             landmarkName = "tapRootPickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -871,8 +722,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "705"
-            endingLineNumber = "705"
+            startingLineNumber = "732"
+            endingLineNumber = "732"
             landmarkName = "tapSuffix1PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -896,22 +747,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "761DE1C3-F518-4C99-AE9C-BF72EEB2E1DB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "481"
-            endingLineNumber = "481"
-            landmarkName = "loadMovie(withRoot:withSuffix1:withSuffix2:withSuffix3:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C2AC35BF-9A21-49F5-B60A-A50A9E937DD1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -928,54 +763,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D572CE9-87B8-4E94-B1DA-5D0E9B62663D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "533"
-            endingLineNumber = "533"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8D882CD-F5B0-4769-9E54-24D55496CE4B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "518"
-            endingLineNumber = "518"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4F65C695-34FC-4140-8A45-E21FA828BE06"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "507"
-            endingLineNumber = "507"
-            landmarkName = "ShowDetailsOfWord(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "229BD0AC-E32D-43DC-AB4C-91EE88CD48D4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -983,8 +770,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "653"
-            endingLineNumber = "653"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
             landmarkName = "tapprefix1PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -999,25 +786,9 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
+            startingLineNumber = "675"
+            endingLineNumber = "675"
             landmarkName = "tapprefix1PickerButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1959F1A9-9281-4630-941A-56CB41A172AD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "743"
-            endingLineNumber = "743"
-            landmarkName = "tapSuffix3PickerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1031,8 +802,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1412"
-            endingLineNumber = "1412"
+            startingLineNumber = "1439"
+            endingLineNumber = "1439"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1047,8 +818,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1511"
-            endingLineNumber = "1511"
+            startingLineNumber = "1538"
+            endingLineNumber = "1538"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1063,8 +834,8 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1530"
-            endingLineNumber = "1530"
+            startingLineNumber = "1557"
+            endingLineNumber = "1557"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1079,57 +850,9 @@
             filePath = "LatinLingo/splitedPickerAny.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1549"
-            endingLineNumber = "1549"
+            startingLineNumber = "1576"
+            endingLineNumber = "1576"
             landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BF62C439-F298-4A06-A9F3-24A5283F8E8D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1622"
-            endingLineNumber = "1622"
-            landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "23C71D04-D2AE-42E0-8423-CAE64D79FD15"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2211"
-            endingLineNumber = "2211"
-            landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2656DE8D-4BED-4F54-BB49-42E979079B39"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "796"
-            endingLineNumber = "796"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

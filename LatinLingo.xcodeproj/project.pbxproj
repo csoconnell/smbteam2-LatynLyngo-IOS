@@ -280,8 +280,8 @@
 				5802B5A21E4B3BB600FE9D84 /* AboutVc.swift */,
 				585CB2E91E64314D00915467 /* FontSettingVC.swift */,
 				584D83CA1E56DA0600550DFD /* SplitedPicker.swift */,
-				583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */,
 				583D755625AC0F420097CE1D /* splitedPickerAny.swift */,
+				583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */,
 				583D755925AC0F430097CE1D /* FileSwift.swift */,
 				583D755A25AC0F430097CE1D /* NavigationController.swift */,
 				583D755825AC0F430097CE1D /* NavigationControllerViewController.swift */,
@@ -838,7 +838,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";
@@ -865,7 +865,7 @@
 				INFOPLIST_FILE = LatinLingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";

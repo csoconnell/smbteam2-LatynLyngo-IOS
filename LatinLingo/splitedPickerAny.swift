@@ -291,9 +291,7 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         super.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func resetbtnClicked(_ sender: UIButton) {
-        self.delegate?.loadDataFunctionAgain()
-    }
+    
     
     //MARK: Mode Management Functions
     func loadIntialData() {
@@ -364,13 +362,13 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         picker6Trailing.constant = 40
         rootBtn.alpha = 0.0
         self.rootBtn.alpha = 1.0
-//        UIView.animate(withDuration: 1.0,
-//                       delay: 0.0,
-//                       options: [UIView.AnimationOptions.curveLinear,
-//                                 UIView.AnimationOptions.repeat,
-//                                 UIView.AnimationOptions.autoreverse],
-//                       animations: { self.rootBtn.alpha = 1.0 },
-//                       completion: nil)
+        //        UIView.animate(withDuration: 1.0,
+        //                       delay: 0.0,
+        //                       options: [UIView.AnimationOptions.curveLinear,
+        //                                 UIView.AnimationOptions.repeat,
+        //                                 UIView.AnimationOptions.autoreverse],
+        //                       animations: { self.rootBtn.alpha = 1.0 },
+        //                       completion: nil)
         self.view.layoutIfNeeded()
     }
     func viewWidthSettings() {
@@ -436,14 +434,20 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         suffix3Img.layer.removeAllAnimations()
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
-                self.popupviewBottom.constant =  -541
+                self.popupviewBottom.constant =  -505
                 self.view.layoutIfNeeded()
             }
             else{
                 self.popupviewBottom.constant = -667
                 self.view.layoutIfNeeded()
             }
-        }, completion: nil)
+        }, completion: { (status) in
+            if self.popupviewBottom.constant == -667 {
+                self.wordformBtn.isHidden = false
+            }
+            
+        })
+        
     }
     @IBAction func ShowDetailsOfWord(_ sender: UIButton) {
         switch sender.tag {
@@ -579,6 +583,29 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         return attributedString
     }
     //MARK: Picker Button Actions
+    @IBAction func resetbtnClicked(_ sender: UIButton) {
+        //self.delegate?.loadDataFunctionAgain()
+        if prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
+            //Initially if user hits spin, nothing should happen
+            
+        } else {
+            if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") && rootValue != "" || self.wordformBtn.isHidden == false {
+                rootbtnClicked(UIButton())
+                prefixbtnClicked(UIButton())
+                suffixbtnClicked(UIButton())
+            } else {
+                if prefix1Value == "" && prefix2Value == "" {
+                    prefixbtnClicked(UIButton())
+                }
+                if suffix1Value == "" && suffix2Value == "" && suffix3Value == "" {
+                    suffixbtnClicked(UIButton())
+                }
+                if rootValue == "" {
+                    rootbtnClicked(UIButton())
+                }
+            }
+         }
+    }
     @IBAction func prefixbtnClicked(_ sender: UIButton) {
         let   random1 :Int = Int(arc4random_uniform(10000))
         prefixBtn.isHidden = true
@@ -762,10 +789,10 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
                         self.listButton.setTitleColor(UIColor.white, for: .normal)
                         self.synonymsButton.isSelected = false
                         self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
-                        if self.popupviewBottom.constant   ==  -541 {
+                        if self.popupviewBottom.constant   ==  -505 {
                             UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
                                 if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
-                                    self.popupviewBottom.constant =  -541
+                                    self.popupviewBottom.constant =  -505
                                     self.view.layoutIfNeeded()
                                 }
                                 else{
@@ -776,7 +803,7 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
                         }
                         else{
                             UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
-                                self.popupviewBottom.constant =  -541
+                                self.popupviewBottom.constant =  -505
                                 self.view.layoutIfNeeded()
                             }, completion: nil)
                         }
@@ -937,7 +964,7 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         
         Numberlist = pickerView.selectedRow(inComponent: 0)
-        if  self.popupviewBottom.constant ==  -541 {
+        if  self.popupviewBottom.constant ==  -505 {
             self.CLOSE(UIButton())
         }
         selectPiceker = pickerView

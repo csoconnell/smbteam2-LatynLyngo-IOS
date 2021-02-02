@@ -223,9 +223,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         templateList.dataSource = self
         if UIScreen.main.bounds.width == 568 {
             listviewHeight.constant = 150
-        }else if UIScreen.main.bounds.width == 667 {
+        } else if UIScreen.main.bounds.width == 667 {
             listviewHeight.constant = 180
-        }else{
+        } else {
             
             listviewHeight.constant = 220
         }
@@ -312,47 +312,32 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.suffixOverlayBtn.addGestureRecognizer(suffixswipeupGesture)
         
         deviceScreenWidth = UIScreen.main.bounds.width
-        if shared.ModeValue == 0{
+        if shared.ModeValue == 0 {// Root mode
             loadIntialData()
-        }
-        else if shared.ModeValue == 1{
+        } else if shared.ModeValue == 1 { // Nonsense mode
             loadNonSenseData()
-        }else{
-            loadRandomData()
-            
+        } else {
+            loadRandomData() // Random mode
         }
     }
     override func viewWillLayoutSubviews() {
-          super.viewWillLayoutSubviews()
-          
-          blockWidthSettings()
-      }
+        super.viewWillLayoutSubviews()
+        
+        blockWidthSettings()
+    }
     func blockWidthSettings() {
-           //
-           //        if UIDevice.current.orientation.isLandscape {
-           //                   deviceScreenWidth = UIScreen.main.bounds.height
-           //               } else {
-           //                   deviceScreenWidth = UIScreen.main.bounds.width
-           //               }
-           deviceScreenWidth = UIScreen.main.bounds.width; print("......isLandscape_\(UIDevice.current.orientation.isLandscape)......height\(UIScreen.main.bounds.height).....width\(UIScreen.main.bounds.width)")
-           if shared.ModeValue == 0 {
-                    pickerviewWidth = 40
-                    picker1Width.constant = (deviceScreenWidth - 60)/3
-                    picker3Width.constant = (deviceScreenWidth - 60)/3
-                    picker6Width.constant = (deviceScreenWidth - 60)/3
-           } else if shared.ModeValue == 1 {
-                   pickerviewWidth = 40
-                   picker1Width.constant = (deviceScreenWidth - 60)/3
-                   picker3Width.constant = (deviceScreenWidth - 60)/3
-                   picker6Width.constant = (deviceScreenWidth - 60)/3
-           } else {
-               pickerviewWidth = 40
-               picker1Width.constant = (deviceScreenWidth - 60)/3
-               picker3Width.constant = (deviceScreenWidth - 60)/3
-               picker6Width.constant = (deviceScreenWidth - 60)/3
-           }
-       }
-
+        //
+        //        if UIDevice.current.orientation.isLandscape {
+        //                   deviceScreenWidth = UIScreen.main.bounds.height
+        //               } else {
+        //                   deviceScreenWidth = UIScreen.main.bounds.width
+        //               }
+        deviceScreenWidth = UIScreen.main.bounds.width; print("......isLandscape_\(UIDevice.current.orientation.isLandscape)......height\(UIScreen.main.bounds.height).....width\(UIScreen.main.bounds.width)")
+        picker1Width.constant = (deviceScreenWidth - 60)/3
+        picker3Width.constant = (deviceScreenWidth - 60)/3
+        picker6Width.constant = (deviceScreenWidth - 60)/3
+    }
+    
     //MARK: Mode Management Functions
     
     func loadNonSenseData() {
@@ -373,17 +358,15 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
             print(item)
-                if item.type == "1" {
-                    nonsencePrefixArr.append(item.word)
-                }
-                else if item.type == "3" {
-                    nonsenceRootArr.append(item.word)
-                    
-                }
-                else if item.type == "6" {
-                    nonsenceSuffixArr.append(item.word)
-                }
+            if item.type == "1" {
+                nonsencePrefixArr.append(item.word)
+            } else if item.type == "3" {
+                nonsenceRootArr.append(item.word)
                 
+            } else if item.type == "6" {
+                nonsenceSuffixArr.append(item.word)
+            }
+            
             
         }
         
@@ -400,23 +383,23 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
-//        rootBtn.alpha = 0.0
-//        prefixBtn.alpha = 0.0
-//        suffixbtn.alpha = 0.0
+        //        rootBtn.alpha = 0.0
+        //        prefixBtn.alpha = 0.0
+        //        suffixbtn.alpha = 0.0
         self.rootBtn.alpha = 1.0
         self.suffixbtn.alpha = 1.0
         self.prefixBtn.alpha = 1.0
-//        UIView.animate(withDuration: 1.0,
-//                       delay: 0.0,
-//                       options: [UIView.AnimationOptions.curveLinear,
-//                                 UIView.AnimationOptions.repeat,
-//                                 UIView.AnimationOptions.autoreverse],
-//                       animations: {
-//                        self.rootBtn.alpha = 1.0
-//                        self.suffixbtn.alpha = 1.0
-//                        self.prefixBtn.alpha = 1.0
-//        },
-//                       completion: nil)
+        //        UIView.animate(withDuration: 1.0,
+        //                       delay: 0.0,
+        //                       options: [UIView.AnimationOptions.curveLinear,
+        //                                 UIView.AnimationOptions.repeat,
+        //                                 UIView.AnimationOptions.autoreverse],
+        //                       animations: {
+        //                        self.rootBtn.alpha = 1.0
+        //                        self.suffixbtn.alpha = 1.0
+        //                        self.prefixBtn.alpha = 1.0
+        //        },
+        //                       completion: nil)
         self.view.layoutIfNeeded()
     }
     func loadIntialData() {
@@ -427,60 +410,55 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker5.isUserInteractionEnabled = false
         picker6.isUserInteractionEnabled = true
         
-        
         picker1.alpha = 0.5
         picker2.alpha = 0.5
         picker4.alpha = 0.5
         picker5.alpha = 0.5
         picker6.alpha = 0.5
         
-        
         movies = DBManager.shared.loadMovies()
         
         for item in movies {
             
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 if item.prefex_1 != "" {
                     pickerdataPrefix1.append(item.prefex_1)}
                 
             }
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     pickerdataPrefix2.append(item.prefex_2)}
                 
             }
             
             if pickerdataRoot.contains(item.root) {
-            }else{
+            } else {
                 if item.root != "" {
                     pickerdataRoot.append(item.root)
                 }
-                
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     
                     pickerdataSuffix1.append(item.suffix_1)
                 }
-                
             }
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     
                     pickerdataSuffix2.append(item.suffix_2)
                 }
-                
             }
             
             if pickerdataSuffix3.contains(item.suffix_3) {
-            }else{
+            } else {
                 
                 if item.suffix_3 != "" {
                     
@@ -489,11 +467,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if wordArrayDB.contains(item.word) {
-            }
-            else{
+            } else{
                 wordArrayDB.append(item.word)
             }
-            
         }
         pickerdataSuffix3 = pickerdataSuffix3.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         
@@ -517,17 +493,17 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker6Trailing.constant = 40
         //rootBtn.alpha = 0.0
         self.rootBtn.alpha = 1.0
-//        UIView.animate(withDuration: 1.0,
-//                       delay: 0.0,
-//                       options: [UIView.AnimationOptions.curveLinear,
-//                                 UIView.AnimationOptions.repeat,
-//                                 UIView.AnimationOptions.autoreverse],
-//                       animations: { self.rootBtn.alpha = 1.0 },
-//                       completion: nil)
+        //        UIView.animate(withDuration: 1.0,
+        //                       delay: 0.0,
+        //                       options: [UIView.AnimationOptions.curveLinear,
+        //                                 UIView.AnimationOptions.repeat,
+        //                                 UIView.AnimationOptions.autoreverse],
+        //                       animations: { self.rootBtn.alpha = 1.0 },
+        //                       completion: nil)
         self.view.layoutIfNeeded()
     }
     
-    func loadRandomData(){
+    func loadRandomData() {
         //restartBtn.isHidden = false
         picker1.alpha = 1.0
         picker2.alpha = 1.0
@@ -546,19 +522,19 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         for item in movies {
             
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 if item.prefex_1 != "" {
                     pickerdataPrefix1.append(item.prefex_1)}
                 
             }
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     pickerdataPrefix2.append(item.prefex_2)}
                 
             }
             if pickerdataRoot.contains(item.root) {
-            }else{
+            } else {
                 if item.root != "" {
                     pickerdataRoot.append(item.root)
                 }
@@ -566,7 +542,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     
@@ -575,7 +551,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     
@@ -585,7 +561,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix3.contains(item.suffix_3) {
-            }else{
+            } else {
                 
                 if item.suffix_3 != "" {
                     
@@ -594,7 +570,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if wordArrayDB.contains(item.word) {
-            }else{
+            } else {
                 wordArrayDB.append(item.word)
                 
             }
@@ -689,20 +665,20 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerCounter += 1
         
         if boolSuffix{
-        }else{
+        } else {
             if boolSuffixdata {
                 boolSuffixdata = false
-                if pickerdataSuffix2.count > 0{
+                if pickerdataSuffix2.count > 0 {
                     boolSuffix1 = true
                 }
             }
         }
         
         if boolSuffix1   {
-        }else{
+        } else {
             if boolSuffix1data {
                 boolSuffix1data = false
-                if pickerdataSuffix3.count > 0{
+                if pickerdataSuffix3.count > 0 {
                     boolSuffix2 = true
                     
                 }
@@ -714,7 +690,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             random = Int(arc4random_uniform(10000))
             rootPickerLoading = false
             
-            if   boolSettingRoot{}else{
+            if   boolSettingRoot{} else {
                 
                 if boolRoot {
                     self.picker3.selectRow(random, inComponent: 0, animated: true)
@@ -742,7 +718,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             random = Int(arc4random_uniform(10000))
             rootPickerLoading = true
             
-            if   boolSettingRoot{}else{
+            if   boolSettingRoot{} else {
                 if boolRoot {
                     self.picker3.selectRow(random, inComponent: 0, animated: true)
                     
@@ -767,7 +743,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
         }
-        if   boolSettingRoot{}else{
+        if   boolSettingRoot{} else {
             if pickerCounter == 1 {
                 boolRoot = false
                 
@@ -793,8 +769,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolPrefix1 = false
                 boolSuffix = true
                 self.pickerView(self.picker2, didSelectRow: random, inComponent: 0)
-            }
-            else{
+            } else{
                 boolSuffix = false
                 boolSuffix1 = true
                 self.pickerView(self.picker6, didSelectRow: random, inComponent: 0)
@@ -807,8 +782,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolSuffix1 = true
                 self.pickerView(self.picker6, didSelectRow: random, inComponent: 0)
                 
-            }
-            else{
+            } else{
                 boolSuffix1 = false
                 boolSuffix2 = true
                 
@@ -820,8 +794,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolSuffix1 = false
                 boolSuffix2 = true
                 self.pickerView(self.picker5, didSelectRow: random, inComponent: 0)
-            }
-            else{
+            } else{
                 boolSuffix2 = false
                 self.pickerView(self.picker4, didSelectRow: random, inComponent: 0)
             }
@@ -901,18 +874,20 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                 
-                self.popupviewBottom.constant =  -541
+                self.popupviewBottom.constant =  -505
                 self.view.layoutIfNeeded()
                 
-            }
-            else{
+            } else{
                 
                 self.popupviewBottom.constant = -667
                 self.view.layoutIfNeeded()
             }
+        }, completion: { (status) in
+            if self.popupviewBottom.constant == -667 {
+                self.wordformBtn.isHidden = false
+            }
             
-            
-        }, completion: nil)
+        })
         
     }
     @IBAction func ShowDetailsOfWord(_ sender: UIButton) {
@@ -1032,11 +1007,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                                                 
                                             }
                                             
-
+                                            
                                         }
                                     }
                                 }
-                             //   self.testArr.add((movie?.synonym)! as String)
+                                //   self.testArr.add((movie?.synonym)! as String)
                                 if self.testArr.contains((movie?.synonym)! as String){
                                 }
                                 else{
@@ -1071,30 +1046,50 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     //MARK: Random Spin Button Action
     @IBAction func resetbtnClicked(_ sender: UIButton) {
-        self.delegate?.loadData()
-        randomTimer.invalidate()
+        
+        if shared.ModeValue == 1 {// nonsense mode
+            prefixbtnClicked(UIButton())
+            rootbtnClicked(UIButton())
+            suffixbtnClicked(UIButton())
+        } else if shared.ModeValue == 2 {// random mode
+            self.delegate?.loadData()
+            randomTimer.invalidate()
+        } else if shared.ModeValue == 0 && prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
+            // root mode , Initially if user hits spin, nothing should happen
+            
+        } else {// root mode with any word
+            
+            if prefix1Value == "" && prefix2Value == "" {
+                prefixbtnClicked(UIButton())
+            }
+            if suffix1Value == "" && suffix2Value == "" && suffix3Value == "" {
+                suffixbtnClicked(UIButton())
+            }
+            if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") {
+                rootbtnClicked(UIButton())
+                prefixbtnClicked(UIButton())
+                suffixbtnClicked(UIButton())
+            }
+        }
     }
     
     //MARK: Picker Button Actions
     @IBAction func prefixbtnClicked(_ sender: UIButton) {
+        print("Prefix BUTTON TAPPED.........")
         let   random1 :Int = Int(arc4random_uniform(10000))
-        
-        
-        if shared.ModeValue == 1{
+        if shared.ModeValue == 1 {
             
             prefixBtn.isHidden = true
             picker1.isHidden = false
             prefixOverlayBtn.isHidden = true
             self.picker1.selectRow(random1, inComponent: 0, animated: true)
             self.pickerView(self.picker1, didSelectRow: random1, inComponent: 0)
-        }
-        else{
-            
-            if rootValue != ""{
+        } else {
+            if rootValue != "" {
                 if suffix3Value == "" {
                     boolSuffixfirst = false
                     boolPrefixfirst = true
-                }else{
+                } else {
                     boolPrefixfirst = false
                 }
                 prefixBtn.isHidden = true
@@ -1106,34 +1101,33 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
     }
     @IBAction func rootbtnClicked(_ sender: UIButton) {
+        print("Root BUTTON TAPPED.........")
         rootBtn.isHidden = true
         rootOverlayBtn.isHidden = true
         picker3.isHidden = false
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let random1 :Int = Int(arc4random_uniform(10000))
         self.picker3.selectRow(random1, inComponent: 0, animated: true)
         //deviceScreenWidth/3
         self.pickerView(self.picker3, didSelectRow: random1, inComponent: 0)
     }
     
     @IBAction func suffixbtnClicked(_ sender: UIButton) {
-        
+        print("Suffix BUTTON TAPPED.........")
         let   random1 :Int = Int(arc4random_uniform(10000))
-        if shared.ModeValue == 1{
+        if shared.ModeValue == 1 {
             suffixbtn.isHidden = true
             picker6.isHidden = false
             suffixOverlayBtn.isHidden = true
             self.picker6.selectRow(random1, inComponent: 0, animated: true)
             self.pickerView(self.picker6, didSelectRow: random1, inComponent: 0)
-        }
-        else{
+        } else {
             if rootValue != ""{
                 
                 if prefix1Value == "" {
                     boolSuffixfirst = true
                     boolPrefixfirst = false
                     self.picker6.isUserInteractionEnabled = true
-                    
-                }else{
+                } else {
                     boolSuffixfirst = false
                 }
                 suffixbtn.isHidden = true
@@ -1141,10 +1135,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 suffixOverlayBtn.isHidden = true
                 self.picker6.selectRow(random1, inComponent: 0, animated: true)
                 self.pickerView(self.picker6, didSelectRow: random1, inComponent: 0)
-                
             }
         }
-        
     }
     
     //MARK: MenuButton Actions
@@ -1299,8 +1291,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     @objc func tapSuffix3PickerButton(_ sender: UITapGestureRecognizer) {
         if suffix3Value != ""{
-//            var myStringArr = suffix3Value.components(separatedBy: " ")
-//            let id = myStringArr[0]
+            //            var myStringArr = suffix3Value.components(separatedBy: " ")
+            //            let id = myStringArr[0]
             let id = suffix3Value
             DBManager.shared.loadWordmeaning(withWord: id, completionHandler: { (movie) in
                 DispatchQueue.main.async {
@@ -1343,13 +1335,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         self.synonymsButton.isSelected = false
                         self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
                         
-                        if self.popupviewBottom.constant   ==  -541 {
+                        if self.popupviewBottom.constant   ==  -505 {
                             
                             UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
                                 
                                 if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
                                     
-                                    self.popupviewBottom.constant =  -541
+                                    self.popupviewBottom.constant =  -505
                                     self.view.layoutIfNeeded()
                                     
                                 }
@@ -1363,10 +1355,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }, completion: nil)
                             
                             
-                        }else{
+                        } else {
+                            
                             UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
                                 
-                                self.popupviewBottom.constant =  -541
+                                self.popupviewBottom.constant =  -505
                                 self.view.layoutIfNeeded()
                             }, completion: nil)
                             
@@ -1425,21 +1418,17 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if shared.ModeValue == 1{
             
             if pickerView == self.picker1{
-                return nonsencePrefixArr[row%nonsencePrefixArr.count]}
-            else if pickerView == self.picker3{
+                return nonsencePrefixArr[row%nonsencePrefixArr.count]} else if pickerView == self.picker3{
                 
-                return nonsenceRootArr[row%nonsenceRootArr.count]}
-            else{
+                return nonsenceRootArr[row%nonsenceRootArr.count]} else{
                 return nonsenceSuffixArr[row%nonsenceSuffixArr.count]
             }
         }
         else{
             if pickerView == self.picker1{
-                return pickerdataPrefix1[row%pickerdataPrefix1.count]}
-            else if pickerView == self.picker2{
+                return pickerdataPrefix1[row%pickerdataPrefix1.count]} else if pickerView == self.picker2{
                 
-                return pickerdataPrefix2[row%pickerdataPrefix2.count]}
-            else if pickerView == self.picker3{
+                return pickerdataPrefix2[row%pickerdataPrefix2.count]} else if pickerView == self.picker3{
                 
                 return pickerdataRoot[row%pickerdataRoot.count]}
                 
@@ -1449,8 +1438,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             else if pickerView == self.picker5{
                 
-                return pickerdataSuffix2[row%pickerdataSuffix2.count]}
-            else{
+                return pickerdataSuffix2[row%pickerdataSuffix2.count]} else{
                 return pickerdataSuffix3[row%pickerdataSuffix3.count]
             }
             
@@ -1471,10 +1459,10 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if SharedInstance.sharedInstance.fontStylePicker == "AmericanTypewriter-Condensed"{
             fontstyle = "AmericanTypewriter-Condensed"
             fontstyleBold = "AmericanTypewriter-CondensedBold"
-        }else if SharedInstance.sharedInstance.fontStylePicker == "ChalkboardSE-Regular" {
+        } else if SharedInstance.sharedInstance.fontStylePicker == "ChalkboardSE-Regular" {
             fontstyle = "ChalkboardSE-Regular"
             fontstyleBold = "ChalkboardSE-Bold"
-        }else if SharedInstance.sharedInstance.fontStylePicker == "Papyrus-Condensed" {
+        } else if SharedInstance.sharedInstance.fontStylePicker == "Papyrus-Condensed" {
             fontstyle = "Papyrus-Condensed"
             fontstyleBold = "Papyrus-Condensed"
             
@@ -1499,13 +1487,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerLabel.adjustsFontSizeToFitWidth = true
         pickerLabel.minimumScaleFactor = 0.2
         
-        if shared.ModeValue == 0{
+        if shared.ModeValue == 0 {
             
             if row == Numberlist {
                 
                 if Numberlist == -1 {
                     
-                }else{
+                } else {
                     pickerLabel.font = UIFont(name: fontstyleBold as String, size: shared.FontSizePicker-5)
                     pickerLabel.textAlignment = NSTextAlignment.center
                     
@@ -1527,7 +1515,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         
@@ -1549,7 +1537,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker1{
                         
@@ -1579,15 +1567,14 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     }
                     
                 }
-            }
-            else if (pickerView == self.picker2 && pickerdataPrefix2.count>0){
+            } else if (pickerView == self.picker2 && pickerdataPrefix2.count>0){
                 pickerLabel.text =  pickerdataPrefix2[row%pickerdataPrefix2.count]
                 
                 if NumberPicker2 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     if row == NumberPicker2{
                         pickerLabel.alpha = 0
                         pickerLabel.textColor = UIColor.black
@@ -1605,21 +1592,20 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }
                         })
                         
-                    }else{
+                    } else {
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                         pickerLabel.textAlignment = NSTextAlignment.center
                     }
                 }
-            }
-            else if (pickerView == self.picker3 && pickerdataRoot.count>0){
+            } else if (pickerView == self.picker3 && pickerdataRoot.count>0){
                 
                 pickerLabel.text =  pickerdataRoot[row%pickerdataRoot.count]
                 if NumberPicker3 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker3{
                         pickerLabel.alpha = 0
@@ -1637,7 +1623,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                         pickerLabel.textAlignment = NSTextAlignment.center
@@ -1649,14 +1635,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             else if (pickerView == self.picker4 && pickerdataSuffix1.count>0){
                 pickerLabel.text =  pickerdataSuffix1[row%pickerdataSuffix1.count]
                 
-            }
-            else if (pickerView == self.picker5&&pickerdataSuffix2.count>0){
+            } else if (pickerView == self.picker5&&pickerdataSuffix2.count>0){
                 
                 if NumberPicker5 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker5{
                         
@@ -1676,7 +1661,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }
                         })
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1686,14 +1671,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
                 
                 pickerLabel.text =  pickerdataSuffix2[row%pickerdataSuffix2.count]
-            }
-            else if (pickerView == self.picker6&&pickerdataSuffix3.count>0) {
+            } else if (pickerView == self.picker6&&pickerdataSuffix3.count>0) {
                 
                 if NumberPicker6 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker6{
                         
@@ -1715,7 +1699,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }
                         })
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1733,7 +1717,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
                 if Numberlist == -1 {
                     
-                }else{
+                } else {
                     pickerLabel.font = UIFont(name: fontstyleBold as String, size: shared.FontSizePicker-5)
                     pickerLabel.textAlignment = NSTextAlignment.center
                     
@@ -1756,7 +1740,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         
@@ -1780,7 +1764,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker1{
                         
@@ -1804,7 +1788,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1813,8 +1797,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     }
                     
                 }
-            }
-            else if (pickerView == self.picker2 && pickerdataPrefix2.count>0){
+            } else if (pickerView == self.picker2 && pickerdataPrefix2.count>0){
                 
                 pickerLabel.text =  pickerdataPrefix2[row%pickerdataPrefix2.count]
                 
@@ -1822,7 +1805,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     // pickerLabel.font = UIFont(name: pickerLabel.font.fontName,
                     
                     
@@ -1847,7 +1830,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1858,15 +1841,14 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
                 
                 
-            }
-            else if (pickerView == self.picker3 && pickerdataRoot.count>0){
+            } else if (pickerView == self.picker3 && pickerdataRoot.count>0){
                 
                 pickerLabel.text =  pickerdataRoot[row%pickerdataRoot.count]
                 if NumberPicker3 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker3{
                         
@@ -1890,7 +1872,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         })
                         
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1914,7 +1896,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker5{
                         
@@ -1936,7 +1918,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }
                         })
                         
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1949,14 +1931,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
                 
                 pickerLabel.text =  pickerdataSuffix2[row%pickerdataSuffix2.count]
-            }
-            else if (pickerView == self.picker6&&pickerdataSuffix3.count>0) {
+            } else if (pickerView == self.picker6&&pickerdataSuffix3.count>0) {
                 
                 if NumberPicker6 == -1 {
                     pickerLabel.textColor = UIColor.gray
                     pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
                     pickerLabel.textAlignment = NSTextAlignment.center
-                }else{
+                } else {
                     
                     if row == NumberPicker6{
                         
@@ -1976,7 +1957,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                                 
                             }
                         })
-                    }else{
+                    } else {
                         
                         pickerLabel.textColor = UIColor.gray
                         pickerLabel.font = UIFont(name: fontstyle as String, size: shared.FontSizePicker-10)
@@ -1994,11 +1975,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             pickerLabel.textColor = UIColor.black
             if (pickerView == self.picker1 && nonsencePrefixArr.count>0){
                 pickerLabel.text =  nonsencePrefixArr[row%nonsencePrefixArr.count]
-            }
-            else  if (pickerView == self.picker3 && nonsenceRootArr.count>0){
+            } else  if (pickerView == self.picker3 && nonsenceRootArr.count>0){
                 pickerLabel.text =  nonsenceRootArr[row%nonsenceRootArr.count]
-            }
-            else  if (pickerView == self.picker6 && nonsenceSuffixArr.count>0){
+            } else  if (pickerView == self.picker6 && nonsenceSuffixArr.count>0){
                 pickerLabel.text =  nonsenceSuffixArr[row%nonsenceSuffixArr.count]
                 
             }
@@ -2011,13 +1990,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        if shared.ModeValue == 0{
+        if shared.ModeValue == 0 {
             Numberlist = pickerView.selectedRow(inComponent: 0)
-            if  self.popupviewBottom.constant ==  -541 {
+            if  self.popupviewBottom.constant ==  -505 {
                 self.CLOSE(UIButton())
             }
             selectPiceker = pickerView
-            if pickerView == self.picker3&&pickerdataRoot.count>0{
+            if pickerView == self.picker3&&pickerdataRoot.count>0 {
                 
                 selectedWordArr = ["","",pickerdataRoot[row%pickerdataRoot.count],"","",""]
                 rootValue = pickerdataRoot[row%pickerdataRoot.count]
@@ -2027,13 +2006,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolSuffixfirst = false
                 boolPrefixfirst = false
                 
-            }
-            else if pickerView == self.picker1&&pickerdataPrefix1.count>0{
+            } else if pickerView == self.picker1&&pickerdataPrefix1.count>0 {
                 
                 if boolPrefixfirst{
-                }else{
+                } else {
                     if boolSuffixfirst{
-                    }else{
+                    } else {
                         boolPrefixfirst = true
                         boolSuffixfirst = false
                     }
@@ -2047,17 +2025,16 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 else{
                     if suffix1Value != ""{
                         pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata: prefix1Value as NSString)
-                    }else if suffix2Value != ""{
+                    } else if suffix2Value != ""{
                         pickerRootSuffixSuffix2prefixActiondone(withPrefixdata:  prefix1Value as NSString  )
-                    }else{
+                    } else {
                         pickerRootPrefixSuffixActiondone(withPrefix: prefix1Value as NSString)}
                 }
-            }
-            else if pickerView == self.picker6&&pickerdataSuffix3.count>0{
+            } else if pickerView == self.picker6&&pickerdataSuffix3.count>0 {
                 if boolPrefixfirst{
-                }else{
+                } else {
                     if boolSuffixfirst{
-                    }else{
+                    } else {
                         boolPrefixfirst = false
                         boolSuffixfirst = true
                     }
@@ -2067,7 +2044,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 if boolPrefixfirst{
                     if prefix1Value != ""{
                         pickerRootSuffixPrefixActiondone(withSuffix: suffix3Value as NSString )
-                    }else{
+                    } else {
                         pickerRootSuffixActiondone(withSuffix: suffix3Value as NSString)
                     }
                     
@@ -2076,27 +2053,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     pickerRootSuffixActiondone(withSuffix: suffix3Value as NSString)
                 }
                 
-            }else if pickerView == self.picker5&&pickerdataSuffix2.count>0{
+            } else if pickerView == self.picker5&&pickerdataSuffix2.count>0 {
                 suffix2Value = pickerdataSuffix2[row%pickerdataSuffix2.count]
                 boolSuffix1data = true
                 NumberPicker5 = pickerView.selectedRow(inComponent: 0)
                 if prefix1Value != ""{
                     pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata: suffix2Value as NSString)
-                }else{
+                } else {
                     
                     pickerRootSuffixSuffix2Actiondone(withSuffixdata: suffix2Value as NSString)
                 }
-            }
-            else if pickerView == self.picker4&&pickerdataSuffix1.count>0{
+            } else if pickerView == self.picker4&&pickerdataSuffix1.count>0 {
                 suffix1lblView.isHidden = true
                 suffix1Value = pickerdataSuffix1[row%pickerdataSuffix1.count]
                 if prefix1Value != ""{
                     if prefix2Value != "" {
                         selectedWordArr = [prefix1Value,prefix2Value,rootValue,suffix1Value,suffix2Value,suffix3Value]
-                    }else{
+                    } else {
                         selectedWordArr = [prefix1Value,"",rootValue,suffix1Value,suffix2Value,suffix3Value]
                     }
-                }else{
+                } else {
                     
                     pickerRootSuffixSuffix2Suffix3Actiondone(withSuffixdata: suffix1Value as NSString)
                     
@@ -2104,8 +2080,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
                 self.picker4.reloadComponent(0)
                 
-            }
-            else if pickerView == self.picker2&&pickerdataPrefix2.count>0{
+            } else if pickerView == self.picker2&&pickerdataPrefix2.count>0 {
                 
                 NumberPicker2 = pickerView.selectedRow(inComponent: 0)
                 prefix2Value = pickerdataPrefix2[row%pickerdataPrefix2.count]
@@ -2118,32 +2093,31 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
         }
         else if shared.ModeValue == 1 {
-            if pickerView == self.picker3&&nonsenceRootArr.count>0{
+            if pickerView == self.picker3&&nonsenceRootArr.count>0 {
                 rootValue = nonsenceRootArr[row%nonsenceRootArr.count]
                 prefix1lblView.isHidden = true
                 suffix3LblView.isHidden = true
                 rootlblView.isHidden = true
                 NumberPicker3 = pickerView.selectedRow(inComponent: 0)
-            }else if pickerView == self.picker1&&nonsencePrefixArr.count>0{
+            } else if pickerView == self.picker1&&nonsencePrefixArr.count>0 {
                 prefix1Value = nonsencePrefixArr[row%nonsencePrefixArr.count]
                 prefix1lblView.isHidden = true
                 NumberPicker1 = pickerView.selectedRow(inComponent: 0)
                 
-            }
-            else if pickerView == self.picker6&&nonsenceSuffixArr.count>0{
+            } else if pickerView == self.picker6&&nonsenceSuffixArr.count>0 {
                 suffix3Value = nonsenceSuffixArr[row%nonsenceSuffixArr.count]
                 NumberPicker6 = pickerView.selectedRow(inComponent: 0)
                 suffix3LblView.isHidden = true
             }
             self.view.layoutIfNeeded()
-        }else{
+        } else {
             Numberlist = pickerView.selectedRow(inComponent: 0)
             
-            if  self.popupviewBottom.constant ==  -541 {
+            if  self.popupviewBottom.constant ==  -505 {
                 self.CLOSE(UIButton())
             }
             selectPiceker = pickerView
-            if pickerView == self.picker3&&pickerdataRoot.count>0{
+            if pickerView == self.picker3&&pickerdataRoot.count>0 {
                 selectedWordArr = ["","",pickerdataRoot[row%pickerdataRoot.count],"","",""]
                 rootValue = pickerdataRoot[row%pickerdataRoot.count]
                 NumberPicker3 = pickerView.selectedRow(inComponent: 0)
@@ -2151,35 +2125,32 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 if   boolSettingRoot{
                     randomSettingSelection()
                 }
-            }else if pickerView == self.picker1&&pickerdataPrefix1.count>0{
+            } else if pickerView == self.picker1&&pickerdataPrefix1.count>0 {
                 
                 prefix1Value = pickerdataPrefix1[row%pickerdataPrefix1.count]
                 selectedWordArr = [pickerdataPrefix1[row%pickerdataPrefix1.count],"",rootValue,"","",""]
                 NumberPicker1 = pickerView.selectedRow(inComponent: 0)
                 pickerRootPrefixActiondone(withPrefix: prefix1Value as NSString )
-            }
-            else if pickerView == self.picker6&&pickerdataSuffix3.count>0{
+            } else if pickerView == self.picker6&&pickerdataSuffix3.count>0 {
                 
                 suffix3Value = pickerdataSuffix3[row%pickerdataSuffix3.count]
                 NumberPicker6 = pickerView.selectedRow(inComponent: 0)
                 pickerRootSuffixPrefixActiondone(withSuffix: suffix3Value as NSString )
-            }else if pickerView == self.picker5&&pickerdataSuffix2.count>0{
+            } else if pickerView == self.picker5&&pickerdataSuffix2.count>0 {
                 
                 suffix2Value = pickerdataSuffix2[row%pickerdataSuffix2.count]
                 NumberPicker5 = pickerView.selectedRow(inComponent: 0)
                 pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata: suffix2Value as NSString)
-            }
-            else if pickerView == self.picker4&&pickerdataSuffix1.count>0{
+            } else if pickerView == self.picker4&&pickerdataSuffix1.count>0 {
                 suffix1lblView.isHidden = true
                 suffix1Value = pickerdataSuffix1[row%pickerdataSuffix1.count]
                 if prefix2Value != "" {
                     selectedWordArr = [prefix1Value,prefix2Value,rootValue,suffix1Value,suffix2Value,suffix3Value]
-                }else{
+                } else {
                     selectedWordArr = [prefix1Value,"",rootValue,suffix1Value,suffix2Value,suffix3Value]
                 }
                 self.picker4.reloadComponent(0)
-            }
-            else if pickerView == self.picker2&&pickerdataPrefix2.count>0{
+            } else if pickerView == self.picker2&&pickerdataPrefix2.count>0 {
                 NumberPicker2 = pickerView.selectedRow(inComponent: 0)
                 prefix2Value = pickerdataPrefix2[row%pickerdataPrefix2.count]
                 pickerRootPrefixPrefix2Actiondone(withPrefix2: prefix2Value as NSString)
@@ -2194,22 +2165,22 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     func RootActionButtonAnimation(){
         self.prefixBtn.alpha = 1.0
         self.suffixbtn.alpha = 1.0
-                               
-//        prefixBtn.alpha = 0.0
-//        suffixbtn.alpha = 0.0
-//        UIView.animate(withDuration: 1.0,
-//                       delay: 0.0,
-//                       options: [UIView.AnimationOptions.curveLinear,
-//                                 UIView.AnimationOptions.repeat,
-//                                 UIView.AnimationOptions.autoreverse],
-//                       animations: {
-//                        self.prefixBtn.alpha = 1.0
-//                        self.suffixbtn.alpha = 1.0
-//
-//
-//        },
-//                       completion: nil)
-//
+        
+        //        prefixBtn.alpha = 0.0
+        //        suffixbtn.alpha = 0.0
+        //        UIView.animate(withDuration: 1.0,
+        //                       delay: 0.0,
+        //                       options: [UIView.AnimationOptions.curveLinear,
+        //                                 UIView.AnimationOptions.repeat,
+        //                                 UIView.AnimationOptions.autoreverse],
+        //                       animations: {
+        //                        self.prefixBtn.alpha = 1.0
+        //                        self.suffixbtn.alpha = 1.0
+        //
+        //
+        //        },
+        //                       completion: nil)
+        //
     }
     func pickerRootPrefixPrefix2Actiondone(withPrefix2 prefix2:NSString){
         self.picker2.reloadComponent(0)
@@ -2222,7 +2193,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             for item in moviesPrefix1 {
                 
                 if pickerdataSuffix1.contains(item.suffix_1) {
-                }else{
+                } else {
                     
                     if item.suffix_1 != "" {
                         pickerdataSuffix1.append(item.suffix_1)
@@ -2231,7 +2202,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     
                 }
                 if pickerdataSuffix2.contains(item.suffix_2) {
-                }else{
+                } else {
                     
                     if item.suffix_2 != "" {
                         pickerdataSuffix2.append(item.suffix_2)
@@ -2241,7 +2212,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
                 
                 if pickerdataSuffix3.contains(item.suffix_3) {
-                }else{
+                } else {
                     if item.suffix_3 != "" {
                         pickerdataSuffix3.append(item.suffix_3)
                     }
@@ -2249,22 +2220,22 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             let   random1 :Int = Int(arc4random_uniform(10000))
             
-            if pickerdataSuffix1.count > 0{
+            if pickerdataSuffix1.count > 0 {
                 self.picker4.selectRow(random1, inComponent: 0, animated: false)
             }
-            if pickerdataSuffix2.count > 0{
+            if pickerdataSuffix2.count > 0 {
                 self.picker5.selectRow(random1, inComponent: 0, animated: false)
             }
-            if pickerdataSuffix3.count > 0{
+            if pickerdataSuffix3.count > 0 {
                 self.picker6.selectRow(random1, inComponent: 0, animated: false)
             }
-            if pickerdataSuffix1.count > 0{
+            if pickerdataSuffix1.count > 0 {
                 self.picker4.reloadComponent(0)
             }
-            if pickerdataSuffix2.count > 0{
+            if pickerdataSuffix2.count > 0 {
                 self.picker5.reloadComponent(0)
             }
-            if pickerdataSuffix3.count > 0{
+            if pickerdataSuffix3.count > 0 {
                 self.picker6.reloadComponent(0)
             }
         }
@@ -2273,11 +2244,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             if suffix2Value != "" {
                 if suffix1Value != "" {
                     selectedWordArr = [prefix1Value,prefix2Value,rootValue,suffix1Value,suffix2Value,suffix3Value]
-                }else{
+                } else {
                     selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
                     
                 }
-            }else{
+            } else {
                 selectedWordArr = [prefix1Value,prefix2Value,rootValue,"","",suffix3Value]
             }
             
@@ -2286,7 +2257,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerRootPrefixActiondone(withPrefix Prefix: NSString){
-        
+        print("width...........pickerRootPrefixActiondone \(deviceScreenWidth)")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         suffix1lblView.isHidden = true
@@ -2306,7 +2277,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         for item in moviesPrefix1 {
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     
                     pickerdataPrefix2.append(item.prefex_2)}
@@ -2314,7 +2285,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix3.contains(item.suffix_3) {
-            }else{
+            } else {
                 
                 if item.suffix_3 != "" {
                     pickerdataSuffix3.append(item.suffix_3)
@@ -2323,7 +2294,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -2332,7 +2303,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     pickerdataSuffix2.append(item.suffix_2)
@@ -2343,43 +2314,43 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix3.count > 0{
+        if pickerdataSuffix3.count > 0 {
             
             self.picker6.selectRow(random1, inComponent: 0, animated: true)
         }
         NumberPicker5 = -1
         NumberPicker6 = -1
         NumberPicker2 = -1
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
             self.picker2.reloadAllComponents()
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadAllComponents()
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadAllComponents()
         }
-        if pickerdataSuffix3.count > 0{
+        if pickerdataSuffix3.count > 0 {
             
             self.picker6.isUserInteractionEnabled = true
             self.picker6.reloadComponent(0)
-        }else{
+        } else {
             self.picker6.isUserInteractionEnabled = false
             
         }
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             boolPrefix1 = true
             picker2.alpha = 1.0
             self.picker2.isUserInteractionEnabled = true
@@ -2400,7 +2371,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Leading.constant = 0
             picker2Leading.constant = 0
             picker6Trailing.constant = 40
-        }else{
+        } else {
             boolPrefix1 = false
             boolSuffix = true
             self.picker2.isUserInteractionEnabled = false
@@ -2425,7 +2396,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerRootPrefixSuffixActiondone(withPrefix Prefix: NSString){
-        
+        print("width...........pickerRootPrefixSuffixActiondone \(deviceScreenWidth)")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         suffix1lblView.isHidden = true
@@ -2438,7 +2409,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         selectedWordArr = [Prefix as String ,"",rootValue,"","",suffix3Value]
         for item in moviesPrefix1 {
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     
                     pickerdataPrefix2.append(item.prefex_2)}
@@ -2447,7 +2418,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -2456,7 +2427,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     pickerdataSuffix2.append(item.suffix_2)
@@ -2466,32 +2437,32 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
         }
         let   random1 :Int = Int(arc4random_uniform(10000))
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.selectRow(random1, inComponent: 0, animated: false)
             
         }
         NumberPicker5 = -1
         
         NumberPicker2 = -1
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
             self.picker2.reloadComponent(0)
             
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.isUserInteractionEnabled = true
             /*deviceScreenWidth/4*/
             
@@ -2512,7 +2483,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker2Leading.constant = 0
             picker6Trailing.constant = 40
             
-        }else{
+        } else {
             self.picker2.isUserInteractionEnabled = false
             picker2Width.constant = 0
             picker4Width.constant = 0
@@ -2539,7 +2510,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerRootSuffixActiondone(withSuffix Suffix: NSString){
-        
+        print("width...........pickerRootSuffixActiondone \(deviceScreenWidth)")
         suffix1lblView.isHidden = true
         suffix2lblView.isHidden = true
         prefix1lblView.isHidden = true
@@ -2555,7 +2526,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix2.removeAll()
         for item in moviesSuffix3 {
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 if item.prefex_1 != "" {
                     
                     pickerdataPrefix1.append(item.prefex_1)
@@ -2564,7 +2535,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     
                     pickerdataPrefix2.append(item.prefex_2)
@@ -2572,7 +2543,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     pickerdataSuffix2.append(item.suffix_2)
@@ -2582,7 +2553,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -2600,26 +2571,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         NumberPicker5 = -1
         
         selectedWordArr = ["","",rootValue,"","",suffix3Value]
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.selectRow(random1, inComponent: 0, animated: true)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.pickerView(self.picker5, didSelectRow: random1, inComponent: 0)
             self.picker5.reloadComponent(0)
         }
-        if pickerdataSuffix3.count > 0{
+        if pickerdataSuffix3.count > 0 {
             
             self.picker6.reloadComponent(0)
         }
@@ -2627,7 +2598,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker5.isUserInteractionEnabled = true
         picker5.alpha = 1.0
         picker4.alpha = 0.5
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             picker1Width.constant = (deviceScreenWidth - 60)/4+20
             picker3Width.constant = (deviceScreenWidth - 60)/4+20
             picker6Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2644,7 +2615,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             Prview4.isHidden = true
             Prview5.isHidden = false
             picker6Trailing.constant = 40
-        }else{
+        } else {
             
             picker2Width.constant = 0
             picker4Width.constant = 0
@@ -2671,7 +2642,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     func pickerRootSuffixPrefixActiondone(withSuffix Suffix: NSString){
         
-        
+        print("width...........pickerRootSuffixPrefixActiondone \(deviceScreenWidth)")
         suffix1lblView.isHidden = true
         suffix2lblView.isHidden = true
         suffix3LblView.isHidden = true
@@ -2687,7 +2658,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         for item in moviesSuffix3 {
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 if item.prefex_2 != "" {
                     
                     pickerdataPrefix2.append(item.prefex_2)
@@ -2696,7 +2667,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     pickerdataSuffix2.append(item.suffix_2)
@@ -2707,7 +2678,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -2716,7 +2687,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         if prefix2Value != "" {
             selectedWordArr = [prefix1Value,prefix2Value,rootValue,"","",suffix3Value]
-        }else{
+        } else {
             
             selectedWordArr = [prefix1Value,"",rootValue,"","",suffix3Value]
             
@@ -2724,24 +2695,24 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let   random1 :Int = Int(arc4random_uniform(10000))
         
         NumberPicker5 = -1
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.selectRow(random1, inComponent: 0, animated: false)
             
         }
         
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.pickerView(self.picker5, didSelectRow: random1, inComponent: 0)
             // NumberPicker5 = random1
             self.picker5.reloadComponent(0)
             
         }
-        if pickerdataSuffix3.count > 0{
+        if pickerdataSuffix3.count > 0 {
             
             self.picker6.reloadComponent(0)
         }
@@ -2750,8 +2721,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         picker5.alpha = 1.0
         picker4.alpha = 0.5
-        if pickerdataPrefix2.count > 0{
-            if pickerdataSuffix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
+            if pickerdataSuffix2.count > 0 {
                 /*deviceScreenWidth/4*/
                 picker1Width.constant = (deviceScreenWidth - 60)/5+20
                 picker3Width.constant = (deviceScreenWidth - 60)/5+20
@@ -2770,7 +2741,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview4.isHidden = true
                 Prview5.isHidden = false
                 picker6Trailing.constant = 40
-            }else{
+            } else {
                 /*deviceScreenWidth/4*/
                 
                 picker1Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2792,9 +2763,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 picker6Trailing.constant = 40
                 
             }
-        }else{
+        } else {
             
-            if pickerdataSuffix2.count > 0{
+            if pickerdataSuffix2.count > 0 {
                 /*deviceScreenWidth/4*/
                 picker1Width.constant = (deviceScreenWidth - 60)/4+20
                 picker3Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2812,7 +2783,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview4.isHidden = true
                 Prview5.isHidden = false
                 picker6Trailing.constant = 40
-            }else{
+            } else {
                 
                 picker2Width.constant = 0
                 picker4Width.constant = 0
@@ -2833,7 +2804,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         self.view.layoutIfNeeded()
     }
-    func pickerRootSuffixSuffix2Actiondone(withSuffixdata Suffixdata: NSString){
+    func pickerRootSuffixSuffix2Actiondone(withSuffixdata Suffixdata: NSString) {
+        print("width...........pickerRootSuffixSuffix2Actiondone \(deviceScreenWidth)")
         suffix1lblView.isHidden = true
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
@@ -2854,7 +2826,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     
@@ -2864,7 +2836,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 
                 if item.prefex_1 != "" {
                     
@@ -2874,7 +2846,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -2893,26 +2865,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker4.isUserInteractionEnabled = true
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
             self.pickerView(self.picker4, didSelectRow: random1, inComponent: 0)
             
         }
         picker4.alpha = 1.0
         
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             
             //deviceScreenWidth/5
             
@@ -2934,7 +2906,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Trailing.constant = 40
             
             
-        }else{
+        } else {
             
             /*deviceScreenWidth/4*/
             
@@ -2962,7 +2934,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.view.layoutIfNeeded()
         
     }
-    func pickerRootSuffixSuffix2Suffix3Actiondone(withSuffixdata Suffixdata: NSString){
+    func pickerRootSuffixSuffix2Suffix3Actiondone(withSuffixdata Suffixdata: NSString) {
+        print("width...........pickerRootSuffixSuffix2Suffix3Actiondone \(deviceScreenWidth)")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         prefix1Value = ""
@@ -2974,7 +2947,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         for item in moviesSuffix3 {
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     
@@ -2984,14 +2957,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 
                 if item.prefex_1 != "" {
                     
                     pickerdataPrefix1.append(item.prefex_1)
-                    
                 }
-                
             }
         }
         pickerdataPrefix1 = pickerdataPrefix1.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
@@ -2999,16 +2970,16 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         self.picker1.isUserInteractionEnabled = true
         
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.reloadComponent(0)
         }
         
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.selectRow(random1, inComponent: 0, animated: false)
         }
         picker1.alpha = 1.0
@@ -3033,8 +3004,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.view.layoutIfNeeded()
     }
     
-    func pickerRootSuffixSuffix2prefixActiondone(withPrefixdata prefixdata: NSString)
-    {        prefix2lblView.isHidden = true
+    func pickerRootSuffixSuffix2prefixActiondone(withPrefixdata prefixdata: NSString) {
+        print("width...........pickerRootSuffixSuffix2prefixActiondone \(deviceScreenWidth)")
+        prefix2lblView.isHidden = true
         prefix2Value = ""
         
         suffix1lblView.isHidden = true
@@ -3046,7 +3018,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix1.removeAll()
         for item in moviesSuffix3 {
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     
@@ -3055,7 +3027,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
             }
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     
@@ -3069,26 +3041,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         self.picker2.isUserInteractionEnabled = true
         
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.reloadComponent(0)
         }
         
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
         }
         picker2.alpha = 1.0
         
         
         /*deviceScreenWidth/4*/
-        if pickerdataSuffix1.count>0{
+        if pickerdataSuffix1.count>0 {
             
             
-            if pickerdataPrefix2.count>0{
+            if pickerdataPrefix2.count>0 {
                 
                 picker1Width.constant = (deviceScreenWidth - 60)/6+25
                 picker3Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3109,8 +3081,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview5.isHidden = false
                 
                 picker6Trailing.constant = 40
-            }
-            else{
+            } else{
                 
                 picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3131,10 +3102,10 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 picker6Trailing.constant = 40
                 
             }
-        }else{
+        } else {
             
             
-            if pickerdataPrefix2.count>0{
+            if pickerdataPrefix2.count>0 {
                 picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3154,8 +3125,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview5.isHidden = false
                 
                 picker6Trailing.constant = 40
-            }
-            else{
+            } else{
                 
                 picker1Width.constant = (deviceScreenWidth - 60)/4+20
                 picker3Width.constant = (deviceScreenWidth - 60)/4+20
@@ -3181,7 +3151,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.view.layoutIfNeeded()
     }
     
-    func pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata prefixdata: NSString){
+    func pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata prefixdata: NSString) {
+        print("width...........pickerRootSuffixSuffix2Suffix3prefixActiondone \(deviceScreenWidth)")
         prefix2lblView.isHidden = true
         prefix2Value = ""
         moviesSuffix3 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix1Value as NSString, withSuffix2: suffix2Value as NSString, withSuffix3: suffix3Value as NSString)
@@ -3190,7 +3161,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2.removeAll()
         for item in moviesSuffix3 {
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     
@@ -3204,25 +3175,25 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         self.picker2.isUserInteractionEnabled = true
         
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
             self.picker2.reloadComponent(0)
         }
         
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
         }
         picker2.alpha = 1.0
         
         
         /*deviceScreenWidth/4*/
-        if pickerdataPrefix2.count>0{
+        if pickerdataPrefix2.count>0 {
             
             picker1Width.constant = (deviceScreenWidth - 60)/6+25
             picker3Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3268,7 +3239,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     func pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata Suffixdata: NSString){
         
-        
+        print("width...........pickerRootSuffixSuffix2PrefixActiondone \(deviceScreenWidth)")
         suffix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         
@@ -3276,7 +3247,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix3Value as NSString, withSuffix2: Suffixdata as NSString)
         if prefix2Value != "" {
             selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
-        }else{
+        } else {
             
             selectedWordArr = [prefix1Value,"",rootValue,"",suffix2Value,suffix3Value]
             
@@ -3287,7 +3258,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         for item in moviesSuffix2 {
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     
@@ -3298,7 +3269,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -3311,26 +3282,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker4.isUserInteractionEnabled = true
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
             self.picker2.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
             self.pickerView(self.picker4, didSelectRow: random1, inComponent: 0)
             
         }
         picker4.alpha = 1.0
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             
-            if pickerdataSuffix1.count > 0{
+            if pickerdataSuffix1.count > 0 {
                 
                 /*deviceScreenWidth/4*/
                 
@@ -3351,7 +3322,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview5.isHidden = false
                 
                 picker6Trailing.constant = 40
-            }else{
+            } else {
                 /*deviceScreenWidth/4*/
                 picker1Width.constant = (deviceScreenWidth - 60)/5+20
                 picker3Width.constant = (deviceScreenWidth - 60)/5+20
@@ -3372,9 +3343,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 picker6Trailing.constant = 40
             }
             
-        }else{
+        } else {
             
-            if pickerdataSuffix1.count > 0{
+            if pickerdataSuffix1.count > 0 {
                 
                 //deviceScreenWidth/5
                 picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3394,7 +3365,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 Prview4.isHidden = false
                 Prview5.isHidden = false
                 picker6Trailing.constant = 40
-            }else{
+            } else {
                 /*deviceScreenWidth/4*/
                 
                 picker1Width.constant = (deviceScreenWidth - 60)/4+20
@@ -3420,6 +3391,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.view.layoutIfNeeded()
     }
     func pickerRootSuffixSuffix2PrefixPrefix2Actiondone(withsuffixdata suffixdata : NSString){
+        print("width...........pickerRootSuffixSuffix2PrefixPrefix2Actiondone \(deviceScreenWidth)")
         suffix1lblView.isHidden = true
         suffix1Value = ""
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withPrefix2: prefix2Value as NSString, withSuffix2: suffix3Value as NSString, withSuffix3: suffixdata)
@@ -3428,7 +3400,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix1.removeAll()
         for item in moviesSuffix2 {
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -3439,18 +3411,18 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker4.isUserInteractionEnabled = true
         let   random1 :Int = Int(arc4random_uniform(10000))
         
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
             self.pickerView(self.picker4, didSelectRow: random1, inComponent: 0)
         }
         picker4.alpha = 1.0
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             
             //                     /*deviceScreenWidth/6*/
             picker1Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3472,7 +3444,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             Prview5.isHidden = false
             
             picker6Trailing.constant = 40
-        }else{
+        } else {
             
             // deviceScreenWidth/5
             picker1Width.constant = (deviceScreenWidth - 60)/5+20
@@ -3498,7 +3470,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.view.layoutIfNeeded()
     }
     func pickerRootActiondone(withRoot Root: NSString){
-        
+        print("width...........pickerRootSuffixSuffix2PrefixPrefix2Actiondone \(deviceScreenWidth)")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         rootlblView.isHidden = true
@@ -3524,7 +3496,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         for item in moviesRoot {
             
             if pickerdataPrefix1.contains(item.prefex_1) {
-            }else{
+            } else {
                 
                 if item.prefex_1 != "" {
                     pickerdataPrefix1.append(item.prefex_1)
@@ -3534,7 +3506,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataPrefix2.contains(item.prefex_2) {
-            }else{
+            } else {
                 
                 if item.prefex_2 != "" {
                     pickerdataPrefix2.append(item.prefex_2)
@@ -3544,7 +3516,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix1.contains(item.suffix_1) {
-            }else{
+            } else {
                 
                 if item.suffix_1 != "" {
                     pickerdataSuffix1.append(item.suffix_1)
@@ -3553,7 +3525,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
             if pickerdataSuffix2.contains(item.suffix_2) {
-            }else{
+            } else {
                 
                 if item.suffix_2 != "" {
                     pickerdataSuffix2.append(item.suffix_2)
@@ -3561,7 +3533,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
             }
             if pickerdataSuffix3.contains(item.suffix_3) {
-            }else{
+            } else {
                 
                 if item.suffix_3 != "" {
                     pickerdataSuffix3.append(item.suffix_3)
@@ -3578,20 +3550,20 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         
         let   random1 :Int = Int(arc4random_uniform(10000))
-        if pickerdataPrefix1.count > 0{
+        if pickerdataPrefix1.count > 0 {
             self.picker1.selectRow(random1, inComponent: 0, animated: true)
         }
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.selectRow(random1, inComponent: 0, animated: false)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.selectRow(random1, inComponent: 0, animated: false)
             
         }
-        if pickerdataSuffix3.count > 0{
+        if pickerdataSuffix3.count > 0 {
             self.picker6.selectRow(random1, inComponent: 0, animated: true)
         }
         
@@ -3609,13 +3581,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker1.reloadComponent(0)
         
         
-        if pickerdataPrefix2.count > 0{
+        if pickerdataPrefix2.count > 0 {
             self.picker2.reloadComponent(0)
         }
-        if pickerdataSuffix1.count > 0{
+        if pickerdataSuffix1.count > 0 {
             self.picker4.reloadComponent(0)
         }
-        if pickerdataSuffix2.count > 0{
+        if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
         }
         self.picker6.reloadComponent(0)
@@ -3664,7 +3636,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 didStatus = true
                 cell.statusBtn.setBackgroundImage(#imageLiteral(resourceName: "no"), for: .normal)
                 
-            }else{
+            } else {
                 
                 cell.statusBtn.isHidden = true
                 
@@ -3683,9 +3655,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             }
                             
                         }
-                        
-                        
-                        
                     }
                 }
                 )
@@ -3711,8 +3680,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if segue.identifier == "grammerVc"{
             let instVc = segue.destination as! InstructionVC
             instVc.pushFrom = "grammerVC"
-        }
-        
+        }        
     }
-    
 }
