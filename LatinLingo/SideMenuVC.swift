@@ -8,8 +8,9 @@
 
 import UIKit
 class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let sideMenuItems: [String] = ["Select mode", "Settings", "Packages", "Instructions"]
-    let  settigsImages : [UIImage] = [#imageLiteral(resourceName: "dash1"), #imageLiteral(resourceName: "dash2"),#imageLiteral(resourceName: "dash3"),#imageLiteral(resourceName: "dash4") ]
+    //let sideMenuItems: [String] = ["Select mode", "Settings", "Packages", "Instructions"]
+    let sideMenuItems: [String] = ["Select mode", "Instructions", "Packages", "Privacy", "Terms of use"]
+    let  settigsImages : [UIImage] = [#imageLiteral(resourceName: "dash1"), #imageLiteral(resourceName: "dash4"), #imageLiteral(resourceName: "dash3"), #imageLiteral(resourceName: "icn2"), #imageLiteral(resourceName: "icn4")]
     @IBOutlet var tableView: UITableView!
     
     // MARK: View lifecycle
@@ -38,17 +39,21 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             self.performSegue(withIdentifier: "toHome", sender: self)
-        }
-        else if indexPath.row == 1{
-            self.performSegue(withIdentifier: "toSettings", sender: self)
-        }
-        else if indexPath.row == 2{
-            self.performSegue(withIdentifier: "toPackage", sender: self)
-        }
-        else if indexPath.row == 3{
+        } else if indexPath.row == 1 {
+            //self.performSegue(withIdentifier: "toSettings", sender: self)
             self.performSegue(withIdentifier: "toInstuctions", sender: self)
+        } else if indexPath.row == 2 {
+            self.performSegue(withIdentifier: "toPackage", sender: self)
+        } else if indexPath.row == 3 {
+            let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "AboutVc") as! AboutVc
+            secondVC.loadData = 1
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        } else if indexPath.row == 4 {
+            let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "AboutVc") as! AboutVc
+            secondVC.loadData = 0
+            self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
 }

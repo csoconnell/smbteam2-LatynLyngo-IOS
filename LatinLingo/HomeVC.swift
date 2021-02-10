@@ -9,6 +9,7 @@
  import UIKit
  import CoreData
  import Alamofire
+ import AVFoundation
  
  struct DictionaryInfo {
     var word_id: Int!
@@ -35,26 +36,35 @@
     var part_speech: String!
     
  }
+ extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+ }
  class HomeVC: UIViewController{
     var meaningList: [WordMeaningInfo]!
     @IBOutlet weak var menuButton: UIButton!
     var shared = SharedInstance.sharedInstance
+    var audio:AVPlayer!
     
     @IBAction func backBTNTapped(_ sender: UIButton) {
+        
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func navigation(_ sender: UIButton) {
         if  sender.tag == 1 {
+            //Root
+            shared.ModeValue = 0
+        } else if sender.tag == 3 {
+            //random
+            shared.ModeValue = 2
+        } else {
+            //nonsense
             startLoader(view: self.view, loadtext: "")
             self.view.isUserInteractionEnabled = false
             meaningList = DBManager.shared.loadnonsenceData()
             shared.ModeValue = 1
-        } else if sender.tag == 2 {
-            shared.ModeValue = 0
-        } else {
-            shared.ModeValue = 2
-            
         }
         loadnavigation()
     }
@@ -64,7 +74,7 @@
         if shared.ModeValue == 1 {
             stopLoader()
             self.view.isUserInteractionEnabled = true
-
+            
             shared.meaningList.removeAll()
             shared.meaningList = meaningList
         }
@@ -72,21 +82,18 @@
     }
     
     @IBAction func navigationAction(_ sender: UIButton) {
+        //any mode
         shared.ModeValue = 3
         let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationPassController") as! NavigationPassController
         self.present(messageVC, animated: false, completion: nil)
     }
     
-    @IBAction func navigationActionPass(_ sender: UIButton) {
-        shared.ModeValue = 3
-        let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationPassController") as! NavigationPassController
-        self.present(messageVC, animated: false, completion: nil)
-    }
     
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
+        
         if (UserDefaults.standard.object(forKey: "insertDB") == nil) || shared.DbUpdated == "1"
         {
             startLoader(view: self.view, loadtext: "")
@@ -114,7 +121,7 @@
                 }
                 stopLoader()
                 self.view.isUserInteractionEnabled = true
-
+                
             }
             
         }

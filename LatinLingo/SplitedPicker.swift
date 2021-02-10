@@ -37,7 +37,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var synonymLbl: UILabel!
     
     //MARK: UIButtons
-    @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var resetBtn: UIButton!
     @IBOutlet weak var prefixOverlayBtn: UIButton!
     @IBOutlet weak var rootOverlayBtn: UIButton!
     @IBOutlet weak var suffixOverlayBtn: UIButton!
@@ -310,6 +310,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         suffixswipeupGesture.delegate = self
         suffixswipeupGesture.direction = .down
         self.suffixOverlayBtn.addGestureRecognizer(suffixswipeupGesture)
+        resetBtn.isHidden = false
         
         deviceScreenWidth = UIScreen.main.bounds.width
         if shared.ModeValue == 0 {// Root mode
@@ -317,6 +318,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         } else if shared.ModeValue == 1 { // Nonsense mode
             loadNonSenseData()
         } else {
+            resetBtn.isHidden = true
             loadRandomData() // Random mode
         }
     }
@@ -1045,32 +1047,38 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     //MARK: Random Spin Button Action
+    @IBAction func spinbtnClicked(_ sender: UIButton) {
+           
+           if shared.ModeValue == 1 {// nonsense mode
+               prefixbtnClicked(UIButton())
+               rootbtnClicked(UIButton())
+               suffixbtnClicked(UIButton())
+           } else if shared.ModeValue == 2 {// random mode
+               self.delegate?.loadData()
+               randomTimer.invalidate()
+           } else if shared.ModeValue == 0 && prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
+               // root mode , Initially if user hits spin, nothing should happen
+               
+           } else {// root mode with any word
+               
+               if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") && rootValue != "" {
+                   //After choosing prefix, root, suffix if spin is hit, then reset everything
+                   self.delegate?.loadData()
+                   randomTimer.invalidate()
+               } else {
+                   if prefix1Value == "" && prefix2Value == "" {
+                       prefixbtnClicked(UIButton())
+                   }
+                   if suffix1Value == "" && suffix2Value == "" && suffix3Value == "" {
+                       suffixbtnClicked(UIButton())
+                   }
+               }
+               
+           }
+       }
     @IBAction func resetbtnClicked(_ sender: UIButton) {
-        
-        if shared.ModeValue == 1 {// nonsense mode
-            prefixbtnClicked(UIButton())
-            rootbtnClicked(UIButton())
-            suffixbtnClicked(UIButton())
-        } else if shared.ModeValue == 2 {// random mode
-            self.delegate?.loadData()
-            randomTimer.invalidate()
-        } else if shared.ModeValue == 0 && prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
-            // root mode , Initially if user hits spin, nothing should happen
-            
-        } else {// root mode with any word
-            
-            if prefix1Value == "" && prefix2Value == "" {
-                prefixbtnClicked(UIButton())
-            }
-            if suffix1Value == "" && suffix2Value == "" && suffix3Value == "" {
-                suffixbtnClicked(UIButton())
-            }
-            if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") {
-                rootbtnClicked(UIButton())
-                prefixbtnClicked(UIButton())
-                suffixbtnClicked(UIButton())
-            }
-        }
+        self.delegate?.loadData()
+        randomTimer.invalidate()
     }
     
     //MARK: Picker Button Actions

@@ -32,7 +32,7 @@ class SharedInstance: NSObject
     var ModeValue: Int = 0
     var numberOfEmergencyContants: Int = 0
     var FontSizePicker : CGFloat = 35
-    var fontStylePicker : NSString = "corbel"
+    var fontStylePicker : NSString = "TrebuchetMS" //"corbel"
     var dataload : NSString = ""
     var dataloadPass : NSString = ""
     var reloadedData : Bool  = false

@@ -76,6 +76,7 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         else if(segue.identifier == "loadDataterms")
         {
             let view : AboutVc = segue.destination as! AboutVc
+            
             view.loadData = 0
         }
     }

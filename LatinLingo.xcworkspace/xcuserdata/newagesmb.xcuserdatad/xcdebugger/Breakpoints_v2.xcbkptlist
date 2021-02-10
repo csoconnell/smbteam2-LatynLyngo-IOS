@@ -192,23 +192,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8BAD9875-A348-4229-A967-A6CC1C1571D1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0E87EA94-0E23-4379-8402-A52FD17813A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -236,23 +219,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2817"
             endingLineNumber = "2817">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "38BF76FE-3D83-4847-B1BF-78F7DB566C2A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,23 +264,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2817"
             endingLineNumber = "2817">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1B391F12-8735-4520-A7E7-E4E1D78488A2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -411,23 +360,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2817"
             endingLineNumber = "2817">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "91F1843E-2EFD-4DE3-93F1-290AF6E278D7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/DBManager.swift"
-            timestampString = "518366486.884429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
-            landmarkName = "loadMovie(withStartValue:StartValueData:SecondValue:SecondValueData:ThirdValue:ThirdValueData:ForthValue:ForthValueData:FifthValue:FifthValueData:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -790,22 +722,38 @@
             endingLineNumber = "675"
             landmarkName = "tapprefix1PickerButton(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "09BFF806-1480-4367-AB3C-4BD8F43D8F21"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatinLingo/splitedPickerAny.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1439"
-            endingLineNumber = "1439"
-            landmarkName = "pickerfirstValueActiondone(withFirstValue:withFirstValueData:SecondValue:SecondValueData:thirdValue:thirdValueData:forthValue:forthValueData:fifthValue:fifthValueData:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6CAFD7A-8A04-4DEC-AAFE-03310981AB18 - 1e51264dff8fbdee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Latyn_Lyngo.splitedPickerAny.tapprefix1PickerButton(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "Latyn Lyngo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatinLingo-IOS/LatinLingo/splitedPickerAny.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "675"
+                  endingLineNumber = "675"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "D6CAFD7A-8A04-4DEC-AAFE-03310981AB18 - b07d0095e1ae8e63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Latyn_Lyngo.WordMeaningInfo&gt;) -&gt; () in Latyn_Lyngo.splitedPickerAny.tapprefix1PickerButton(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "Latyn Lyngo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatinLingo-IOS/LatinLingo/splitedPickerAny.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "676"
+                  endingLineNumber = "676"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

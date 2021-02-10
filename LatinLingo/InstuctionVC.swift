@@ -34,14 +34,14 @@ class InstructionVC: UIViewController, UIScrollViewDelegate {
             menuButton.isHidden = true
             if pushFrom == "instVC"{
                 url = NSURL (string: kBaseURLCommon + "instruction")
-                instnLbl.text = "Instructions For Use"
+                instnLbl.text = "Instructions"
             } else {
                 instnLbl.text = "Grammar For Use"
                 url = NSURL (string: kBaseURLCommon + "grammer")
             }
         } else {
             url = NSURL (string: kBaseURLCommon + "instruction")
-            instnLbl.text = "Instructions For Use"
+            instnLbl.text = "Instructions"
             if pushFrom == "WelcomeVC" {
                 backBtn.isHidden = false
                 menuButton.isHidden = true

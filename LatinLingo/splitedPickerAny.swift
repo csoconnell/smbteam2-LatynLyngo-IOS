@@ -582,17 +582,17 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
         attributedString.addAttributes(boldFontAttribute, range: str.range(of: ":"))
         return attributedString
     }
-    //MARK: Picker Button Actions
-    @IBAction func resetbtnClicked(_ sender: UIButton) {
+    
+     //MARK: Random Spin Button Action
+    @IBAction func spintbtnClicked(_ sender: UIButton) {
         //self.delegate?.loadDataFunctionAgain()
         if prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
             //Initially if user hits spin, nothing should happen
             
         } else {
-            if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") && rootValue != "" || self.wordformBtn.isHidden == false {
-                rootbtnClicked(UIButton())
-                prefixbtnClicked(UIButton())
-                suffixbtnClicked(UIButton())
+            if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") && rootValue != "" {
+                //After choosing prefix, root, suffix if spin is hit, then reset everything
+                self.delegate?.loadDataFunctionAgain()
             } else {
                 if prefix1Value == "" && prefix2Value == "" {
                     prefixbtnClicked(UIButton())
@@ -606,7 +606,11 @@ class splitedPickerAny:  UIViewController, UIPickerViewDataSource, UIPickerViewD
             }
          }
     }
-    @IBAction func prefixbtnClicked(_ sender: UIButton) {
+    @IBAction func resetbtnClicked(_ sender: UIButton) {
+        self.delegate?.loadDataFunctionAgain()
+    }
+    //MARK: Picker Button Actions
+   @IBAction func prefixbtnClicked(_ sender: UIButton) {
         let   random1 :Int = Int(arc4random_uniform(10000))
         prefixBtn.isHidden = true
         picker1.isHidden = false
