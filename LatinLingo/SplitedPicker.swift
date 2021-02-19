@@ -116,10 +116,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var MeaningTextView: UITextView!
     
     //MARK: Constraints
-    @IBOutlet weak var popupviewBottom: NSLayoutConstraint!
-    @IBOutlet weak var listviewHeight: NSLayoutConstraint!
+    @IBOutlet weak var popupviewTop: NSLayoutConstraint!
     @IBOutlet weak var popupViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var picker1Width: NSLayoutConstraint!
     @IBOutlet weak var picker2Width: NSLayoutConstraint!
     @IBOutlet weak var picker3Width: NSLayoutConstraint!
@@ -145,6 +143,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     var counter = 0
     
     //MARK: Bool Variables
+    
     var boolRoot = true
     var boolPrefix = true
     var boolSuffix = true
@@ -160,8 +159,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     var menubtnClicked = false
     var didselectStatus = false
     var didStatus = false
-    
-    
+    // for spin action
+    var prefixSpinned = false
+    var rootSpinned = false
+    var suffixSpinned = false
+    var prefixValueSelected = false
+    var rootValueSelected = false
+    var suffixValueSelected = false
     
     //MARK: NSDictionaries
     var movies: [DictionaryInfo]!
@@ -213,6 +217,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
         let frame = CGRect(x: self.view.center.x-20, y: self.view.center.y-20, width: 40, height: 40)
         activityIndicatorView = NVActivityIndicatorView(frame: frame,
                                                         type: .ballSpinFadeLoader)
@@ -221,14 +227,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         templateList.delegate = self
         templateList.dataSource = self
-        if UIScreen.main.bounds.width == 568 {
-            listviewHeight.constant = 150
-        } else if UIScreen.main.bounds.width == 667 {
-            listviewHeight.constant = 180
-        } else {
-            
-            listviewHeight.constant = 220
-        }
+        
+        popupViewHeight.constant = UIScreen.main.bounds.height + 15
         
         rootBtn.titleLabel?.font = UIFont(name: shared.fontStylePicker as String, size: shared.FontSizePicker)
         prefixBtn.titleLabel?.font = UIFont(name: shared.fontStylePicker as String, size: shared.FontSizePicker)
@@ -277,9 +277,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let showmeaningGestureBottom = UITapGestureRecognizer(target: self, action: #selector(self.showMeaningGestureTapped(_:)))
         showmeaningGestureBottom.delegate = self
         showmeaningGestureBottom.numberOfTapsRequired = 1
-        self.bottomImg.isUserInteractionEnabled = true
-        self.bottomImg.addGestureRecognizer(showmeaningGestureBottom)
-        self.topImg.addGestureRecognizer(showmeaningGesture)
+        self.wordformBtn.isUserInteractionEnabled = true
+        self.wordformBtn.addGestureRecognizer(showmeaningGestureBottom)
+        // self.bottomImg.isUserInteractionEnabled = true
+        //      self.bottomImg.addGestureRecognizer(showmeaningGestureBottom)
+        //  self.topImg.addGestureRecognizer(showmeaningGesture)
         
         
         let rootswipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.rootbtnClicked(_:)))
@@ -322,22 +324,26 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             loadRandomData() // Random mode
         }
     }
+    // view settings after device orientation changed
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        blockWidthSettings()
-    }
-    func blockWidthSettings() {
         //
         //        if UIDevice.current.orientation.isLandscape {
         //                   deviceScreenWidth = UIScreen.main.bounds.height
         //               } else {
         //                   deviceScreenWidth = UIScreen.main.bounds.width
         //               }
-        deviceScreenWidth = UIScreen.main.bounds.width; print("......isLandscape_\(UIDevice.current.orientation.isLandscape)......height\(UIScreen.main.bounds.height).....width\(UIScreen.main.bounds.width)")
+        popupViewHeight.constant = UIScreen.main.bounds.height + 15
+        deviceScreenWidth = UIScreen.main.bounds.width
         picker1Width.constant = (deviceScreenWidth - 60)/3
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if self.popupviewTop.constant != 0 {
+            self.wordformBtn.isHidden = false
+        }
+        self.popupviewTop.constant = 0
     }
     
     //MARK: Mode Management Functions
@@ -689,7 +695,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         if rootPickerLoading{
             
-            random = Int(arc4random_uniform(10000))
+            random = Int.random(in: 0...10000)
             rootPickerLoading = false
             
             if   boolSettingRoot{} else {
@@ -717,7 +723,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
         }
         else{
-            random = Int(arc4random_uniform(10000))
+            random = Int.random(in: 0...10000)
             rootPickerLoading = true
             
             if   boolSettingRoot{} else {
@@ -874,23 +880,19 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         suffix3Img.layer.removeAllAnimations()
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             
-            if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
-                
-                self.popupviewBottom.constant =  -505
+            if  self.popupviewTop.constant == UIScreen.main.bounds.height + 15 {
+                self.popupviewTop.constant =  200
                 self.view.layoutIfNeeded()
-                
-            } else{
-                
-                self.popupviewBottom.constant = -667
+            } else {
+                self.popupviewTop.constant = 0
                 self.view.layoutIfNeeded()
             }
         }, completion: { (status) in
-            if self.popupviewBottom.constant == -667 {
+            if self.popupviewTop.constant == 0 {
                 self.wordformBtn.isHidden = false
             }
             
         })
-        
     }
     @IBAction func ShowDetailsOfWord(_ sender: UIButton) {
         
@@ -930,8 +932,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         closeBtn.setImage(UIImage(named:"close"), for: .normal)
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
-            
-            self.popupviewBottom.constant = -667+(UIScreen.main.bounds.height)
+            self.popupviewTop.constant = UIScreen.main.bounds.height + 15
             self.view.layoutIfNeeded()
         }, completion: nil)
         
@@ -957,7 +958,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             var str: String = ""
             for i in (0..<meaningArr.count){
-                str += "\(partofSpeechDict["\(partofSpeachArr[i])"] as! String):\n\(meaningArr[i])\n"
+                str += "\(partofSpeechDict["\(partofSpeachArr[i])"] as? String):\n\(meaningArr[i])\n"
             }
             let stringVar : NSString = str as NSString
             let newString  = stringVar.replacingOccurrences(of: "<br />", with: "", options: .literal, range: NSRange(location: 0, length: stringVar.length))
@@ -1017,7 +1018,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                                 if self.testArr.contains((movie?.synonym)! as String){
                                 }
                                 else{
-                                    let   random1 :Int = Int(arc4random_uniform(4))
+                                    let   random1 :Int = Int.random(in: 0...3) //Int(arc4random_uniform(4))
                                     self.testArr.removeObject(at: random1)
                                     self.testArr.insert((movie?.synonym)! as String, at: random1)
                                 }
@@ -1048,34 +1049,39 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     //MARK: Random Spin Button Action
     @IBAction func spinbtnClicked(_ sender: UIButton) {
-           
-           if shared.ModeValue == 1 {// nonsense mode
-               prefixbtnClicked(UIButton())
-               rootbtnClicked(UIButton())
-               suffixbtnClicked(UIButton())
-           } else if shared.ModeValue == 2 {// random mode
-               self.delegate?.loadData()
-               randomTimer.invalidate()
-           } else if shared.ModeValue == 0 && prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
-               // root mode , Initially if user hits spin, nothing should happen
-               
-           } else {// root mode with any word
-               
-               if (prefix1Value != "" || prefix2Value != "") && (suffix1Value != "" || suffix2Value != "" || suffix3Value != "") && rootValue != "" {
-                   //After choosing prefix, root, suffix if spin is hit, then reset everything
-                   self.delegate?.loadData()
-                   randomTimer.invalidate()
-               } else {
-                   if prefix1Value == "" && prefix2Value == "" {
-                       prefixbtnClicked(UIButton())
-                   }
-                   if suffix1Value == "" && suffix2Value == "" && suffix3Value == "" {
-                       suffixbtnClicked(UIButton())
-                   }
-               }
-               
-           }
-       }
+        
+        if shared.ModeValue == 1 {// nonsense mode
+            rootbtnAction()
+            prefixbtnAction()
+            suffixbtnAction()
+        } else if shared.ModeValue == 2 {// random mode
+            self.delegate?.loadData()
+            randomTimer.invalidate()
+        } else if shared.ModeValue == 0 && prefixOverlayBtn.isHidden == false && rootOverlayBtn.isHidden == false && suffixOverlayBtn.isHidden == false {
+            // root mode , Initially if user hits spin, nothing should happen
+            
+        } else {// root mode with any word
+            
+            print("spin............\(prefixValueSelected)......\(rootValueSelected)......\(suffixValueSelected)")
+            if !prefixValueSelected {
+                prefixSpinned = true
+                prefixbtnAction()
+            }
+            if !suffixValueSelected {
+                suffixSpinned = true
+                suffixbtnAction()
+            }
+            if prefixValueSelected && suffixValueSelected && rootValueSelected {
+                rootbtnAction()
+                prefixbtnAction()
+                suffixbtnAction()
+            }
+            
+        }
+        
+        
+        
+    }
     @IBAction func resetbtnClicked(_ sender: UIButton) {
         self.delegate?.loadData()
         randomTimer.invalidate()
@@ -1083,8 +1089,23 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     //MARK: Picker Button Actions
     @IBAction func prefixbtnClicked(_ sender: UIButton) {
-        print("Prefix BUTTON TAPPED.........")
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        prefixSpinned = false
+        prefixValueSelected = true
+        prefixbtnAction()
+    }
+    @IBAction func rootbtnClicked(_ sender: UIButton) {
+        rootSpinned = false
+        rootValueSelected = true
+        rootbtnAction()
+    }
+    
+    @IBAction func suffixbtnClicked(_ sender: UIButton) {
+        suffixSpinned = false
+        suffixValueSelected = true
+        suffixbtnAction()
+    }
+    func prefixbtnAction() {
+        let   random1 :Int = Int.random(in: 0...10000)
         if shared.ModeValue == 1 {
             
             prefixBtn.isHidden = true
@@ -1108,20 +1129,17 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
         }
     }
-    @IBAction func rootbtnClicked(_ sender: UIButton) {
-        print("Root BUTTON TAPPED.........")
+    func rootbtnAction() {
         rootBtn.isHidden = true
         rootOverlayBtn.isHidden = true
         picker3.isHidden = false
-        let random1 :Int = Int(arc4random_uniform(10000))
+        let random1 :Int = Int.random(in: 0...10000)
         self.picker3.selectRow(random1, inComponent: 0, animated: true)
         //deviceScreenWidth/3
         self.pickerView(self.picker3, didSelectRow: random1, inComponent: 0)
     }
-    
-    @IBAction func suffixbtnClicked(_ sender: UIButton) {
-        print("Suffix BUTTON TAPPED.........")
-        let   random1 :Int = Int(arc4random_uniform(10000))
+    func suffixbtnAction() {
+        let   random1 :Int = Int.random(in: 0...10000)
         if shared.ModeValue == 1 {
             suffixbtn.isHidden = true
             picker6.isHidden = false
@@ -1146,7 +1164,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
         }
     }
-    
     //MARK: MenuButton Actions
     @IBAction func menuBtnClicked(_ sender: UIButton) {
         if menubtnClicked{
@@ -1321,68 +1338,56 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     @objc func showMeaningGestureTapped(_ sender: UITapGestureRecognizer){
+        // showWordMeaningPopup()
+        wordform()
+    }
+    func showWordMeaningPopup() {
+        let wordBtnStatus = self.wordformBtn.isHidden
         self.wordformBtn.isHidden = true
         
-        DBManager.shared.loadwordFromDB(withWord: selectedWordArr[0], prefix2: selectedWordArr[1], root: selectedWordArr[2], suffix1: selectedWordArr[3], suffix2: selectedWordArr[4], suffix3: selectedWordArr[5], completionHandler: { (movie) in
-            
-            DispatchQueue.main.async {
-                if movie != nil {
-                    
-                    self.resultWord = movie!.word
-                    
-                    if self.wordArrayDB.contains(self.resultWord){
-                        
-                        
-                        self.randomTimer.invalidate()
-                        self.resultView.isHidden = false
-                        self.resultLbl.text = self.resultWord  as String
-                        self.meaningButton.isSelected = false
-                        self.meaningButton.setTitleColor(UIColor.white, for: .normal)
-                        self.listButton.isSelected = false
-                        self.listButton.setTitleColor(UIColor.white, for: .normal)
-                        self.synonymsButton.isSelected = false
-                        self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
-                        
-                        if self.popupviewBottom.constant   ==  -505 {
-                            
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
-                                
-                                if  self.popupviewBottom.constant == -667+(UIScreen.main.bounds.height){
-                                    
-                                    self.popupviewBottom.constant =  -505
-                                    self.view.layoutIfNeeded()
-                                    
-                                }
-                                else{
-                                    
-                                    self.popupviewBottom.constant = -667
-                                    self.view.layoutIfNeeded()
-                                }
-                                
-                                
-                            }, completion: nil)
-                            
-                            
-                        } else {
-                            
-                            UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
-                                
-                                self.popupviewBottom.constant =  -505
-                                self.view.layoutIfNeeded()
-                            }, completion: nil)
-                            
-                        }
-                        
-                        
-                    }
-                    
-                }
-            }
-        })
+        print(".......showMeaningGestureTapped.........\(wordBtnStatus)")
+        print(".......self.popupviewTop.constant.........\(self.popupviewTop.constant)")
+        self.randomTimer.invalidate()
+        self.resultView.isHidden = false
+        self.resultLbl.text = self.resultWord  as String
+        self.meaningButton.isSelected = false
+        self.meaningButton.setTitleColor(UIColor.white, for: .normal)
+        self.listButton.isSelected = false
+        self.listButton.setTitleColor(UIColor.white, for: .normal)
+        self.synonymsButton.isSelected = false
+        self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
+        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+            self.popupviewTop.constant =  200
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        /*if wordBtnStatus == false {
+         self.wordformBtn.isHidden = true
+         
+         if self.popupviewTop.constant == 200 {
+         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
+         if  self.popupviewTop.constant == UIScreen.main.bounds.height + 15 {
+         self.popupviewTop.constant =  200
+         self.view.layoutIfNeeded()
+         } else {
+         self.popupviewTop.constant = 0
+         self.view.layoutIfNeeded()
+         }
+         }, completion: nil)
+         }
+         else{
+         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+         self.popupviewTop.constant =  200
+         self.view.layoutIfNeeded()
+         }, completion: nil)
+         }
+         }*/
     }
-    
     //MARK: WordCheckking Function
     func wordform() {
+        print(".......wordform().........")
+        //        self.popupviewTop.constant = 0
+        //               self.wordformBtn.isHidden = true
+        print("prefix1...\(selectedWordArr[0])...prefix2...\(selectedWordArr[1])...root...\(selectedWordArr[2])...suffix1...\(selectedWordArr[3])...suffix2...\(selectedWordArr[4])...suffix3...\(selectedWordArr[5])")
         self.wordformBtn.isHidden = true
         DBManager.shared.loadwordFromDB(withWord: selectedWordArr[0], prefix2: selectedWordArr[1], root: selectedWordArr[2], suffix1: selectedWordArr[3], suffix2: selectedWordArr[4], suffix3: selectedWordArr[5], completionHandler: { (movie) in
             DispatchQueue.main.async {
@@ -1391,11 +1396,19 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     self.resultWord = movie!.word
                     
                     if self.wordArrayDB.contains(self.resultWord){
-                        
-                        
+                        print(".......resultWord........\(self.resultWord)")
+                        self.activityIndicatorView?.stopAnimating()
                         self.wordformBtn.isHidden = false
+                        
+                        self.showWordMeaningPopup()
+                    } else {
+                        print("down popup")
                     }
                     
+                } else {
+                    self.popupviewTop.constant = 0
+                    self.wordformBtn.isHidden = true
+                    print("down popuppp")
                 }
                 
             }
@@ -1406,8 +1419,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBAction func back(_ sender: UIButton) {
         
         randomTimer.invalidate()
-        
-        print( self.navigationController!.viewControllers)
         
         dismiss(animated: true, completion: nil)
         
@@ -2000,12 +2011,17 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     {
         if shared.ModeValue == 0 {
             Numberlist = pickerView.selectedRow(inComponent: 0)
-            if  self.popupviewBottom.constant ==  -505 {
-                self.CLOSE(UIButton())
+            if self.popupviewTop.constant == 200 {
+                self.wordformBtn.isHidden = true
+                self.popupviewTop.constant = 0
             }
             selectPiceker = pickerView
             if pickerView == self.picker3&&pickerdataRoot.count>0 {
-                
+                if !rootSpinned {
+                    rootValueSelected = true
+                    
+                }
+                rootSpinned = false
                 selectedWordArr = ["","",pickerdataRoot[row%pickerdataRoot.count],"","",""]
                 rootValue = pickerdataRoot[row%pickerdataRoot.count]
                 NumberPicker3 = pickerView.selectedRow(inComponent: 0)
@@ -2015,7 +2031,10 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolPrefixfirst = false
                 
             } else if pickerView == self.picker1&&pickerdataPrefix1.count>0 {
-                
+                if !prefixSpinned {
+                    prefixValueSelected = true
+                }
+                prefixSpinned = false
                 if boolPrefixfirst{
                 } else {
                     if boolSuffixfirst{
@@ -2039,6 +2058,10 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                         pickerRootPrefixSuffixActiondone(withPrefix: prefix1Value as NSString)}
                 }
             } else if pickerView == self.picker6&&pickerdataSuffix3.count>0 {
+                if !suffixSpinned {
+                    suffixValueSelected = true
+                }
+                suffixSpinned = false
                 if boolPrefixfirst{
                 } else {
                     if boolSuffixfirst{
@@ -2066,6 +2089,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolSuffix1data = true
                 NumberPicker5 = pickerView.selectedRow(inComponent: 0)
                 if prefix1Value != ""{
+                    
                     pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata: suffix2Value as NSString)
                 } else {
                     
@@ -2098,7 +2122,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             self.view.layoutIfNeeded()
             wordform()
-            
         }
         else if shared.ModeValue == 1 {
             if pickerView == self.picker3&&nonsenceRootArr.count>0 {
@@ -2108,11 +2131,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 rootlblView.isHidden = true
                 NumberPicker3 = pickerView.selectedRow(inComponent: 0)
             } else if pickerView == self.picker1&&nonsencePrefixArr.count>0 {
+                
                 prefix1Value = nonsencePrefixArr[row%nonsencePrefixArr.count]
                 prefix1lblView.isHidden = true
                 NumberPicker1 = pickerView.selectedRow(inComponent: 0)
                 
             } else if pickerView == self.picker6&&nonsenceSuffixArr.count>0 {
+                
                 suffix3Value = nonsenceSuffixArr[row%nonsenceSuffixArr.count]
                 NumberPicker6 = pickerView.selectedRow(inComponent: 0)
                 suffix3LblView.isHidden = true
@@ -2121,11 +2146,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         } else {
             Numberlist = pickerView.selectedRow(inComponent: 0)
             
-            if  self.popupviewBottom.constant ==  -505 {
-                self.CLOSE(UIButton())
+            if self.popupviewTop.constant == 200 {
+                self.wordformBtn.isHidden = true
+                self.popupviewTop.constant = 0
             }
             selectPiceker = pickerView
             if pickerView == self.picker3&&pickerdataRoot.count>0 {
+                
                 selectedWordArr = ["","",pickerdataRoot[row%pickerdataRoot.count],"","",""]
                 rootValue = pickerdataRoot[row%pickerdataRoot.count]
                 NumberPicker3 = pickerView.selectedRow(inComponent: 0)
@@ -2167,6 +2194,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             wordform()
             self.view.layoutIfNeeded()
         }
+        
     }
     
     //MARK:DATABase  BuildIn Functions
@@ -2191,6 +2219,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         //
     }
     func pickerRootPrefixPrefix2Actiondone(withPrefix2 prefix2:NSString){
+        print("...1........pickerRootPrefixPrefix2Actiondone(withPrefix2 prefix2:")
         self.picker2.reloadComponent(0)
         if suffix3Value == "" {
             moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withPrefix2: prefix2 as NSString)
@@ -2226,7 +2255,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     }
                 }
             }
-            let   random1 :Int = Int(arc4random_uniform(10000))
+            let   random1 :Int = Int.random(in: 0...10000)
             
             if pickerdataSuffix1.count > 0 {
                 self.picker4.selectRow(random1, inComponent: 0, animated: false)
@@ -2265,7 +2294,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerRootPrefixActiondone(withPrefix Prefix: NSString){
-        print("width...........pickerRootPrefixActiondone \(deviceScreenWidth)")
+        print("....2..........pickerRootPrefixActiondone(withPrefix Prefix:")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         suffix1lblView.isHidden = true
@@ -2281,9 +2310,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix2.removeAll()
         pickerdataSuffix3.removeAll()
         moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as String as NSString, withPrefix: Prefix as NSString)
-        selectedWordArr = [Prefix as String,"",rootValue,"","",""]
+        
         for item in moviesPrefix1 {
-            
+            selectedWordArr = [Prefix as String,item.prefex_2,rootValue,"","",""]
             if pickerdataPrefix2.contains(item.prefex_2) {
             } else {
                 if item.prefex_2 != "" {
@@ -2320,7 +2349,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
         }
         
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataPrefix2.count > 0 {
             
@@ -2359,6 +2388,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         if pickerdataPrefix2.count > 0 {
+            print("2....4..")
             boolPrefix1 = true
             picker2.alpha = 1.0
             self.picker2.isUserInteractionEnabled = true
@@ -2380,6 +2410,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker2Leading.constant = 0
             picker6Trailing.constant = 40
         } else {
+            print("2....3 ..")
             boolPrefix1 = false
             boolSuffix = true
             self.picker2.isUserInteractionEnabled = false
@@ -2400,11 +2431,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker3Width.constant = (deviceScreenWidth - 60)/3
             picker6Width.constant = (deviceScreenWidth - 60)/3
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     
     func pickerRootPrefixSuffixActiondone(withPrefix Prefix: NSString){
-        print("width...........pickerRootPrefixSuffixActiondone \(deviceScreenWidth)")
+        print("....3........pickerRootPrefixSuffixActiondone(withPrefix Prefix:")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         suffix1lblView.isHidden = true
@@ -2444,7 +2476,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
         }
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         if pickerdataPrefix2.count > 0 {
             
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
@@ -2473,7 +2505,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if pickerdataPrefix2.count > 0 {
             self.picker2.isUserInteractionEnabled = true
             /*deviceScreenWidth/4*/
-            
+            print("3....4..")
             picker1Width.constant = (deviceScreenWidth - 60)/4+20
             picker3Width.constant = (deviceScreenWidth - 60)/4+20
             picker6Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2492,6 +2524,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Trailing.constant = 40
             
         } else {
+            print("3....3..")
             self.picker2.isUserInteractionEnabled = false
             picker2Width.constant = 0
             picker4Width.constant = 0
@@ -2514,11 +2547,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Width.constant = (deviceScreenWidth - 60)/3
             
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     
     func pickerRootSuffixActiondone(withSuffix Suffix: NSString){
-        print("width...........pickerRootSuffixActiondone \(deviceScreenWidth)")
+        print("...4..........pickerRootSuffixActiondone(withSuffix Suffix")
         suffix1lblView.isHidden = true
         suffix2lblView.isHidden = true
         prefix1lblView.isHidden = true
@@ -2575,7 +2609,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix1 = pickerdataSuffix1.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         pickerdataPrefix1 = pickerdataPrefix1.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         NumberPicker5 = -1
         
         selectedWordArr = ["","",rootValue,"","",suffix3Value]
@@ -2607,6 +2641,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker5.alpha = 1.0
         picker4.alpha = 0.5
         if pickerdataSuffix2.count > 0 {
+            print("4....4...")
             picker1Width.constant = (deviceScreenWidth - 60)/4+20
             picker3Width.constant = (deviceScreenWidth - 60)/4+20
             picker6Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2624,7 +2659,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             Prview5.isHidden = false
             picker6Trailing.constant = 40
         } else {
-            
+            print("4....3")
             picker2Width.constant = 0
             picker4Width.constant = 0
             picker5Width.constant = 0
@@ -2644,18 +2679,19 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             picker6Trailing.constant = 40
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
         
     }
     
     func pickerRootSuffixPrefixActiondone(withSuffix Suffix: NSString){
         
-        print("width...........pickerRootSuffixPrefixActiondone \(deviceScreenWidth)")
+        print("....5..........pickerRootSuffixPrefixActiondone(withSuffix Suffix")
         suffix1lblView.isHidden = true
         suffix2lblView.isHidden = true
         suffix3LblView.isHidden = true
         suffix2Value = ""
-        suffix1Value = ""
+        //  suffix1Value = ""
         
         moviesSuffix3=DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: Suffix as NSString)
         
@@ -2664,7 +2700,10 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataSuffix2.removeAll()
         
         for item in moviesSuffix3 {
+            // suffix1Value = item.suffix_1
+            selectedWordArr = [prefix1Value,prefix2Value,rootValue,item.suffix_1,suffix2Value,suffix3Value]
             
+            print("..5.......\(selectedWordArr)")
             if pickerdataPrefix2.contains(item.prefex_2) {
             } else {
                 if item.prefex_2 != "" {
@@ -2693,14 +2732,14 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 }
             }
         }
-        if prefix2Value != "" {
-            selectedWordArr = [prefix1Value,prefix2Value,rootValue,"","",suffix3Value]
-        } else {
-            
-            selectedWordArr = [prefix1Value,"",rootValue,"","",suffix3Value]
-            
-        }
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        //                   if prefix2Value != "" {
+        //                       selectedWordArr = [prefix1Value,prefix2Value,rootValue,"","",suffix3Value]
+        //                   } else {
+        //
+        //                       selectedWordArr = [prefix1Value,"",rootValue,"","",suffix3Value]
+        //
+        //                   }
+        let   random1 :Int = Int.random(in: 0...10000)
         
         NumberPicker5 = -1
         if pickerdataSuffix1.count > 0 {
@@ -2728,92 +2767,229 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.picker5.isUserInteractionEnabled = true
         
         picker5.alpha = 1.0
-        picker4.alpha = 0.5
-        if pickerdataPrefix2.count > 0 {
-            if pickerdataSuffix2.count > 0 {
-                /*deviceScreenWidth/4*/
-                picker1Width.constant = (deviceScreenWidth - 60)/5+20
-                picker3Width.constant = (deviceScreenWidth - 60)/5+20
-                picker6Width.constant = (deviceScreenWidth - 60)/5+20
-                picker2Width.constant = (deviceScreenWidth - 60)/5-30
-                picker4Width.constant = 0
-                picker5Width.constant = (deviceScreenWidth - 60)/5-30
-                picker5Leading.constant = 0
-                picker1Leading.constant = 30
-                picker3Leading.constant = picker2Width.constant
-                picker6Leading.constant = picker5Width.constant
-                picker2Leading.constant = 0
-                picker4leading.constant = 0
-                
-                Prview2.isHidden = false
-                Prview4.isHidden = true
-                Prview5.isHidden = false
-                picker6Trailing.constant = 40
-            } else {
-                /*deviceScreenWidth/4*/
-                
-                picker1Width.constant = (deviceScreenWidth - 60)/4+20
-                picker3Width.constant = (deviceScreenWidth - 60)/4+20
-                picker6Width.constant = (deviceScreenWidth - 60)/4+20
-                picker2Width.constant = (deviceScreenWidth - 60)/4-60
-                
-                picker4Width.constant = 0
-                picker5Width.constant = 0
-                picker5Leading.constant = 0
-                picker1Leading.constant = 30
-                picker3Leading.constant =  picker2Width.constant
-                picker6Leading.constant = 0
-                picker2Leading.constant = 0
-                Prview2.isHidden = false
-                Prview4.isHidden = true
-                Prview5.isHidden = true
-                
-                picker6Trailing.constant = 40
-                
-            }
-        } else {
+        picker4.alpha = 1.0
+        if pickerdataPrefix2.count > 0 && pickerdataSuffix1.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------5....6")
+            picker1Width.constant = (deviceScreenWidth - 60)/6+25
+            picker3Width.constant = (deviceScreenWidth - 60)/6+25
+            picker6Width.constant = (deviceScreenWidth - 60)/6+25
+            picker2Width.constant = (deviceScreenWidth - 60)/6-15
+            picker4Width.constant = (deviceScreenWidth - 60)/6-15
+            picker5Width.constant = (deviceScreenWidth - 60)/6-15
+            picker5Leading.constant = picker4Width.constant
             
-            if pickerdataSuffix2.count > 0 {
-                /*deviceScreenWidth/4*/
-                picker1Width.constant = (deviceScreenWidth - 60)/4+20
-                picker3Width.constant = (deviceScreenWidth - 60)/4+20
-                picker6Width.constant = (deviceScreenWidth - 60)/4+20
-                picker2Width.constant = 0
-                picker4Width.constant = 0
-                picker5Width.constant = (deviceScreenWidth - 60)/4-60
-                picker4leading.constant = 0
-                picker5Leading.constant = 0
-                picker1Leading.constant = 30
-                picker3Leading.constant = 0
-                picker6Leading.constant = picker5Width.constant
-                picker2Leading.constant = 0
-                Prview2.isHidden = true
-                Prview4.isHidden = true
-                Prview5.isHidden = false
-                picker6Trailing.constant = 40
-            } else {
-                
-                picker2Width.constant = 0
-                picker4Width.constant = 0
-                picker5Width.constant = 0
-                picker5Leading.constant = 0
-                Prview2.isHidden = true
-                Prview4.isHidden = true
-                Prview5.isHidden = true
-                //deviceScreenWidth/3
-                picker1Leading.constant = 30
-                picker3Leading.constant = 0
-                picker6Leading.constant = 0
-                picker1Width.constant = (deviceScreenWidth - 60)/3
-                picker3Width.constant = (deviceScreenWidth - 60)/3
-                picker6Width.constant = (deviceScreenWidth - 60)/3
-                picker6Trailing.constant = 40
-            }
+            picker1Leading.constant = 30
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant = picker4Width.constant*2
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            Prview2.isHidden = false
+            Prview4.isHidden = false
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataPrefix2.count > 0 && pickerdataSuffix1.count > 0{
+            print("-------5....5.....P2 S1")
+        } else if pickerdataPrefix2.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------5....5.....P2 S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/5+20
+            picker3Width.constant = (deviceScreenWidth - 60)/5+20
+            picker6Width.constant = (deviceScreenWidth - 60)/5+20
+            picker2Width.constant = (deviceScreenWidth - 60)/5-30
+            picker4Width.constant = 0
+            picker5Width.constant = (deviceScreenWidth - 60)/5-30
+            picker5Leading.constant = 0
+            picker1Leading.constant = 30
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant = picker5Width.constant
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = false
+            Prview4.isHidden = true
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataSuffix1.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------5....S1..S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/5
+            picker3Width.constant = (deviceScreenWidth - 60)/5
+            picker6Width.constant = (deviceScreenWidth - 60)/5
+            picker2Width.constant = 0
+            picker4Width.constant = (deviceScreenWidth - 60)/5
+            picker5Width.constant = (deviceScreenWidth - 60)/5
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = picker4Width.constant*2
+            picker5Leading.constant =  picker4Width.constant
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = false
+            Prview4.isHidden = false //true
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+            print(picker3Leading.constant)
+        } else if pickerdataSuffix2.count > 0 {
+            print("-------5....4...S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = 0
+            picker4Width.constant = 0
+            picker5Width.constant = (deviceScreenWidth - 60)/4-60
+            picker4leading.constant = 0
+            picker5Leading.constant = 0
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = picker5Width.constant
+            picker2Leading.constant = 0
+            Prview2.isHidden = true
+            Prview4.isHidden = true
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataSuffix1.count > 0 {
+            print("-------5...4....s1")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = 0
+            picker4Width.constant = (deviceScreenWidth - 60)/4-60
+            picker5Width.constant = 0
+            picker5Leading.constant =  picker4Width.constant
+            picker1Leading.constant = 40
+            picker3Leading.constant = 0
+            picker6Leading.constant =  picker4Width.constant*2
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = true
+            Prview4.isHidden = false
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataPrefix2.count > 0 {
+            print("-------5...4....p2")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = (deviceScreenWidth - 60)/4-60
+            picker4Width.constant = 0
+            picker5Width.constant = 0
+            picker5Leading.constant =  0
+            picker1Leading.constant = 40
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant =  0
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = false
+            Prview4.isHidden = true
+            Prview5.isHidden = true
+            picker6Trailing.constant = 40
+        } else {
+            print("-------5...3")
+            picker2Width.constant = 0
+            picker4Width.constant = 0
+            picker5Width.constant = 0
+            picker5Leading.constant = 0
+            Prview2.isHidden = true
+            Prview4.isHidden = true
+            Prview5.isHidden = true
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = 0
+            picker1Width.constant = (deviceScreenWidth - 60)/3
+            picker3Width.constant = (deviceScreenWidth - 60)/3
+            picker6Width.constant = (deviceScreenWidth - 60)/3
+            picker6Trailing.constant = 40
         }
+        /*
+         if pickerdataPrefix2.count > 0 {
+         if pickerdataSuffix2.count > 0 {
+         /*deviceScreenWidth/4*/
+         print("5....5")
+         picker1Width.constant = (deviceScreenWidth - 60)/5+20
+         picker3Width.constant = (deviceScreenWidth - 60)/5+20
+         picker6Width.constant = (deviceScreenWidth - 60)/5+20
+         picker2Width.constant = (deviceScreenWidth - 60)/5-30
+         picker4Width.constant = 0
+         picker5Width.constant = (deviceScreenWidth - 60)/5-30
+         picker5Leading.constant = 0
+         picker1Leading.constant = 30
+         picker3Leading.constant = picker2Width.constant
+         picker6Leading.constant = picker5Width.constant
+         picker2Leading.constant = 0
+         picker4leading.constant = 0
+         
+         Prview2.isHidden = false
+         Prview4.isHidden = true
+         Prview5.isHidden = false
+         picker6Trailing.constant = 40
+         } else {
+         /*deviceScreenWidth/4*/
+         print("5....4...P2")
+         picker1Width.constant = (deviceScreenWidth - 60)/4+20
+         picker3Width.constant = (deviceScreenWidth - 60)/4+20
+         picker6Width.constant = (deviceScreenWidth - 60)/4+20
+         picker2Width.constant = (deviceScreenWidth - 60)/4-60
+         
+         picker4Width.constant = 0
+         picker5Width.constant = 0
+         picker5Leading.constant = 0
+         picker1Leading.constant = 30
+         picker3Leading.constant =  picker2Width.constant
+         picker6Leading.constant = 0
+         picker2Leading.constant = 0
+         Prview2.isHidden = false
+         Prview4.isHidden = true
+         Prview5.isHidden = true
+         
+         picker6Trailing.constant = 40
+         
+         }
+         } else {
+         
+         if pickerdataSuffix2.count > 0 {
+         /*deviceScreenWidth/4*/
+         print("5....4...S2")
+         picker1Width.constant = (deviceScreenWidth - 60)/4+20
+         picker3Width.constant = (deviceScreenWidth - 60)/4+20
+         picker6Width.constant = (deviceScreenWidth - 60)/4+20
+         picker2Width.constant = 0
+         picker4Width.constant = 0
+         picker5Width.constant = (deviceScreenWidth - 60)/4-60
+         picker4leading.constant = 0
+         picker5Leading.constant = 0
+         picker1Leading.constant = 30
+         picker3Leading.constant = 0
+         picker6Leading.constant = picker5Width.constant
+         picker2Leading.constant = 0
+         Prview2.isHidden = true
+         Prview4.isHidden = true
+         Prview5.isHidden = false
+         picker6Trailing.constant = 40
+         } else {
+         print("5....3")
+         picker2Width.constant = 0
+         picker4Width.constant = 0
+         picker5Width.constant = 0
+         picker5Leading.constant = 0
+         Prview2.isHidden = true
+         Prview4.isHidden = true
+         Prview5.isHidden = true
+         //deviceScreenWidth/3
+         picker1Leading.constant = 30
+         picker3Leading.constant = 0
+         picker6Leading.constant = 0
+         picker1Width.constant = (deviceScreenWidth - 60)/3
+         picker3Width.constant = (deviceScreenWidth - 60)/3
+         picker6Width.constant = (deviceScreenWidth - 60)/3
+         picker6Trailing.constant = 40
+         }
+         }*/
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     func pickerRootSuffixSuffix2Actiondone(withSuffixdata Suffixdata: NSString) {
-        print("width...........pickerRootSuffixSuffix2Actiondone \(deviceScreenWidth)")
+        print("....6.........pickerRootSuffixSuffix2Actiondone(withSuffixdata Suffixdata")
         suffix1lblView.isHidden = true
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
@@ -2871,7 +3047,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         pickerdataRoot = pickerdataRoot.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         self.picker4.isUserInteractionEnabled = true
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
@@ -2893,7 +3069,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker4.alpha = 1.0
         
         if pickerdataSuffix1.count > 0 {
-            
+            print("6....5...")
             //deviceScreenWidth/5
             
             picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -2915,7 +3091,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
         } else {
-            
+            print("6....4")
             /*deviceScreenWidth/4*/
             
             picker1Width.constant = (deviceScreenWidth - 60)/4+20
@@ -2939,11 +3115,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
         
     }
     func pickerRootSuffixSuffix2Suffix3Actiondone(withSuffixdata Suffixdata: NSString) {
-        print("width...........pickerRootSuffixSuffix2Suffix3Actiondone \(deviceScreenWidth)")
+        print(".....7............pickerRootSuffixSuffix2Suffix3Actiondone(withSuffixdata Suffixdata:")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         prefix1Value = ""
@@ -2985,7 +3162,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             self.picker2.reloadComponent(0)
         }
         
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataPrefix1.count > 0 {
             self.picker1.selectRow(random1, inComponent: 0, animated: false)
@@ -3008,12 +3185,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         Prview4.isHidden = false
         Prview5.isHidden = false
         picker6Trailing.constant = 40
-        
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     
     func pickerRootSuffixSuffix2prefixActiondone(withPrefixdata prefixdata: NSString) {
-        print("width...........pickerRootSuffixSuffix2prefixActiondone \(deviceScreenWidth)")
+        print(".....8......pickerRootSuffixSuffix2prefixActiondone(withPrefixdata prefixdata:")
         prefix2lblView.isHidden = true
         prefix2Value = ""
         
@@ -3056,7 +3233,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             self.picker2.reloadComponent(0)
         }
         
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataPrefix2.count > 0 {
             self.picker2.selectRow(random1, inComponent: 0, animated: false)
@@ -3069,7 +3246,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
             if pickerdataPrefix2.count>0 {
-                
+                print("8....6...")
                 picker1Width.constant = (deviceScreenWidth - 60)/6+25
                 picker3Width.constant = (deviceScreenWidth - 60)/6+25
                 picker6Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3090,7 +3267,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
                 picker6Trailing.constant = 40
             } else{
-                
+                print("8....5...S1")
                 picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3114,6 +3291,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
             if pickerdataPrefix2.count>0 {
+                print("8....5...P2")
                 picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
                 picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3134,7 +3312,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
                 picker6Trailing.constant = 40
             } else{
-                
+                print("8....4")
                 picker1Width.constant = (deviceScreenWidth - 60)/4+20
                 picker3Width.constant = (deviceScreenWidth - 60)/4+20
                 picker6Width.constant = (deviceScreenWidth - 60)/4+20
@@ -3156,11 +3334,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     
     func pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata prefixdata: NSString) {
-        print("width...........pickerRootSuffixSuffix2Suffix3prefixActiondone \(deviceScreenWidth)")
+        print("....9.......pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata prefixdata")
         prefix2lblView.isHidden = true
         prefix2Value = ""
         moviesSuffix3 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix1Value as NSString, withSuffix2: suffix2Value as NSString, withSuffix3: suffix3Value as NSString)
@@ -3186,7 +3365,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if pickerdataPrefix1.count > 0 {
             self.picker1.reloadComponent(0)
         }
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataPrefix2.count > 0 {
             self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
@@ -3202,7 +3381,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         /*deviceScreenWidth/4*/
         if pickerdataPrefix2.count>0 {
-            
+            print("9....6...")
             picker1Width.constant = (deviceScreenWidth - 60)/6+25
             picker3Width.constant = (deviceScreenWidth - 60)/6+25
             picker6Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3224,7 +3403,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Trailing.constant = 40
         }
         else{
-            
+            print("9....5...")
             picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
             picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
             picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
@@ -3243,28 +3422,24 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             picker6Trailing.constant = 40
             
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     func pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata Suffixdata: NSString){
         
-        print("width...........pickerRootSuffixSuffix2PrefixActiondone \(deviceScreenWidth)")
+        print("....10........pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata Suffixdata")
         suffix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         
-        suffix1Value = ""
+        //  suffix1Value = ""
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix3Value as NSString, withSuffix2: Suffixdata as NSString)
-        if prefix2Value != "" {
-            selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
-        } else {
-            
-            selectedWordArr = [prefix1Value,"",rootValue,"",suffix2Value,suffix3Value]
-            
-            
-        }
+        
         pickerdataPrefix2.removeAll()
         pickerdataSuffix1.removeAll()
         for item in moviesSuffix2 {
-            
+            //  suffix1Value = item.suffix_1
+            selectedWordArr = [prefix1Value,prefix2Value,rootValue,item.suffix_1,suffix2Value,suffix3Value]
+            print("..10.......\(selectedWordArr)")
             if pickerdataPrefix2.contains(item.prefex_2) {
             } else {
                 
@@ -3288,7 +3463,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         self.picker4.isUserInteractionEnabled = true
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
@@ -3307,99 +3482,332 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         picker4.alpha = 1.0
         
-        if pickerdataPrefix2.count > 0 {
+        if pickerdataPrefix2.count > 0 && pickerdataSuffix1.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------10....6")
+            picker1Width.constant = (deviceScreenWidth - 60)/6+25
+            picker3Width.constant = (deviceScreenWidth - 60)/6+25
+            picker6Width.constant = (deviceScreenWidth - 60)/6+25
+            picker2Width.constant = (deviceScreenWidth - 60)/6-15
+            picker4Width.constant = (deviceScreenWidth - 60)/6-15
+            picker5Width.constant = (deviceScreenWidth - 60)/6-15
+            picker5Leading.constant = picker4Width.constant
+            picker1Leading.constant = 30
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant = picker4Width.constant*2
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            Prview2.isHidden = false
+            Prview4.isHidden = false
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataPrefix2.count > 0 && pickerdataSuffix1.count > 0{
+            print("-------10....5.....P2 S1")
+        } else if pickerdataPrefix2.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------10....5.....P2 S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/5+20
+            picker3Width.constant = (deviceScreenWidth - 60)/5+20
+            picker6Width.constant = (deviceScreenWidth - 60)/5+20
+            picker2Width.constant = (deviceScreenWidth - 60)/5-30
+            picker4Width.constant = 0
+            picker5Width.constant = (deviceScreenWidth - 60)/5-30
+            picker5Leading.constant = 0
+            picker1Leading.constant = 30
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant = picker5Width.constant
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
             
-            if pickerdataSuffix1.count > 0 {
-                
-                /*deviceScreenWidth/4*/
-                
-                picker1Width.constant = (deviceScreenWidth - 60)/6+25
-                picker3Width.constant = (deviceScreenWidth - 60)/6+25
-                picker6Width.constant = (deviceScreenWidth - 60)/6+25
-                picker2Width.constant = (deviceScreenWidth - 60)/6-15
-                picker4Width.constant = (deviceScreenWidth - 60)/6-15
-                picker5Width.constant = (deviceScreenWidth - 60)/6-15
-                picker5Leading.constant = picker4Width.constant
-                picker1Leading.constant = 30
-                picker3Leading.constant = picker2Width.constant
-                picker6Leading.constant = picker4Width.constant*2
-                picker2Leading.constant = 0
-                picker4leading.constant = 0
-                Prview2.isHidden = false
-                Prview4.isHidden = false
-                Prview5.isHidden = false
-                
-                picker6Trailing.constant = 40
-            } else {
-                /*deviceScreenWidth/4*/
-                picker1Width.constant = (deviceScreenWidth - 60)/5+20
-                picker3Width.constant = (deviceScreenWidth - 60)/5+20
-                picker6Width.constant = (deviceScreenWidth - 60)/5+20
-                picker2Width.constant = (deviceScreenWidth - 60)/5-30
-                
-                picker4Width.constant = 0
-                picker5Width.constant = (deviceScreenWidth - 60)/5-30
-                picker5Leading.constant = 0
-                picker1Leading.constant = 30
-                picker3Leading.constant = picker2Width.constant
-                picker6Leading.constant = picker5Width.constant
-                picker2Leading.constant = 0
-                picker4leading.constant = 0
-                Prview2.isHidden = false
-                Prview4.isHidden = true
-                Prview5.isHidden = false
-                picker6Trailing.constant = 40
-            }
+            Prview2.isHidden = false
+            Prview4.isHidden = true
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataSuffix1.count > 0 && pickerdataSuffix2.count > 0 {
+            print("-------10....S1..S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/5
+            picker3Width.constant = (deviceScreenWidth - 60)/5
+            picker6Width.constant = (deviceScreenWidth - 60)/5
+            picker2Width.constant = 0
+            picker4Width.constant = (deviceScreenWidth - 60)/5
+            picker5Width.constant = (deviceScreenWidth - 60)/5
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = picker4Width.constant*2
+            picker5Leading.constant =  picker4Width.constant
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
             
+            Prview2.isHidden = false
+            Prview4.isHidden = false
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+            print(picker3Leading.constant)
+            //            picker1Width.constant = (deviceScreenWidth - 60)/5+20
+            //            picker3Width.constant = (deviceScreenWidth - 60)/5+20
+            //            picker6Width.constant = (deviceScreenWidth - 60)/5+20
+            //            picker2Width.constant = 0
+            //            picker4Width.constant = (deviceScreenWidth - 60)/5-30
+            //            picker5Width.constant = (deviceScreenWidth - 60)/5-30
+            //            picker5Leading.constant = picker4Width.constant //0
+            //            picker1Leading.constant = 30
+            //            picker3Leading.constant = picker2Width.constant
+            //            picker6Leading.constant = picker5Width.constant
+            //            picker2Leading.constant = 0
+            //            picker4leading.constant = 0
+            //
+            //            Prview2.isHidden = false
+            //            Prview4.isHidden = true
+            //            Prview5.isHidden = false
+            //            picker6Trailing.constant = 40
+        } else if pickerdataSuffix2.count > 0 {
+            print("-------10....4...S2")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = 0
+            picker4Width.constant = 0
+            picker5Width.constant = (deviceScreenWidth - 60)/4-60
+            picker4leading.constant = 0
+            picker5Leading.constant = 0
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = picker5Width.constant
+            picker2Leading.constant = 0
+            Prview2.isHidden = true
+            Prview4.isHidden = true
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataSuffix1.count > 0 {
+            print("-------10...4....s1")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = 0
+            picker4Width.constant = (deviceScreenWidth - 60)/4-60
+            picker5Width.constant = 0
+            picker5Leading.constant =  picker4Width.constant
+            picker1Leading.constant = 40
+            picker3Leading.constant = 0
+            picker6Leading.constant =  picker4Width.constant*2
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = true
+            Prview4.isHidden = false
+            Prview5.isHidden = false
+            picker6Trailing.constant = 40
+        } else if pickerdataPrefix2.count > 0 {
+            print("-------10...4....p2")
+            picker1Width.constant = (deviceScreenWidth - 60)/4+20
+            picker3Width.constant = (deviceScreenWidth - 60)/4+20
+            picker6Width.constant = (deviceScreenWidth - 60)/4+20
+            picker2Width.constant = (deviceScreenWidth - 60)/4-60
+            picker4Width.constant = 0
+            picker5Width.constant = 0
+            picker5Leading.constant =  0
+            picker1Leading.constant = 40
+            picker3Leading.constant = picker2Width.constant
+            picker6Leading.constant =  0
+            picker2Leading.constant = 0
+            picker4leading.constant = 0
+            
+            Prview2.isHidden = false
+            Prview4.isHidden = true
+            Prview5.isHidden = true
+            picker6Trailing.constant = 40
         } else {
-            
-            if pickerdataSuffix1.count > 0 {
-                
-                //deviceScreenWidth/5
-                picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
-                picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
-                picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
-                picker2Width.constant = 0
-                picker4Width.constant = (deviceScreenWidth - 60)/5-18
-                picker5Width.constant = (deviceScreenWidth - 60)/5-18
-                picker5Leading.constant =  picker4Width.constant
-                picker1Leading.constant = 30
-                picker3Leading.constant = 0
-                picker6Leading.constant =  picker4Width.constant*2
-                picker2Leading.constant = 0
-                picker4leading.constant = 0
-                
-                Prview2.isHidden = true
-                Prview4.isHidden = false
-                Prview5.isHidden = false
-                picker6Trailing.constant = 40
-            } else {
-                /*deviceScreenWidth/4*/
-                
-                picker1Width.constant = (deviceScreenWidth - 60)/4+20
-                picker3Width.constant = (deviceScreenWidth - 60)/4+20
-                picker6Width.constant = (deviceScreenWidth - 60)/4+20
-                picker2Width.constant = 0
-                picker4Width.constant = 0
-                picker5Width.constant = (deviceScreenWidth - 60)/4-60
-                picker4leading.constant = 0
-                picker5Leading.constant = 0
-                picker1Leading.constant = 30
-                picker3Leading.constant = 0
-                picker6Leading.constant = picker5Width.constant
-                picker2Leading.constant = 0
-                Prview2.isHidden = true
-                Prview4.isHidden = true
-                Prview5.isHidden = false
-                
-                picker6Trailing.constant = 40
-            }
+            print("-------10...3")
+            picker2Width.constant = 0
+            picker4Width.constant = 0
+            picker5Width.constant = 0
+            picker5Leading.constant = 0
+            Prview2.isHidden = true
+            Prview4.isHidden = true
+            Prview5.isHidden = true
+            picker1Leading.constant = 30
+            picker3Leading.constant = 0
+            picker6Leading.constant = 0
+            picker1Width.constant = (deviceScreenWidth - 60)/3
+            picker3Width.constant = (deviceScreenWidth - 60)/3
+            picker6Width.constant = (deviceScreenWidth - 60)/3
+            picker6Trailing.constant = 40
         }
-        
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
+    /*   func pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata Suffixdata: NSString){
+     
+     print("....10........pickerRootSuffixSuffix2PrefixActiondone(withSuffixdata Suffixdata")
+     suffix1lblView.isHidden = true
+     prefix2lblView.isHidden = true
+     
+     //suffix1Value = ""
+     moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withSuffix: suffix3Value as NSString, withSuffix2: Suffixdata as NSString)
+     //        if prefix2Value != "" {
+     //            selectedWordArr = [prefix1Value,prefix2Value,rootValue,"",suffix2Value,suffix3Value]
+     //        } else {
+     //
+     //            selectedWordArr = [prefix1Value,"",rootValue,"",suffix2Value,suffix3Value]
+     //
+     //        }
+     
+     pickerdataPrefix2.removeAll()
+     pickerdataSuffix1.removeAll()
+     for item in moviesSuffix2 {
+     suffix1Value = item.suffix_1
+     selectedWordArr = [prefix1Value,prefix2Value,rootValue,suffix1Value,suffix2Value,suffix3Value]
+     if pickerdataPrefix2.contains(item.prefex_2) {
+     } else {
+     
+     if item.prefex_2 != "" {
+     
+     pickerdataPrefix2.append(item.prefex_2)
+     
+     }
+     
+     }
+     
+     if pickerdataSuffix1.contains(item.suffix_1) {
+     } else {
+     
+     if item.suffix_1 != "" {
+     pickerdataSuffix1.append(item.suffix_1)
+     }
+     
+     }
+     
+     }
+     
+     self.picker4.isUserInteractionEnabled = true
+     let   random1 :Int = Int.random(in: 0...10000)
+     
+     if pickerdataSuffix2.count > 0 {
+     self.picker5.reloadComponent(0)
+     }
+     if pickerdataSuffix1.count > 0 {
+     self.picker4.reloadAllComponents() //reloadComponent(0)
+     }
+     if pickerdataPrefix2.count > 0 {
+     self.pickerView(self.picker2, didSelectRow: random1, inComponent: 0)
+     self.picker2.reloadComponent(0)
+     }
+     if pickerdataSuffix1.count > 0 {
+     self.picker4.selectRow(random1, inComponent: 0, animated: false)
+     self.pickerView(self.picker4, didSelectRow: random1, inComponent: 0)
+     
+     }
+     picker4.alpha = 1.0
+     
+     if pickerdataPrefix2.count > 0 {
+     
+     if pickerdataSuffix1.count > 0 {
+     print("10....6")
+     /*deviceScreenWidth/4*/
+     
+     picker1Width.constant = (deviceScreenWidth - 60)/6+25
+     picker3Width.constant = (deviceScreenWidth - 60)/6+25
+     picker6Width.constant = (deviceScreenWidth - 60)/6+25
+     picker2Width.constant = (deviceScreenWidth - 60)/6-15
+     picker4Width.constant = (deviceScreenWidth - 60)/6-15
+     picker5Width.constant = (deviceScreenWidth - 60)/6-15
+     picker5Leading.constant = picker4Width.constant
+     picker1Leading.constant = 30
+     picker3Leading.constant = picker2Width.constant
+     picker6Leading.constant = picker4Width.constant*2
+     picker2Leading.constant = 0
+     picker4leading.constant = 0
+     Prview2.isHidden = false
+     Prview4.isHidden = false
+     Prview5.isHidden = false
+     
+     picker6Trailing.constant = 40
+     } else {
+     print("10....5....p2")
+     /*deviceScreenWidth/4*/
+     picker1Width.constant = (deviceScreenWidth - 60)/5+20
+     picker3Width.constant = (deviceScreenWidth - 60)/5+20
+     picker6Width.constant = (deviceScreenWidth - 60)/5+20
+     picker2Width.constant = (deviceScreenWidth - 60)/5-30
+     
+     picker4Width.constant = 0
+     picker5Width.constant = (deviceScreenWidth - 60)/5-30
+     picker5Leading.constant = 0
+     picker1Leading.constant = 30
+     picker3Leading.constant = picker2Width.constant
+     picker6Leading.constant = picker5Width.constant
+     picker2Leading.constant = 0
+     picker4leading.constant = 0
+     Prview2.isHidden = false
+     Prview4.isHidden = true
+     Prview5.isHidden = false
+     picker6Trailing.constant = 40
+     }
+     
+     } else {
+     
+     if pickerdataSuffix1.count > 0 {
+     print("10....5....s1")
+     //deviceScreenWidth/5
+     //                picker1Width.constant = (deviceScreenWidth - 60)/5+20
+     //                              picker3Width.constant = (deviceScreenWidth - 60)/5+20
+     //                              picker6Width.constant = (deviceScreenWidth - 60)/5+20
+     //                              picker2Width.constant = (deviceScreenWidth - 60)/5-30
+     //
+     //                              picker4Width.constant = 0
+     //                              picker5Width.constant = (deviceScreenWidth - 60)/5-30
+     //                              picker5Leading.constant = 0
+     //                              picker1Leading.constant = 30
+     //                              picker3Leading.constant = picker2Width.constant
+     //                              picker6Leading.constant = picker5Width.constant
+     //                              picker2Leading.constant = 0
+     //                              picker4leading.constant = 0
+     //                              Prview2.isHidden = false
+     //                              Prview4.isHidden = true
+     //                              Prview5.isHidden = false
+     //                              picker6Trailing.constant = 40
+     picker1Width.constant = (deviceScreenWidth - 60)/5+(36/3)
+     picker3Width.constant = (deviceScreenWidth - 60)/5+(36/3)
+     picker6Width.constant = (deviceScreenWidth - 60)/5+(36/3)
+     picker2Width.constant = 0
+     picker4Width.constant = (deviceScreenWidth - 60)/5-18
+     picker5Width.constant = (deviceScreenWidth - 60)/5-18
+     picker5Leading.constant =  picker4Width.constant
+     picker1Leading.constant = 40
+     picker3Leading.constant = 0
+     picker6Leading.constant =  picker4Width.constant*2
+     picker2Leading.constant = 0
+     picker4leading.constant = 0
+     
+     Prview2.isHidden = true
+     Prview4.isHidden = false
+     Prview5.isHidden = false
+     picker6Trailing.constant = 40
+     } else {
+     /*deviceScreenWidth/4*/
+     print("10....4....")
+     picker1Width.constant = (deviceScreenWidth - 60)/4+20
+     picker3Width.constant = (deviceScreenWidth - 60)/4+20
+     picker6Width.constant = (deviceScreenWidth - 60)/4+20
+     picker2Width.constant = 0
+     picker4Width.constant = 0
+     picker5Width.constant = (deviceScreenWidth - 60)/4-60
+     picker4leading.constant = 0
+     picker5Leading.constant = 0
+     picker1Leading.constant = 30
+     picker3Leading.constant = 0
+     picker6Leading.constant = picker5Width.constant
+     picker2Leading.constant = 0
+     Prview2.isHidden = true
+     Prview4.isHidden = true
+     Prview5.isHidden = false
+     
+     picker6Trailing.constant = 40
+     }
+     }
+     print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
+     self.view.layoutIfNeeded()
+     }*/
     func pickerRootSuffixSuffix2PrefixPrefix2Actiondone(withsuffixdata suffixdata : NSString){
-        print("width...........pickerRootSuffixSuffix2PrefixPrefix2Actiondone \(deviceScreenWidth)")
+        print("...11...........pickerRootSuffixSuffix2PrefixPrefix2Actiondone")
         suffix1lblView.isHidden = true
         suffix1Value = ""
         moviesSuffix2 = DBManager.shared.loadMovie(withRoot: rootValue as NSString, withPrefix: prefix1Value as NSString, withPrefix2: prefix2Value as NSString, withSuffix2: suffix3Value as NSString, withSuffix3: suffixdata)
@@ -3417,7 +3825,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
         }
         self.picker4.isUserInteractionEnabled = true
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         
         if pickerdataSuffix2.count > 0 {
             self.picker5.reloadComponent(0)
@@ -3431,7 +3839,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         picker4.alpha = 1.0
         if pickerdataSuffix1.count > 0 {
-            
+            print("11....6...")
             //                     /*deviceScreenWidth/6*/
             picker1Width.constant = (deviceScreenWidth - 60)/6+25
             picker3Width.constant = (deviceScreenWidth - 60)/6+25
@@ -3453,7 +3861,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             picker6Trailing.constant = 40
         } else {
-            
+            print("11....5...")
             // deviceScreenWidth/5
             picker1Width.constant = (deviceScreenWidth - 60)/5+20
             picker3Width.constant = (deviceScreenWidth - 60)/5+20
@@ -3475,10 +3883,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             picker6Trailing.constant = 40
         }
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     func pickerRootActiondone(withRoot Root: NSString){
-        print("width...........pickerRootSuffixSuffix2PrefixPrefix2Actiondone \(deviceScreenWidth)")
+        print("pickerRootActiondone(withRoot Root:")
         prefix1lblView.isHidden = true
         prefix2lblView.isHidden = true
         rootlblView.isHidden = true
@@ -3557,7 +3966,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         
-        let   random1 :Int = Int(arc4random_uniform(10000))
+        let   random1 :Int = Int.random(in: 0...10000)
         if pickerdataPrefix1.count > 0 {
             self.picker1.selectRow(random1, inComponent: 0, animated: true)
         }
@@ -3617,6 +4026,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker3Width.constant = (deviceScreenWidth - 60)/3
         picker6Width.constant = (deviceScreenWidth - 60)/3
         picker6Trailing.constant = 40
+        print("\(selectedWordArr)...\(picker1Width.constant)...\(picker3Width.constant)...\(picker6Width.constant)...\(picker2Width.constant)...\(picker4Width.constant)...\(picker5Width.constant)")
         self.view.layoutIfNeeded()
     }
     
@@ -3636,40 +4046,86 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         cell.backgroundColor = UIColor.clear
         cell.statusBtn.isHidden = true
         
-        
         if didselectStatus{
-            
-            if didselectValue == indexPath.row{
-                cell.statusBtn.isHidden = false
-                didStatus = true
-                cell.statusBtn.setBackgroundImage(#imageLiteral(resourceName: "no"), for: .normal)
-                
-            } else {
-                
-                cell.statusBtn.isHidden = true
-                
-            }
-            
             
             if let id = resultLbl.text {
                 DBManager.shared.loadMovie(withWordSynonym: id, completionHandler: { (movie) in
                     DispatchQueue.main.async {
                         if movie != nil {
-                            if  self.testArr[indexPath.row] as? String == movie?.synonym{
+                            if  self.testArr[indexPath.row] as? String == movie?.synonym {
+                                
+                                if self.didselectValue == indexPath.row {
+                                    if checkSynonymSuccess() {
+                                        let jeremyGif = UIImage.sd_animatedGIFNamed("giphy")
+                                        let imageView = UIImageView(image: jeremyGif)
+                                        
+                                        imageView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width/2, height: self.view.frame.size.width/2)
+                                        
+                                        imageView.center.x = self.view.center.x
+                                        imageView.center.y = UIScreen.main.bounds.height
+                                        self.view.isUserInteractionEnabled = false
+                                        self.view.addSubview(imageView)
+                                        UIView.animate(withDuration:1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
+                                            
+                                            imageView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+                                            imageView.contentMode = .scaleAspectFit
+                                            imageView.center = self.view.center
+                                        }, completion: { (status) in
+                                            print("completed")
+                                        })
+                                        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+                                            imageView.removeFromSuperview()
+                                            self.view.isUserInteractionEnabled = true
+                                        }
+                                    } else {
+                                        
+                                    }
+                                } else {
+                                    
+                                }
                                 cell.statusBtn.isHidden = false
                                 
                                 cell.statusBtn.setBackgroundImage(#imageLiteral(resourceName: "check"), for: .normal)
                                 
+                            } else {
+                                if self.didselectValue == indexPath.row {
+                                    cell.statusBtn.isHidden = false
+                                    self.didStatus = true
+                                    cell.statusBtn.setBackgroundImage(#imageLiteral(resourceName: "no"), for: .normal)
+                                    
+                                } else {
+                                    
+                                    cell.statusBtn.isHidden = true
+                                    
+                                }
                             }
                             
+                        } else {
+                            if self.didselectValue == indexPath.row{
+                                cell.statusBtn.isHidden = false
+                                self.didStatus = true
+                                cell.statusBtn.setBackgroundImage(#imageLiteral(resourceName: "no"), for: .normal)
+                                
+                            } else {
+                                
+                                cell.statusBtn.isHidden = true
+                                
+                            }
                         }
                     }
                 }
                 )
             }
+            
+            
         }
         return cell
     }
+    //    func checkSynonymCurrect(withWordSynonym Word: String, completionHandler: (_ movieInfo: DictionaryInfo?) -> Void) {
+    //
+    //
+    //        completionHandler(movieInfo)
+    //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         didselectStatus = true
         didselectValue = indexPath.row

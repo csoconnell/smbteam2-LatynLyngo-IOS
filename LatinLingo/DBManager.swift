@@ -586,8 +586,6 @@ class DBManager: NSObject {
     func loadwordFromDB(withWord prefix1: String, prefix2 : String, root : String, suffix1:String, suffix2:String, suffix3:String, completionHandler: (_ movieInfo: DictionaryInfo?) -> Void)  {
         var movieInfo:DictionaryInfo!
          print(".........loadwordFromDB 582")
-        print(suffix1)
-        
         if openDatabase() {
             let query = "select * from wordList where \(field_root)=? AND \(field_prefex_1)=? AND \(field_prefex_2)=? AND \(field_suffix_3)=? AND \(field_suffix_2)=? AND \(field_suffix_1)=?"
             do{
@@ -595,6 +593,8 @@ class DBManager: NSObject {
                 
                 if results.next() {
                     movieInfo =  DictionaryInfo(word_id: Int(results.int(forColumn: field_id)), word_database_id: results.string(forColumn: field_word_id), word: results.string(forColumn: field_word), meaning: results.string(forColumn: field_meaning), prefex_1: results.string(forColumn: field_prefex_1), prefex_2: results.string(forColumn: field_prefex_2), root: results.string(forColumn: field_root), suffix_1: results.string(forColumn: field_suffix_1), suffix_2: results.string(forColumn: field_suffix_2), suffix_3: results.string(forColumn: field_suffix_3), synonym: results.string(forColumn: field_synonym), part_speech: results.string(forColumn: field_speech))
+                    print(".........loadwordFromDB 582......movie")
+                    print(movieInfo as Any)
                 }
                 else {
                     print(database.lastError())

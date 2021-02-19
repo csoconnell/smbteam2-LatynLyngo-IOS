@@ -69,7 +69,7 @@
         loadnavigation()
     }
     func loadnavigation()  {
-        let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
         
         if shared.ModeValue == 1 {
             stopLoader()
@@ -78,14 +78,16 @@
             shared.meaningList.removeAll()
             shared.meaningList = meaningList
         }
-        self.present(messageVC, animated: false, completion: nil)
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     @IBAction func navigationAction(_ sender: UIButton) {
         //any mode
         shared.ModeValue = 3
-        let messageVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationPassController") as! NavigationPassController
-        self.present(messageVC, animated: false, completion: nil)
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationPassController") as! NavigationPassController
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     
@@ -93,10 +95,10 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
-        
-        if (UserDefaults.standard.object(forKey: "insertDB") == nil) || shared.DbUpdated == "1"
-        {
-            startLoader(view: self.view, loadtext: "")
+      //  if (UserDefaults.standard.object(forKey: "insertDB") == nil) || shared.DbUpdated == "1"
+         self.shared.DbUpdated = true
+        if !shared.DbUpdated {
+            startLoader(view: self.view, loadtext: "")//UIApplication.shared.keyWindow!  self.view
             self.view.isUserInteractionEnabled = false
             Alamofire.request( "\(kBaseURLClient)get_word_list").response {
                 response in
@@ -110,12 +112,13 @@
                     let dict1 = printDict.value(forKey: "meaning") as! NSArray
                     if DBManager.shared.createDatabase() {
                         //UserDefaults.standard.set(true, forKey: "insertDB")
-                        UserDefaults.standard.synchronize()
+                       // UserDefaults.standard.synchronize()
+                        self.shared.DbUpdated = true
                         DBManager.shared.insertWordTableData(passDict: dict)
                         DBManager.shared.insertMeaningTableData(passDict: dict1)
                         
                     }
-                    
+                     
                 } catch let error as NSError {
                     print("error: \(error.localizedDescription)")
                 }

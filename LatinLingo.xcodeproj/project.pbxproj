@@ -26,7 +26,6 @@
 		581B51F91E2670170005D53A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B51F81E2670170005D53A /* HomeVC.swift */; };
 		581B51FC1E2670170005D53A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581B51FA1E2670170005D53A /* Main.storyboard */; };
 		581B51FF1E2670170005D53A /* LatinLingo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 581B51FD1E2670170005D53A /* LatinLingo.xcdatamodeld */; };
-		581BD30825D11FC4006251CC /* vibration.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 581BD30725D11FC4006251CC /* vibration.mp3 */; };
 		582561F51E31BF1800526558 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582561F41E31BF1800526558 /* AudioToolbox.framework */; };
 		582561FB1E31C59000526558 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F71E31C59000526558 /* corbel.ttf */; };
 		582561FC1E31C59000526558 /* corbelb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582561F81E31C59000526558 /* corbelb.ttf */; };
@@ -40,6 +39,10 @@
 		58362A641E9534890069C913 /* ChalkboardSE-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 589328151E9524B40002DC0A /* ChalkboardSE-Bold.ttf */; };
 		58362A651E95348B0069C913 /* ChalkboardSE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5893281E1E95280A0002DC0A /* ChalkboardSE-Regular.ttf */; };
 		58362A671E9538060069C913 /* BanglaSangamMN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58362A661E9538060069C913 /* BanglaSangamMN.ttf */; };
+		5838B41725DB9BAE00CF5CE1 /* synonymSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5838B41625DB9BAD00CF5CE1 /* synonymSuccess.gif */; };
+		5838B41B25DB9DEA00CF5CE1 /* synSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5838B41A25DB9DE800CF5CE1 /* synSuccess.gif */; };
+		5838B41D25DBA25800CF5CE1 /* source.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5838B41C25DBA25600CF5CE1 /* source.gif */; };
+		5838B41F25DBA45300CF5CE1 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5838B41E25DBA45200CF5CE1 /* giphy.gif */; };
 		583D755B25AC0F430097CE1D /* passDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755025AC0F410097CE1D /* passDataVC.swift */; };
 		583D755C25AC0F430097CE1D /* splitedPickerWithReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */; };
 		583D755D25AC0F430097CE1D /* SelectAnyModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */; };
@@ -123,7 +126,6 @@
 		581B51FE1E2670170005D53A /* LatinLingo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LatinLingo.xcdatamodel; sourceTree = "<group>"; };
 		581B52001E2670170005D53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581B52051E2670170005D53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		581BD30725D11FC4006251CC /* vibration.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vibration.mp3; sourceTree = "<group>"; };
 		582561F41E31BF1800526558 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		582561F71E31C59000526558 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbel.ttf; path = fonts/corbel.ttf; sourceTree = "<group>"; };
 		582561F81E31C59000526558 /* corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelb.ttf; path = fonts/corbelb.ttf; sourceTree = "<group>"; };
@@ -131,6 +133,10 @@
 		582561FA1E31C59000526558 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbelz.ttf; path = fonts/corbelz.ttf; sourceTree = "<group>"; };
 		582562011E31E02900526558 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		58362A661E9538060069C913 /* BanglaSangamMN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BanglaSangamMN.ttf; sourceTree = "<group>"; };
+		5838B41625DB9BAD00CF5CE1 /* synonymSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = synonymSuccess.gif; sourceTree = "<group>"; };
+		5838B41A25DB9DE800CF5CE1 /* synSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = synSuccess.gif; path = ../../../../../Downloads/synSuccess.gif; sourceTree = "<group>"; };
+		5838B41C25DBA25600CF5CE1 /* source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = source.gif; sourceTree = "<group>"; };
+		5838B41E25DBA45200CF5CE1 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		583D755025AC0F410097CE1D /* passDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = passDataVC.swift; path = LatinLingo/passDataVC.swift; sourceTree = "<group>"; };
 		583D755125AC0F410097CE1D /* splitedPickerWithReset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = splitedPickerWithReset.swift; path = LatinLingo/splitedPickerWithReset.swift; sourceTree = "<group>"; };
 		583D755225AC0F420097CE1D /* SelectAnyModeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectAnyModeVC.swift; path = LatinLingo/SelectAnyModeVC.swift; sourceTree = "<group>"; };
@@ -442,9 +448,12 @@
 			isa = PBXGroup;
 			children = (
 				5856BCFD25AF1C06000325B6 /* splashImg.png */,
+				5838B41625DB9BAD00CF5CE1 /* synonymSuccess.gif */,
+				5838B41E25DBA45200CF5CE1 /* giphy.gif */,
 				5856BCFE25AF1C07000325B6 /* splashImg@2x.png */,
+				5838B41A25DB9DE800CF5CE1 /* synSuccess.gif */,
+				5838B41C25DBA25600CF5CE1 /* source.gif */,
 				5856BCFF25AF1C08000325B6 /* splashImg@3x.png */,
-				581BD30725D11FC4006251CC /* vibration.mp3 */,
 				585CB2EF1E6448CD00915467 /* Clapp.mp3 */,
 				585CB2F01E6448CD00915467 /* Tick.mp3 */,
 			);
@@ -561,17 +570,20 @@
 				582561FE1E31C59000526558 /* corbelz.ttf in Resources */,
 				585BBED81E83FA9F000734A3 /* verdana.ttf in Resources */,
 				582561FC1E31C59000526558 /* corbelb.ttf in Resources */,
+				5838B41F25DBA45300CF5CE1 /* giphy.gif in Resources */,
 				585CB2F11E6448CD00915467 /* Clapp.mp3 in Resources */,
 				589EF0611E4C5E950024CA08 /* Assets.xcassets in Resources */,
 				582561FD1E31C59000526558 /* corbeli.ttf in Resources */,
 				58362A621E9534830069C913 /* GillSans-Bold.ttf in Resources */,
 				582561FB1E31C59000526558 /* corbel.ttf in Resources */,
+				5838B41D25DBA25800CF5CE1 /* source.gif in Resources */,
+				5838B41B25DB9DEA00CF5CE1 /* synSuccess.gif in Resources */,
+				5838B41725DB9BAE00CF5CE1 /* synonymSuccess.gif in Resources */,
 				584592D81E5CA1A000F39623 /* HarringtonBold.ttf in Resources */,
 				58362A601E95347C0069C913 /* Papyrus-Condensed.ttf in Resources */,
 				585BBECD1E83F6DA000734A3 /* AmericanTypewriterCondensedBold.ttf in Resources */,
 				5802B5A91E4B74C400FE9D84 /* HARNGTON.TTF in Resources */,
 				585BBED51E83FA81000734A3 /* trebucbd.ttf in Resources */,
-				581BD30825D11FC4006251CC /* vibration.mp3 in Resources */,
 				58362A611E9534800069C913 /* ArialRounded-Bold.ttf in Resources */,
 				585CB2F21E6448CD00915467 /* Tick.mp3 in Resources */,
 				5856BD0225AF1C09000325B6 /* splashImg@3x.png in Resources */,
@@ -836,13 +848,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.25;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";
@@ -863,13 +875,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LatinLingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.25;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "Latyn Lyngo";
 				PROVISIONING_PROFILE = "";

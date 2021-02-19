@@ -36,7 +36,7 @@ class SharedInstance: NSObject
     var dataload : NSString = ""
     var dataloadPass : NSString = ""
     var reloadedData : Bool  = false
-    var DbUpdated : NSString = ""
+    var DbUpdated : Bool  = false
     var meaningList: [WordMeaningInfo] = []
     
     func userAuthTokenFun(passString: String)
@@ -57,7 +57,7 @@ class SharedInstance: NSObject
         userFullName = passString["username"] as? NSString ?? ""
         _ = KeychainWrapper.standard.set(userFullName ?? "", forKey: "username")
         userProfilepic = passString["image_url"] as? NSString ?? ""
-        DbUpdated = passString["db_updated"] as? NSString ?? ""
+     //   DbUpdated = passString["db_updated"] as? NSString ?? ""
         print(DbUpdated)
         
         
