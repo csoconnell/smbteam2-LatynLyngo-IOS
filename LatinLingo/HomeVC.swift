@@ -96,7 +96,7 @@
         super.viewDidLoad()
         menuButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
       //  if (UserDefaults.standard.object(forKey: "insertDB") == nil) || shared.DbUpdated == "1"
-         self.shared.DbUpdated = true
+ self.shared.DbUpdated = true
         if !shared.DbUpdated {
             startLoader(view: self.view, loadtext: "")//UIApplication.shared.keyWindow!  self.view
             self.view.isUserInteractionEnabled = false

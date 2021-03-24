@@ -10,7 +10,7 @@ import UIKit
 class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //let sideMenuItems: [String] = ["Select mode", "Settings", "Packages", "Instructions"]
     let sideMenuItems: [String] = ["Select mode", "Instructions", "Packages", "Privacy", "Terms of use"]
-    let  settigsImages : [UIImage] = [#imageLiteral(resourceName: "dash1"), #imageLiteral(resourceName: "dash4"), #imageLiteral(resourceName: "dash3"), #imageLiteral(resourceName: "icn2"), #imageLiteral(resourceName: "icn4")]
+    let  settigsImages : [UIImage] = [#imageLiteral(resourceName: "dash1"), #imageLiteral(resourceName: "dash4"), #imageLiteral(resourceName: "dash3"), #imageLiteral(resourceName: "icn2"), #imageLiteral(resourceName: "icn4")]// check table height if menu changed
     @IBOutlet var tableView: UITableView!
     
     // MARK: View lifecycle

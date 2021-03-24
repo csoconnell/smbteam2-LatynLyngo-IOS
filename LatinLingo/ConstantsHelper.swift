@@ -39,7 +39,7 @@ func checkSynonymSuccess() -> Bool {
     //save in user default for every 5th correct answer that the user gets on synonyms, a " confetti gif " has to appear.
     
     let synonymSuccessCount = UserDefaults.standard.object(forKey: "synonymSuccessCount") as? Int ?? 0
-    if synonymSuccessCount == 4 {
+    if synonymSuccessCount == 2 {
         UserDefaults.standard.set(0, forKey: "synonymSuccessCount")
         UserDefaults.standard.synchronize()
         return true

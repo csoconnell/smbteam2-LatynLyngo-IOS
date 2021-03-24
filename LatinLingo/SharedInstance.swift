@@ -38,7 +38,7 @@ class SharedInstance: NSObject
     var reloadedData : Bool  = false
     var DbUpdated : Bool  = false
     var meaningList: [WordMeaningInfo] = []
-    
+     var rootValue: NSString = ""
     func userAuthTokenFun(passString: String)
     {
         userAuthToken = ""

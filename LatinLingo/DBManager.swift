@@ -149,10 +149,11 @@ class DBManager: NSObject {
                 var query = ""
                 let List_word_id = movie.object(forKey: "w_id") as? String ?? ""
                 let List_word = movie.object(forKey: "word" )as? String ?? ""
-                var List_meaning = ""
-                if let meaning = movie.object(forKey: "meaning") as? String{
-                    List_meaning = meaning as String
-                }
+                //               var List_meaning = ""
+                //                if let meaning = movie.object(forKey: "meaning") as? String{
+                //                    List_meaning = meaning as String
+                //                }
+                let List_meaning = movie.object(forKey: "meaning") as? String ?? ""
                 let List_type = movie.object(forKey: "type") as? String ?? ""
                 let List_m_id = movie.object(forKey: "m_cat_id") as? String ?? ""
                 let List_speech = movie.object(forKey: "part_of_speech") as? String ?? ""
@@ -181,8 +182,8 @@ class DBManager: NSObject {
         
         if openDatabase() {
             if let rs = database.executeQuery("SELECT COUNT(*) as Count FROM wordList", withArgumentsIn: nil) {
-            while rs.next() {
-                print("Total Records:", rs.int(forColumn: "Count"))
+                while rs.next() {
+                    print("Total Records:", rs.int(forColumn: "Count"))
                 }
             }
             let query = "select * from wordList"
@@ -585,7 +586,7 @@ class DBManager: NSObject {
     }
     func loadwordFromDB(withWord prefix1: String, prefix2 : String, root : String, suffix1:String, suffix2:String, suffix3:String, completionHandler: (_ movieInfo: DictionaryInfo?) -> Void)  {
         var movieInfo:DictionaryInfo!
-         print(".........loadwordFromDB 582")
+        print(".........loadwordFromDB 582")
         if openDatabase() {
             let query = "select * from wordList where \(field_root)=? AND \(field_prefex_1)=? AND \(field_prefex_2)=? AND \(field_suffix_3)=? AND \(field_suffix_2)=? AND \(field_suffix_1)=?"
             do{
@@ -616,7 +617,7 @@ class DBManager: NSObject {
             
             do {
                 let results = try database.executeQuery(query, values: [Word])
-                 print(".........loadWordmeaning 616")
+                print(".........loadWordmeaning 616")
                 print(Word)
                 
                 if results.next() {
@@ -920,5 +921,71 @@ class DBManager: NSObject {
         
         return movies
     }
-    
+    func loadTestMovie(withDataWord  prefix1: String, prefix2: String, root: String, suffix1: String, suffix2: String, suffix3: String) -> [DictionaryInfo]! {
+        var movies: [DictionaryInfo]!
+        
+        if openDatabase() {
+            var query = "select * from wordList where "
+            var valueArr = [String]()
+            if root != "" {
+                query = query + "\(field_root)=?"
+            }
+            if prefix1 != "" {
+                query = query + "\(field_prefex_1)=?"
+            }
+            if prefix2 != "" {
+                query = query + "\(field_prefex_2)=?"
+            }
+            if suffix3 != "" {
+                query = query + "\(field_suffix_3)=?"
+            }
+            if suffix2 != "" {
+                query = query + "\(field_suffix_2)=?"
+            }
+            if suffix1 != "" {
+                query = query + "\(field_suffix_1)=?"
+                valueArr.insert(suffix1, at: 0)
+            }
+            if suffix2 != "" {
+                valueArr.insert(suffix2, at: 0)
+            }
+            if suffix3 != "" {
+                valueArr.insert(suffix3, at: 0)
+            }
+            if prefix2 != "" {
+                valueArr.insert(prefix2, at: 0)
+            }
+            if prefix1 != "" {
+                valueArr.insert(prefix1, at: 0)
+            }
+            if root != "" {
+                valueArr.insert(root, at: 0)
+            }
+            if valueArr.count > 1 {
+                
+                query = query.replacingOccurrences(of: "=?", with: "=? AND ")
+                query = String(query.dropLast(5))
+            }
+            print("query...............\(query)")
+            print(valueArr)
+            do {
+                let results = try database.executeQuery(query, values: valueArr)
+                
+                while results.next() {
+                    let  movieInfo =  DictionaryInfo(word_id: Int(results.int(forColumn: field_id)), word_database_id: results.string(forColumn: field_word_id), word: results.string(forColumn: field_word), meaning: results.string(forColumn: field_meaning), prefex_1: results.string(forColumn: field_prefex_1), prefex_2: results.string(forColumn: field_prefex_2), root: results.string(forColumn: field_root), suffix_1: results.string(forColumn: field_suffix_1), suffix_2: results.string(forColumn: field_suffix_2), suffix_3: results.string(forColumn: field_suffix_3), synonym: results.string(forColumn: field_synonym), part_speech: results.string(forColumn: field_speech))
+                    if movies == nil {
+                        movies = [DictionaryInfo]()
+                    }
+                    
+                    movies.append(movieInfo)
+                }
+                
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            database.close()
+        }
+        return movies
+    }
 }

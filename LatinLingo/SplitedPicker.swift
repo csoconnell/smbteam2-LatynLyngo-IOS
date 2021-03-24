@@ -134,7 +134,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var picker6Trailing: NSLayoutConstraint!
     @IBOutlet var grammerTop: NSLayoutConstraint!
     @IBOutlet var instructionTop: NSLayoutConstraint!
-    
+    @IBOutlet weak var closeBtnTop: NSLayoutConstraint!
     
     //MARK: Timer Variables
     var timer = Timer()
@@ -526,7 +526,17 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         picker5.isHidden = false
         picker6.isHidden = false
         picker3.isHidden = false
-        movies = DBManager.shared.loadMovies()
+        var savedRootValue = ""
+        if (UserDefaults.standard.object(forKey: "rootValue") as? String) != nil {
+            savedRootValue = UserDefaults.standard.object(forKey: "rootValue") as! String
+        }
+        if savedRootValue == "" {
+            movies = DBManager.shared.loadMovies()
+        } else {
+            movies = DBManager.shared.loadMovie(withRoot: savedRootValue as NSString)
+        }
+        
+      //     movies = DBManager.shared.loadMovies()     moviesRoot=DBManager.shared.loadMovie(withRoot: Root as NSString )
         for item in movies {
             
             if pickerdataPrefix1.contains(item.prefex_1) {
@@ -656,7 +666,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @objc func randomSelection(){
         if !(self.activityIndicatorView?.isDescendant(of: self.view))! {
             self.view.addSubview(activityIndicatorView!)
-            
             activityIndicatorView?.startAnimating()
         }
         randomP1MeaningView.isHidden = false
@@ -729,7 +738,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             if   boolSettingRoot{} else {
                 if boolRoot {
                     self.picker3.selectRow(random, inComponent: 0, animated: true)
-                    
                 }}
             
             if boolPrefix {
@@ -751,18 +759,14 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             
         }
-        if   boolSettingRoot{} else {
+        if boolSettingRoot{} else {
             if pickerCounter == 1 {
                 boolRoot = false
                 
                 prefixBtn.isHidden  = true
                 
                 picker1.isHidden = false
-                
-                
-                
-                self.pickerView(self.picker3, didSelectRow: random, inComponent: 0)
-                
+               self.pickerView(self.picker3, didSelectRow: random, inComponent: 0)
             }
         }
         if pickerCounter == 2 {
@@ -782,7 +786,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 boolSuffix1 = true
                 self.pickerView(self.picker6, didSelectRow: random, inComponent: 0)
             }
-            
         }
         if pickerCounter == 4 {
             if prefix1Value != ""{
@@ -793,7 +796,6 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             } else{
                 boolSuffix1 = false
                 boolSuffix2 = true
-                
                 self.pickerView(self.picker5, didSelectRow: random, inComponent: 0)
             }
         }
@@ -815,13 +817,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         if pickerCounter == 7 {
             activityIndicatorView?.stopAnimating()
-            
             self.activityIndicatorView?.removeFromSuperview()
             randomTimer.invalidate()
             boolSettingRoot = true
             picker3.isUserInteractionEnabled = true
         }
-        
     }
     //MARK: PopUpView Ations
     @IBAction func meanigpopupACtion(_ sender: UIButton) {
@@ -881,7 +881,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             
             if  self.popupviewTop.constant == UIScreen.main.bounds.height + 15 {
-                self.popupviewTop.constant =  200
+                self.closeBtnTop.constant = 0
+                self.popupviewTop.constant = 150
                 self.view.layoutIfNeeded()
             } else {
                 self.popupviewTop.constant = 0
@@ -932,7 +933,11 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         closeBtn.setImage(UIImage(named:"close"), for: .normal)
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+            self.closeBtnTop.constant = 30
             self.popupviewTop.constant = UIScreen.main.bounds.height + 15
+            self.menubtnClicked = true
+            self.menuBtnClicked(UIButton())
+            self.menuBtnView.isHidden = true
             self.view.layoutIfNeeded()
         }, completion: nil)
         
@@ -958,14 +963,14 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             var str: String = ""
             for i in (0..<meaningArr.count){
-                str += "\(partofSpeechDict["\(partofSpeachArr[i])"] as? String):\n\(meaningArr[i])\n"
+                str += "\(partofSpeechDict["\(partofSpeachArr[i])"] as? String ?? ""):\n\(meaningArr[i])\n"
             }
             let stringVar : NSString = str as NSString
             let newString  = stringVar.replacingOccurrences(of: "<br />", with: "", options: .literal, range: NSRange(location: 0, length: stringVar.length))
             let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Corbel", size: 24.0)!, NSAttributedString.Key.foregroundColor: UIColor.white]
             let myAttrString = NSAttributedString(string: newString, attributes: myAttribute)
             
-            self.MeaningTextView.attributedText = myAttrString
+            self.MeaningTextView.text = myAttrString.string
             self.MeaningTextView.textAlignment = .center
             break
         case 2:
@@ -999,7 +1004,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                             if movie?.synonym != "" {
                                 self.nosynonymLbl.isHidden = true
                                 self.templateList.isHidden = false
-                                self.MeaningTextView.text = movie?.synonym
+                                self.MeaningTextView.text = String(movie?.synonym ?? "")
                                 for var i in (0..<self.items.count) {
                                     if self.items[i].synonym != ""{
                                         if self.testArr.count < 4 {
@@ -1072,6 +1077,8 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 suffixbtnAction()
             }
             if prefixValueSelected && suffixValueSelected && rootValueSelected {
+                (prefixSpinned, suffixSpinned, rootSpinned)  = (true,true,true)
+                (prefixValueSelected, rootValueSelected, suffixValueSelected)  = (false,false,false)
                 rootbtnAction()
                 prefixbtnAction()
                 suffixbtnAction()
@@ -1111,7 +1118,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             prefixBtn.isHidden = true
             picker1.isHidden = false
             prefixOverlayBtn.isHidden = true
-            self.picker1.selectRow(random1, inComponent: 0, animated: true)
+             self.picker1.selectRow(random1, inComponent: 0, animated: true)
             self.pickerView(self.picker1, didSelectRow: random1, inComponent: 0)
         } else {
             if rootValue != "" {
@@ -1134,6 +1141,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         rootOverlayBtn.isHidden = true
         picker3.isHidden = false
         let random1 :Int = Int.random(in: 0...10000)
+       
         self.picker3.selectRow(random1, inComponent: 0, animated: true)
         //deviceScreenWidth/3
         self.pickerView(self.picker3, didSelectRow: random1, inComponent: 0)
@@ -1169,15 +1177,12 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         if menubtnClicked{
             self.menubtnClicked = false
             UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                
                 self.grammerTop.constant = -28
                 self.instructionTop.constant = -28
                 
                 self.view.layoutIfNeeded()
             }, completion: { finish in
-                UIView.animate(withDuration: 0.1){
-                    self.menuBtnView.isHidden = true
-                }
+                self.menuBtnView.isHidden = true
             })
         }
         else{
@@ -1342,9 +1347,13 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         wordform()
     }
     func showWordMeaningPopup() {
+        
+        self.menubtnClicked = true
+        self.menuBtnClicked(UIButton())
+        
         let wordBtnStatus = self.wordformBtn.isHidden
         self.wordformBtn.isHidden = true
-        
+        self.closeBtnTop.constant = 0
         print(".......showMeaningGestureTapped.........\(wordBtnStatus)")
         print(".......self.popupviewTop.constant.........\(self.popupviewTop.constant)")
         self.randomTimer.invalidate()
@@ -1357,7 +1366,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         self.synonymsButton.isSelected = false
         self.synonymsButton.setTitleColor(UIColor.white, for: .normal)
         UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
-            self.popupviewTop.constant =  200
+            self.popupviewTop.constant =  150
             self.view.layoutIfNeeded()
         }, completion: nil)
         /*if wordBtnStatus == false {
@@ -2011,7 +2020,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     {
         if shared.ModeValue == 0 {
             Numberlist = pickerView.selectedRow(inComponent: 0)
-            if self.popupviewTop.constant == 200 {
+            if self.popupviewTop.constant == 150 {
                 self.wordformBtn.isHidden = true
                 self.popupviewTop.constant = 0
             }
@@ -2029,7 +2038,9 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 
                 boolSuffixfirst = false
                 boolPrefixfirst = false
-                
+                // save root value for random mode
+                  UserDefaults.standard.set(rootValue, forKey: "rootValue")
+                   UserDefaults.standard.synchronize()
             } else if pickerView == self.picker1&&pickerdataPrefix1.count>0 {
                 if !prefixSpinned {
                     prefixValueSelected = true
@@ -2048,8 +2059,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 NumberPicker1 = pickerView.selectedRow(inComponent: 0)
                 if boolPrefixfirst{
                     pickerRootPrefixActiondone(withPrefix: prefix1Value as NSString )
-                }
-                else{
+                }else{
                     if suffix1Value != ""{
                         pickerRootSuffixSuffix2Suffix3prefixActiondone(withPrefixdata: prefix1Value as NSString)
                     } else if suffix2Value != ""{
@@ -2146,7 +2156,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         } else {
             Numberlist = pickerView.selectedRow(inComponent: 0)
             
-            if self.popupviewTop.constant == 200 {
+            if self.popupviewTop.constant == 150 {
                 self.wordformBtn.isHidden = true
                 self.popupviewTop.constant = 0
             }
@@ -2312,7 +2322,7 @@ class SplitedPicker: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         moviesPrefix1=DBManager.shared.loadMovie(withRoot: rootValue as String as NSString, withPrefix: Prefix as NSString)
         
         for item in moviesPrefix1 {
-            selectedWordArr = [Prefix as String,item.prefex_2,rootValue,"","",""]
+            selectedWordArr = [Prefix as String,item.prefex_2,rootValue,"","",item.suffix_3]
             if pickerdataPrefix2.contains(item.prefex_2) {
             } else {
                 if item.prefex_2 != "" {
