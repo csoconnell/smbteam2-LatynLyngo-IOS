@@ -8,125 +8,32 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Canvas.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
-		<key>NVActivityIndicatorView.xcscheme</key>
+		<key>Pods-LatynLyngo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
-		<key>Pods-LatinLingo.xcscheme</key>
+		<key>SideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Pods-LatinLingoTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-LatinLingoUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RJImageLoader.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ReachabilitySwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SkyFloatingLabelTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftKeychainWrapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>17509E3B183A2735B7074172BACAD057</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>373E1E190AF78863EF5083A7BBBD3D55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5C579F07F4E627608A9A7CE2D3353804</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A5FB453792E181757433C6DD3EE5EA9E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5C1880EAC3E2833299F75FB0FCE75B1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CCA3BE5AFB35D730F8AE2E0058CC6B2A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DAC7389AC74699AAEBA7170E0240929D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F6497E6E7D485D7D0D7E0CD8E84BFCD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC68DFF4A8CEF713D67D3BAC64E8B48B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

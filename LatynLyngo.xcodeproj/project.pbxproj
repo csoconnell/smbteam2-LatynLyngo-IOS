@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53F21B691A1F1A539E1E8435 /* Pods_LatynLyngo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055341F2ACBD2D0A216445D4 /* Pods_LatynLyngo.framework */; };
+		58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58443297260DAEAD00C28C01 /* AppDelegate.swift */; };
+		5844329A260DAEAD00C28C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58443299260DAEAD00C28C01 /* SceneDelegate.swift */; };
+		5844329F260DAEAD00C28C01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5844329D260DAEAD00C28C01 /* Main.storyboard */; };
+		584432A4260DAEB000C28C01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584432A3260DAEB000C28C01 /* Assets.xcassets */; };
+		584432A7260DAEB000C28C01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584432A5260DAEB000C28C01 /* LaunchScreen.storyboard */; };
+		584432B3260DB01500C28C01 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432B2260DB01500C28C01 /* WordModel.swift */; };
+		584432B6260DB02D00C28C01 /* WelcomeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432B5260DB02D00C28C01 /* WelcomeCVC.swift */; };
+		584432BB260DB03F00C28C01 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432B8260DB03E00C28C01 /* HomeVC.swift */; };
+		584432BC260DB03F00C28C01 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432B9260DB03E00C28C01 /* WelcomeVC.swift */; };
+		584432BD260DB03F00C28C01 /* WordPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432BA260DB03E00C28C01 /* WordPickerVC.swift */; };
+		584432C6260DB05900C28C01 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C5260DB05900C28C01 /* WordViewModel.swift */; };
+		584432EC260DB07300C28C01 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C7260DB07200C28C01 /* ExtensionHelper.swift */; };
+		584432ED260DB07300C28C01 /* CardsCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C8260DB07200C28C01 /* CardsCVLayout.swift */; };
+		584432EE260DB07300C28C01 /* Common Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C9260DB07200C28C01 /* Common Methods.swift */; };
+		584432EF260DB07300C28C01 /* newSplash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CB260DB07200C28C01 /* newSplash@3x.png */; };
+		584432F0260DB07300C28C01 /* newSplash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CC260DB07200C28C01 /* newSplash@2x.png */; };
+		584432F1260DB07300C28C01 /* source.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432CD260DB07200C28C01 /* source.gif */; };
+		584432F2260DB07300C28C01 /* newSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CE260DB07200C28C01 /* newSplash.png */; };
+		584432F3260DB07300C28C01 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432CF260DB07200C28C01 /* giphy.gif */; };
+		584432F4260DB07300C28C01 /* synonymSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432D0260DB07200C28C01 /* synonymSuccess.gif */; };
+		584432F5260DB07300C28C01 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432D1260DB07200C28C01 /* CommonData.swift */; };
+		584432F6260DB07300C28C01 /* ActivityIndicatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */; };
+		584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D5260DB07200C28C01 /* FMDatabaseQueue.m */; };
+		584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D8260DB07200C28C01 /* FMDatabaseAdditions.m */; };
+		584432F9260DB07300C28C01 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D9260DB07200C28C01 /* FMDatabase.m */; };
+		584432FA260DB07300C28C01 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432DD260DB07200C28C01 /* FMDatabasePool.m */; };
+		584432FB260DB07300C28C01 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432DE260DB07200C28C01 /* FMResultSet.m */; };
+		584432FC260DB07300C28C01 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E0260DB07200C28C01 /* corbel.ttf */; };
+		584432FD260DB07300C28C01 /* corbelb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E1260DB07200C28C01 /* corbelb.ttf */; };
+		584432FE260DB07300C28C01 /* trebuc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E2260DB07300C28C01 /* trebuc.ttf */; };
+		584432FF260DB07300C28C01 /* corbeli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E3260DB07300C28C01 /* corbeli.ttf */; };
+		58443301260DB07300C28C01 /* corbelz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E5260DB07300C28C01 /* corbelz.ttf */; };
+		58443302260DB07300C28C01 /* trebucbd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E6260DB07300C28C01 /* trebucbd.ttf */; };
+		58443303260DB07300C28C01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432E9260DB07300C28C01 /* NetworkManager.swift */; };
+		58443304260DB07300C28C01 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432EA260DB07300C28C01 /* DBManager.swift */; };
+		58443305260DB07300C28C01 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432EB260DB07300C28C01 /* URLs.swift */; };
+		5844330E260DB27800C28C01 /* LatynLyngo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5844330C260DB27800C28C01 /* LatynLyngo.xcdatamodeld */; };
+		5844331D260DCD4000C28C01 /* Harrington-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5844331C260DCD4000C28C01 /* Harrington-Bold.ttf */; };
+		5844331F260DE96100C28C01 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844331E260DE96100C28C01 /* SideMenuVC.swift */; };
+		5844F5DA260F4A9200A60C63 /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844F5D9260F4A9100A60C63 /* InstructionVC.swift */; };
+		5844F5DC260F77AB00A60C63 /* SideMenuNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */; };
+		5844F5DE260F79A200A60C63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5844F5DD260F79A200A60C63 /* WebKit.framework */; };
+		5890955B260F028400575A46 /* SidemenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890955A260F028400575A46 /* SidemenuTVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		055341F2ACBD2D0A216445D4 /* Pods_LatynLyngo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatynLyngo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		113BADBBA67F7EE4B713455C /* Pods-LatynLyngo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatynLyngo.release.xcconfig"; path = "Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo.release.xcconfig"; sourceTree = "<group>"; };
+		58443294260DAEAD00C28C01 /* LatynLyngo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LatynLyngo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58443297260DAEAD00C28C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58443299260DAEAD00C28C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5844329E260DAEAD00C28C01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		584432A3260DAEB000C28C01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		584432A6260DAEB000C28C01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		584432A8260DAEB000C28C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584432B2260DB01500C28C01 /* WordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		584432B5260DB02D00C28C01 /* WelcomeCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCVC.swift; sourceTree = "<group>"; };
+		584432B8260DB03E00C28C01 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		584432B9260DB03E00C28C01 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		584432BA260DB03E00C28C01 /* WordPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPickerVC.swift; sourceTree = "<group>"; };
+		584432C5260DB05900C28C01 /* WordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
+		584432C7260DB07200C28C01 /* ExtensionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
+		584432C8260DB07200C28C01 /* CardsCVLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCVLayout.swift; sourceTree = "<group>"; };
+		584432C9260DB07200C28C01 /* Common Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common Methods.swift"; sourceTree = "<group>"; };
+		584432CB260DB07200C28C01 /* newSplash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newSplash@3x.png"; sourceTree = "<group>"; };
+		584432CC260DB07200C28C01 /* newSplash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newSplash@2x.png"; sourceTree = "<group>"; };
+		584432CD260DB07200C28C01 /* source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = source.gif; sourceTree = "<group>"; };
+		584432CE260DB07200C28C01 /* newSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newSplash.png; sourceTree = "<group>"; };
+		584432CF260DB07200C28C01 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
+		584432D0260DB07200C28C01 /* synonymSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = synonymSuccess.gif; sourceTree = "<group>"; };
+		584432D1260DB07200C28C01 /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
+		584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorHelper.swift; sourceTree = "<group>"; };
+		584432D4260DB07200C28C01 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		584432D5260DB07200C28C01 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		584432D6260DB07200C28C01 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		584432D7260DB07200C28C01 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		584432D8260DB07200C28C01 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		584432D9260DB07200C28C01 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		584432DA260DB07200C28C01 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		584432DB260DB07200C28C01 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		584432DC260DB07200C28C01 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		584432DD260DB07200C28C01 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		584432DE260DB07200C28C01 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		584432E0260DB07200C28C01 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbel.ttf; sourceTree = "<group>"; };
+		584432E1260DB07200C28C01 /* corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbelb.ttf; sourceTree = "<group>"; };
+		584432E2260DB07300C28C01 /* trebuc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebuc.ttf; sourceTree = "<group>"; };
+		584432E3260DB07300C28C01 /* corbeli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbeli.ttf; sourceTree = "<group>"; };
+		584432E5260DB07300C28C01 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbelz.ttf; sourceTree = "<group>"; };
+		584432E6260DB07300C28C01 /* trebucbd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebucbd.ttf; sourceTree = "<group>"; };
+		584432E7260DB07300C28C01 /* LatynLyngo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LatynLyngo-Bridging-Header.h"; sourceTree = "<group>"; };
+		584432E9260DB07300C28C01 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		584432EA260DB07300C28C01 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		584432EB260DB07300C28C01 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		5844330D260DB27800C28C01 /* LatynLyngo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LatynLyngo.xcdatamodel; sourceTree = "<group>"; };
+		5844331C260DCD4000C28C01 /* Harrington-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harrington-Bold.ttf"; sourceTree = "<group>"; };
+		5844331E260DE96100C28C01 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		5844F5D9260F4A9100A60C63 /* InstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
+		5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationVC.swift; sourceTree = "<group>"; };
+		5844F5DD260F79A200A60C63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5890955A260F028400575A46 /* SidemenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuTVC.swift; sourceTree = "<group>"; };
+		C421474D0DC02B9A9C6C7E01 /* Pods-LatynLyngo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatynLyngo.debug.xcconfig"; path = "Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58443291260DAEAD00C28C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5844F5DE260F79A200A60C63 /* WebKit.framework in Frameworks */,
+				53F21B691A1F1A539E1E8435 /* Pods_LatynLyngo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03A8AE98009B3C532ACA93BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5844F5DD260F79A200A60C63 /* WebKit.framework */,
+				055341F2ACBD2D0A216445D4 /* Pods_LatynLyngo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4412E749E21AD9F143CBEFD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C421474D0DC02B9A9C6C7E01 /* Pods-LatynLyngo.debug.xcconfig */,
+				113BADBBA67F7EE4B713455C /* Pods-LatynLyngo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5844328B260DAEAD00C28C01 = {
+			isa = PBXGroup;
+			children = (
+				58443296260DAEAD00C28C01 /* LatynLyngo */,
+				58443295260DAEAD00C28C01 /* Products */,
+				4412E749E21AD9F143CBEFD5 /* Pods */,
+				03A8AE98009B3C532ACA93BB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		58443295260DAEAD00C28C01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58443294260DAEAD00C28C01 /* LatynLyngo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58443296260DAEAD00C28C01 /* LatynLyngo */ = {
+			isa = PBXGroup;
+			children = (
+				58443297260DAEAD00C28C01 /* AppDelegate.swift */,
+				58443299260DAEAD00C28C01 /* SceneDelegate.swift */,
+				584432B1260DAFE500C28C01 /* Model */,
+				584432B0260DAFE200C28C01 /* View */,
+				584432AF260DAFDF00C28C01 /* ViewModel */,
+				584432AE260DAFD600C28C01 /* Resources */,
+				584432A8260DAEB000C28C01 /* Info.plist */,
+				584432A3260DAEB000C28C01 /* Assets.xcassets */,
+				5844330C260DB27800C28C01 /* LatynLyngo.xcdatamodeld */,
+			);
+			path = LatynLyngo;
+			sourceTree = "<group>";
+		};
+		584432AE260DAFD600C28C01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */,
+				584432C8260DB07200C28C01 /* CardsCVLayout.swift */,
+				584432C9260DB07200C28C01 /* Common Methods.swift */,
+				584432D1260DB07200C28C01 /* CommonData.swift */,
+				584432C7260DB07200C28C01 /* ExtensionHelper.swift */,
+				584432E7260DB07300C28C01 /* LatynLyngo-Bridging-Header.h */,
+				584432D3260DB07200C28C01 /* FMDB */,
+				584432DF260DB07200C28C01 /* Fonts */,
+				584432CA260DB07200C28C01 /* Images */,
+				584432E8260DB07300C28C01 /* Services */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		584432AF260DAFDF00C28C01 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				584432C5260DB05900C28C01 /* WordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		584432B0260DAFE200C28C01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5890955C260F1A4A00575A46 /* TableViewCells */,
+				584432B7260DB03E00C28C01 /* ViewControllers */,
+				5844330F260DB29300C28C01 /* StoryBoards */,
+				584432B4260DB02D00C28C01 /* CollectionViewCells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		584432B1260DAFE500C28C01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				584432B2260DB01500C28C01 /* WordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		584432B4260DB02D00C28C01 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				584432B5260DB02D00C28C01 /* WelcomeCVC.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		584432B7260DB03E00C28C01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				584432B9260DB03E00C28C01 /* WelcomeVC.swift */,
+				5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */,
+				584432B8260DB03E00C28C01 /* HomeVC.swift */,
+				584432BA260DB03E00C28C01 /* WordPickerVC.swift */,
+				5844331E260DE96100C28C01 /* SideMenuVC.swift */,
+				5844F5D9260F4A9100A60C63 /* InstructionVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		584432CA260DB07200C28C01 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				584432CB260DB07200C28C01 /* newSplash@3x.png */,
+				584432CC260DB07200C28C01 /* newSplash@2x.png */,
+				584432CD260DB07200C28C01 /* source.gif */,
+				584432CE260DB07200C28C01 /* newSplash.png */,
+				584432CF260DB07200C28C01 /* giphy.gif */,
+				584432D0260DB07200C28C01 /* synonymSuccess.gif */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		584432D3260DB07200C28C01 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				584432D4260DB07200C28C01 /* FMDatabase.h */,
+				584432D5260DB07200C28C01 /* FMDatabaseQueue.m */,
+				584432D6260DB07200C28C01 /* FMResultSet.h */,
+				584432D7260DB07200C28C01 /* FMDatabasePool.h */,
+				584432D8260DB07200C28C01 /* FMDatabaseAdditions.m */,
+				584432D9260DB07200C28C01 /* FMDatabase.m */,
+				584432DA260DB07200C28C01 /* FMDatabaseQueue.h */,
+				584432DB260DB07200C28C01 /* FMDB.h */,
+				584432DC260DB07200C28C01 /* FMDatabaseAdditions.h */,
+				584432DD260DB07200C28C01 /* FMDatabasePool.m */,
+				584432DE260DB07200C28C01 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		584432DF260DB07200C28C01 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5844331C260DCD4000C28C01 /* Harrington-Bold.ttf */,
+				584432E0260DB07200C28C01 /* corbel.ttf */,
+				584432E1260DB07200C28C01 /* corbelb.ttf */,
+				584432E2260DB07300C28C01 /* trebuc.ttf */,
+				584432E3260DB07300C28C01 /* corbeli.ttf */,
+				584432E5260DB07300C28C01 /* corbelz.ttf */,
+				584432E6260DB07300C28C01 /* trebucbd.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		584432E8260DB07300C28C01 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				584432E9260DB07300C28C01 /* NetworkManager.swift */,
+				584432EA260DB07300C28C01 /* DBManager.swift */,
+				584432EB260DB07300C28C01 /* URLs.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5844330F260DB29300C28C01 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				5844329D260DAEAD00C28C01 /* Main.storyboard */,
+				584432A5260DAEB000C28C01 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		5890955C260F1A4A00575A46 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5890955A260F028400575A46 /* SidemenuTVC.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58443293260DAEAD00C28C01 /* LatynLyngo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584432AB260DAEB000C28C01 /* Build configuration list for PBXNativeTarget "LatynLyngo" */;
+			buildPhases = (
+				9FAD9EE4A89534E421085D78 /* [CP] Check Pods Manifest.lock */,
+				58443290260DAEAD00C28C01 /* Sources */,
+				58443291260DAEAD00C28C01 /* Frameworks */,
+				58443292260DAEAD00C28C01 /* Resources */,
+				F7E98613C975489464835429 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LatynLyngo;
+			productName = LatynLyngo;
+			productReference = 58443294260DAEAD00C28C01 /* LatynLyngo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5844328C260DAEAD00C28C01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = NewAgeSMB;
+				TargetAttributes = {
+					58443293260DAEAD00C28C01 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5844328F260DAEAD00C28C01 /* Build configuration list for PBXProject "LatynLyngo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5844328B260DAEAD00C28C01;
+			productRefGroup = 58443295260DAEAD00C28C01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58443293260DAEAD00C28C01 /* LatynLyngo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58443292260DAEAD00C28C01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584432F0260DB07300C28C01 /* newSplash@2x.png in Resources */,
+				58443301260DB07300C28C01 /* corbelz.ttf in Resources */,
+				58443302260DB07300C28C01 /* trebucbd.ttf in Resources */,
+				584432A7260DAEB000C28C01 /* LaunchScreen.storyboard in Resources */,
+				584432F2260DB07300C28C01 /* newSplash.png in Resources */,
+				584432FE260DB07300C28C01 /* trebuc.ttf in Resources */,
+				584432A4260DAEB000C28C01 /* Assets.xcassets in Resources */,
+				584432F1260DB07300C28C01 /* source.gif in Resources */,
+				5844329F260DAEAD00C28C01 /* Main.storyboard in Resources */,
+				5844331D260DCD4000C28C01 /* Harrington-Bold.ttf in Resources */,
+				584432FD260DB07300C28C01 /* corbelb.ttf in Resources */,
+				584432F4260DB07300C28C01 /* synonymSuccess.gif in Resources */,
+				584432FF260DB07300C28C01 /* corbeli.ttf in Resources */,
+				584432F3260DB07300C28C01 /* giphy.gif in Resources */,
+				584432EF260DB07300C28C01 /* newSplash@3x.png in Resources */,
+				584432FC260DB07300C28C01 /* corbel.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FAD9EE4A89534E421085D78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LatynLyngo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7E98613C975489464835429 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58443290260DAEAD00C28C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584432C6260DB05900C28C01 /* WordViewModel.swift in Sources */,
+				584432EC260DB07300C28C01 /* ExtensionHelper.swift in Sources */,
+				584432BD260DB03F00C28C01 /* WordPickerVC.swift in Sources */,
+				5844331F260DE96100C28C01 /* SideMenuVC.swift in Sources */,
+				5844F5DC260F77AB00A60C63 /* SideMenuNavigationVC.swift in Sources */,
+				5844330E260DB27800C28C01 /* LatynLyngo.xcdatamodeld in Sources */,
+				58443305260DB07300C28C01 /* URLs.swift in Sources */,
+				584432F9260DB07300C28C01 /* FMDatabase.m in Sources */,
+				584432FB260DB07300C28C01 /* FMResultSet.m in Sources */,
+				584432ED260DB07300C28C01 /* CardsCVLayout.swift in Sources */,
+				584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */,
+				58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */,
+				584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */,
+				584432B6260DB02D00C28C01 /* WelcomeCVC.swift in Sources */,
+				584432F5260DB07300C28C01 /* CommonData.swift in Sources */,
+				58443303260DB07300C28C01 /* NetworkManager.swift in Sources */,
+				58443304260DB07300C28C01 /* DBManager.swift in Sources */,
+				584432BB260DB03F00C28C01 /* HomeVC.swift in Sources */,
+				5844F5DA260F4A9200A60C63 /* InstructionVC.swift in Sources */,
+				584432EE260DB07300C28C01 /* Common Methods.swift in Sources */,
+				584432FA260DB07300C28C01 /* FMDatabasePool.m in Sources */,
+				584432F6260DB07300C28C01 /* ActivityIndicatorHelper.swift in Sources */,
+				5844329A260DAEAD00C28C01 /* SceneDelegate.swift in Sources */,
+				584432BC260DB03F00C28C01 /* WelcomeVC.swift in Sources */,
+				584432B3260DB01500C28C01 /* WordModel.swift in Sources */,
+				5890955B260F028400575A46 /* SidemenuTVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5844329D260DAEAD00C28C01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5844329E260DAEAD00C28C01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		584432A5260DAEB000C28C01 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				584432A6260DAEB000C28C01 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		584432A9260DAEB000C28C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		584432AA260DAEB000C28C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		584432AC260DAEB000C28C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C421474D0DC02B9A9C6C7E01 /* Pods-LatynLyngo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3HPCT47XEZ;
+				INFOPLIST_FILE = LatynLyngo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_Dev_10Feb2021;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/newagesmb/Desktop/JANAINA/Projects/LatynLyngo/LatynLyngo/Resources/LatynLyngo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		584432AD260DAEB000C28C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 113BADBBA67F7EE4B713455C /* Pods-LatynLyngo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3HPCT47XEZ;
+				INFOPLIST_FILE = LatynLyngo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_appstore;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/newagesmb/Desktop/JANAINA/Projects/LatynLyngo/LatynLyngo/Resources/LatynLyngo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5844328F260DAEAD00C28C01 /* Build configuration list for PBXProject "LatynLyngo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584432A9260DAEB000C28C01 /* Debug */,
+				584432AA260DAEB000C28C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		584432AB260DAEB000C28C01 /* Build configuration list for PBXNativeTarget "LatynLyngo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584432AC260DAEB000C28C01 /* Debug */,
+				584432AD260DAEB000C28C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5844330C260DB27800C28C01 /* LatynLyngo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5844330D260DB27800C28C01 /* LatynLyngo.xcdatamodel */,
+			);
+			currentVersion = 5844330D260DB27800C28C01 /* LatynLyngo.xcdatamodel */;
+			path = LatynLyngo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5844328C260DAEAD00C28C01 /* Project object */;
+}

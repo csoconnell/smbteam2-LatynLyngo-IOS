@@ -1,0 +1,6 @@
+framework module Pods_LatynLyngo {
+  umbrella header "Pods-LatynLyngo-umbrella.h"
+
+  export *
+  module * { export * }
+}

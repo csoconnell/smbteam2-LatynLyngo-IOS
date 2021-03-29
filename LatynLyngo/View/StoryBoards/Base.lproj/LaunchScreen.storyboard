@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yN5-td-EgG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="i4O-bW-1nm">
+            <objects>
+                <viewController id="yN5-td-EgG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gEq-kA-y0u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="bVN-U3-xcJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bVN-U3-xcJ" secondAttribute="trailing" id="DA2-ml-wtk"/>
+                            <constraint firstItem="bVN-U3-xcJ" firstAttribute="leading" secondItem="gEq-kA-y0u" secondAttribute="leading" id="fWw-vl-Cwk"/>
+                            <constraint firstAttribute="bottom" secondItem="bVN-U3-xcJ" secondAttribute="bottom" id="hrM-vL-wzx"/>
+                            <constraint firstItem="bVN-U3-xcJ" firstAttribute="top" secondItem="gEq-kA-y0u" secondAttribute="top" id="xx7-so-0S2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BaU-kF-NW9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5a-c6-gKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="-185"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="newSplash.png" width="414" height="896"/>
+    </resources>
+</document>
