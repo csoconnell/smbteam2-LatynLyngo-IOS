@@ -10,9 +10,9 @@ import UIKit
 
 class WelcomeCVC: UICollectionViewCell {
     
-    @IBOutlet weak var contentLBL: UILabel!
+    @IBOutlet weak var contentTextView: UITextView!
     
     func setCellValues(text: NSAttributedString, row: Int) {
-        contentLBL.attributedText = text
+        contentTextView.attributedText = text
     }
 }

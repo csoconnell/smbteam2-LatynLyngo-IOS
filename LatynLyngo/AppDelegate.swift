@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		53F21B691A1F1A539E1E8435 /* Pods_LatynLyngo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055341F2ACBD2D0A216445D4 /* Pods_LatynLyngo.framework */; };
+		583D8B7226118BE800628F8E /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D8B7126118BE800628F8E /* CommonData.swift */; };
+		583D8B7426118BF000628F8E /* Common Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D8B7326118BF000628F8E /* Common Methods.swift */; };
+		583D8B7626118BF400628F8E /* CardsCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D8B7526118BF400628F8E /* CardsCVLayout.swift */; };
 		58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58443297260DAEAD00C28C01 /* AppDelegate.swift */; };
 		5844329A260DAEAD00C28C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58443299260DAEAD00C28C01 /* SceneDelegate.swift */; };
 		5844329F260DAEAD00C28C01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5844329D260DAEAD00C28C01 /* Main.storyboard */; };
@@ -20,27 +23,18 @@
 		584432BD260DB03F00C28C01 /* WordPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432BA260DB03E00C28C01 /* WordPickerVC.swift */; };
 		584432C6260DB05900C28C01 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C5260DB05900C28C01 /* WordViewModel.swift */; };
 		584432EC260DB07300C28C01 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C7260DB07200C28C01 /* ExtensionHelper.swift */; };
-		584432ED260DB07300C28C01 /* CardsCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C8260DB07200C28C01 /* CardsCVLayout.swift */; };
-		584432EE260DB07300C28C01 /* Common Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432C9260DB07200C28C01 /* Common Methods.swift */; };
 		584432EF260DB07300C28C01 /* newSplash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CB260DB07200C28C01 /* newSplash@3x.png */; };
 		584432F0260DB07300C28C01 /* newSplash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CC260DB07200C28C01 /* newSplash@2x.png */; };
 		584432F1260DB07300C28C01 /* source.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432CD260DB07200C28C01 /* source.gif */; };
 		584432F2260DB07300C28C01 /* newSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 584432CE260DB07200C28C01 /* newSplash.png */; };
 		584432F3260DB07300C28C01 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432CF260DB07200C28C01 /* giphy.gif */; };
 		584432F4260DB07300C28C01 /* synonymSuccess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 584432D0260DB07200C28C01 /* synonymSuccess.gif */; };
-		584432F5260DB07300C28C01 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432D1260DB07200C28C01 /* CommonData.swift */; };
 		584432F6260DB07300C28C01 /* ActivityIndicatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */; };
 		584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D5260DB07200C28C01 /* FMDatabaseQueue.m */; };
 		584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D8260DB07200C28C01 /* FMDatabaseAdditions.m */; };
 		584432F9260DB07300C28C01 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432D9260DB07200C28C01 /* FMDatabase.m */; };
 		584432FA260DB07300C28C01 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432DD260DB07200C28C01 /* FMDatabasePool.m */; };
 		584432FB260DB07300C28C01 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 584432DE260DB07200C28C01 /* FMResultSet.m */; };
-		584432FC260DB07300C28C01 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E0260DB07200C28C01 /* corbel.ttf */; };
-		584432FD260DB07300C28C01 /* corbelb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E1260DB07200C28C01 /* corbelb.ttf */; };
-		584432FE260DB07300C28C01 /* trebuc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E2260DB07300C28C01 /* trebuc.ttf */; };
-		584432FF260DB07300C28C01 /* corbeli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E3260DB07300C28C01 /* corbeli.ttf */; };
-		58443301260DB07300C28C01 /* corbelz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E5260DB07300C28C01 /* corbelz.ttf */; };
-		58443302260DB07300C28C01 /* trebucbd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 584432E6260DB07300C28C01 /* trebucbd.ttf */; };
 		58443303260DB07300C28C01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432E9260DB07300C28C01 /* NetworkManager.swift */; };
 		58443304260DB07300C28C01 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432EA260DB07300C28C01 /* DBManager.swift */; };
 		58443305260DB07300C28C01 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584432EB260DB07300C28C01 /* URLs.swift */; };
@@ -50,12 +44,17 @@
 		5844F5DA260F4A9200A60C63 /* InstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844F5D9260F4A9100A60C63 /* InstructionVC.swift */; };
 		5844F5DC260F77AB00A60C63 /* SideMenuNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */; };
 		5844F5DE260F79A200A60C63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5844F5DD260F79A200A60C63 /* WebKit.framework */; };
+		5845A11A261B82AB001D9EF4 /* SynonymCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845A119261B82AB001D9EF4 /* SynonymCVC.swift */; };
+		58460DAF26130800008200BA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58460DAE26130800008200BA /* TestViewController.swift */; };
 		5890955B260F028400575A46 /* SidemenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890955A260F028400575A46 /* SidemenuTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		055341F2ACBD2D0A216445D4 /* Pods_LatynLyngo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LatynLyngo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		113BADBBA67F7EE4B713455C /* Pods-LatynLyngo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatynLyngo.release.xcconfig"; path = "Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo.release.xcconfig"; sourceTree = "<group>"; };
+		583D8B7126118BE800628F8E /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
+		583D8B7326118BF000628F8E /* Common Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common Methods.swift"; sourceTree = "<group>"; };
+		583D8B7526118BF400628F8E /* CardsCVLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCVLayout.swift; sourceTree = "<group>"; };
 		58443294260DAEAD00C28C01 /* LatynLyngo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LatynLyngo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58443297260DAEAD00C28C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58443299260DAEAD00C28C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,15 +69,12 @@
 		584432BA260DB03E00C28C01 /* WordPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPickerVC.swift; sourceTree = "<group>"; };
 		584432C5260DB05900C28C01 /* WordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		584432C7260DB07200C28C01 /* ExtensionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
-		584432C8260DB07200C28C01 /* CardsCVLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCVLayout.swift; sourceTree = "<group>"; };
-		584432C9260DB07200C28C01 /* Common Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common Methods.swift"; sourceTree = "<group>"; };
 		584432CB260DB07200C28C01 /* newSplash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newSplash@3x.png"; sourceTree = "<group>"; };
 		584432CC260DB07200C28C01 /* newSplash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newSplash@2x.png"; sourceTree = "<group>"; };
 		584432CD260DB07200C28C01 /* source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = source.gif; sourceTree = "<group>"; };
 		584432CE260DB07200C28C01 /* newSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newSplash.png; sourceTree = "<group>"; };
 		584432CF260DB07200C28C01 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		584432D0260DB07200C28C01 /* synonymSuccess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = synonymSuccess.gif; sourceTree = "<group>"; };
-		584432D1260DB07200C28C01 /* CommonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorHelper.swift; sourceTree = "<group>"; };
 		584432D4260DB07200C28C01 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		584432D5260DB07200C28C01 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
@@ -91,12 +87,6 @@
 		584432DC260DB07200C28C01 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		584432DD260DB07200C28C01 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		584432DE260DB07200C28C01 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		584432E0260DB07200C28C01 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbel.ttf; sourceTree = "<group>"; };
-		584432E1260DB07200C28C01 /* corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbelb.ttf; sourceTree = "<group>"; };
-		584432E2260DB07300C28C01 /* trebuc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebuc.ttf; sourceTree = "<group>"; };
-		584432E3260DB07300C28C01 /* corbeli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbeli.ttf; sourceTree = "<group>"; };
-		584432E5260DB07300C28C01 /* corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbelz.ttf; sourceTree = "<group>"; };
-		584432E6260DB07300C28C01 /* trebucbd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trebucbd.ttf; sourceTree = "<group>"; };
 		584432E7260DB07300C28C01 /* LatynLyngo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LatynLyngo-Bridging-Header.h"; sourceTree = "<group>"; };
 		584432E9260DB07300C28C01 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		584432EA260DB07300C28C01 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -107,7 +97,13 @@
 		5844F5D9260F4A9100A60C63 /* InstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionVC.swift; sourceTree = "<group>"; };
 		5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationVC.swift; sourceTree = "<group>"; };
 		5844F5DD260F79A200A60C63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5845A119261B82AB001D9EF4 /* SynonymCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCVC.swift; sourceTree = "<group>"; };
+		58460DAE26130800008200BA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5890955A260F028400575A46 /* SidemenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuTVC.swift; sourceTree = "<group>"; };
+		58945A66261C8759001F6A01 /* Corbeli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbeli.ttf; sourceTree = "<group>"; };
+		58945A67261C8759001F6A01 /* Corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbelz.ttf; sourceTree = "<group>"; };
+		58945A68261C875A001F6A01 /* Corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbel.ttf; sourceTree = "<group>"; };
+		58945A69261C875A001F6A01 /* Corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbelb.ttf; sourceTree = "<group>"; };
 		C421474D0DC02B9A9C6C7E01 /* Pods-LatynLyngo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatynLyngo.debug.xcconfig"; path = "Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,9 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */,
-				584432C8260DB07200C28C01 /* CardsCVLayout.swift */,
-				584432C9260DB07200C28C01 /* Common Methods.swift */,
-				584432D1260DB07200C28C01 /* CommonData.swift */,
+				583D8B7526118BF400628F8E /* CardsCVLayout.swift */,
+				583D8B7326118BF000628F8E /* Common Methods.swift */,
+				583D8B7126118BE800628F8E /* CommonData.swift */,
 				584432C7260DB07200C28C01 /* ExtensionHelper.swift */,
 				584432E7260DB07300C28C01 /* LatynLyngo-Bridging-Header.h */,
 				584432D3260DB07200C28C01 /* FMDB */,
@@ -204,9 +200,9 @@
 		584432B0260DAFE200C28C01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5890955C260F1A4A00575A46 /* TableViewCells */,
 				584432B7260DB03E00C28C01 /* ViewControllers */,
 				5844330F260DB29300C28C01 /* StoryBoards */,
+				5890955C260F1A4A00575A46 /* TableViewCells */,
 				584432B4260DB02D00C28C01 /* CollectionViewCells */,
 			);
 			path = View;
@@ -224,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				584432B5260DB02D00C28C01 /* WelcomeCVC.swift */,
+				5845A119261B82AB001D9EF4 /* SynonymCVC.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -232,11 +229,12 @@
 			isa = PBXGroup;
 			children = (
 				584432B9260DB03E00C28C01 /* WelcomeVC.swift */,
-				5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */,
 				584432B8260DB03E00C28C01 /* HomeVC.swift */,
-				584432BA260DB03E00C28C01 /* WordPickerVC.swift */,
+				5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */,
 				5844331E260DE96100C28C01 /* SideMenuVC.swift */,
 				5844F5D9260F4A9100A60C63 /* InstructionVC.swift */,
+				584432BA260DB03E00C28C01 /* WordPickerVC.swift */,
+				58460DAE26130800008200BA /* TestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -276,12 +274,10 @@
 			isa = PBXGroup;
 			children = (
 				5844331C260DCD4000C28C01 /* Harrington-Bold.ttf */,
-				584432E0260DB07200C28C01 /* corbel.ttf */,
-				584432E1260DB07200C28C01 /* corbelb.ttf */,
-				584432E2260DB07300C28C01 /* trebuc.ttf */,
-				584432E3260DB07300C28C01 /* corbeli.ttf */,
-				584432E5260DB07300C28C01 /* corbelz.ttf */,
-				584432E6260DB07300C28C01 /* trebucbd.ttf */,
+				58945A68261C875A001F6A01 /* Corbel.ttf */,
+				58945A69261C875A001F6A01 /* Corbelb.ttf */,
+				58945A66261C8759001F6A01 /* Corbeli.ttf */,
+				58945A67261C8759001F6A01 /* Corbelz.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -374,21 +370,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				584432F0260DB07300C28C01 /* newSplash@2x.png in Resources */,
-				58443301260DB07300C28C01 /* corbelz.ttf in Resources */,
-				58443302260DB07300C28C01 /* trebucbd.ttf in Resources */,
 				584432A7260DAEB000C28C01 /* LaunchScreen.storyboard in Resources */,
 				584432F2260DB07300C28C01 /* newSplash.png in Resources */,
-				584432FE260DB07300C28C01 /* trebuc.ttf in Resources */,
 				584432A4260DAEB000C28C01 /* Assets.xcassets in Resources */,
 				584432F1260DB07300C28C01 /* source.gif in Resources */,
 				5844329F260DAEAD00C28C01 /* Main.storyboard in Resources */,
 				5844331D260DCD4000C28C01 /* Harrington-Bold.ttf in Resources */,
-				584432FD260DB07300C28C01 /* corbelb.ttf in Resources */,
 				584432F4260DB07300C28C01 /* synonymSuccess.gif in Resources */,
-				584432FF260DB07300C28C01 /* corbeli.ttf in Resources */,
 				584432F3260DB07300C28C01 /* giphy.gif in Resources */,
 				584432EF260DB07300C28C01 /* newSplash@3x.png in Resources */,
-				584432FC260DB07300C28C01 /* corbel.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,26 +431,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583D8B7626118BF400628F8E /* CardsCVLayout.swift in Sources */,
 				584432C6260DB05900C28C01 /* WordViewModel.swift in Sources */,
 				584432EC260DB07300C28C01 /* ExtensionHelper.swift in Sources */,
 				584432BD260DB03F00C28C01 /* WordPickerVC.swift in Sources */,
+				5845A11A261B82AB001D9EF4 /* SynonymCVC.swift in Sources */,
 				5844331F260DE96100C28C01 /* SideMenuVC.swift in Sources */,
 				5844F5DC260F77AB00A60C63 /* SideMenuNavigationVC.swift in Sources */,
 				5844330E260DB27800C28C01 /* LatynLyngo.xcdatamodeld in Sources */,
 				58443305260DB07300C28C01 /* URLs.swift in Sources */,
 				584432F9260DB07300C28C01 /* FMDatabase.m in Sources */,
 				584432FB260DB07300C28C01 /* FMResultSet.m in Sources */,
-				584432ED260DB07300C28C01 /* CardsCVLayout.swift in Sources */,
 				584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */,
 				58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */,
+				583D8B7426118BF000628F8E /* Common Methods.swift in Sources */,
 				584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */,
 				584432B6260DB02D00C28C01 /* WelcomeCVC.swift in Sources */,
-				584432F5260DB07300C28C01 /* CommonData.swift in Sources */,
 				58443303260DB07300C28C01 /* NetworkManager.swift in Sources */,
+				58460DAF26130800008200BA /* TestViewController.swift in Sources */,
+				583D8B7226118BE800628F8E /* CommonData.swift in Sources */,
 				58443304260DB07300C28C01 /* DBManager.swift in Sources */,
 				584432BB260DB03F00C28C01 /* HomeVC.swift in Sources */,
 				5844F5DA260F4A9200A60C63 /* InstructionVC.swift in Sources */,
-				584432EE260DB07300C28C01 /* Common Methods.swift in Sources */,
 				584432FA260DB07300C28C01 /* FMDatabasePool.m in Sources */,
 				584432F6260DB07300C28C01 /* ActivityIndicatorHelper.swift in Sources */,
 				5844329A260DAEAD00C28C01 /* SceneDelegate.swift in Sources */,
@@ -620,6 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.28;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_Dev_10Feb2021;
@@ -643,6 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.28;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_appstore;

@@ -8,12 +8,14 @@
 
 import UIKit
 
+// MARK: - UIDevice
 extension UIDevice {
     static func vibrate() {
         // AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }
 
+// MARK: - UIView
 @IBDesignable extension UIView {
     @IBInspectable var borderColor: UIColor? {
         set {
@@ -46,6 +48,39 @@ extension UIDevice {
         }
     }
 }
+extension UIView {
+  /// Adds constraints to this `UIView` instances `superview` object to make sure this always has the same size as the superview.
+  /// Please note that this has no effect if its `superview` is `nil` – add this `UIView` instance as a subview before calling this.
+  func bindFrameToSuperviewBounds() {
+    guard let superview = self.superview else {
+      print("Error! `superview` was nil – call `addSubview(view: UIView)` before calling `bindFrameToSuperviewBounds()` to fix this.")
+      return
+    }
+
+    self.translatesAutoresizingMaskIntoConstraints = false
+
+    NSLayoutConstraint.activate([
+      self.topAnchor.constraint(equalTo: superview.topAnchor),
+      self.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+      self.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+      self.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+    ])
+  }
+}
+@IBDesignable class ViewInStack: UIView {
+
+    @IBInspectable var width: CGFloat = 1.0
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: width, height: 170.0)
+        // if using in, say, a vertical stack view, the width is ignored
+    }
+
+    override func prepareForInterfaceBuilder() {
+         invalidateIntrinsicContentSize()
+    }
+}
+// MARK: - UIViewController
 extension UIViewController {
     
     func presentTransitionVC(vc: UINavigationController) {
@@ -76,3 +111,11 @@ extension UIViewController {
         }
     }
 }
+// MARK: - UITextView
+//@IBDesignable extension UITextView {
+//    @IBInspectable var isEmptyRowsHidden: Bool = true {
+//        didSet {
+//            self.layer.shadowColor = self.shadowColor.cgColor
+//        }
+//    }
+//}

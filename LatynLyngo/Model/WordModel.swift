@@ -24,7 +24,7 @@ struct DictionaryInfo {
    var prefex_1: String!
    var prefex_2: String!
    var root: String!
-   var suffix_1: String!
+   var suffix_1: String! //not using in app 2021
    var suffix_2: String!
    var suffix_3: String!
    var synonym: String!

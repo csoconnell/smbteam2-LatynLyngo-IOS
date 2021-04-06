@@ -15,7 +15,6 @@ class WordViewModel: NSObject {
                 guard let wordsArray = dataObject.value(forKey: "word") as? NSArray  else {return}
                 guard let meaningArray = dataObject.value(forKey: "meaning") as? NSArray  else {return}
                 if DBManager.shared.createDatabase() {
-                    WordModel.shared.DbUpdated = true
                     DBManager.shared.insertWordTableData(passDict: wordsArray)
                     DBManager.shared.insertMeaningTableData(passDict: meaningArray)
                 }

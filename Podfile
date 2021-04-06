@@ -9,6 +9,5 @@ target 'LatynLyngo' do
 
  pod 'IQKeyboardManagerSwift'
  pod 'Alamofire'
- 
 
 end

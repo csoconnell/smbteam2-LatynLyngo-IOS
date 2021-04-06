@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="WordDictionary" representedClassName="WordDictionary" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="cat_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="meaning" optional="YES" attributeType="String"/>
+        <attribute name="prefex_1" optional="YES" attributeType="String"/>
+        <attribute name="prefex_1_mng" optional="YES" attributeType="String"/>
+        <attribute name="prefex_2" optional="YES" attributeType="String"/>
+        <attribute name="prefex_2_mng" optional="YES" attributeType="String"/>
+        <attribute name="suffix_1" optional="YES" attributeType="String"/>
+        <attribute name="suffix_1_mng" optional="YES" attributeType="String"/>
+        <attribute name="suffix_2" optional="YES" attributeType="String"/>
+        <attribute name="suffix_2_mng" optional="YES" attributeType="String"/>
+        <attribute name="suffix_3" optional="YES" attributeType="String"/>
+        <attribute name="suffix_3_mng" optional="YES" attributeType="String"/>
+        <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="word" optional="YES" attributeType="String"/>
+        <attribute name="word_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Entity" positionX="-428.546875" positionY="-93.62109375" width="128" height="43"/>
+        <element name="WordDictionary" positionX="-36" positionY="9" width="128" height="298"/>
+    </elements>
 </model>

@@ -7,8 +7,7 @@
  //
  
  import UIKit
- import SideMenu
-
+ 
  class HomeVC: UIViewController{
     
     @IBOutlet weak var slackView: UIStackView!
@@ -32,20 +31,12 @@
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if UIDevice.current.orientation.isLandscape {
-            slackView.axis = .horizontal
-        } else {
-            slackView.axis = .vertical
-        }
+        initialViewSettings()
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-    
-       if UIDevice.current.orientation.isLandscape {
-        slackView.axis = .horizontal
-    } else {
-        slackView.axis = .vertical
-    }
+        super.viewWillTransition(to: size, with: coordinator)
+        initialViewSettings()
+        
     }
     // MARK: - Button Actions
     
@@ -54,10 +45,10 @@
         presentTransitionVC(vc: nextVC)
     }
     @IBAction func modeBTNTapped(_ sender: UIButton) {
-        // 0 - Root, 1 - random, 2 - Nonsense
-//        WordModel.shared.ModeValue = sender.tag
-//        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "WordPickerVC") as! WordPickerVC
-//        self.navigationController?.pushViewController(nextVC, animated: true)
+        //   0 - Root, 1 - random, 2 - Nonsense
+        WordModel.shared.ModeValue = sender.tag
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "WordPickerVC") as! WordPickerVC
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     /*
@@ -100,4 +91,12 @@
      }
      
      */
+    // MARK: - Methods
+    func initialViewSettings() {
+        if UIDevice.current.orientation.isLandscape {
+            slackView.axis = .horizontal
+        } else {
+            slackView.axis = .vertical
+        }
+    }
  }
