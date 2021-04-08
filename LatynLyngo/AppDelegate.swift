@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               // Saves changes in the application's managed object context before the application terminates.
               self.saveContext()
           }
+     func applicationWillEnterForeground(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "checkUpdate"), object: nil)
+   
+    }
         // MARK: - Core Data stack
 
         lazy var persistentContainer: NSPersistentContainer = {

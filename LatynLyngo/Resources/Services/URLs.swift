@@ -16,6 +16,7 @@ let baseURLClient = baseURL + "client/"
 let baseURLCommon = baseURL + "common/"
 
 struct URLs {
+    static let appstoreURL = URL(string: "https://apps.apple.com/in/app/ludic-lingo/id1258048614")!
     static let terms = URL(string: baseURLCommon + "terms_of_use")!
     static let privacy = URL(string: baseURLCommon + "privacy_policy")!
     

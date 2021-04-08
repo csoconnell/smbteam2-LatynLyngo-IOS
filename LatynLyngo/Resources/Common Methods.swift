@@ -41,7 +41,7 @@ func splitAttributedStrings(inputString: NSAttributedString, seperator: String, 
     var collectedWords = [String]()
     collectedWords.reserveCapacity(length)
     var count = 0
-    let words = input.components(separatedBy: " ")
+    let words = input.components(separatedBy: CharacterSet.newlines)
     for word in words {
         count += word.count + 1 //add 1 to include space
         if (count > length) {
@@ -64,7 +64,7 @@ func splitAttributedStrings(inputString: NSAttributedString, seperator: String, 
     }
     var start = 0
     let stringArr = inputString.string.ls_wrap(maxWidth: length)
-  //  let stringArr = result
+  // let stringArr = result
     for txt in stringArr {
         let range = NSMakeRange(start, txt.count)
         print("....range... \(range)")

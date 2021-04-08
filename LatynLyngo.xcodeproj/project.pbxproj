@@ -47,6 +47,9 @@
 		5845A11A261B82AB001D9EF4 /* SynonymCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845A119261B82AB001D9EF4 /* SynonymCVC.swift */; };
 		58460DAF26130800008200BA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58460DAE26130800008200BA /* TestViewController.swift */; };
 		5890955B260F028400575A46 /* SidemenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890955A260F028400575A46 /* SidemenuTVC.swift */; };
+		58EB2B59261EC782003F89AC /* TextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB2B58261EC782003F89AC /* TextViewVC.swift */; };
+		58EB2B5B261EC7D7003F89AC /* brillig.txt in Resources */ = {isa = PBXBuildFile; fileRef = 58EB2B5A261EC7D6003F89AC /* brillig.txt */; };
+		58EB2B5D261F0082003F89AC /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB2B5C261F0082003F89AC /* LinkTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +107,9 @@
 		58945A67261C8759001F6A01 /* Corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbelz.ttf; sourceTree = "<group>"; };
 		58945A68261C875A001F6A01 /* Corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbel.ttf; sourceTree = "<group>"; };
 		58945A69261C875A001F6A01 /* Corbelb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbelb.ttf; sourceTree = "<group>"; };
+		58EB2B58261EC782003F89AC /* TextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewVC.swift; sourceTree = "<group>"; };
+		58EB2B5A261EC7D6003F89AC /* brillig.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = brillig.txt; sourceTree = "<group>"; };
+		58EB2B5C261F0082003F89AC /* LinkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
 		C421474D0DC02B9A9C6C7E01 /* Pods-LatynLyngo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatynLyngo.debug.xcconfig"; path = "Target Support Files/Pods-LatynLyngo/Pods-LatynLyngo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,7 @@
 		58443296260DAEAD00C28C01 /* LatynLyngo */ = {
 			isa = PBXGroup;
 			children = (
+				58EB2B5A261EC7D6003F89AC /* brillig.txt */,
 				58443297260DAEAD00C28C01 /* AppDelegate.swift */,
 				58443299260DAEAD00C28C01 /* SceneDelegate.swift */,
 				584432B1260DAFE500C28C01 /* Model */,
@@ -179,6 +186,7 @@
 				583D8B7526118BF400628F8E /* CardsCVLayout.swift */,
 				583D8B7326118BF000628F8E /* Common Methods.swift */,
 				583D8B7126118BE800628F8E /* CommonData.swift */,
+				58EB2B5C261F0082003F89AC /* LinkTextView.swift */,
 				584432C7260DB07200C28C01 /* ExtensionHelper.swift */,
 				584432E7260DB07300C28C01 /* LatynLyngo-Bridging-Header.h */,
 				584432D3260DB07200C28C01 /* FMDB */,
@@ -235,6 +243,7 @@
 				5844F5D9260F4A9100A60C63 /* InstructionVC.swift */,
 				584432BA260DB03E00C28C01 /* WordPickerVC.swift */,
 				58460DAE26130800008200BA /* TestViewController.swift */,
+				58EB2B58261EC782003F89AC /* TextViewVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 				584432A7260DAEB000C28C01 /* LaunchScreen.storyboard in Resources */,
 				584432F2260DB07300C28C01 /* newSplash.png in Resources */,
 				584432A4260DAEB000C28C01 /* Assets.xcassets in Resources */,
+				58EB2B5B261EC7D7003F89AC /* brillig.txt in Resources */,
 				584432F1260DB07300C28C01 /* source.gif in Resources */,
 				5844329F260DAEAD00C28C01 /* Main.storyboard in Resources */,
 				5844331D260DCD4000C28C01 /* Harrington-Bold.ttf in Resources */,
@@ -444,9 +454,11 @@
 				584432FB260DB07300C28C01 /* FMResultSet.m in Sources */,
 				584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */,
 				58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */,
+				58EB2B59261EC782003F89AC /* TextViewVC.swift in Sources */,
 				583D8B7426118BF000628F8E /* Common Methods.swift in Sources */,
 				584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */,
 				584432B6260DB02D00C28C01 /* WelcomeCVC.swift in Sources */,
+				58EB2B5D261F0082003F89AC /* LinkTextView.swift in Sources */,
 				58443303260DB07300C28C01 /* NetworkManager.swift in Sources */,
 				58460DAF26130800008200BA /* TestViewController.swift in Sources */,
 				583D8B7226118BE800628F8E /* CommonData.swift in Sources */,
@@ -605,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				INFOPLIST_FILE = LatynLyngo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -612,7 +625,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.28;
+				MARKETING_VERSION = 1.0.30;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_Dev_10Feb2021;
@@ -629,6 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				INFOPLIST_FILE = LatynLyngo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -636,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.28;
+				MARKETING_VERSION = 1.0.30;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LatinLingo.LatinLingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = LatynLyngo_appstore;

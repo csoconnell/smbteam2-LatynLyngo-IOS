@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,10 +27,10 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-        <string>Corbel.ttf</string>
-        <string>Corbelb.ttf</string>
-        <string>Corbeli.ttf</string>
-        <string>Corbelz.ttf</string>
+		<string>Corbel.ttf</string>
+		<string>Corbelb.ttf</string>
+		<string>Corbeli.ttf</string>
+		<string>Corbelz.ttf</string>
 		<string>Harrington-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

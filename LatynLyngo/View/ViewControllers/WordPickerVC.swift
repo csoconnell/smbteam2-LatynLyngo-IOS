@@ -56,6 +56,7 @@ class WordPickerVC: UIViewController {
     @IBOutlet weak var wordDetailViewHeightConstraint: NSLayoutConstraint!
     
     var items: [DictionaryInfo]!
+    var allMovies: [DictionaryInfo] = []
     var synonymListArray : NSMutableArray = []
     var partofSpeechDict : NSDictionary = ["n.":"Noun","adj.":"Adjective","v.":"Verb","":"Adverb","":"Pronoun","":" Preposition","":"Conjunction ","":"Interjection"]
     var nonsencePrefixArr = [String]()
@@ -66,6 +67,7 @@ class WordPickerVC: UIViewController {
     var pickerdataRoot = [String]()
     var pickerdataSuffix3 = [String]()
     var pickerdataSuffix2 = [String]()
+    var savedRootArray = [String]()
     var wordArray = ["","","","",""]
     
     var resultWord = ""
@@ -114,7 +116,7 @@ class WordPickerVC: UIViewController {
     // MARK: - Button Actions
     @IBAction func SpinBTNTapped(_ sender: UIButton) {
         if WordModel.shared.ModeValue == 1 {// random mode
-            loadRandomData()
+            showRandomMovie()
             // randomTimer.invalidate()
             
         } else if WordModel.shared.ModeValue == 2 {// nonsense mode
@@ -150,9 +152,9 @@ class WordPickerVC: UIViewController {
         resetWith(root: false)
     }
     @IBAction func instructionBTNTapped(_ sender: UIButton) {
-           let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "InstructionVC") as! InstructionVC
-           self.navigationController?.pushViewController(nextVC, animated: true)
-       }
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "InstructionVC") as! InstructionVC
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     @IBAction func prefixOverlayBTNTapped(_ sender: UIButton) {
         prefixSpinned = false
@@ -285,11 +287,11 @@ class WordPickerVC: UIViewController {
             }
             let stringVar = str.replacingOccurrences(of: "<br />", with: "")
             self.wordDetailTextView.text = stringVar
-//            let newString  = stringVar.replacingOccurrences(of: "<br />", with: "", options: .literal, range: NSRange(location: 0, length: stringVar.length))
-//            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Corbel", size: 24.0)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-//            let myAttrString = NSAttributedString(string: newString, attributes: myAttribute)
-//            self.wordDetailTextView.attributedText = myAttrString
-//            self.wordDetailTextView.textAlignment = .center
+            //            let newString  = stringVar.replacingOccurrences(of: "<br />", with: "", options: .literal, range: NSRange(location: 0, length: stringVar.length))
+            //            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Corbel", size: 24.0)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+            //            let myAttrString = NSAttributedString(string: newString, attributes: myAttribute)
+            //            self.wordDetailTextView.attributedText = myAttrString
+            //            self.wordDetailTextView.textAlignment = .center
             break
         case 2:
             items = DBManager.shared.loadMovieList(withDataWord: "", prefix2: "", root: wordArray[2], suffix1: "", suffix2: "", suffix3: "") ?? []
@@ -391,7 +393,7 @@ class WordPickerVC: UIViewController {
     }
     func initialSettings() {
         items = []
-      
+        
         hideViews(hideP2View: true, hideS2View: true)
         picker1.isUserInteractionEnabled = true
         picker2.isUserInteractionEnabled = true
@@ -414,11 +416,11 @@ class WordPickerVC: UIViewController {
             suffixOverlayBTN.isUserInteractionEnabled = false
             rootOverlayBTN.isUserInteractionEnabled = false
             prefixOverlayBTN.isUserInteractionEnabled = false
-            var savedRootValue = ""
-            if (UserDefaults.standard.object(forKey: "savedRootValue") as? String) != nil {
-                savedRootValue = UserDefaults.standard.object(forKey: "savedRootValue") as! String
+            
+            if (UserDefaults.standard.object(forKey: "savedRootArray") as? [String]) != nil {
+                savedRootArray = UserDefaults.standard.object(forKey: "savedRootArray") as! [String]
             }
-            if savedRootValue == "" {
+            if savedRootArray.isEmpty {
                 let alert = UIAlertController(title: "Instruction", message: "You need to start studying with root mode to start growing the random mode", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     self.navigationController?.popViewController(animated: true)
@@ -426,7 +428,7 @@ class WordPickerVC: UIViewController {
                 }))
                 self.present(alert, animated: true, completion: nil)
             } else {
-                wordArray = ["","",savedRootValue,"",""]
+                
                 loadRandomData()
             }
         } else {
@@ -510,92 +512,144 @@ class WordPickerVC: UIViewController {
         }
     }
     func loadRandomData() {
-        activityIndicator.startAnimaton()
-        loadPickerData(prefix1: "", prefix2: "", root: wordArray[2], suffix2: "", suffix3: "") { (pickerMovies) in
-            if !pickerMovies.isEmpty {
-                let randomNum :Int = Int.random(in: 1...10000)
-                let randomMovie = pickerMovies[randomNum%pickerMovies.count]
-                print("randomMovie....\(pickerMovies.count)......\(randomNum%pickerMovies.count)....\(randomMovie)")
-                wordArray = [randomMovie.prefex_1,randomMovie.prefex_2,randomMovie.root,randomMovie.suffix_2,randomMovie.suffix_3]
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if let root = randomMovie.root {
-                        if root != "" {
-                            self.rootOverlayBTN.isHidden = true
-                            self.picker3.isHidden = false
-                            
-                            self.picker3.selectRow(randomNum, inComponent: 0, animated: true)
-                            self.pickerView(self.picker3, didSelectRow: randomNum, inComponent: 0)
-                        } else {
-                            self.picker3.isHidden = true
-                            self.rootOverlayBTN.isHidden = false
-                        }
+        
+        let movies = DBManager.shared.loadMovies() ?? []
+        print("......\(allMovies.count).....\(allMovies)")
+        for movie in movies {
+            for root in savedRootArray {
+                if movie.root == root {
+                    allMovies.append(movie)
+                }
+            }
+        }
+        print("......\(allMovies.count).........\(savedRootArray.count)")
+        if !allMovies.isEmpty && !savedRootArray.isEmpty {
+            for item in allMovies {
+                if pickerdataPrefix1.contains(item.prefex_1) {
+                }else{
+                    if item.prefex_1 != "" {
+                        pickerdataPrefix1.append(item.prefex_1)}
+                }
+                if pickerdataPrefix2.contains(item.prefex_2) {
+                }else{
+                    if item.prefex_2 != "" {
+                        pickerdataPrefix2.append(item.prefex_2)}
+                }
+                if pickerdataRoot.contains(item.root) {
+                }else{
+                    if item.root != "" {
+                        pickerdataRoot.append(item.root)
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    if let prefix1 = randomMovie.prefex_1 {
-                        if prefix1 != "" {
-                            self.picker1.isHidden = false
-                            self.prefixOverlayBTN.isHidden = true
-                            if let indexofFirstword = self.pickerdataPrefix1.firstIndex(of: prefix1) {
-                                self.picker1.selectRow(indexofFirstword, inComponent: 0, animated: true)
-                            }
-                        } else {
-                            self.picker1.isHidden = true
-                            self.prefixOverlayBTN.isHidden = false
-                        }
+                if pickerdataSuffix2.contains(item.suffix_2) {
+                }else{
+                    if item.suffix_2 != "" {
+                        pickerdataSuffix2.append(item.suffix_2)
                     }
+                }
+                if pickerdataSuffix3.contains(item.suffix_3) {
+                }else{
                     
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    if let prefix2 = randomMovie.prefex_2 {
-                        if prefix2 == "" {
-                            self.hideViews(hideP2View: true)
-                        } else {
-                            self.hideViews(hideP2View: false)
-                            if let indexofFirstword = self.pickerdataPrefix2.firstIndex(of: prefix2) {
-                                self.picker2.selectRow(indexofFirstword, inComponent: 0, animated: true)
-                            }
-                        }
+                    if item.suffix_3 != "" {
+                        pickerdataSuffix3.append(item.suffix_3)
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    if let suffix3 = randomMovie.suffix_3 {
-                        if suffix3 != "" {
-                            self.picker5.isHidden = false
-                            self.suffixOverlayBTN.isHidden = true
-                            if let indexofFirstword = self.pickerdataSuffix3.firstIndex(of: suffix3) {
-                                self.picker5.selectRow(indexofFirstword, inComponent: 0, animated: true)
-                            }
-                        } else {
-                            self.picker5.isHidden = true
-                            self.suffixOverlayBTN.isHidden = false
+            }
+            pickerdataPrefix1 = pickerdataPrefix1.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            pickerdataPrefix2 = pickerdataPrefix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            pickerdataRoot = pickerdataRoot.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            pickerdataSuffix2 = pickerdataSuffix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            pickerdataSuffix3 = pickerdataSuffix3.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            showRandomMovie()
+        }
+    }
+    func showRandomMovie() {
+        if !allMovies.isEmpty && !savedRootArray.isEmpty {
+            activityIndicator.startAnimaton()
+            let randomNum :Int = Int.random(in: 1...10000)
+            let randomMovie = allMovies[randomNum%allMovies.count]
+            print("randomMovie....\(allMovies.count)......\(randomNum%allMovies.count)....\(randomMovie)")
+            wordArray = [randomMovie.prefex_1,randomMovie.prefex_2,randomMovie.root,randomMovie.suffix_2,randomMovie.suffix_3]
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if let root = randomMovie.root {
+                    if root != "" {
+                        self.rootOverlayBTN.isHidden = true
+                        self.picker3.isHidden = false
+                        if let indexofFirstword = self.pickerdataRoot.firstIndex(of: root) {
+                            self.picker3.selectRow(indexofFirstword, inComponent: 0, animated: true)
                         }
+                       // self.picker3.selectRow(randomNum, inComponent: 0, animated: true)
+                       // self.pickerView(self.picker3, didSelectRow: randomNum, inComponent: 0)
+                    } else {
+                        self.picker3.isHidden = true
+                        self.rootOverlayBTN.isHidden = false
                     }
-                    
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                    
-                    if let suffix2 = randomMovie.suffix_2 {
-                        if suffix2 == "" {
-                            self.hideViews(hideS2View: true)
-                        } else {
-                            self.hideViews(hideS2View: false)
-                            if let indexofFirstword = self.pickerdataSuffix2.firstIndex(of: suffix2) {
-                                self.picker4.selectRow(indexofFirstword, inComponent: 0, animated: true)
-                            }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if let prefix1 = randomMovie.prefex_1 {
+                    if prefix1 != "" {
+                        self.picker1.isHidden = false
+                        self.prefixOverlayBTN.isHidden = true
+                        if let indexofFirstword = self.pickerdataPrefix1.firstIndex(of: prefix1) {
+                            self.picker1.selectRow(indexofFirstword, inComponent: 0, animated: true)
                         }
+                    } else {
+                        self.picker1.isHidden = true
+                        self.prefixOverlayBTN.isHidden = false
                     }
                 }
-                picker1.reloadAllComponents()
-                picker2.reloadAllComponents()
-                picker3.reloadAllComponents()
-                picker4.reloadAllComponents()
-                picker5.reloadAllComponents()
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    activityIndicator.stopAnimaton()
-                    self.wordform()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                if let prefix2 = randomMovie.prefex_2 {
+                    if prefix2 == "" {
+                        self.hideViews(hideP2View: true)
+                    } else {
+                        self.hideViews(hideP2View: false)
+                        if let indexofFirstword = self.pickerdataPrefix2.firstIndex(of: prefix2) {
+                            self.picker2.selectRow(indexofFirstword, inComponent: 0, animated: true)
+                        }
+                    }
                 }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                if let suffix3 = randomMovie.suffix_3 {
+                    if suffix3 != "" {
+                        self.picker5.isHidden = false
+                        self.suffixOverlayBTN.isHidden = true
+                        if let indexofFirstword = self.pickerdataSuffix3.firstIndex(of: suffix3) {
+                            self.picker5.selectRow(indexofFirstword, inComponent: 0, animated: true)
+                        }
+                    } else {
+                        self.picker5.isHidden = true
+                        self.suffixOverlayBTN.isHidden = false
+                    }
+                }
+                
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                
+                if let suffix2 = randomMovie.suffix_2 {
+                    if suffix2 == "" {
+                        self.hideViews(hideS2View: true)
+                    } else {
+                        self.hideViews(hideS2View: false)
+                        if let indexofFirstword = self.pickerdataSuffix2.firstIndex(of: suffix2) {
+                            self.picker4.selectRow(indexofFirstword, inComponent: 0, animated: true)
+                        }
+                    }
+                }
+            }
+            picker1.reloadAllComponents()
+            picker2.reloadAllComponents()
+            picker3.reloadAllComponents()
+            picker4.reloadAllComponents()
+            picker5.reloadAllComponents()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                activityIndicator.stopAnimaton()
+                self.wordform()
             }
         }
     }
@@ -972,7 +1026,10 @@ extension WordPickerVC: UIPickerViewDelegate {
                 resetWith(root: true)
                 getMovies()
                 // save root value for random mode
-                UserDefaults.standard.set(rootValue, forKey: "savedRootValue")
+                if !savedRootArray.contains(rootValue) {
+                    savedRootArray.append(rootValue)
+                }
+                UserDefaults.standard.set(savedRootArray, forKey: "savedRootArray")
                 UserDefaults.standard.synchronize()
             } else if pickerView == picker4 {
                 suffix2Value = pickerdataSuffix2[row%pickerdataSuffix2.count]
@@ -1126,8 +1183,8 @@ extension WordPickerVC: UICollectionViewDelegate {
 // MARK: - ScrollView Delegates
 extension WordPickerVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       if let verticalIndicator: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 1)] as? UIImageView) {
-        verticalIndicator.backgroundColor = UIColor(red: 143.0/255.0, green: 180.0/255.0, blue: 246.0/255.0, alpha: 0.7)
+        if let verticalIndicator: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 1)] as? UIImageView) {
+            verticalIndicator.backgroundColor = UIColor(red: 152.0/255.0, green: 187.0/255.0, blue: 241.0/255.0, alpha: 1.0)
         }
     }
 }

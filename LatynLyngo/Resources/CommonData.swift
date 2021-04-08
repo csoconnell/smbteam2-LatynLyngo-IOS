@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+let appVerion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0"
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
@@ -19,7 +19,7 @@ var activityIndicator: ActivityIndicatorHelper = ActivityIndicatorHelper(view: U
 //Font
 let appRegular14Font = UIFont(name: "TrebuchetMS", size: 14) //TrebuchetMS   trebuc
 let appRegular24Font = UIFont(name: "TrebuchetMS", size: 24)
-let appRegular50Font = UIFont(name: "TrebuchetMS", size: 50)
+let appRegular50Font = UIFont(name: "TrebuchetMS-Bold", size: 20)
 
 //Color
 //let AppButtonColor = UIColor(named: "ButtonColor")IconBgColor

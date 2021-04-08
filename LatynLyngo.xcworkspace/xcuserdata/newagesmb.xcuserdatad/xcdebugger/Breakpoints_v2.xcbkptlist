@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0093A479-E8A1-47D8-8E72-AB4BBA7F583B"
+            uuid = "67F55B1D-9C73-49D4-9FBB-7D833C4CC446"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LatynLyngo/View/ViewControllers/WordPickerVC.swift"
+            filePath = "LatynLyngo/View/ViewControllers/TextViewVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "947"
-            endingLineNumber = "947"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2340FDD1-C842-4DBD-8A8B-CB1E38BC8FE8"
+            uuid = "21EC82AF-005C-41A2-9E95-EAAB27D7399E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LatynLyngo/View/ViewControllers/WordPickerVC.swift"
+            filePath = "LatynLyngo/View/ViewControllers/TextViewVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "994"
-            endingLineNumber = "994"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6444EE8A-5CF1-485D-B795-247E20652ED0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LatynLyngo/View/ViewControllers/WelcomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "showContentText()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

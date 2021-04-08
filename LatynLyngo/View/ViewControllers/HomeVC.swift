@@ -18,7 +18,7 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WordModel.shared.DbUpdated = true
+      //WordModel.shared.DbUpdated = true
         if !WordModel.shared.DbUpdated {
             activityIndicator.startAnimaton()
             self.view.isUserInteractionEnabled = false

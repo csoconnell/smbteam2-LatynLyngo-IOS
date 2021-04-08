@@ -12,6 +12,8 @@ class WordModel {
  
     var DbUpdated = false
     var ModeValue = 2 // 0 - Root, 1 - random, 2 - Nonsense
+    var appStoreVersion = ""
+    
     static let shared = WordModel()
     
 }
