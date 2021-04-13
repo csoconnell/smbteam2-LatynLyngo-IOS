@@ -19,7 +19,7 @@ var activityIndicator: ActivityIndicatorHelper = ActivityIndicatorHelper(view: U
 //Font
 let appRegular14Font = UIFont(name: "TrebuchetMS", size: 14) //TrebuchetMS   trebuc
 let appRegular24Font = UIFont(name: "TrebuchetMS", size: 24)
-let appRegular50Font = UIFont(name: "TrebuchetMS-Bold", size: 20)
+let appBold20Font = UIFont(name: "TrebuchetMS-Bold", size: 20)
 
 //Color
 //let AppButtonColor = UIColor(named: "ButtonColor")IconBgColor

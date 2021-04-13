@@ -11,22 +11,33 @@
  class HomeVC: UIViewController{
     
     @IBOutlet weak var slackView: UIStackView!
+    @IBOutlet weak var backBTN: UIButton!
+    @IBOutlet weak var menuBTN: UIButton!
     
     var meaningList: [WordMeaningInfo]!
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      //WordModel.shared.DbUpdated = true
+//        view.isUserInteractionEnabled = false
+//        menuBTN.isUserInteractionEnabled = false
+//        backBTN.isUserInteractionEnabled = false
+
+        UIApplication.shared.beginIgnoringInteractionEvents()
+       // WordModel.shared.DbUpdated = true
         if !WordModel.shared.DbUpdated {
             activityIndicator.startAnimaton()
-            self.view.isUserInteractionEnabled = false
             WordViewModel().GetWordListRequest { (status, message) in
                 activityIndicator.stopAnimaton()
                 WordModel.shared.DbUpdated = true
-                self.view.isUserInteractionEnabled = true
-            }
+                UIApplication.shared.endIgnoringInteractionEvents()
+             }
+            
+        } else {
+             UIApplication.shared.endIgnoringInteractionEvents()
+//            self.view.isUserInteractionEnabled = true
+//            self.menuBTN.isUserInteractionEnabled = true
+//            self.backBTN.isUserInteractionEnabled = true
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +52,9 @@
     // MARK: - Button Actions
     
     @IBAction func menuBTNTapped(_ sender: UIButton) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationVC") as! SideMenuNavigationVC
+      let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationVC") as! SideMenuNavigationVC
         presentTransitionVC(vc: nextVC)
+        
     }
     @IBAction func modeBTNTapped(_ sender: UIButton) {
         //   0 - Root, 1 - random, 2 - Nonsense

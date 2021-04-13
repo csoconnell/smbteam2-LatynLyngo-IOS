@@ -36,25 +36,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="wi5-dH-xnb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZJz-sC-xjz">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZJz-sC-xjz">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUo-wp-ZNQ">
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="1" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="bUo-wp-ZNQ" customClass="WelcomeViewInStack" customModule="LatynLyngo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-EG-3Nv">
-                                                <rect key="frame" x="97" y="33" width="181" height="181"/>
+                                                <rect key="frame" x="97" y="63" width="181" height="181"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Eiy-EG-3Nv" secondAttribute="height" multiplier="1:1" id="bOz-cr-KId"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotext 8" translatesAutoresizingMaskIntoConstraints="NO" id="tWE-7S-gmM">
-                                                <rect key="frame" x="30" y="244" width="315" height="85"/>
+                                                <rect key="frame" x="30" y="249" width="315" height="118"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="x0o-XA-hrB"/>
-                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,11 +60,17 @@
                                             <constraint firstAttribute="trailing" secondItem="tWE-7S-gmM" secondAttribute="trailing" constant="30" id="AO4-WP-zfq"/>
                                             <constraint firstItem="tWE-7S-gmM" firstAttribute="leading" secondItem="bUo-wp-ZNQ" secondAttribute="leading" constant="30" id="AeM-fm-9bC"/>
                                             <constraint firstItem="Eiy-EG-3Nv" firstAttribute="width" secondItem="bUo-wp-ZNQ" secondAttribute="width" multiplier="200/414" id="Kwc-fT-6rr"/>
-                                            <constraint firstItem="tWE-7S-gmM" firstAttribute="top" secondItem="Eiy-EG-3Nv" secondAttribute="bottom" constant="30" id="XGa-RX-k5H"/>
-                                            <constraint firstItem="Eiy-EG-3Nv" firstAttribute="centerY" secondItem="bUo-wp-ZNQ" secondAttribute="centerY" constant="-60" id="hmd-M1-wMJ"/>
+                                            <constraint firstItem="Eiy-EG-3Nv" firstAttribute="centerY" secondItem="bUo-wp-ZNQ" secondAttribute="centerY" constant="-30" id="VtU-AV-bcl"/>
+                                            <constraint firstItem="tWE-7S-gmM" firstAttribute="top" secondItem="Eiy-EG-3Nv" secondAttribute="bottom" constant="5" id="XGa-RX-k5H"/>
+                                            <constraint firstAttribute="bottom" secondItem="tWE-7S-gmM" secondAttribute="bottom" id="hYj-r0-8wW"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKT-UH-5vU">
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="1" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="lKT-UH-5vU" customClass="WelcomeViewInStack" customModule="LatynLyngo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="367" width="375" height="367"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytm-S9-0f8">
@@ -75,7 +78,7 @@
                                                 <subviews>
                                                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-vZ-H9a">
                                                         <rect key="frame" x="5" y="5" width="335" height="237"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6j6-KW-LFC" customClass="CardsCVLayout" customModule="LatynLyngo" customModuleProvider="target">
                                                             <size key="itemSize" width="275" height="191"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -90,7 +93,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="275" height="191"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-rF-9ix">
+                                                                        <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-rF-9ix">
                                                                             <rect key="frame" x="0.0" y="0.0" width="275" height="191"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,6 +219,7 @@
                     <navigationItem key="navigationItem" id="tBf-Gu-4vI"/>
                     <connections>
                         <outlet property="contentCV" destination="A1p-vZ-H9a" id="sTU-db-546"/>
+                        <outlet property="logoView" destination="bUo-wp-ZNQ" id="PlB-C1-TMw"/>
                         <outlet property="pageControl" destination="aUG-Qy-L1d" id="46v-fO-V6z"/>
                         <outlet property="slackView" destination="ZJz-sC-xjz" id="k6I-DD-The"/>
                     </connections>
@@ -398,6 +402,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="jAv-MZ-1pG"/>
                     <connections>
+                        <outlet property="backBTN" destination="B0K-Ro-boZ" id="2Be-To-Get"/>
+                        <outlet property="menuBTN" destination="oOS-rV-dzf" id="BBu-8e-zs8"/>
                         <outlet property="slackView" destination="m9g-S7-evJ" id="4cZ-pb-3qC"/>
                     </connections>
                 </viewController>
@@ -1320,7 +1326,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfA-fi-hlt">
                                                         <rect key="frame" x="0.0" y="0.0" width="91" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                                                         <state key="normal" title="PREFIX" backgroundImage="bg">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -1363,7 +1369,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="scrollIndicatorInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Corbel" family="Corbel" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="TOd-6e-LPm" id="qnG-ed-zg4"/>
@@ -1427,7 +1433,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4E-MG-kQ8">
                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="111"/>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                                                         <state key="normal" title="ROOT" backgroundImage="bg">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -1535,7 +1541,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-Wu-O1x">
                                                         <rect key="frame" x="0.0" y="0.0" width="91" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                                                         <state key="normal" title="SUFFIX" backgroundImage="bg">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -2228,51 +2234,6 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="8717.6000000000004" y="-27.339901477832512"/>
-        </scene>
-        <!--Text ViewVC-->
-        <scene sceneID="2x4-uf-1H1">
-            <objects>
-                <viewController id="MLi-Ot-e06" customClass="TextViewVC" customModule="LatynLyngo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5fA-YR-qOe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYB-Xj-qMn">
-                                <rect key="frame" x="50" y="74" width="275" height="317"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="317" id="z2D-Rd-00E"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96D-22-3wU">
-                                <rect key="frame" x="50" y="411" width="275" height="367"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="96D-22-3wU" firstAttribute="leading" secondItem="ylW-uN-laK" secondAttribute="leading" constant="50" id="8Za-AZ-oQf"/>
-                            <constraint firstItem="96D-22-3wU" firstAttribute="top" secondItem="IYB-Xj-qMn" secondAttribute="bottom" constant="20" id="Ffs-KN-XiD"/>
-                            <constraint firstItem="ylW-uN-laK" firstAttribute="trailing" secondItem="IYB-Xj-qMn" secondAttribute="trailing" constant="50" id="WBA-it-0w9"/>
-                            <constraint firstItem="IYB-Xj-qMn" firstAttribute="leading" secondItem="ylW-uN-laK" secondAttribute="leading" constant="50" id="YhZ-qx-Cr9"/>
-                            <constraint firstItem="ylW-uN-laK" firstAttribute="bottom" secondItem="96D-22-3wU" secondAttribute="bottom" id="bPf-l1-7el"/>
-                            <constraint firstItem="IYB-Xj-qMn" firstAttribute="top" secondItem="ylW-uN-laK" secondAttribute="top" constant="30" id="xra-NS-2NK"/>
-                            <constraint firstItem="ylW-uN-laK" firstAttribute="trailing" secondItem="96D-22-3wU" secondAttribute="trailing" constant="50" id="y80-Uk-rvC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ylW-uN-laK"/>
-                    </view>
-                    <connections>
-                        <outlet property="tv" destination="IYB-Xj-qMn" id="hcs-Rx-GHB"/>
-                        <outlet property="tv2" destination="96D-22-3wU" id="c0M-8P-DZI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-K9-a57" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="40" y="26.986506746626688"/>
         </scene>
     </scenes>
     <resources>

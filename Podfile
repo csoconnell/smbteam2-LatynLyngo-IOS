@@ -9,5 +9,5 @@ target 'LatynLyngo' do
 
  pod 'IQKeyboardManagerSwift'
  pod 'Alamofire'
-
+ pod 'SDWebImage'
 end

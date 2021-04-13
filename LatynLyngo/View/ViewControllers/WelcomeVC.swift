@@ -13,6 +13,7 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var slackView: UIStackView!
     @IBOutlet weak var contentCV: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var logoView: WelcomeViewInStack!
     
     var cellTextViewArray:[UITextView] = []
     var contentText = ""
@@ -34,16 +35,28 @@ class WelcomeVC: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         //contentCV.layoutIfNeeded()
-        view.layoutIfNeeded()
+       // view.layoutIfNeeded()
         // contentDetailTextViewHeightConstraint.constant = (80/667) * UIScreen.main.bounds.height
     }
     // view settings after device orientation changed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         initialViewSettings()
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.showContentText()
+          
+            self.contentCV.reloadData()
         }
+        
+//        contentCV.reloadSections(IndexSet(arrayLiteral: 0))
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//
+//                   if self.cellTextViewArray.count > 0 {
+//                       self.contentCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
+//                   }
+//                            self.contentCV.reloadData()
+//            self.viewWillLayoutSubviews()
+//                   }
     }
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
@@ -65,8 +78,10 @@ class WelcomeVC: UIViewController {
     func initialViewSettings() {
         
         if UIDevice.current.orientation.isLandscape {
+            logoView.height = 1.0
             slackView.axis = .horizontal
         } else {
+            logoView.height = 0.6 // intrinsic content size
             slackView.axis = .vertical
         }
     }
@@ -79,6 +94,7 @@ class WelcomeVC: UIViewController {
             
             if let dataObject = responseDic?["data"] as? String {
                 self.contentText = dataObject
+                self.initialViewSettings()
                 self.showContentText()
             }
             
@@ -109,9 +125,9 @@ class WelcomeVC: UIViewController {
                 data: contentText.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
                 options: options,
                 documentAttributes: nil)
-           
-            let contentFrame = CGRect(x: 0, y: 0, width: contentCV.frame.width - 10, height: contentCV.frame.height - 5)
-             let viewFrame = CGRect(x: 0, y: 0, width: contentCV.frame.width , height: contentCV.frame.height )
+            print(UIScreen.main.bounds.width)
+            let contentFrame = CGRect(x: 0, y: 0, width: contentCV.bounds.width - 10, height: contentCV.bounds.height - 10)
+             let viewFrame = CGRect(x: 0, y: 0, width: contentCV.bounds.width , height: contentCV.bounds.height )
             let txtSorage = NSTextStorage(attributedString:contentAttrString)
             let layoutManager = NSLayoutManager()
             txtSorage.addLayoutManager(layoutManager)
@@ -138,12 +154,10 @@ class WelcomeVC: UIViewController {
             cellTextViewArray.removeLast(emptyViewsCount)
           
             self.pageControl.numberOfPages = self.cellTextViewArray.count
-            contentCV.layoutIfNeeded()
-            
             self.contentCV.reloadData()
-            if cellTextViewArray.count > 0 {
-                self.contentCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
-            }
+           
+            print(".......")
+//print(".................")
         }
     }
    
@@ -157,10 +171,12 @@ extension WelcomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WelcomeCVC", for: indexPath) as! WelcomeCVC
-        // cell.setCellValues(text: contentArray[indexPath.row], row: indexPath.row)
-       // cell.contentTextView.removeFromSuperview()
-        cell.contentView.addSubview(cellTextViewArray[indexPath.row])
-        //cell.contentTextView = cellTextViewArray[indexPath.row]
+        for view in cell.contentView.subviews {
+            view.removeFromSuperview()
+        }
+       cell.contentView.addSubview(cellTextViewArray[indexPath.row])
+        cell.layoutSubviews()
+        cell.layoutIfNeeded()
         return cell
     }
 }

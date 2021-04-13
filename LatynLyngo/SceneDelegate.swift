@@ -8,10 +8,14 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "checkUpdate"), object: nil)
+    }
+    
 }
 

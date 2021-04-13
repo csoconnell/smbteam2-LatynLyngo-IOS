@@ -80,6 +80,19 @@ extension UIView {
          invalidateIntrinsicContentSize()
     }
 }
+@IBDesignable class WelcomeViewInStack: UIView {
+
+    @IBInspectable var height: CGFloat = 1.0
+
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: self.bounds.width, height: height)
+        // if using in, say, a vertical stack view, the width is ignored
+    }
+
+    override func prepareForInterfaceBuilder() {
+         invalidateIntrinsicContentSize()
+    }
+}
 // MARK: - UIViewController
 extension UIViewController {
     

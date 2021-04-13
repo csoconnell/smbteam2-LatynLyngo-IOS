@@ -9,11 +9,13 @@
 import UIKit
 
 class TextView: UITextView {
+    
     //MARK: Properties
     open var didTouchedLink:((URL,NSRange,CGPoint) -> Void)?
-
     override init(frame: CGRect, textContainer: NSTextContainer?) {
+        
         super.init(frame: frame, textContainer: textContainer)
+        self.backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -21,6 +23,7 @@ class TextView: UITextView {
     }
 
     override func draw(_ rect: CGRect) {
+        
         super.draw(rect)
     }
 
@@ -34,6 +37,7 @@ class TextView: UITextView {
 }
 
 extension TextView {
+     
     fileprivate func tapped(on point:CGPoint) {
         var location: CGPoint = point
         location.x -= self.textContainerInset.left
