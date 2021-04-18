@@ -39,33 +39,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D7FFB66-C8DE-4CBA-B328-EE0A03796354"
+            uuid = "980A39CE-3E39-4B35-8086-16CA10C3FC49"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LatynLyngo/View/ViewControllers/WordPickerVC.swift"
+            filePath = "LatynLyngo/View/ViewControllers/SplashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "782"
-            endingLineNumber = "782"
-            landmarkName = "getMovies()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "77D24055-AEFB-405E-81BC-A10FB62DCCA1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LatynLyngo/View/ViewControllers/WordPickerVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "792"
-            endingLineNumber = "792"
-            landmarkName = "getMovies()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "980A39CE-3E39-4B35-8086-16CA10C3FC49 - 66a531272d7dd929"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.String, Swift.Bool) -&gt; () in LatynLyngo.SplashVC.viewDidLoad() -&gt; ()"
+                  moduleName = "LatynLyngo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatynLyngo/LatynLyngo/View/ViewControllers/SplashVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1586">
+               </Location>
+               <Location
+                  uuid = "980A39CE-3E39-4B35-8086-16CA10C3FC49 - 66a531272d7dd929"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.String, Swift.Bool) -&gt; () in LatynLyngo.SplashVC.viewDidLoad() -&gt; ()"
+                  moduleName = "LatynLyngo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/newagesmb/Desktop/JANAINA/Projects/LatynLyngo/LatynLyngo/View/ViewControllers/SplashVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "2647">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

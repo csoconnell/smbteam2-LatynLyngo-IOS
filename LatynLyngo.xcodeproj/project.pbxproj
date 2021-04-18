@@ -46,6 +46,8 @@
 		5844F5DE260F79A200A60C63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5844F5DD260F79A200A60C63 /* WebKit.framework */; };
 		5845A11A261B82AB001D9EF4 /* SynonymCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845A119261B82AB001D9EF4 /* SynonymCVC.swift */; };
 		58460DAF26130800008200BA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58460DAE26130800008200BA /* TestViewController.swift */; };
+		58477AC2262ABE0E004517E9 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58477AC1262ABE0E004517E9 /* SlideInTransition.swift */; };
+		584D5202262831C400BB62A1 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D5201262831C400BB62A1 /* SplashVC.swift */; };
 		5890955B260F028400575A46 /* SidemenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5890955A260F028400575A46 /* SidemenuTVC.swift */; };
 		58EB2B5D261F0082003F89AC /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB2B5C261F0082003F89AC /* LinkTextView.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		5844F5DD260F79A200A60C63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		5845A119261B82AB001D9EF4 /* SynonymCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymCVC.swift; sourceTree = "<group>"; };
 		58460DAE26130800008200BA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		58477AC1262ABE0E004517E9 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		584D5201262831C400BB62A1 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		5890955A260F028400575A46 /* SidemenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuTVC.swift; sourceTree = "<group>"; };
 		58945A66261C8759001F6A01 /* Corbeli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbeli.ttf; sourceTree = "<group>"; };
 		58945A67261C8759001F6A01 /* Corbelz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Corbelz.ttf; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			children = (
 				584432D2260DB07200C28C01 /* ActivityIndicatorHelper.swift */,
 				583D8B7526118BF400628F8E /* CardsCVLayout.swift */,
+				58477AC1262ABE0E004517E9 /* SlideInTransition.swift */,
 				583D8B7326118BF000628F8E /* Common Methods.swift */,
 				583D8B7126118BE800628F8E /* CommonData.swift */,
 				58EB2B5C261F0082003F89AC /* LinkTextView.swift */,
@@ -231,6 +236,7 @@
 		584432B7260DB03E00C28C01 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				584D5201262831C400BB62A1 /* SplashVC.swift */,
 				584432B9260DB03E00C28C01 /* WelcomeVC.swift */,
 				584432B8260DB03E00C28C01 /* HomeVC.swift */,
 				5844F5DB260F77AB00A60C63 /* SideMenuNavigationVC.swift */,
@@ -445,12 +451,14 @@
 				58443305260DB07300C28C01 /* URLs.swift in Sources */,
 				584432F9260DB07300C28C01 /* FMDatabase.m in Sources */,
 				584432FB260DB07300C28C01 /* FMResultSet.m in Sources */,
+				584D5202262831C400BB62A1 /* SplashVC.swift in Sources */,
 				584432F7260DB07300C28C01 /* FMDatabaseQueue.m in Sources */,
 				58443298260DAEAD00C28C01 /* AppDelegate.swift in Sources */,
 				583D8B7426118BF000628F8E /* Common Methods.swift in Sources */,
 				584432F8260DB07300C28C01 /* FMDatabaseAdditions.m in Sources */,
 				584432B6260DB02D00C28C01 /* WelcomeCVC.swift in Sources */,
 				58EB2B5D261F0082003F89AC /* LinkTextView.swift in Sources */,
+				58477AC2262ABE0E004517E9 /* SlideInTransition.swift in Sources */,
 				58443303260DB07300C28C01 /* NetworkManager.swift in Sources */,
 				58460DAF26130800008200BA /* TestViewController.swift in Sources */,
 				583D8B7226118BE800628F8E /* CommonData.swift in Sources */,
@@ -609,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				INFOPLIST_FILE = LatynLyngo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -634,7 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 3HPCT47XEZ;
 				INFOPLIST_FILE = LatynLyngo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

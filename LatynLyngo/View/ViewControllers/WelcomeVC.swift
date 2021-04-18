@@ -19,44 +19,34 @@ class WelcomeVC: UIViewController {
     var contentText = ""
     var heightOfContentLBL = ((320/896) * screenHeight) - 50
     var widthOfContentLBL = screenWidth - 60
-   
+    
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getContentText()
+        //       self.initialViewSettings()
+        //        self.showContentText()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         NotificationCenter.default.addObserver(self, selector: #selector(self.checkForUpdate), name: NSNotification.Name(rawValue: "checkUpdate"), object: nil)
         initialViewSettings()
-       
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.showContentText()
+            self.contentCV.reloadData()
+        }
     }
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        //contentCV.layoutIfNeeded()
-       // view.layoutIfNeeded()
-        // contentDetailTextViewHeightConstraint.constant = (80/667) * UIScreen.main.bounds.height
-    }
+    
+    
     // view settings after device orientation changed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         initialViewSettings()
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.showContentText()
-          
             self.contentCV.reloadData()
         }
         
-//        contentCV.reloadSections(IndexSet(arrayLiteral: 0))
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//
-//                   if self.cellTextViewArray.count > 0 {
-//                       self.contentCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
-//                   }
-//                            self.contentCV.reloadData()
-//            self.viewWillLayoutSubviews()
-//                   }
     }
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
@@ -85,21 +75,6 @@ class WelcomeVC: UIViewController {
             slackView.axis = .vertical
         }
     }
-    func getContentText() {
-        activityIndicator.startAnimaton()
-        NetworkManager.shared.fetchingResponse(from: URLs.welcomeMessage, parameters: [:], method: .get, encoder: .urlEncoding) { (responseData, responseDic, message, status) in
-            activityIndicator.stopAnimaton()
-            let storeVersion = responseDic?["version"] as? String ?? ""
-            WordModel.shared.appStoreVersion = storeVersion
-            
-            if let dataObject = responseDic?["data"] as? String {
-                self.contentText = dataObject
-                self.initialViewSettings()
-                self.showContentText()
-            }
-            
-        }
-    }
     @objc func checkForUpdate() {
         let versionCompare = appVerion.compare(WordModel.shared.appStoreVersion, options: .numeric)
         
@@ -111,7 +86,7 @@ class WelcomeVC: UIViewController {
                 
             })
             self .present(alert, animated: true, completion: nil)
-         }
+        }
         
     }
     func showContentText() {
@@ -127,7 +102,7 @@ class WelcomeVC: UIViewController {
                 documentAttributes: nil)
             print(UIScreen.main.bounds.width)
             let contentFrame = CGRect(x: 0, y: 0, width: contentCV.bounds.width - 10, height: contentCV.bounds.height - 10)
-             let viewFrame = CGRect(x: 0, y: 0, width: contentCV.bounds.width , height: contentCV.bounds.height )
+            let viewFrame = CGRect(x: 0, y: 0, width: contentCV.bounds.width , height: contentCV.bounds.height )
             let txtSorage = NSTextStorage(attributedString:contentAttrString)
             let layoutManager = NSLayoutManager()
             txtSorage.addLayoutManager(layoutManager)
@@ -135,32 +110,32 @@ class WelcomeVC: UIViewController {
             
             var lastTextConainer: NSTextContainer? = nil
             while nil == lastTextConainer {
-               for _ in 1...20 {
-                let textContainer = NSTextContainer(size:contentFrame.size)
-                layoutManager.addTextContainer(textContainer)
-                let tv = TextView(frame:viewFrame, textContainer:textContainer)
-                tv.didTouchedLink = { (url,tapRange,point) in
-                    if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                for _ in 1...20 {
+                    let textContainer = NSTextContainer(size:contentFrame.size)
+                    layoutManager.addTextContainer(textContainer)
+                    let tv = TextView(frame:viewFrame, textContainer:textContainer)
+                    tv.didTouchedLink = { (url,tapRange,point) in
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
                     }
+                    cellTextViewArray.append(tv)
                 }
-                cellTextViewArray.append(tv)
-               }
-               lastTextConainer = layoutManager.textContainer(forGlyphAt: layoutManager.numberOfGlyphs - 1, effectiveRange: nil)
+                lastTextConainer = layoutManager.textContainer(forGlyphAt: layoutManager.numberOfGlyphs - 1, effectiveRange: nil)
             }
             
             let pagesCount = layoutManager.textContainers.firstIndex(of: lastTextConainer!)! + 1
             let emptyViewsCount = 20 - pagesCount
             cellTextViewArray.removeLast(emptyViewsCount)
-          
+            
             self.pageControl.numberOfPages = self.cellTextViewArray.count
             self.contentCV.reloadData()
-           
+            
             print(".......")
-//print(".................")
+            //print(".................")
         }
     }
-   
+    
 }
 
 // MARK: - CollectionView Delegates
@@ -174,7 +149,7 @@ extension WelcomeVC: UICollectionViewDataSource {
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
-       cell.contentView.addSubview(cellTextViewArray[indexPath.row])
+        cell.contentView.addSubview(cellTextViewArray[indexPath.row])
         cell.layoutSubviews()
         cell.layoutIfNeeded()
         return cell

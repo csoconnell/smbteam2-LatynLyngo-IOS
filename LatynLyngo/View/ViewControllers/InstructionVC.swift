@@ -24,7 +24,7 @@ class InstructionVC: UIViewController {
     }
     // MARK: - Methods
     func initialSettings() {
-         webView.isHidden = false
+        webView.isHidden = false
         emptyLBL.isHidden = true
         var url = URLs.instruction
         if contentData == "Privacy" {

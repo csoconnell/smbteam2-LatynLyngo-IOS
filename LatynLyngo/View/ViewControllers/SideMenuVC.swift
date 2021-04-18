@@ -10,6 +10,9 @@ import UIKit
 
 class SideMenuVC: UIViewController {
     
+    var didTapMenuType: ((Int) -> Void)?
+    
+    
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,26 +20,19 @@ class SideMenuVC: UIViewController {
     
     // MARK: - Button Actions
     @IBAction func closeBTNTapped(_ sender: UIButton) {
-        dismissTransitionVC()
+        dismiss(animated: true) { [weak self] in
+            
+            self?.didTapMenuType?(1)
+        }
+        //dismissTransitionVC()
     }
     
     @IBAction func menuBTNTapped(_ sender: UIButton) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "InstructionVC") as! InstructionVC
-        if sender.tag == 1 {
-            dismissTransitionVC()
-        } else if sender.tag == 2 {
-            // default - Instruction
-        } else if sender.tag == 3 {
-            nextVC.contentData = "Hints"
-        } else if sender.tag == 4 {
-           nextVC.contentData = "Packages"
-        } else if sender.tag == 5 {
-            nextVC.contentData = "Privacy"
-        }  else {
-            nextVC.contentData = "Terms"
+       
+        dismiss(animated: true) { [weak self] in
+            print("Dismissing: \(sender.tag)")
+            self?.didTapMenuType?(sender.tag)
         }
-        if sender.tag != 1 {
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        }
+       
     }
 }
