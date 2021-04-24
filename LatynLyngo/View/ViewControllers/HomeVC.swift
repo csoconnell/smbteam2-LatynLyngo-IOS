@@ -26,7 +26,7 @@
         //        backBTN.isUserInteractionEnabled = false
         
         UIApplication.shared.beginIgnoringInteractionEvents()
-    //  WordModel.shared.DbUpdated = true
+   //  WordModel.shared.DbUpdated = true
         if !WordModel.shared.DbUpdated {
             activityIndicator.startAnimaton()
             WordViewModel().GetWordListRequest { (status, message) in

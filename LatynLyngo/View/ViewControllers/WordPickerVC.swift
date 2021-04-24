@@ -69,6 +69,7 @@ class WordPickerVC: UIViewController {
     var pickerdataSuffix2 = [String]()
     var savedRootArray = [String]()
     var wordArray = ["","","","",""]
+    var searchWordArray = ["","","","",""]
     
     var resultWord = ""
     var rootValue = ""
@@ -91,8 +92,8 @@ class WordPickerVC: UIViewController {
     var suffixValueSelected = false
     var spinTapped = false
     
-    var prefexTapped = false
-    var suffixTapped = false
+    var prefexValueChanged = false
+    var suffixValueChanged = false
     
     // 0 - Root, 1 - random, 2 - Nonsense
     
@@ -138,8 +139,9 @@ class WordPickerVC: UIViewController {
             // root mode , Initially if user hits spin, nothing should happen
             
         } else {// root mode with any word
-           spinTapped = true
-            print("no spin...selected............\(prefixValueSelected)......\(rootValueSelected)......\(suffixValueSelected)")
+            spinTapped = true
+            print("spin...selected............\(prefixValueSelected)......\(rootValueSelected)......\(suffixValueSelected)")
+            print("spin............\(prefixSpinned)......  ..\(rootSpinned)...... .\(suffixSpinned)")
             if !prefixValueSelected {
                 prefixSpinned = true
                 prefixBtnAction()
@@ -148,14 +150,22 @@ class WordPickerVC: UIViewController {
                 suffixSpinned = true
                 suffixBtnAction()
             }
-            if prefixValueSelected && suffixValueSelected && rootValueSelected {
-                (prefixSpinned, suffixSpinned, rootSpinned)  = (true,true,true)
-                (prefixValueSelected, rootValueSelected, suffixValueSelected)  = (false,false,false)
+            if prefixValueSelected && suffixValueSelected {//&& rootValueSelected
+                //  (prefixSpinned, suffixSpinned, rootSpinned)  = (true,true,true)
+                //   (prefixValueSelected, rootValueSelected, suffixValueSelected)  = (false,false,false)
                 rootBtnAction()
-                prefixBtnAction()
-                suffixBtnAction()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.prefixBtnAction()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.suffixBtnAction()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    (self.prefixSpinned, self.suffixSpinned, self.rootSpinned)  = (true,true,true)
+                       (self.prefixValueSelected, self.rootValueSelected, self.suffixValueSelected)  = (false,false,false)
+                }
+                
             }
-            print("spin............\(prefixSpinned)......  ..\(rootSpinned)...... .\(suffixSpinned)")
         }
         
     }
@@ -168,7 +178,6 @@ class WordPickerVC: UIViewController {
     }
     
     @IBAction func prefixOverlayBTNTapped(_ sender: UIButton) {
-        prefexTapped = true
         prefixSpinned = false
         prefixValueSelected = true
         prefixBtnAction()
@@ -179,12 +188,13 @@ class WordPickerVC: UIViewController {
         rootBtnAction()
     }
     @IBAction func suffixOverlayBTNTapped(_ sender: UIButton) {
-        suffixTapped = true
         suffixSpinned = false
         suffixValueSelected = true
         suffixBtnAction()
     }
     @IBAction func wordMeaningBTNTapped(_ sender: UIButton) {
+        self.wordDetailViewTopConstraint.constant = 0 // hide more word tip view
+        
         if sender.tag == 1 {
             p1MeaningView.isHidden = !p1MeaningView.isHidden
         } else if sender.tag == 2 {
@@ -235,13 +245,13 @@ class WordPickerVC: UIViewController {
             }
         }, completion: { (status) in
             if self.wordDetailViewTopConstraint.constant == 0 {
-                self.wordDetailBTN.isHidden = false
+                //self.wordDetailBTN.isHidden = false
             }
             
         })
     }
     @IBAction func wordDetailBTNTapped(_ sender: UIButton) {
-        wordform()
+        wordform(delay: 0)
     }
     
     @IBAction func ShowDetailsOfWord(_ sender: UIButton) {
@@ -381,7 +391,7 @@ class WordPickerVC: UIViewController {
             self.wordDetailViewHeightConstraint.constant = UIScreen.main.bounds.height + 15
         }
         if self.wordDetailViewTopConstraint.constant != 0 {
-            self.wordDetailBTN.isHidden = false
+            // self.wordDetailBTN.isHidden = false
         }
         self.wordDetailViewTopConstraint.constant = 0
         if UIDevice.current.orientation.isLandscape {
@@ -583,9 +593,9 @@ class WordPickerVC: UIViewController {
         }
     }
     func showRandomMovie() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             self.wordDetailViewTopConstraint.constant = 0
-            self.wordDetailBTN.isHidden = true
+            // self.wordDetailBTN.isHidden = true
         }, completion: nil)
         
         if !allMovies.isEmpty && !savedRootArray.isEmpty {
@@ -673,12 +683,13 @@ class WordPickerVC: UIViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.3) {//3
                 //  activityIndicator.stopAnimaton()
-                self.wordform()
+                self.wordform(delay: 2)
             }
         }
     }
     func prefixBtnAction() {
-    let randomNum = Int.random(in: 0...10000)
+        prefexValueChanged = true
+        let randomNum = Int.random(in: 0...10000)
         if WordModel.shared.ModeValue == 2 {
             
             picker1.isHidden = false
@@ -693,23 +704,24 @@ class WordPickerVC: UIViewController {
                 } else {
                     boolPrefixFirst = false
                 }
-                
                 picker1.isHidden = false
                 prefixOverlayBTN.isHidden = true
                 self.picker1.selectRow(randomNum, inComponent: 0, animated: true)
                 self.pickerView(self.picker1, didSelectRow: randomNum, inComponent: 0)
             }
         }
+        
     }
     func rootBtnAction() {
-    let randomNum = Int.random(in: 0...10000)
+        let randomNum = Int.random(in: 0...10000)
         picker3.isHidden = false
         rootOverlayBTN.isHidden = true
         self.picker3.selectRow(randomNum, inComponent: 0, animated: true)
         self.pickerView(self.picker3, didSelectRow: randomNum, inComponent: 0)
     }
     func suffixBtnAction() {
-    let randomNum = Int.random(in: 0...10000)
+        suffixValueChanged = true
+        let randomNum = Int.random(in: 0...10000)
         if WordModel.shared.ModeValue == 2 {
             picker5.isHidden = false
             suffixOverlayBTN.isHidden = true
@@ -717,7 +729,6 @@ class WordPickerVC: UIViewController {
             self.pickerView(self.picker5, didSelectRow: randomNum, inComponent: 0)
         } else {
             if rootValue != ""{
-                
                 if prefix1Value == "" {
                     boolSuffixFirst = true
                     boolPrefixFirst = false
@@ -733,11 +744,12 @@ class WordPickerVC: UIViewController {
     }
     
     func resetWith(root: Bool) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
             self.wordDetailViewTopConstraint.constant = 0
-            self.wordDetailBTN.isHidden = true
+            
         }, completion: nil)
         
+        self.wordDetailBTN.isHidden = true
         
         if root {
             wordArray = ["","",rootValue,"",""]
@@ -748,17 +760,13 @@ class WordPickerVC: UIViewController {
             picker3.isHidden = true
             
         }
-        boolSuffixFirst = false
-        boolPrefixFirst = false
+        searchWordArray = wordArray
         prefix1Value = ""
         prefix2Value = ""
         suffix2Value = ""
         suffix3Value = ""
         picker1.isHidden = true
         picker5.isHidden = true
-         spinTapped = false
-         prefexTapped = false
-         suffixTapped = false
         self.hideViews(hideP2View: true, hideS2View: true)
         prefixOverlayBTN.isHidden = false
         suffixOverlayBTN.isHidden = false
@@ -767,6 +775,18 @@ class WordPickerVC: UIViewController {
         rootMeaningView.isHidden = true
         s2MeaningView.isHidden = true
         s3MeaningView.isHidden = true
+        // for spin action
+        prefixSpinned = false
+        rootSpinned = false
+        suffixSpinned = false
+        prefixValueSelected = false
+        rootValueSelected = false
+        suffixValueSelected = false
+        spinTapped = false
+        boolSuffixFirst = false
+        boolPrefixFirst = false
+        prefexValueChanged = false
+        suffixValueChanged = false
     }
     func getMovies(root:Bool) {
         print("values.....prefix1_\(wordArray[0]).....prefix2_\(wordArray[1]).....root_\(wordArray[2]).......suffix2_\(wordArray[3]).....suffix3_\(wordArray[4])")
@@ -777,39 +797,24 @@ class WordPickerVC: UIViewController {
         if spinTapped && suffixValueSelected == false {
             wordArray[4] = ""
         }
-       wordArray[1] = ""
+        wordArray[1] = ""
         wordArray[3] = ""
-        loadPickerData(prefix1: wordArray[0], prefix2: wordArray[1], root: wordArray[2], suffix2: wordArray[3], suffix3: wordArray[4]) { (pickerMovies) in
+        print("searchWordArray.....\(searchWordArray)")
+        loadPickerData(prefix1: searchWordArray[0], prefix2: searchWordArray[1], root: searchWordArray[2], suffix2: searchWordArray[3], suffix3: searchWordArray[4]) { (pickerMovies) in
             
             print("pickerMovies........\(pickerMovies.count)");
             print(pickerMovies)
             print("array count.....prefix1_\(pickerdataPrefix1.count).....prefix2_\(pickerdataPrefix2.count).....root_\(pickerdataRoot.count).........suffix2_\(pickerdataSuffix2.count).....suffix3_\(pickerdataSuffix3.count)")
-            
-            print("boolSuffixFirst...\(boolSuffixFirst)")
-            print("boolPrefixFirst...\(boolPrefixFirst)...prefexTapped...\(prefexTapped)...suffixTapped...\(suffixTapped)")
+            print("boolPrefixFirst...\(boolPrefixFirst)...boolSuffixFirst...\(boolSuffixFirst)...prefexValueChanged...\(prefexValueChanged)...suffixValueChanged...\(suffixValueChanged)..spinTapped...\(spinTapped)")
             // if !pickerMovies.isEmpty && rootValue != "" && prefix1Value != "" && suffix3Value != "" {
-            // if !pickerMovies.isEmpty && rootValue != "" && ((prefix1Value != "" && suffix3Value != "") || (prefix1Value == "" && prefexTapped) || (suffix3Value == "" && suffixTapped)) {
-            if !pickerMovies.isEmpty && ((prefexTapped && suffixTapped) || spinTapped){
+            // if !pickerMovies.isEmpty && rootValue != "" && ((prefix1Value != "" && suffix3Value != "") || (prefix1Value == "" && prefexValueChanged) || (suffix3Value == "" && suffixValueChanged)) {
+            if !pickerMovies.isEmpty && ((prefexValueChanged && suffixValueChanged) || spinTapped){
                 
                 let randomNum :Int = Int.random(in: 1...10000)
                 let randomMovie = pickerMovies[randomNum%pickerMovies.count]
                 print("randomMovie.........\n\(randomMovie)")
-                if let prefix1 = randomMovie.prefex_1 {
-                    if wordArray[0] == "" {
-                        wordArray[0] = prefix1
-                    }
-                    if wordArray[0] != "" {
-                        self.picker1.isHidden = false
-                        self.prefixOverlayBTN.isHidden = true
-                        if let indexofFirstword = self.pickerdataPrefix1.firstIndex(of: wordArray[0]) {
-                            self.picker1.selectRow(indexofFirstword, inComponent: 0, animated: true)
-                        }
-                    } else {
-                        self.picker1.isHidden = true
-                        self.prefixOverlayBTN.isHidden = false
-                    }
-                    
-                }
+                let randomWordArray = [randomMovie.prefex_1!,randomMovie.prefex_2!,rootValue,randomMovie.suffix_2!,randomMovie.suffix_3!]
+                
                 if let prefix2 = randomMovie.prefex_2 {
                     wordArray[1] = prefix2
                     if wordArray[1] == "" {
@@ -832,10 +837,39 @@ class WordPickerVC: UIViewController {
                         }
                     }
                 }
-                if let suffix3 = randomMovie.suffix_3 {
-                    if wordArray[4] == "" {
-                        wordArray[4] = suffix3
+                print(wordArray)
+                print(randomWordArray)
+                if wordArray[0] != randomWordArray[0] {
+                    //if wordArray[0] == "" {
+                    //    wordArray[0] = prefix1
+                    //  }
+                    wordArray[0] = randomWordArray[0]
+                    if wordArray[0] != "" {
+                        self.picker1.isHidden = false
+                        self.prefixOverlayBTN.isHidden = true
+                        if let indexofFirstword = self.pickerdataPrefix1.firstIndex(of: wordArray[0]) {
+                            self.picker1.selectRow(indexofFirstword, inComponent: 0, animated: true)
+                        }
+                    } else {
+                        self.picker1.isHidden = true
+                        self.prefixOverlayBTN.isHidden = false
                     }
+                } else  {
+                    if wordArray[0] != "" {
+                        self.picker1.isHidden = false
+                        self.prefixOverlayBTN.isHidden = true
+                        
+                    } else {
+                        self.picker1.isHidden = true
+                        self.prefixOverlayBTN.isHidden = false
+                    }
+                }
+                
+                if wordArray[4] != randomWordArray[4] {
+                    //                    if wordArray[4] == "" {
+                    //                        wordArray[4] = suffix3
+                    //                    }
+                    wordArray[4] = randomWordArray[4]
                     if wordArray[4] != "" {
                         self.picker5.isHidden = false
                         self.suffixOverlayBTN.isHidden = true
@@ -846,23 +880,43 @@ class WordPickerVC: UIViewController {
                         self.picker5.isHidden = true
                         self.suffixOverlayBTN.isHidden = false
                     }
+                } else {
+                    if wordArray[4] != "" {
+                        self.picker5.isHidden = false
+                        self.suffixOverlayBTN.isHidden = true
+                    } else {
+                        self.picker5.isHidden = true
+                        self.suffixOverlayBTN.isHidden = false
+                    }
                 }
+                
+                //                if wordSearchArray[0] == "" {
+                //                    boolSuffixFirst = true
+                //                    boolPrefixFirst = false
+                //                }
+                //                if wordSearchArray[4] == "" {
+                //                    boolSuffixFirst = false
+                //                    boolPrefixFirst = true
+                //                }
             } else {
                 self.hideViews(hideP2View: true, hideS2View: true)
             }
             
         }
-        picker1.reloadAllComponents()
-        picker2.reloadAllComponents()
-        picker3.reloadAllComponents()
-        picker4.reloadAllComponents()
-        picker5.reloadAllComponents()
-        wordform()
+        //        picker1.reloadAllComponents()
+        //        picker2.reloadAllComponents()
+        //        picker3.reloadAllComponents()
+        //        picker4.reloadAllComponents()
+        //        picker5.reloadAllComponents()
+        wordform(delay: 2)
     }
-    func wordform() {
+    func wordform(delay: Int) {
         print(".......wordform().........")
         print(wordArray)
-        
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
+            self.wordDetailViewTopConstraint.constant = 0
+            
+        }, completion: nil)
         hideMeaningViews()
         self.wordDetailBTN.isHidden = true
         DBManager.shared.loadwordFromDB(withWord: wordArray[0], prefix2: wordArray[1], root: wordArray[2], suffix1: "", suffix2: wordArray[3], suffix3: wordArray[4], completionHandler: { (movie) in
@@ -873,7 +927,7 @@ class WordPickerVC: UIViewController {
                     
                     self.resultWord = movie!.word
                     self.wordDetailBTN.isHidden = false
-                    self.showWordMeaningPopup()
+                    self.showWordMeaningPopup(delay: delay)
                 } else {
                     self.wordDetailViewTopConstraint.constant = 0
                     self.wordDetailBTN.isHidden = true
@@ -884,7 +938,7 @@ class WordPickerVC: UIViewController {
         })
     }
     
-    func showWordMeaningPopup() {
+    func showWordMeaningPopup(delay: Int) {
         // save root value for random mode
         if !savedRootArray.contains(rootValue) {
             savedRootArray.append(rootValue)
@@ -892,12 +946,9 @@ class WordPickerVC: UIViewController {
         UserDefaults.standard.set(savedRootArray, forKey: "savedRootArray")
         UserDefaults.standard.synchronize()
         
-        let wordBtnStatus = self.wordDetailBTN.isHidden
-        self.wordDetailBTN.isHidden = true
+        
+        //self.wordDetailBTN.isHidden = true
         self.closeBTNTopConstraint.constant = 0
-        print(".......showMeaningGestureTapped.........\(wordBtnStatus)")
-        print(".......self.popupviewTop.constant.........\(self.wordDetailViewTopConstraint.constant)")
-        //self.randomTimer.invalidate()
         self.wordDetailLBL.text = self.resultWord
         self.meaningBTN.isSelected = false
         self.meaningBTN.borderColor = UIColor.white
@@ -905,7 +956,7 @@ class WordPickerVC: UIViewController {
         self.listBTN.borderColor = UIColor.white
         self.synonymBTN.isSelected = false
         self.synonymBTN.borderColor = UIColor.white
-        UIView.animate(withDuration:0.5, delay: 0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+        UIView.animate(withDuration:0.5, delay: TimeInterval(delay), options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {// increased delay 2
             self.wordDetailViewTopConstraint.constant =  150
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -973,6 +1024,11 @@ class WordPickerVC: UIViewController {
             pickerdataRoot = pickerdataRoot.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
             pickerdataSuffix2 = pickerdataSuffix2.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
             pickerdataSuffix3 = pickerdataSuffix3.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            picker1.reloadAllComponents()
+            picker2.reloadAllComponents()
+            picker3.reloadAllComponents()
+            picker4.reloadAllComponents()
+            picker5.reloadAllComponents()
         }
         handler(movies)
     }
@@ -1013,19 +1069,17 @@ extension WordPickerVC: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 10000
-        //        if pickerView == picker1 {
-        //            return pickerdataPrefix1.count
-        //        } else if pickerView == picker2 {
-        //            return pickerdataPrefix2.count
-        //        } else if pickerView == picker3 {
-        //            return pickerdataRoot.count
-        //        } else if pickerView == picker4 {
-        //            return pickerdataSuffix1.count
-        //        } else if pickerView == picker5 {
-        //            return pickerdataSuffix2.count
-        //        } else {
-        //            return pickerdataSuffix3.count
-        //        }
+        //                if pickerView == picker1 {
+        //                    return pickerdataPrefix1.count
+        //                } else if pickerView == picker2 {
+        //                    return pickerdataPrefix2.count
+        //                } else if pickerView == picker3 {
+        //                    return pickerdataRoot.count
+        //                } else if pickerView == picker4 {
+        //                    return pickerdataSuffix2.count
+        //                } else {
+        //                    return pickerdataSuffix3.count
+        //                }
     }
 }
 
@@ -1084,9 +1138,11 @@ extension WordPickerVC: UIPickerViewDelegate {
         return label
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        print("prefixSpinned...\(prefixSpinned)...rootSpinned...\(rootSpinned)...... suffixSpinned...\(suffixSpinned)")
         if WordModel.shared.ModeValue == 0 { //root mode
+            
             if pickerView == picker1 {
-                print("prefixSpinned...\(prefixSpinned)")
+                
                 if !prefixSpinned {
                     prefixValueSelected = true
                 }
@@ -1098,24 +1154,40 @@ extension WordPickerVC: UIPickerViewDelegate {
                 }
                 
                 print("....1...\(prefix1Value)")
+                if boolPrefixFirst{
+                } else {
+                    if boolSuffixFirst{
+                    } else {
+                        boolPrefixFirst = true
+                        boolSuffixFirst = false
+                    }
+                }
                 if boolPrefixFirst {
-                    boolSuffixFirst = false
+                    
                     wordArray = [prefix1Value,"",rootValue,"",""]
                 }else{
-                    boolPrefixFirst = true
-                    boolSuffixFirst = false
-                    wordArray[0] = prefix1Value
+                    
+                    wordArray[0] = suffix3Value
                 }
-                print("prefix2View...\(prefix2View.isHidden)")
-                print("suffix2View...\(suffix2View.isHidden)")
+                if boolPrefixFirst {
+                    searchWordArray = [prefix1Value,"",rootValue,"",""]
+                }else{
+                    searchWordArray = [prefix1Value,"",rootValue,"",suffix3Value]
+                    
+                }
+                if boolPrefixFirst && suffixValueSelected && !prefixValueSelected {
+                    searchWordArray = ["","",rootValue,"",suffix3Value]
+                }
+                print("spin.....\(wordArray)...\(searchWordArray)...\(prefixValueSelected)....\(suffixValueSelected)")
+                
+                print("boolPrefixFirst...\(boolPrefixFirst)...boolSuffixFirst...\(boolSuffixFirst)")
                 getMovies(root: false)
             } else if pickerView == picker2 {
                 prefix2Value = pickerdataPrefix2[row%pickerdataPrefix2.count]
                 print("....2..\(prefix2Value)")
                 wordArray[1] = prefix2Value
-                wordform()
+                wordform(delay: 2)
             } else if pickerView == picker3 {
-                print("rootSpinned...\(rootSpinned)")
                 if !rootSpinned {
                     rootValueSelected = true
                     
@@ -1133,9 +1205,8 @@ extension WordPickerVC: UIPickerViewDelegate {
                 suffix2Value = pickerdataSuffix2[row%pickerdataSuffix2.count]
                 print("....5...\(suffix2Value)")
                 wordArray[3] = suffix2Value
-                wordform()
+                wordform(delay: 2)
             } else {
-                print("suffixSpinned...\(suffixSpinned)")
                 if !suffixSpinned {
                     suffixValueSelected = true
                 }
@@ -1145,20 +1216,47 @@ extension WordPickerVC: UIPickerViewDelegate {
                 } else  {
                     suffix3Value = ""
                 }
-                print("prefix2View...\(prefix2View.isHidden)")
-                print("suffix2View...\(suffix2View.isHidden)")
+                print("boolPrefixFirst...\(boolPrefixFirst)...boolSuffixFirst...\(boolSuffixFirst)...\(wordArray)")
                 print("....6...\(suffix3Value)")
+                
+                if boolSuffixFirst{
+                } else {
+                    if boolPrefixFirst{
+                    } else {
+                        boolSuffixFirst = true
+                        boolPrefixFirst = false
+                    }
+                }
+                
+                //                if boolPrefixFirst{
+                //                } else {
+                //                    if boolSuffixFirst{
+                //                    } else {
+                //                        boolPrefixFirst = false
+                //                        boolSuffixFirst = true
+                //                    }
+                //                }
+                
                 if boolSuffixFirst {
-                    boolPrefixFirst = false
+                    
                     wordArray = ["","",rootValue,"",suffix3Value]
                 }else{
-                    boolPrefixFirst = false
-                    boolSuffixFirst = true
+                    
                     wordArray[4] = suffix3Value
                 }
+                if boolPrefixFirst{
+                    searchWordArray = [prefix1Value,"",rootValue,"",suffix3Value]
+                }
+                else{
+                    searchWordArray = ["","",rootValue,"",suffix3Value]
+                }
+                print("spin.....\(wordArray)...\(searchWordArray)...\(prefixValueSelected)....\(suffixValueSelected)")
                 getMovies(root: false)
             }
-        } else if WordModel.shared.ModeValue == 1 { // random mode
+            print(wordArray)
+            
+            print("-----------------------------------")
+        } else if WordModel.shared.ModeValue == 1 { // random mo de
             
         } else { // nonsense mode
             if pickerView == picker1 {
